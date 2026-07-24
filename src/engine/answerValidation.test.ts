@@ -17,4 +17,18 @@ describe('answer validation', () => {
     expect(maxAttemptsFor(openQuestion)).toBe(3)
     expect(maxAttemptsFor({ ...openQuestion, type: 'multiple-choice' })).toBe(1)
   })
+
+  it('valide un QCM multiple indépendamment de l’ordre des choix', () => {
+    const multipleQuestion: Question = {
+      ...openQuestion,
+      type: 'multiple-select',
+      choices: ['Charge', 'Flammèche', 'Griffe', 'Rugissement'],
+      correctChoices: ['Charge', 'Griffe'],
+    }
+
+    expect(isAnswerCorrect(multipleQuestion, ['Griffe', 'Charge'])).toBe(true)
+    expect(isAnswerCorrect(multipleQuestion, ['Charge'])).toBe(false)
+    expect(isAnswerCorrect(multipleQuestion, ['Charge', 'Griffe', 'Flammèche'])).toBe(false)
+    expect(maxAttemptsFor(multipleQuestion)).toBe(1)
+  })
 })

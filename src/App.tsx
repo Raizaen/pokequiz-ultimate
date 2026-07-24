@@ -183,7 +183,7 @@ export function App() {
       </section>
       <section className="player-grid">
         {game.players.map((player) => (
-          <PlayerPanel key={player.id} player={player} question={question} answer={game.answers[player.id]} disabled={game.revealed} onAnswer={(value) => setGame(submitAnswer(game, player.id, value))} />
+          <PlayerPanel key={`${question.id}-${player.id}`} player={player} question={question} answer={game.answers[player.id]} disabled={game.revealed} onAnswer={(value) => setGame(submitAnswer(game, player.id, value))} />
         ))}
       </section>
       {game.revealed ? (

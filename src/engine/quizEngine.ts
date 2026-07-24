@@ -1,4 +1,4 @@
-import type { AnswersByPlayer, GameState, Player, Question } from '../domain/quiz'
+import type { AnswersByPlayer, AnswerValue, GameState, Player, Question } from '../domain/quiz'
 import { isAnswerCorrect, maxAttemptsFor } from './answerValidation'
 
 const emptyAnswers = (): AnswersByPlayer => ({})
@@ -20,7 +20,7 @@ export function createGame(players: Player[], questions: Question[]): GameState 
   }
 }
 
-export function submitAnswer(state: GameState, playerId: string, value: string): GameState {
+export function submitAnswer(state: GameState, playerId: string, value: AnswerValue): GameState {
   if (state.finished || state.revealed || state.remainingSeconds <= 0) return state
   const question = state.questions[state.questionIndex]
   const previous = state.answers[playerId]

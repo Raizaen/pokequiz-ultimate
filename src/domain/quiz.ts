@@ -1,4 +1,5 @@
-export type QuestionType = 'multiple-choice' | 'open'
+export type QuestionType = 'multiple-choice' | 'multiple-select' | 'open'
+export type AnswerValue = string | string[]
 
 export interface Question {
   id: string
@@ -8,6 +9,8 @@ export interface Question {
   prompt: string
   choices?: string[]
   acceptedAnswers: string[]
+  correctChoices?: string[]
+  template?: string
   explanation: string
   points: number
   durationSeconds: number
@@ -29,7 +32,7 @@ export interface Player {
 
 export interface PlayerAnswer {
   attempts: number
-  value: string
+  value: AnswerValue
   isCorrect: boolean
   locked: boolean
 }
