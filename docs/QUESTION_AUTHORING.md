@@ -38,3 +38,7 @@ Chaque question doit :
 ## Pack pilote Capacités
 
 `src/data/curated/movesPilot.ts` applique les mêmes règles aux caractéristiques de combat. Les questions dépendantes d’un équilibrage historique délimitent explicitement les générations concernées. Le pack couvre puissance, précision, PP, priorité, catégorie de dégâts, météo, effets secondaires et capacités signatures.
+
+## Pack pilote Stratégie
+
+`src/data/curated/strategyPilot.ts` privilégie les situations et interactions utiles en combat plutôt qu’un unique modèle fondé sur les statistiques de base. Il couvre EV, IV, natures, STAB, statuts, objets tenus, météo, écrans et interactions de talents. Les changements historiques sont toujours rattachés à une génération précise.
