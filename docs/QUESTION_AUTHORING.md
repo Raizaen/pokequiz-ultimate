@@ -42,3 +42,7 @@ Chaque question doit :
 ## Pack pilote Stratégie
 
 `src/data/curated/strategyPilot.ts` privilégie les situations et interactions utiles en combat plutôt qu’un unique modèle fondé sur les statistiques de base. Il couvre EV, IV, natures, STAB, statuts, objets tenus, météo, écrans et interactions de talents. Les changements historiques sont toujours rattachés à une génération précise.
+
+## Pack pilote Objets
+
+`src/data/curated/itemsPilot.ts` couvre les usages en combat, les Baies, les Balls et les objets d’évolution. Les QCM multiples servent à comparer des familles d’objets ou des conditions d’activation sans réduire la catégorie à une succession de définitions.
