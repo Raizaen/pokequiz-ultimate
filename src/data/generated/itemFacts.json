@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "name": "Master Ball",
+    "cost": 0,
+    "flingPower": null,
+    "category": "Balls standard",
+    "pocket": "Balls"
+  },
+  {
+    "id": 2,
+    "name": "Hyper Ball",
+    "cost": 800,
+    "flingPower": null,
+    "category": "Balls standard",
+    "pocket": "Balls"
+  },
+  {
+    "id": 3,
+    "name": "Super Ball",
+    "cost": 600,
+    "flingPower": null,
+    "category": "Balls standard",
+    "pocket": "Balls"
+  },
+  {
+    "id": 4,
+    "name": "Poké Ball",
+    "cost": 200,
+    "flingPower": null,
+    "category": "Balls standard",
+    "pocket": "Balls"
+  },
+  {
+    "id": 5,
+    "name": "Safari Ball",
+    "cost": 0,
+    "flingPower": null,
+    "category": "Balls standard",
+    "pocket": "Balls"
+  },
+  {
+    "id": 6,
+    "name": "Filet Ball",
+    "cost": 1000,
+    "flingPower": null,
+    "category": "Balls spéciales",
+    "pocket": "Balls"
+  },
+  {
+    "id": 7,
+    "name": "Scuba Ball",
+    "cost": 1000,
+    "flingPower": null,
+    "category": "Balls spéciales",
+    "pocket": "Balls"
+  },
+  {
+    "id": 8,
+    "name": "Faiblo Ball",
+    "cost": 1000,
+    "flingPower": null,
+    "category": "Balls spéciales",
+    "pocket": "Balls"
+  },
+  {
+    "id": 9,
+    "name": "Bis Ball",
+    "cost": 1000,
+    "flingPower": null,
+    "category": "Balls spéciales",
+    "pocket": "Balls"
+  },
+  {
+    "id": 10,
+    "name": "Chrono Ball",
+    "cost": 1000,
+    "flingPower": null,
+    "category": "Balls spéciales",
+    "pocket": "Balls"
+  },
+  {
+    "id": 11,
+    "name": "Luxe Ball",
+    "cost": 3000,
+    "flingPower": null,
+    "category": "Balls spéciales",
+    "pocket": "Balls"
+  },
+  {
+    "id": 12,
+    "name": "Honor Ball",
+    "cost": 20,
+    "flingPower": null,
+    "category": "Balls spéciales",
+    "pocket": "Balls"
+  },
+  {
+    "id": 13,
+    "name": "Sombre Ball",
+    "cost": 1000,
+    "flingPower": null,
+    "category": "Balls spéciales",
+    "pocket": "Balls"
+  },
+  {
+    "id": 14,
+    "name": "Soin Ball",
+    "cost": 300,
+    "flingPower": null,
+    "category": "Balls spéciales",
+    "pocket": "Balls"
+  },
+  {
+    "id": 15,
+    "name": "Rapide Ball",
+    "cost": 1000,
+    "flingPower": null,
+    "category": "Balls spéciales",
+    "pocket": "Balls"
+  },
+  {
+    "id": 16,
+    "name": "Mémoire Ball",
+    "cost": 0,
+    "flingPower": null,
+    "category": "Balls spéciales",
+    "pocket": "Balls"
+  },
+  {
+    "id": 17,
+    "name": "Potion",
+    "cost": 200,
+    "flingPower": 30,
+    "category": "Soin",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 18,
+    "name": "Antidote",
+    "cost": 200,
+    "flingPower": 30,
+    "category": "Soin de statut",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 19,
+    "name": "Anti-Brûle",
+    "cost": 200,
+    "flingPower": 30,
+    "category": "Soin de statut",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 20,
+    "name": "Antigel",
+    "cost": 200,
+    "flingPower": 30,
+    "category": "Soin de statut",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 21,
+    "name": "Réveil",
+    "cost": 200,
+    "flingPower": 30,
+    "category": "Soin de statut",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 22,
+    "name": "Anti-Para",
+    "cost": 200,
+    "flingPower": 30,
+    "category": "Soin de statut",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 23,
+    "name": "Guérison",
+    "cost": 3000,
+    "flingPower": 30,
+    "category": "Soin",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 24,
+    "name": "Potion Max",
+    "cost": 2500,
+    "flingPower": 30,
+    "category": "Soin",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 25,
+    "name": "Hyper Potion",
+    "cost": 1500,
+    "flingPower": 30,
+    "category": "Soin",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 26,
+    "name": "Super Potion",
+    "cost": 700,
+    "flingPower": 30,
+    "category": "Soin",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 27,
+    "name": "Total Soin",
+    "cost": 400,
+    "flingPower": 30,
+    "category": "Soin de statut",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 28,
+    "name": "Rappel",
+    "cost": 2000,
+    "flingPower": 30,
+    "category": "Renaissance",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 29,
+    "name": "Rappel Max",
+    "cost": 4000,
+    "flingPower": 30,
+    "category": "Renaissance",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 30,
+    "name": "Eau Fraîche",
+    "cost": 200,
+    "flingPower": 30,
+    "category": "Soin",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 31,
+    "name": "Soda Cool",
+    "cost": 300,
+    "flingPower": 30,
+    "category": "Soin",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 32,
+    "name": "Limonade",
+    "cost": 400,
+    "flingPower": 30,
+    "category": "Soin",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 33,
+    "name": "Lait Meumeu",
+    "cost": 600,
+    "flingPower": 30,
+    "category": "Soin",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 34,
+    "name": "Poudrénergie",
+    "cost": 500,
+    "flingPower": 30,
+    "category": "Soin",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 35,
+    "name": "Racinénergie",
+    "cost": 1200,
+    "flingPower": 30,
+    "category": "Soin",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 36,
+    "name": "Poudre Soin",
+    "cost": 300,
+    "flingPower": 30,
+    "category": "Soin de statut",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 37,
+    "name": "Herbe Rappel",
+    "cost": 2800,
+    "flingPower": 30,
+    "category": "Renaissance",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 38,
+    "name": "Huile",
+    "cost": 1200,
+    "flingPower": 30,
+    "category": "Récupération de PP",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 39,
+    "name": "Huile Max",
+    "cost": 2000,
+    "flingPower": 30,
+    "category": "Récupération de PP",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 40,
+    "name": "Élixir",
+    "cost": 3000,
+    "flingPower": 30,
+    "category": "Récupération de PP",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 41,
+    "name": "Élixir Max",
+    "cost": 4500,
+    "flingPower": 30,
+    "category": "Récupération de PP",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 42,
+    "name": "Lava Cookie",
+    "cost": 350,
+    "flingPower": 30,
+    "category": "Soin de statut",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 43,
+    "name": "Jus de Baie",
+    "cost": 200,
+    "flingPower": 30,
+    "category": "Soin",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 44,
+    "name": "Cendre Sacrée",
+    "cost": 50000,
+    "flingPower": 30,
+    "category": "Renaissance",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 45,
+    "name": "PV Plus",
+    "cost": 10000,
+    "flingPower": 30,
+    "category": "Vitamines",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 46,
+    "name": "Protéine",
+    "cost": 10000,
+    "flingPower": 30,
+    "category": "Vitamines",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 47,
+    "name": "Fer",
+    "cost": 10000,
+    "flingPower": 30,
+    "category": "Vitamines",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 48,
+    "name": "Carbone",
+    "cost": 10000,
+    "flingPower": 30,
+    "category": "Vitamines",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 49,
+    "name": "Calcium",
+    "cost": 10000,
+    "flingPower": 30,
+    "category": "Vitamines",
+    "pocket": "Médicaments"
+  },
+  {
+    "id": 50,
+    "name": "Super Bonbon",
+    "cost": 10000,
+    "flingPower": 30,
+    "category": "Vitamines",
+    "pocket": "Médicaments"
+  }
+]

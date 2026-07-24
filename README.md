@@ -11,6 +11,7 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 - difficulté Découverte, Confirmé, Expert ou Tous niveaux ;
 - choix du nombre de questions selon la sélection disponible ;
 - QCM avec un seul essai par joueur ;
+- QCM multiples avec plusieurs propositions à cocher ;
 - questions ouvertes avec trois essais ;
 - validation tolérante aux accents, espaces, casse et ponctuation ;
 - chronomètre, score automatique et révélation expliquée ;
@@ -19,6 +20,7 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 - sauvegarde locale automatique ;
 - podium final ;
 - au moins 50 questions dans chaque catégorie jouable ;
+- catégories Capacités et Objets indépendantes, avec plusieurs modèles de questions chacune ;
 - tests unitaires du moteur.
 
 ## Lancer le projet

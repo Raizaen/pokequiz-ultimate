@@ -3,559 +3,1516 @@
     "id": 1,
     "name": "Bulbizarre",
     "primaryType": "Plante",
+    "types": [
+      "Plante",
+      "Poison"
+    ],
     "highestStats": [
       "Attaque Spéciale",
       "Défense Spéciale"
     ],
     "highestValue": 65,
+    "lowestStats": [
+      "PV",
+      "Vitesse"
+    ],
+    "lowestValue": 45,
+    "statsTotal": 318,
+    "speed": 45,
+    "height": 0.7,
+    "weight": 6.9,
+    "baseExperience": 64,
+    "primaryAbility": "Engrais",
     "generation": 1,
+    "genus": "Pokémon Graine",
+    "color": "Vert",
+    "captureRate": 45,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Au matin de sa vie, la graine sur son dos lui fournit les éléments dont il a besoin pour grandir."
   },
   {
     "id": 22,
     "name": "Rapasdepic",
     "primaryType": "Normal",
+    "types": [
+      "Normal",
+      "Vol"
+    ],
     "highestStats": [
       "Vitesse"
     ],
     "highestValue": 100,
+    "lowestStats": [
+      "Attaque Spéciale",
+      "Défense Spéciale"
+    ],
+    "lowestValue": 61,
+    "statsTotal": 442,
+    "speed": 100,
+    "height": 1.2,
+    "weight": 38,
+    "baseExperience": 155,
+    "primaryAbility": "Regard Vif",
     "generation": 1,
+    "genus": "Pokémon Bec-Oiseau",
+    "color": "Brun",
+    "captureRate": 90,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il a assez d’énergie pour voler toute la journée avec ses grandes ailes. Il frappe de son bec acéré."
   },
   {
     "id": 43,
     "name": "Mystherbe",
     "primaryType": "Plante",
+    "types": [
+      "Plante",
+      "Poison"
+    ],
     "highestStats": [
       "Attaque Spéciale"
     ],
     "highestValue": 75,
+    "lowestStats": [
+      "Vitesse"
+    ],
+    "lowestValue": 30,
+    "statsTotal": 320,
+    "speed": 30,
+    "height": 0.5,
+    "weight": 5.4,
+    "baseExperience": 64,
+    "primaryAbility": "Chlorophylle",
     "generation": 1,
+    "genus": "Pokémon Racine",
+    "color": "Bleu",
+    "captureRate": 255,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "En journée, il plante ses pieds-racines dans le sol. La nuit, il se promène en semant des graines."
   },
   {
     "id": 64,
     "name": "Kadabra",
     "primaryType": "Psy",
+    "types": [
+      "Psy"
+    ],
     "highestStats": [
       "Attaque Spéciale"
     ],
     "highestValue": 120,
+    "lowestStats": [
+      "Défense"
+    ],
+    "lowestValue": 30,
+    "statsTotal": 400,
+    "speed": 105,
+    "height": 1.3,
+    "weight": 56.5,
+    "baseExperience": 140,
+    "primaryAbility": "Synchro",
     "generation": 1,
+    "genus": "Pokémon Psy",
+    "color": "Brun",
+    "captureRate": 100,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il fixe sa cuillère d’argent afin de concentrer son esprit et d’émettre un maximum d’ondes alpha."
   },
   {
     "id": 85,
     "name": "Dodrio",
     "primaryType": "Normal",
+    "types": [
+      "Normal",
+      "Vol"
+    ],
     "highestStats": [
       "Attaque",
       "Vitesse"
     ],
     "highestValue": 110,
+    "lowestStats": [
+      "PV",
+      "Attaque Spéciale",
+      "Défense Spéciale"
+    ],
+    "lowestValue": 60,
+    "statsTotal": 470,
+    "speed": 110,
+    "height": 1.8,
+    "weight": 85.2,
+    "baseExperience": 165,
+    "primaryAbility": "Fuite",
     "generation": 1,
+    "genus": "Pokémon Trioiseau",
+    "color": "Brun",
+    "captureRate": 45,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Quand Doduo connaît cette étrange évolution, l’une de ses têtes se dédouble. Il atteint les 60 km/h."
   },
   {
     "id": 105,
     "name": "Ossatueur",
     "primaryType": "Sol",
+    "types": [
+      "Sol"
+    ],
     "highestStats": [
       "Défense"
     ],
     "highestValue": 110,
+    "lowestStats": [
+      "Vitesse"
+    ],
+    "lowestValue": 45,
+    "statsTotal": 425,
+    "speed": 45,
+    "height": 1,
+    "weight": 45,
+    "baseExperience": 149,
+    "primaryAbility": "Tête de Roc",
     "generation": 1,
+    "genus": "Pokémon Gard’Os",
+    "color": "Brun",
+    "captureRate": 75,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Ce Pokémon sauvage possède des os depuis sa naissance. Il s’en sert pour combattre avec dextérité."
   },
   {
     "id": 126,
     "name": "Magmar",
     "primaryType": "Feu",
+    "types": [
+      "Feu"
+    ],
     "highestStats": [
       "Attaque Spéciale"
     ],
     "highestValue": 100,
+    "lowestStats": [
+      "Défense"
+    ],
+    "lowestValue": 57,
+    "statsTotal": 495,
+    "speed": 93,
+    "height": 1.3,
+    "weight": 44.5,
+    "baseExperience": 173,
+    "primaryAbility": "Corps Ardent",
     "generation": 1,
+    "genus": "Pokémon Crache-Feu",
+    "color": "Rouge",
+    "captureRate": 45,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Quand il respire profondément, des vagues de chaleur émanent de son corps et le rendent difficile à voir."
   },
   {
     "id": 147,
     "name": "Minidraco",
     "primaryType": "Dragon",
+    "types": [
+      "Dragon"
+    ],
     "highestStats": [
       "Attaque"
     ],
     "highestValue": 64,
+    "lowestStats": [
+      "PV"
+    ],
+    "lowestValue": 41,
+    "statsTotal": 300,
+    "speed": 50,
+    "height": 1.8,
+    "weight": 3.3,
+    "baseExperience": 60,
+    "primaryAbility": "Mue",
     "generation": 1,
+    "genus": "Pokémon Dragon",
+    "color": "Bleu",
+    "captureRate": 45,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il grandit en muant quasiment tous les jours. Sa peau est toute douce après la mue."
   },
   {
     "id": 168,
     "name": "Migalos",
     "primaryType": "Insecte",
+    "types": [
+      "Insecte",
+      "Poison"
+    ],
     "highestStats": [
       "Attaque"
     ],
     "highestValue": 90,
+    "lowestStats": [
+      "Vitesse"
+    ],
+    "lowestValue": 40,
+    "statsTotal": 400,
+    "speed": 40,
+    "height": 1.1,
+    "weight": 33.5,
+    "baseExperience": 140,
+    "primaryAbility": "Essaim",
     "generation": 2,
+    "genus": "Pokémon Long-Patte",
+    "color": "Rouge",
+    "captureRate": 90,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il attache un fil à sa proie avant de la libérer. Il s’en servira pour la retrouver, elle et ses amis."
   },
   {
     "id": 189,
     "name": "Cotovol",
     "primaryType": "Plante",
+    "types": [
+      "Plante",
+      "Vol"
+    ],
     "highestStats": [
       "Vitesse"
     ],
     "highestValue": 110,
+    "lowestStats": [
+      "Attaque",
+      "Attaque Spéciale"
+    ],
+    "lowestValue": 55,
+    "statsTotal": 460,
+    "speed": 110,
+    "height": 0.8,
+    "weight": 3,
+    "baseExperience": 207,
+    "primaryAbility": "Chlorophylle",
     "generation": 2,
+    "genus": "Pokémon Pissenlit",
+    "color": "Bleu",
+    "captureRate": 45,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Poussé par les vents saisonniers, il fait le tour du globe en semant des spores de coton."
   },
   {
     "id": 210,
     "name": "Granbull",
     "primaryType": "Fée",
+    "types": [
+      "Fée"
+    ],
     "highestStats": [
       "Attaque"
     ],
     "highestValue": 120,
+    "lowestStats": [
+      "Vitesse"
+    ],
+    "lowestValue": 45,
+    "statsTotal": 450,
+    "speed": 45,
+    "height": 1.4,
+    "weight": 48.7,
+    "baseExperience": 158,
+    "primaryAbility": "Intimidation",
     "generation": 2,
+    "genus": "Pokémon Fée",
+    "color": "Violet",
+    "captureRate": 75,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "En dépit des apparences, c’est un grand timide. Quand il s’énerve, il mord de ses énormes crocs."
   },
   {
     "id": 231,
     "name": "Phanpy",
     "primaryType": "Sol",
+    "types": [
+      "Sol"
+    ],
     "highestStats": [
       "PV"
     ],
     "highestValue": 90,
+    "lowestStats": [
+      "Attaque Spéciale",
+      "Défense Spéciale",
+      "Vitesse"
+    ],
+    "lowestValue": 40,
+    "statsTotal": 330,
+    "speed": 40,
+    "height": 0.5,
+    "weight": 33.5,
+    "baseExperience": 66,
+    "primaryAbility": "Ramassage",
     "generation": 2,
+    "genus": "Pokémon Long-Nez",
+    "color": "Bleu",
+    "captureRate": 120,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il est fort malgré son aspect ramassé. Il n’a aucun mal à porter un humain adulte sur son dos."
   },
   {
     "id": 252,
     "name": "Arcko",
     "primaryType": "Plante",
+    "types": [
+      "Plante"
+    ],
     "highestStats": [
       "Vitesse"
     ],
     "highestValue": 70,
+    "lowestStats": [
+      "Défense"
+    ],
+    "lowestValue": 35,
+    "statsTotal": 310,
+    "speed": 70,
+    "height": 0.5,
+    "weight": 5,
+    "baseExperience": 62,
+    "primaryAbility": "Engrais",
     "generation": 3,
+    "genus": "Pokémon Bois Gecko",
+    "color": "Vert",
+    "captureRate": 45,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Ses plantes de pieds sont couvertes d’épines lui permettant de marcher au mur et au plafond."
   },
   {
     "id": 273,
     "name": "Grainipiot",
     "primaryType": "Plante",
+    "types": [
+      "Plante"
+    ],
     "highestStats": [
       "Défense"
     ],
     "highestValue": 50,
+    "lowestStats": [
+      "Attaque Spéciale",
+      "Défense Spéciale",
+      "Vitesse"
+    ],
+    "lowestValue": 30,
+    "statsTotal": 220,
+    "speed": 30,
+    "height": 0.5,
+    "weight": 4,
+    "baseExperience": 44,
+    "primaryAbility": "Chlorophylle",
     "generation": 3,
+    "genus": "Pokémon Gland",
+    "color": "Brun",
+    "captureRate": 255,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il ressemble à un gland pendu à une branche. Il adore effrayer les autres Pokémon."
   },
   {
     "id": 294,
     "name": "Ramboum",
     "primaryType": "Normal",
+    "types": [
+      "Normal"
+    ],
     "highestStats": [
       "PV"
     ],
     "highestValue": 84,
+    "lowestStats": [
+      "Défense",
+      "Défense Spéciale"
+    ],
+    "lowestValue": 43,
+    "statsTotal": 360,
+    "speed": 48,
+    "height": 1,
+    "weight": 40.5,
+    "baseExperience": 126,
+    "primaryAbility": "Anti-Bruit",
     "generation": 3,
+    "genus": "Pokémon Grosse Voix",
+    "color": "Bleu",
+    "captureRate": 120,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "L’onde de choc provoquée par son cri peut renverser un camion. Il trépigne pour augmenter sa force."
   },
   {
     "id": 314,
     "name": "Lumivole",
     "primaryType": "Insecte",
+    "types": [
+      "Insecte"
+    ],
     "highestStats": [
       "Défense Spéciale",
       "Vitesse"
     ],
     "highestValue": 85,
+    "lowestStats": [
+      "Attaque"
+    ],
+    "lowestValue": 47,
+    "statsTotal": 430,
+    "speed": 85,
+    "height": 0.6,
+    "weight": 17.7,
+    "baseExperience": 151,
+    "primaryAbility": "Benêt",
     "generation": 3,
+    "genus": "Pokémon Luciole",
+    "color": "Violet",
+    "captureRate": 150,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il utilise son doux parfum pour aider Muciole à décrire des arabesques dans le ciel nocturne."
   },
   {
     "id": 335,
     "name": "Mangriff",
     "primaryType": "Normal",
+    "types": [
+      "Normal"
+    ],
     "highestStats": [
       "Attaque"
     ],
     "highestValue": 115,
+    "lowestStats": [
+      "Défense",
+      "Attaque Spéciale",
+      "Défense Spéciale"
+    ],
+    "lowestValue": 60,
+    "statsTotal": 458,
+    "speed": 90,
+    "height": 1.3,
+    "weight": 40.3,
+    "baseExperience": 160,
+    "primaryAbility": "Vaccin",
     "generation": 3,
+    "genus": "Pokémon Chat Furet",
+    "color": "Blanc",
+    "captureRate": 90,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "C’est le rival de Séviper depuis des générations. Ses griffes aiguisées sont son meilleur atout."
   },
   {
     "id": 356,
     "name": "Téraclope",
     "primaryType": "Spectre",
+    "types": [
+      "Spectre"
+    ],
     "highestStats": [
       "Défense",
       "Défense Spéciale"
     ],
     "highestValue": 130,
+    "lowestStats": [
+      "Vitesse"
+    ],
+    "lowestValue": 25,
+    "statsTotal": 455,
+    "speed": 25,
+    "height": 1.6,
+    "weight": 30.6,
+    "baseExperience": 159,
+    "primaryAbility": "Pression",
     "generation": 3,
+    "genus": "Pokémon Appel",
+    "color": "Noir",
+    "captureRate": 90,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il cherche des feux follets pour les avaler. Ce qui se passe alors dans son corps est un mystère."
   },
   {
     "id": 377,
     "name": "Regirock",
     "primaryType": "Roche",
+    "types": [
+      "Roche"
+    ],
     "highestStats": [
       "Défense"
     ],
     "highestValue": 200,
+    "lowestStats": [
+      "Attaque Spéciale",
+      "Vitesse"
+    ],
+    "lowestValue": 50,
+    "statsTotal": 580,
+    "speed": 50,
+    "height": 1.7,
+    "weight": 230,
+    "baseExperience": 261,
+    "primaryAbility": "Corps Sain",
     "generation": 3,
+    "genus": "Pokémon Pic Rocheux",
+    "color": "Brun",
+    "captureRate": 3,
+    "isLegendary": true,
+    "isMythical": false,
     "flavor": "Tout son corps est fait de roche. S’il s’ébrèche au combat, il utilise des pierres pour le réparer."
   },
   {
     "id": 398,
     "name": "Étouraptor",
     "primaryType": "Normal",
+    "types": [
+      "Normal",
+      "Vol"
+    ],
     "highestStats": [
       "Attaque"
     ],
     "highestValue": 120,
+    "lowestStats": [
+      "Attaque Spéciale"
+    ],
+    "lowestValue": 50,
+    "statsTotal": 485,
+    "speed": 100,
+    "height": 1.2,
+    "weight": 24.9,
+    "baseExperience": 218,
+    "primaryAbility": "Intimidation",
     "generation": 4,
+    "genus": "Pokémon Rapace",
+    "color": "Brun",
+    "captureRate": 45,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il combattra sans relâche, même blessé. Il prend grand soin de sa mèche."
   },
   {
     "id": 419,
     "name": "Mustéflott",
     "primaryType": "Eau",
+    "types": [
+      "Eau"
+    ],
     "highestStats": [
       "Vitesse"
     ],
     "highestValue": 115,
+    "lowestStats": [
+      "Défense Spéciale"
+    ],
+    "lowestValue": 50,
+    "statsTotal": 495,
+    "speed": 115,
+    "height": 1.1,
+    "weight": 33.5,
+    "baseExperience": 173,
+    "primaryAbility": "Glissade",
     "generation": 4,
+    "genus": "Pokémon Aquabelette",
+    "color": "Brun",
+    "captureRate": 75,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il chasse souvent près des ports de pêche où il sauve parfois les gens tombés à la mer."
   },
   {
     "id": 440,
     "name": "Ptiravi",
     "primaryType": "Normal",
+    "types": [
+      "Normal"
+    ],
     "highestStats": [
       "PV"
     ],
     "highestValue": 100,
+    "lowestStats": [
+      "Attaque",
+      "Défense"
+    ],
+    "lowestValue": 5,
+    "statsTotal": 220,
+    "speed": 30,
+    "height": 0.6,
+    "weight": 24.4,
+    "baseExperience": 110,
+    "primaryAbility": "Médic Nature",
     "generation": 4,
+    "genus": "Pokémon Maisonjouet",
+    "color": "Rose",
+    "captureRate": 130,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Ce Pokémon ne se sépare jamais de son petit caillou et a tendance à traîner dans les pieds des gens."
   },
   {
     "id": 461,
     "name": "Dimoret",
     "primaryType": "Ténèbres",
+    "types": [
+      "Ténèbres",
+      "Glace"
+    ],
     "highestStats": [
       "Vitesse"
     ],
     "highestValue": 125,
+    "lowestStats": [
+      "Attaque Spéciale"
+    ],
+    "lowestValue": 45,
+    "statsTotal": 510,
+    "speed": 125,
+    "height": 1.1,
+    "weight": 34,
+    "baseExperience": 179,
+    "primaryAbility": "Pression",
     "generation": 4,
+    "genus": "Pokémon Grifacérée",
+    "color": "Noir",
+    "captureRate": 45,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "L’évolution l’a rendu encore plus retors. Il communique en griffant des signes dans les pierres."
   },
   {
     "id": 482,
     "name": "Créfadet",
     "primaryType": "Psy",
+    "types": [
+      "Psy"
+    ],
     "highestStats": [
       "Attaque",
       "Attaque Spéciale"
     ],
     "highestValue": 125,
+    "lowestStats": [
+      "Défense",
+      "Défense Spéciale"
+    ],
+    "lowestValue": 70,
+    "statsTotal": 580,
+    "speed": 115,
+    "height": 0.3,
+    "weight": 0.3,
+    "baseExperience": 261,
+    "primaryAbility": "Lévitation",
     "generation": 4,
+    "genus": "Pokémon Volonté",
+    "color": "Bleu",
+    "captureRate": 3,
+    "isLegendary": true,
+    "isMythical": false,
     "flavor": "Quand il prit son envol, les hommes acquirent la détermination. La volonté était née."
   },
   {
     "id": 503,
     "name": "Clamiral",
     "primaryType": "Eau",
+    "types": [
+      "Eau"
+    ],
     "highestStats": [
       "Attaque Spéciale"
     ],
     "highestValue": 108,
+    "lowestStats": [
+      "Défense Spéciale",
+      "Vitesse"
+    ],
+    "lowestValue": 70,
+    "statsTotal": 528,
+    "speed": 70,
+    "height": 1.5,
+    "weight": 94.6,
+    "baseExperience": 238,
+    "primaryAbility": "Torrent",
     "generation": 5,
+    "genus": "Pokémon Dignitaire",
+    "color": "Bleu",
+    "captureRate": 45,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il peut terrasser ses ennemis d’un coup de la lame enchâssée dans son armure, et les faire taire d’un seul regard."
   },
   {
     "id": 523,
     "name": "Zéblitz",
     "primaryType": "Électrik",
+    "types": [
+      "Électrik"
+    ],
     "highestStats": [
       "Vitesse"
     ],
     "highestValue": 116,
+    "lowestStats": [
+      "Défense",
+      "Défense Spéciale"
+    ],
+    "lowestValue": 63,
+    "statsTotal": 497,
+    "speed": 116,
+    "height": 1.6,
+    "weight": 79.5,
+    "baseExperience": 174,
+    "primaryAbility": "Paratonnerre",
     "generation": 5,
+    "genus": "Pokémon Foudrélec",
+    "color": "Noir",
+    "captureRate": 75,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il réagit à la vitesse de l’éclair. Lorsqu’il est en plein galop, on peut entendre le grondement du tonnerre."
   },
   {
     "id": 544,
     "name": "Scobolide",
     "primaryType": "Insecte",
+    "types": [
+      "Insecte",
+      "Poison"
+    ],
     "highestStats": [
       "Défense"
     ],
     "highestValue": 99,
+    "lowestStats": [
+      "PV",
+      "Attaque Spéciale"
+    ],
+    "lowestValue": 40,
+    "statsTotal": 360,
+    "speed": 47,
+    "height": 1.2,
+    "weight": 58.5,
+    "baseExperience": 126,
+    "primaryAbility": "Point Poison",
     "generation": 5,
+    "genus": "Pokémon Coconplopode",
+    "color": "Gris",
+    "captureRate": 120,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Protégé par sa solide carapace, il fonce sur ses ennemis en roulant comme un pneu."
   },
   {
     "id": 565,
     "name": "Mégapagos",
     "primaryType": "Eau",
+    "types": [
+      "Eau",
+      "Roche"
+    ],
     "highestStats": [
       "Défense"
     ],
     "highestValue": 133,
+    "lowestStats": [
+      "Vitesse"
+    ],
+    "lowestValue": 32,
+    "statsTotal": 495,
+    "speed": 32,
+    "height": 1.2,
+    "weight": 81,
+    "baseExperience": 173,
+    "primaryAbility": "Solide Roc",
     "generation": 5,
+    "genus": "Pokémon Tortantique",
+    "color": "Bleu",
+    "captureRate": 45,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il vit sur terre et en mer. Ses bras surpuissants peuvent percer des trous dans la coque des paquebots."
   },
   {
     "id": 586,
     "name": "Haydaim",
     "primaryType": "Normal",
+    "types": [
+      "Normal",
+      "Plante"
+    ],
     "highestStats": [
       "Attaque"
     ],
     "highestValue": 100,
+    "lowestStats": [
+      "Attaque Spéciale"
+    ],
+    "lowestValue": 60,
+    "statsTotal": 475,
+    "speed": 95,
+    "height": 1.9,
+    "weight": 92.5,
+    "baseExperience": 166,
+    "primaryAbility": "Chlorophylle",
     "generation": 5,
+    "genus": "Pokémon Saison",
+    "color": "Brun",
+    "captureRate": 75,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il change d’habitat selon les saisons. Les gens constatent le passage des saisons en regardant ses ramures."
   },
   {
     "id": 607,
     "name": "Funécire",
     "primaryType": "Spectre",
+    "types": [
+      "Spectre",
+      "Feu"
+    ],
     "highestStats": [
       "Attaque Spéciale"
     ],
     "highestValue": 65,
+    "lowestStats": [
+      "Vitesse"
+    ],
+    "lowestValue": 20,
+    "statsTotal": 275,
+    "speed": 20,
+    "height": 0.3,
+    "weight": 3.1,
+    "baseExperience": 55,
+    "primaryAbility": "Torche",
     "generation": 5,
+    "genus": "Pokémon Chandelle",
+    "color": "Blanc",
+    "captureRate": 190,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Sa flamme brûle en consumant l’énergie vitale des gens et des Pokémon."
   },
   {
     "id": 628,
     "name": "Gueriaigle",
     "primaryType": "Normal",
+    "types": [
+      "Normal",
+      "Vol"
+    ],
     "highestStats": [
       "Attaque"
     ],
     "highestValue": 123,
+    "lowestStats": [
+      "Attaque Spéciale"
+    ],
+    "lowestValue": 57,
+    "statsTotal": 510,
+    "speed": 80,
+    "height": 1.5,
+    "weight": 41,
+    "baseExperience": 179,
+    "primaryAbility": "Regard Vif",
     "generation": 5,
+    "genus": "Pokémon Vaillant",
+    "color": "Rouge",
+    "captureRate": 60,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Pour les siens, il combat au mépris du danger. Il est capable de soulever une voiture haut dans le ciel."
   },
   {
     "id": 649,
     "name": "Genesect",
     "primaryType": "Insecte",
+    "types": [
+      "Insecte",
+      "Acier"
+    ],
     "highestStats": [
       "Attaque",
       "Attaque Spéciale"
     ],
     "highestValue": 120,
+    "lowestStats": [
+      "PV"
+    ],
+    "lowestValue": 71,
+    "statsTotal": 600,
+    "speed": 99,
+    "height": 1.5,
+    "weight": 82.5,
+    "baseExperience": 270,
+    "primaryAbility": "Télécharge",
     "generation": 5,
+    "genus": "Pokémon Paléozoïque",
+    "color": "Violet",
+    "captureRate": 3,
+    "isLegendary": false,
+    "isMythical": true,
     "flavor": "Il y a 300 millions d’années, il était craint comme l’ultime prédateur. Il a été modifié par la Team Plasma."
   },
   {
     "id": 670,
     "name": "Floette",
     "primaryType": "Fée",
+    "types": [
+      "Fée"
+    ],
     "highestStats": [
       "Défense Spéciale"
     ],
     "highestValue": 98,
+    "lowestStats": [
+      "Attaque"
+    ],
+    "lowestValue": 45,
+    "statsTotal": 371,
+    "speed": 52,
+    "height": 0.2,
+    "weight": 0.9,
+    "baseExperience": 130,
+    "primaryAbility": "Flora-Voile",
     "generation": 6,
+    "genus": "Pokémon Uniflore",
+    "color": "Blanc",
+    "captureRate": 120,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il survole les champs de fleurs, et prend soin de celles qui sont sur le point de faner. Au combat, il fait appel à leur force cachée."
   },
   {
     "id": 691,
     "name": "Kravarech",
     "primaryType": "Poison",
+    "types": [
+      "Poison",
+      "Dragon"
+    ],
     "highestStats": [
       "Défense Spéciale"
     ],
     "highestValue": 123,
+    "lowestStats": [
+      "Vitesse"
+    ],
+    "lowestValue": 44,
+    "statsTotal": 494,
+    "speed": 44,
+    "height": 1.8,
+    "weight": 81.5,
+    "baseExperience": 173,
+    "primaryAbility": "Point Poison",
     "generation": 6,
+    "genus": "Pokémon Simulalgue",
+    "color": "Brun",
+    "captureRate": 55,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il asperge tous ceux qui osent pénétrer sur son territoire d’un poison assez corrosif pour dissoudre la coque d’un pétrolier."
   },
   {
     "id": 712,
     "name": "Grelaçon",
     "primaryType": "Glace",
+    "types": [
+      "Glace"
+    ],
     "highestStats": [
       "Défense"
     ],
     "highestValue": 85,
+    "lowestStats": [
+      "Vitesse"
+    ],
+    "lowestValue": 28,
+    "statsTotal": 304,
+    "speed": 28,
+    "height": 1,
+    "weight": 99.5,
+    "baseExperience": 61,
+    "primaryAbility": "Tempo Perso",
     "generation": 6,
+    "genus": "Pokémon Glaçon",
+    "color": "Bleu",
+    "captureRate": 190,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "La glace qui couvre son corps bloque les attaques ennemies. Si elle se fissure, il la reconstitue immédiatement en soufflant de l’air glacé."
   },
   {
     "id": 732,
     "name": "Piclairon",
     "primaryType": "Normal",
+    "types": [
+      "Normal",
+      "Vol"
+    ],
     "highestStats": [
       "Attaque"
     ],
     "highestValue": 85,
+    "lowestStats": [
+      "Attaque Spéciale"
+    ],
+    "lowestValue": 40,
+    "statsTotal": 355,
+    "speed": 75,
+    "height": 0.6,
+    "weight": 14.8,
+    "baseExperience": 124,
+    "primaryAbility": "Regard Vif",
     "generation": 7,
+    "genus": "Pokémon Bec Clairon",
+    "color": "Noir",
+    "captureRate": 120,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il garde toujours dans son bec les pépins des fruits qu’il mange, ce qui lui permet de faire feu dès qu’un ennemi se présente."
   },
   {
     "id": 753,
     "name": "Mimantis",
     "primaryType": "Plante",
+    "types": [
+      "Plante"
+    ],
     "highestStats": [
       "Attaque"
     ],
     "highestValue": 55,
+    "lowestStats": [
+      "Défense",
+      "Défense Spéciale",
+      "Vitesse"
+    ],
+    "lowestValue": 35,
+    "statsTotal": 250,
+    "speed": 35,
+    "height": 0.3,
+    "weight": 1.5,
+    "baseExperience": 50,
+    "primaryAbility": "Feuille Garde",
     "generation": 7,
+    "genus": "Pokémon Fauch’Herbe",
+    "color": "Rose",
+    "captureRate": 190,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "La journée, il passe son temps à flâner au soleil et à faire la sieste. Le soir venu, il part à la recherche d’un lieu plus sûr pour passer la nuit."
   },
   {
     "id": 774,
     "name": "Météno",
     "primaryType": "Roche",
+    "types": [
+      "Roche",
+      "Vol"
+    ],
     "highestStats": [
       "Défense",
       "Défense Spéciale"
     ],
     "highestValue": 100,
+    "lowestStats": [
+      "PV",
+      "Attaque",
+      "Attaque Spéciale",
+      "Vitesse"
+    ],
+    "lowestValue": 60,
+    "statsTotal": 440,
+    "speed": 60,
+    "height": 0.3,
+    "weight": 40,
+    "baseExperience": 154,
+    "primaryAbility": "Bouclier-Carcan",
     "generation": 7,
+    "genus": "Pokémon Météore",
+    "color": "Brun",
+    "captureRate": 30,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il vivait dans la couche d’ozone, avant que sa carapace, devenue trop lourde, ne finisse par le faire chuter sur la terre ferme."
   },
   {
     "id": 795,
     "name": "Cancrelove",
     "primaryType": "Insecte",
+    "types": [
+      "Insecte",
+      "Combat"
+    ],
     "highestStats": [
       "Vitesse"
     ],
     "highestValue": 151,
+    "lowestStats": [
+      "Défense",
+      "Défense Spéciale"
+    ],
+    "lowestValue": 37,
+    "statsTotal": 570,
+    "speed": 151,
+    "height": 1.8,
+    "weight": 25,
+    "baseExperience": 257,
+    "primaryAbility": "Boost Chimère",
     "generation": 7,
+    "genus": "Pokémon Gracile",
+    "color": "Blanc",
+    "captureRate": 45,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "L’une des dangereuses Ultra-Chimères. On l’aurait aperçue en train de courir à une vitesse prodigieuse."
   },
   {
     "id": 816,
     "name": "Larméléon",
     "primaryType": "Eau",
+    "types": [
+      "Eau"
+    ],
     "highestStats": [
       "Attaque Spéciale",
       "Vitesse"
     ],
     "highestValue": 70,
+    "lowestStats": [
+      "Attaque",
+      "Défense",
+      "Défense Spéciale"
+    ],
+    "lowestValue": 40,
+    "statsTotal": 310,
+    "speed": 70,
+    "height": 0.3,
+    "weight": 4,
+    "baseExperience": 62,
+    "primaryAbility": "Torrent",
     "generation": 8,
+    "genus": "Pokémon Lézard’Eau",
+    "color": "Bleu",
+    "captureRate": 45,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Quand il a peur, il pleure des larmes contenant une substance lacrymogène d’une puissance équivalente à celle de cent oignons."
   },
   {
     "id": 837,
     "name": "Charbi",
     "primaryType": "Roche",
+    "types": [
+      "Roche"
+    ],
     "highestStats": [
       "Défense",
       "Défense Spéciale"
     ],
     "highestValue": 50,
+    "lowestStats": [
+      "PV",
+      "Vitesse"
+    ],
+    "lowestValue": 30,
+    "statsTotal": 240,
+    "speed": 30,
+    "height": 0.3,
+    "weight": 12,
+    "baseExperience": 48,
+    "primaryAbility": "Turbine",
     "generation": 8,
+    "genus": "Pokémon Charbon",
+    "color": "Noir",
+    "captureRate": 255,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "On l’a découvert dans une mine il y a 400 ans. Son corps est presque entièrement composé d’une substance identique au charbon."
   },
   {
     "id": 858,
     "name": "Sorcilence",
     "primaryType": "Psy",
+    "types": [
+      "Psy",
+      "Fée"
+    ],
     "highestStats": [
       "Attaque Spéciale"
     ],
     "highestValue": 136,
+    "lowestStats": [
+      "Vitesse"
+    ],
+    "lowestValue": 29,
+    "statsTotal": 510,
+    "speed": 29,
+    "height": 2.1,
+    "weight": 5.1,
+    "baseExperience": 255,
+    "primaryAbility": "Cœur Soin",
     "generation": 8,
+    "genus": "Pokémon Silencieux",
+    "color": "Rose",
+    "captureRate": 45,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Il éloigne les autres êtres vivants en émettant des ondes psychiques pouvant donner des maux de tête épouvantables."
   },
   {
     "id": 879,
     "name": "Pachyradjah",
     "primaryType": "Acier",
+    "types": [
+      "Acier"
+    ],
     "highestStats": [
       "Attaque"
     ],
     "highestValue": 130,
+    "lowestStats": [
+      "Vitesse"
+    ],
+    "lowestValue": 30,
+    "statsTotal": 500,
+    "speed": 30,
+    "height": 3,
+    "weight": 650,
+    "baseExperience": 175,
+    "primaryAbility": "Sans Limite",
     "generation": 8,
+    "genus": "Pokémon Pachycuivre",
+    "color": "Vert",
+    "captureRate": 90,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Sa peau verte résiste bien à l’eau. Il s’est installé dans la région il y a longtemps et a travaillé en coopération avec les Hommes."
   },
   {
     "id": 900,
     "name": "Hachécateur",
     "primaryType": "Insecte",
+    "types": [
+      "Insecte",
+      "Roche"
+    ],
     "highestStats": [
       "Attaque"
     ],
     "highestValue": 135,
+    "lowestStats": [
+      "Attaque Spéciale"
+    ],
+    "lowestValue": 45,
+    "statsTotal": 500,
+    "speed": 85,
+    "height": 1.8,
+    "weight": 89,
+    "baseExperience": 175,
+    "primaryAbility": "Essaim",
     "generation": 8,
+    "genus": "Pokémon Hache",
+    "color": "Brun",
+    "captureRate": 115,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Ce Pokémon porte le numéro 900 dans le Pokédex national."
   },
   {
     "id": 921,
     "name": "Pohm",
     "primaryType": "Électrik",
+    "types": [
+      "Électrik"
+    ],
     "highestStats": [
       "Vitesse"
     ],
     "highestValue": 60,
+    "lowestStats": [
+      "Défense"
+    ],
+    "lowestValue": 20,
+    "statsTotal": 240,
+    "speed": 60,
+    "height": 0.3,
+    "weight": 2.5,
+    "baseExperience": 48,
+    "primaryAbility": "Statik",
     "generation": 9,
+    "genus": "Souris",
+    "color": "Jaune",
+    "captureRate": 190,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Ce Pokémon porte le numéro 921 dans le Pokédex national."
   },
   {
     "id": 941,
     "name": "Fulgulairo",
     "primaryType": "Électrik",
+    "types": [
+      "Électrik",
+      "Vol"
+    ],
     "highestStats": [
       "Vitesse"
     ],
     "highestValue": 125,
+    "lowestStats": [
+      "Défense",
+      "Défense Spéciale"
+    ],
+    "lowestValue": 60,
+    "statsTotal": 490,
+    "speed": 125,
+    "height": 1.4,
+    "weight": 38.6,
+    "baseExperience": 172,
+    "primaryAbility": "Turbine Éolienne",
     "generation": 9,
+    "genus": "Frégate",
+    "color": "Jaune",
+    "captureRate": 90,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Ce Pokémon porte le numéro 941 dans le Pokédex national."
   },
   {
     "id": 962,
     "name": "Lestombaile",
     "primaryType": "Vol",
+    "types": [
+      "Vol",
+      "Ténèbres"
+    ],
     "highestStats": [
       "Attaque"
     ],
     "highestValue": 103,
+    "lowestStats": [
+      "Attaque Spéciale"
+    ],
+    "lowestValue": 60,
+    "statsTotal": 485,
+    "speed": 82,
+    "height": 1.5,
+    "weight": 42.9,
+    "baseExperience": 243,
+    "primaryAbility": "Cœur de Coq",
     "generation": 9,
+    "genus": "Délesteur",
+    "color": "Blanc",
+    "captureRate": 25,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Ce Pokémon porte le numéro 962 dans le Pokédex national."
   },
   {
     "id": 983,
     "name": "Scalpereur",
     "primaryType": "Ténèbres",
+    "types": [
+      "Ténèbres",
+      "Acier"
+    ],
     "highestStats": [
       "Attaque"
     ],
     "highestValue": 135,
+    "lowestStats": [
+      "Vitesse"
+    ],
+    "lowestValue": 50,
+    "statsTotal": 550,
+    "speed": 50,
+    "height": 2,
+    "weight": 120,
+    "baseExperience": 275,
+    "primaryAbility": "Acharné",
     "generation": 9,
+    "genus": "Pourfendant",
+    "color": "Noir",
+    "captureRate": 25,
+    "isLegendary": false,
+    "isMythical": false,
     "flavor": "Ce Pokémon porte le numéro 983 dans le Pokédex national."
   },
   {
     "id": 1004,
     "name": "Yuyu",
     "primaryType": "Ténèbres",
+    "types": [
+      "Ténèbres",
+      "Feu"
+    ],
     "highestStats": [
       "Attaque Spéciale"
     ],
     "highestValue": 135,
+    "lowestStats": [
+      "PV"
+    ],
+    "lowestValue": 55,
+    "statsTotal": 570,
+    "speed": 100,
+    "height": 0.4,
+    "weight": 4.9,
+    "baseExperience": 285,
+    "primaryAbility": "Perles du Fléau",
     "generation": 9,
+    "genus": "Fléau",
+    "color": "Rouge",
+    "captureRate": 6,
+    "isLegendary": true,
+    "isMythical": false,
     "flavor": "Ce Pokémon porte le numéro 1004 dans le Pokédex national."
   },
   {
     "id": 1025,
     "name": "Pêchaminus",
     "primaryType": "Poison",
+    "types": [
+      "Poison",
+      "Spectre"
+    ],
     "highestStats": [
       "Défense"
     ],
     "highestValue": 160,
+    "lowestStats": [
+      "PV",
+      "Attaque",
+      "Attaque Spéciale",
+      "Défense Spéciale",
+      "Vitesse"
+    ],
+    "lowestValue": 88,
+    "statsTotal": 600,
+    "speed": 88,
+    "height": 0.3,
+    "weight": 0.3,
+    "baseExperience": 300,
+    "primaryAbility": "Emprise Toxique",
     "generation": 9,
+    "genus": "Emprise",
+    "color": "Violet",
+    "captureRate": 3,
+    "isLegendary": false,
+    "isMythical": true,
     "flavor": "Ce Pokémon porte le numéro 1025 dans le Pokédex national."
   }
 ]

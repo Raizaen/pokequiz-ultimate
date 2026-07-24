@@ -5,7 +5,8 @@ const playableCategories = [
   'Labo',
   'Sprites',
   'Pokédex',
-  'Capacités et objets',
+  'Capacités',
+  'Objets',
   'Stratégie',
   'Lore',
   'Jeux principaux',
@@ -25,6 +26,21 @@ describe('question bank', () => {
     const multipleChoiceQuestions = questions.filter(({ type }) => type === 'multiple-choice')
     expect(multipleChoiceQuestions.every(({ choices, acceptedAnswers }) =>
       choices?.length === 4 && choices.includes(acceptedAnswers[0]),
+    )).toBe(true)
+  })
+
+  it('propose plusieurs modèles dans chaque catégorie textuelle générée', () => {
+    for (const category of ['Labo', 'Pokédex', 'Capacités', 'Objets', 'Stratégie', 'Lore', 'Jeux principaux']) {
+      const templates = new Set(questions.filter((question) => question.category === category).map(({ template }) => template).filter(Boolean))
+      expect(templates.size, category).toBeGreaterThanOrEqual(4)
+    }
+  })
+
+  it('contient des QCM multiples valides dans la catégorie Capacités', () => {
+    const multipleSelectQuestions = questions.filter(({ type }) => type === 'multiple-select')
+    expect(multipleSelectQuestions.length).toBeGreaterThanOrEqual(10)
+    expect(multipleSelectQuestions.every(({ choices, correctChoices }) =>
+      choices?.length === 4 && correctChoices && correctChoices.length > 0 && correctChoices.every((answer) => choices.includes(answer)),
     )).toBe(true)
   })
 })

@@ -13,13 +13,13 @@ La V3 ne dépend pas du code de la V2.5. L’archive historique reste à la raci
 
 ## Principes
 
-Le moteur ne dépend ni de React ni de Pokémon. Une question décrit son type, ses réponses acceptées, sa durée et sa valeur. Les QCM autorisent un essai ; les questions ouvertes en autorisent trois. L’interface appelle le moteur et sauvegarde chaque nouvel état dans `localStorage`.
+Le moteur ne dépend ni de React ni de Pokémon. Une question décrit son type, ses réponses acceptées, sa durée et sa valeur. Les QCM simples et multiples autorisent un essai ; les questions ouvertes en autorisent trois. Pour un QCM multiple, le moteur compare les ensembles normalisés de choix sans tenir compte de leur ordre. L’interface appelle le moteur et sauvegarde chaque nouvel état dans `localStorage`.
 
 La configuration d’une partie est elle aussi indépendante de l’interface. Elle définit le mode (`mixed` ou `category`), la catégorie éventuelle et un palier de difficulté. Le sélecteur filtre la banque avant d’effectuer le tirage aléatoire.
 
 ## Données PokéAPI
 
-Le script `scripts/generate-pokeapi-bank.mjs` importe puis met en cache les faits Pokémon, les capacités et le catalogue de sprites. L’application ne dépend donc pas de l’API au moment de jouer, à l’exception des fichiers PNG des sprites. Le mélange Fisher–Yates utilise l’aléatoire cryptographique du navigateur et déduplique les questions par identifiant avant le tirage.
+Le script `scripts/generate-pokeapi-bank.mjs` importe puis met en cache les faits Pokémon, les capacités, les objets et le catalogue de sprites. Les générateurs alternent plusieurs modèles grâce au champ `template`, dont les tests contrôlent la diversité. L’application ne dépend donc pas de l’API au moment de jouer, à l’exception des fichiers PNG des sprites. Le mélange Fisher–Yates utilise l’aléatoire cryptographique du navigateur et déduplique les questions par identifiant avant le tirage.
 
 ## Prochains jalons
 

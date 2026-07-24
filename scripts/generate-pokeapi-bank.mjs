@@ -12,6 +12,11 @@ const frenchStats = {
   hp: 'PV', attack: 'Attaque', defense: 'Défense', 'special-attack': 'Attaque Spéciale',
   'special-defense': 'Défense Spéciale', speed: 'Vitesse',
 }
+const frenchDamageClasses = { physical: 'Physique', special: 'Spéciale', status: 'Statut' }
+const frenchColors = {
+  black: 'Noir', blue: 'Bleu', brown: 'Brun', gray: 'Gris', green: 'Vert',
+  pink: 'Rose', purple: 'Violet', red: 'Rouge', white: 'Blanc', yellow: 'Jaune',
+}
 const formWords = {
   mega: 'Méga', gmax: 'Gigamax', alola: "d’Alola", galar: 'de Galar', hisui: 'de Hisui',
   paldea: 'de Paldea', origin: 'Originelle', altered: 'Alternative', attack: 'Attaque',
@@ -27,6 +32,11 @@ const fetchJson = async (url) => {
   const response = await fetch(url)
   if (!response.ok) throw new Error(`${response.status} ${url}`)
   return response.json()
+}
+const resourceCache = new Map()
+const fetchCached = (url) => {
+  if (!resourceCache.has(url)) resourceCache.set(url, fetchJson(url))
+  return resourceCache.get(url)
 }
 
 async function mapLimit(values, limit, mapper) {
@@ -54,15 +64,32 @@ async function pokemonFact(id) {
   const species = await fetchJson(pokemon.species.url)
   const name = localName(species.names, pokemon.name)
   const maximum = Math.max(...pokemon.stats.map(({ base_stat }) => base_stat))
+  const minimum = Math.min(...pokemon.stats.map(({ base_stat }) => base_stat))
   const highestStats = pokemon.stats.filter(({ base_stat }) => base_stat === maximum).map(({ stat }) => frenchStats[stat.name])
+  const lowestStats = pokemon.stats.filter(({ base_stat }) => base_stat === minimum).map(({ stat }) => frenchStats[stat.name])
   const flavor = species.flavor_text_entries.find(({ language }) => language.name === 'fr')?.flavor_text
+  const primaryAbilityData = await fetchCached(pokemon.abilities.find(({ is_hidden }) => !is_hidden)?.ability.url ?? pokemon.abilities[0].ability.url)
   return {
     id,
     name,
     primaryType: frenchTypes[pokemon.types.sort((a, b) => a.slot - b.slot)[0].type.name],
+    types: pokemon.types.sort((a, b) => a.slot - b.slot).map(({ type }) => frenchTypes[type.name]),
     highestStats,
     highestValue: maximum,
+    lowestStats,
+    lowestValue: minimum,
+    statsTotal: pokemon.stats.reduce((sum, { base_stat }) => sum + base_stat, 0),
+    speed: pokemon.stats.find(({ stat }) => stat.name === 'speed').base_stat,
+    height: pokemon.height / 10,
+    weight: pokemon.weight / 10,
+    baseExperience: pokemon.base_experience,
+    primaryAbility: localName(primaryAbilityData.names, primaryAbilityData.name),
     generation: generationNumber(species.generation.name),
+    genus: species.genera.find(({ language }) => language.name === 'fr')?.genus ?? 'Pokémon inconnu',
+    color: frenchColors[species.color.name],
+    captureRate: species.capture_rate,
+    isLegendary: species.is_legendary,
+    isMythical: species.is_mythical,
     flavor: cleanText(flavor ?? `Ce Pokémon porte le numéro ${id} dans le Pokédex national.`)
       .replace(new RegExp(name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'giu'), 'Ce Pokémon'),
   }
@@ -74,9 +101,25 @@ async function moveFact(id) {
     id,
     name: localName(move.names, move.name),
     type: frenchTypes[move.type.name],
+    damageClass: frenchDamageClasses[move.damage_class.name],
     power: move.power,
     accuracy: move.accuracy,
     pp: move.pp,
+    priority: move.priority,
+  }
+}
+
+async function itemFact(id) {
+  const item = await fetchJson(`${API}/item/${id}`)
+  const category = await fetchCached(item.category.url)
+  const pocket = await fetchCached(category.pocket.url)
+  return {
+    id,
+    name: localName(item.names, item.name),
+    cost: item.cost,
+    flingPower: item.fling_power,
+    category: localName(category.names, category.name),
+    pocket: localName(pocket.names, pocket.name),
   }
 }
 
@@ -106,6 +149,8 @@ const factIds = Array.from({ length: 50 }, (_, index) => Math.round(1 + index * 
 const pokemonFacts = await mapLimit(factIds, 12, pokemonFact)
 const moveIds = Array.from({ length: 50 }, (_, index) => index + 1)
 const moveFacts = await mapLimit(moveIds, 12, moveFact)
+const itemIds = Array.from({ length: 50 }, (_, index) => index + 1)
+const itemFacts = await mapLimit(itemIds, 12, itemFact)
 
 const pokemonList = await fetchJson(`${API}/pokemon?limit=2000`)
 const baseIds = Array.from({ length: 250 }, (_, index) => Math.round(1 + index * (1024 / 249)))
@@ -123,7 +168,8 @@ if (spriteCatalog.length < 350) throw new Error(`Only ${spriteCatalog.length} sp
 await Promise.all([
   writeFile(new URL('pokemonFacts.json', OUTPUT), `${JSON.stringify(pokemonFacts, null, 2)}\n`),
   writeFile(new URL('moveFacts.json', OUTPUT), `${JSON.stringify(moveFacts, null, 2)}\n`),
+  writeFile(new URL('itemFacts.json', OUTPUT), `${JSON.stringify(itemFacts, null, 2)}\n`),
   writeFile(new URL('spriteCatalog.json', OUTPUT), `${JSON.stringify(spriteCatalog, null, 2)}\n`),
 ])
 
-console.log(`Generated ${pokemonFacts.length} Pokémon facts, ${moveFacts.length} move facts and ${spriteCatalog.length} sprites.`)
+console.log(`Generated ${pokemonFacts.length} Pokémon facts, ${moveFacts.length} moves, ${itemFacts.length} items and ${spriteCatalog.length} sprites.`)
