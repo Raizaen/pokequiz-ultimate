@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "name": "Écras’Face",
+    "type": "Normal",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 35
+  },
+  {
+    "id": 2,
+    "name": "Poing Karaté",
+    "type": "Combat",
+    "power": 50,
+    "accuracy": 100,
+    "pp": 25
+  },
+  {
+    "id": 3,
+    "name": "Torgnoles",
+    "type": "Normal",
+    "power": 15,
+    "accuracy": 85,
+    "pp": 10
+  },
+  {
+    "id": 4,
+    "name": "Poing Comète",
+    "type": "Normal",
+    "power": 18,
+    "accuracy": 85,
+    "pp": 15
+  },
+  {
+    "id": 5,
+    "name": "Ultimapoing",
+    "type": "Normal",
+    "power": 80,
+    "accuracy": 85,
+    "pp": 20
+  },
+  {
+    "id": 6,
+    "name": "Jackpot",
+    "type": "Normal",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 20
+  },
+  {
+    "id": 7,
+    "name": "Poing Feu",
+    "type": "Feu",
+    "power": 75,
+    "accuracy": 100,
+    "pp": 15
+  },
+  {
+    "id": 8,
+    "name": "Poing Glace",
+    "type": "Glace",
+    "power": 75,
+    "accuracy": 100,
+    "pp": 15
+  },
+  {
+    "id": 9,
+    "name": "Poing Éclair",
+    "type": "Électrik",
+    "power": 75,
+    "accuracy": 100,
+    "pp": 15
+  },
+  {
+    "id": 10,
+    "name": "Griffe",
+    "type": "Normal",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 35
+  },
+  {
+    "id": 11,
+    "name": "Force Poigne",
+    "type": "Normal",
+    "power": 55,
+    "accuracy": 100,
+    "pp": 30
+  },
+  {
+    "id": 12,
+    "name": "Guillotine",
+    "type": "Normal",
+    "power": null,
+    "accuracy": 30,
+    "pp": 5
+  },
+  {
+    "id": 13,
+    "name": "Coupe-Vent",
+    "type": "Normal",
+    "power": 80,
+    "accuracy": 100,
+    "pp": 10
+  },
+  {
+    "id": 14,
+    "name": "Danse Lames",
+    "type": "Normal",
+    "power": null,
+    "accuracy": null,
+    "pp": 20
+  },
+  {
+    "id": 15,
+    "name": "Coupe",
+    "type": "Normal",
+    "power": 50,
+    "accuracy": 95,
+    "pp": 30
+  },
+  {
+    "id": 16,
+    "name": "Tornade",
+    "type": "Vol",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 35
+  },
+  {
+    "id": 17,
+    "name": "Cru-Ailes",
+    "type": "Vol",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 35
+  },
+  {
+    "id": 18,
+    "name": "Cyclone",
+    "type": "Normal",
+    "power": null,
+    "accuracy": null,
+    "pp": 20
+  },
+  {
+    "id": 19,
+    "name": "Vol",
+    "type": "Vol",
+    "power": 90,
+    "accuracy": 95,
+    "pp": 15
+  },
+  {
+    "id": 20,
+    "name": "Étreinte",
+    "type": "Normal",
+    "power": 15,
+    "accuracy": 85,
+    "pp": 20
+  },
+  {
+    "id": 21,
+    "name": "Souplesse",
+    "type": "Normal",
+    "power": 80,
+    "accuracy": 75,
+    "pp": 20
+  },
+  {
+    "id": 22,
+    "name": "Fouet Lianes",
+    "type": "Plante",
+    "power": 45,
+    "accuracy": 100,
+    "pp": 25
+  },
+  {
+    "id": 23,
+    "name": "Écrasement",
+    "type": "Normal",
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20
+  },
+  {
+    "id": 24,
+    "name": "Double Pied",
+    "type": "Combat",
+    "power": 30,
+    "accuracy": 100,
+    "pp": 30
+  },
+  {
+    "id": 25,
+    "name": "Ultimawashi",
+    "type": "Normal",
+    "power": 120,
+    "accuracy": 75,
+    "pp": 5
+  },
+  {
+    "id": 26,
+    "name": "Pied Sauté",
+    "type": "Combat",
+    "power": 100,
+    "accuracy": 95,
+    "pp": 10
+  },
+  {
+    "id": 27,
+    "name": "Mawashi Geri",
+    "type": "Combat",
+    "power": 60,
+    "accuracy": 85,
+    "pp": 15
+  },
+  {
+    "id": 28,
+    "name": "Jet de Sable",
+    "type": "Sol",
+    "power": null,
+    "accuracy": 100,
+    "pp": 15
+  },
+  {
+    "id": 29,
+    "name": "Coup d’Boule",
+    "type": "Normal",
+    "power": 70,
+    "accuracy": 100,
+    "pp": 15
+  },
+  {
+    "id": 30,
+    "name": "Koud’Korne",
+    "type": "Normal",
+    "power": 65,
+    "accuracy": 100,
+    "pp": 25
+  },
+  {
+    "id": 31,
+    "name": "Furie",
+    "type": "Normal",
+    "power": 15,
+    "accuracy": 85,
+    "pp": 20
+  },
+  {
+    "id": 32,
+    "name": "Empal’Korne",
+    "type": "Normal",
+    "power": null,
+    "accuracy": 30,
+    "pp": 5
+  },
+  {
+    "id": 33,
+    "name": "Charge",
+    "type": "Normal",
+    "power": 40,
+    "accuracy": 100,
+    "pp": 35
+  },
+  {
+    "id": 34,
+    "name": "Plaquage",
+    "type": "Normal",
+    "power": 85,
+    "accuracy": 100,
+    "pp": 15
+  },
+  {
+    "id": 35,
+    "name": "Ligotage",
+    "type": "Normal",
+    "power": 15,
+    "accuracy": 90,
+    "pp": 20
+  },
+  {
+    "id": 36,
+    "name": "Bélier",
+    "type": "Normal",
+    "power": 90,
+    "accuracy": 85,
+    "pp": 20
+  },
+  {
+    "id": 37,
+    "name": "Mania",
+    "type": "Normal",
+    "power": 120,
+    "accuracy": 100,
+    "pp": 10
+  },
+  {
+    "id": 38,
+    "name": "Damoclès",
+    "type": "Normal",
+    "power": 120,
+    "accuracy": 100,
+    "pp": 15
+  },
+  {
+    "id": 39,
+    "name": "Mimi-Queue",
+    "type": "Normal",
+    "power": null,
+    "accuracy": 100,
+    "pp": 30
+  },
+  {
+    "id": 40,
+    "name": "Dard-Venin",
+    "type": "Poison",
+    "power": 15,
+    "accuracy": 100,
+    "pp": 35
+  },
+  {
+    "id": 41,
+    "name": "Double Dard",
+    "type": "Insecte",
+    "power": 25,
+    "accuracy": 100,
+    "pp": 20
+  },
+  {
+    "id": 42,
+    "name": "Dard-Nuée",
+    "type": "Insecte",
+    "power": 25,
+    "accuracy": 95,
+    "pp": 20
+  },
+  {
+    "id": 43,
+    "name": "Groz’Yeux",
+    "type": "Normal",
+    "power": null,
+    "accuracy": 100,
+    "pp": 30
+  },
+  {
+    "id": 44,
+    "name": "Morsure",
+    "type": "Ténèbres",
+    "power": 60,
+    "accuracy": 100,
+    "pp": 25
+  },
+  {
+    "id": 45,
+    "name": "Rugissement",
+    "type": "Normal",
+    "power": null,
+    "accuracy": 100,
+    "pp": 40
+  },
+  {
+    "id": 46,
+    "name": "Hurlement",
+    "type": "Normal",
+    "power": null,
+    "accuracy": null,
+    "pp": 20
+  },
+  {
+    "id": 47,
+    "name": "Berceuse",
+    "type": "Normal",
+    "power": null,
+    "accuracy": 55,
+    "pp": 15
+  },
+  {
+    "id": 48,
+    "name": "Ultrason",
+    "type": "Normal",
+    "power": null,
+    "accuracy": 55,
+    "pp": 20
+  },
+  {
+    "id": 49,
+    "name": "Sonic Boom",
+    "type": "Normal",
+    "power": null,
+    "accuracy": 90,
+    "pp": 20
+  },
+  {
+    "id": 50,
+    "name": "Entrave",
+    "type": "Normal",
+    "power": null,
+    "accuracy": 100,
+    "pp": 20
+  }
+]

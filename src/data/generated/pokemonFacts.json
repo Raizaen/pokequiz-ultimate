@@ -1,0 +1,561 @@
+[
+  {
+    "id": 1,
+    "name": "Bulbizarre",
+    "primaryType": "Plante",
+    "highestStats": [
+      "Attaque Spéciale",
+      "Défense Spéciale"
+    ],
+    "highestValue": 65,
+    "generation": 1,
+    "flavor": "Au matin de sa vie, la graine sur son dos lui fournit les éléments dont il a besoin pour grandir."
+  },
+  {
+    "id": 22,
+    "name": "Rapasdepic",
+    "primaryType": "Normal",
+    "highestStats": [
+      "Vitesse"
+    ],
+    "highestValue": 100,
+    "generation": 1,
+    "flavor": "Il a assez d’énergie pour voler toute la journée avec ses grandes ailes. Il frappe de son bec acéré."
+  },
+  {
+    "id": 43,
+    "name": "Mystherbe",
+    "primaryType": "Plante",
+    "highestStats": [
+      "Attaque Spéciale"
+    ],
+    "highestValue": 75,
+    "generation": 1,
+    "flavor": "En journée, il plante ses pieds-racines dans le sol. La nuit, il se promène en semant des graines."
+  },
+  {
+    "id": 64,
+    "name": "Kadabra",
+    "primaryType": "Psy",
+    "highestStats": [
+      "Attaque Spéciale"
+    ],
+    "highestValue": 120,
+    "generation": 1,
+    "flavor": "Il fixe sa cuillère d’argent afin de concentrer son esprit et d’émettre un maximum d’ondes alpha."
+  },
+  {
+    "id": 85,
+    "name": "Dodrio",
+    "primaryType": "Normal",
+    "highestStats": [
+      "Attaque",
+      "Vitesse"
+    ],
+    "highestValue": 110,
+    "generation": 1,
+    "flavor": "Quand Doduo connaît cette étrange évolution, l’une de ses têtes se dédouble. Il atteint les 60 km/h."
+  },
+  {
+    "id": 105,
+    "name": "Ossatueur",
+    "primaryType": "Sol",
+    "highestStats": [
+      "Défense"
+    ],
+    "highestValue": 110,
+    "generation": 1,
+    "flavor": "Ce Pokémon sauvage possède des os depuis sa naissance. Il s’en sert pour combattre avec dextérité."
+  },
+  {
+    "id": 126,
+    "name": "Magmar",
+    "primaryType": "Feu",
+    "highestStats": [
+      "Attaque Spéciale"
+    ],
+    "highestValue": 100,
+    "generation": 1,
+    "flavor": "Quand il respire profondément, des vagues de chaleur émanent de son corps et le rendent difficile à voir."
+  },
+  {
+    "id": 147,
+    "name": "Minidraco",
+    "primaryType": "Dragon",
+    "highestStats": [
+      "Attaque"
+    ],
+    "highestValue": 64,
+    "generation": 1,
+    "flavor": "Il grandit en muant quasiment tous les jours. Sa peau est toute douce après la mue."
+  },
+  {
+    "id": 168,
+    "name": "Migalos",
+    "primaryType": "Insecte",
+    "highestStats": [
+      "Attaque"
+    ],
+    "highestValue": 90,
+    "generation": 2,
+    "flavor": "Il attache un fil à sa proie avant de la libérer. Il s’en servira pour la retrouver, elle et ses amis."
+  },
+  {
+    "id": 189,
+    "name": "Cotovol",
+    "primaryType": "Plante",
+    "highestStats": [
+      "Vitesse"
+    ],
+    "highestValue": 110,
+    "generation": 2,
+    "flavor": "Poussé par les vents saisonniers, il fait le tour du globe en semant des spores de coton."
+  },
+  {
+    "id": 210,
+    "name": "Granbull",
+    "primaryType": "Fée",
+    "highestStats": [
+      "Attaque"
+    ],
+    "highestValue": 120,
+    "generation": 2,
+    "flavor": "En dépit des apparences, c’est un grand timide. Quand il s’énerve, il mord de ses énormes crocs."
+  },
+  {
+    "id": 231,
+    "name": "Phanpy",
+    "primaryType": "Sol",
+    "highestStats": [
+      "PV"
+    ],
+    "highestValue": 90,
+    "generation": 2,
+    "flavor": "Il est fort malgré son aspect ramassé. Il n’a aucun mal à porter un humain adulte sur son dos."
+  },
+  {
+    "id": 252,
+    "name": "Arcko",
+    "primaryType": "Plante",
+    "highestStats": [
+      "Vitesse"
+    ],
+    "highestValue": 70,
+    "generation": 3,
+    "flavor": "Ses plantes de pieds sont couvertes d’épines lui permettant de marcher au mur et au plafond."
+  },
+  {
+    "id": 273,
+    "name": "Grainipiot",
+    "primaryType": "Plante",
+    "highestStats": [
+      "Défense"
+    ],
+    "highestValue": 50,
+    "generation": 3,
+    "flavor": "Il ressemble à un gland pendu à une branche. Il adore effrayer les autres Pokémon."
+  },
+  {
+    "id": 294,
+    "name": "Ramboum",
+    "primaryType": "Normal",
+    "highestStats": [
+      "PV"
+    ],
+    "highestValue": 84,
+    "generation": 3,
+    "flavor": "L’onde de choc provoquée par son cri peut renverser un camion. Il trépigne pour augmenter sa force."
+  },
+  {
+    "id": 314,
+    "name": "Lumivole",
+    "primaryType": "Insecte",
+    "highestStats": [
+      "Défense Spéciale",
+      "Vitesse"
+    ],
+    "highestValue": 85,
+    "generation": 3,
+    "flavor": "Il utilise son doux parfum pour aider Muciole à décrire des arabesques dans le ciel nocturne."
+  },
+  {
+    "id": 335,
+    "name": "Mangriff",
+    "primaryType": "Normal",
+    "highestStats": [
+      "Attaque"
+    ],
+    "highestValue": 115,
+    "generation": 3,
+    "flavor": "C’est le rival de Séviper depuis des générations. Ses griffes aiguisées sont son meilleur atout."
+  },
+  {
+    "id": 356,
+    "name": "Téraclope",
+    "primaryType": "Spectre",
+    "highestStats": [
+      "Défense",
+      "Défense Spéciale"
+    ],
+    "highestValue": 130,
+    "generation": 3,
+    "flavor": "Il cherche des feux follets pour les avaler. Ce qui se passe alors dans son corps est un mystère."
+  },
+  {
+    "id": 377,
+    "name": "Regirock",
+    "primaryType": "Roche",
+    "highestStats": [
+      "Défense"
+    ],
+    "highestValue": 200,
+    "generation": 3,
+    "flavor": "Tout son corps est fait de roche. S’il s’ébrèche au combat, il utilise des pierres pour le réparer."
+  },
+  {
+    "id": 398,
+    "name": "Étouraptor",
+    "primaryType": "Normal",
+    "highestStats": [
+      "Attaque"
+    ],
+    "highestValue": 120,
+    "generation": 4,
+    "flavor": "Il combattra sans relâche, même blessé. Il prend grand soin de sa mèche."
+  },
+  {
+    "id": 419,
+    "name": "Mustéflott",
+    "primaryType": "Eau",
+    "highestStats": [
+      "Vitesse"
+    ],
+    "highestValue": 115,
+    "generation": 4,
+    "flavor": "Il chasse souvent près des ports de pêche où il sauve parfois les gens tombés à la mer."
+  },
+  {
+    "id": 440,
+    "name": "Ptiravi",
+    "primaryType": "Normal",
+    "highestStats": [
+      "PV"
+    ],
+    "highestValue": 100,
+    "generation": 4,
+    "flavor": "Ce Pokémon ne se sépare jamais de son petit caillou et a tendance à traîner dans les pieds des gens."
+  },
+  {
+    "id": 461,
+    "name": "Dimoret",
+    "primaryType": "Ténèbres",
+    "highestStats": [
+      "Vitesse"
+    ],
+    "highestValue": 125,
+    "generation": 4,
+    "flavor": "L’évolution l’a rendu encore plus retors. Il communique en griffant des signes dans les pierres."
+  },
+  {
+    "id": 482,
+    "name": "Créfadet",
+    "primaryType": "Psy",
+    "highestStats": [
+      "Attaque",
+      "Attaque Spéciale"
+    ],
+    "highestValue": 125,
+    "generation": 4,
+    "flavor": "Quand il prit son envol, les hommes acquirent la détermination. La volonté était née."
+  },
+  {
+    "id": 503,
+    "name": "Clamiral",
+    "primaryType": "Eau",
+    "highestStats": [
+      "Attaque Spéciale"
+    ],
+    "highestValue": 108,
+    "generation": 5,
+    "flavor": "Il peut terrasser ses ennemis d’un coup de la lame enchâssée dans son armure, et les faire taire d’un seul regard."
+  },
+  {
+    "id": 523,
+    "name": "Zéblitz",
+    "primaryType": "Électrik",
+    "highestStats": [
+      "Vitesse"
+    ],
+    "highestValue": 116,
+    "generation": 5,
+    "flavor": "Il réagit à la vitesse de l’éclair. Lorsqu’il est en plein galop, on peut entendre le grondement du tonnerre."
+  },
+  {
+    "id": 544,
+    "name": "Scobolide",
+    "primaryType": "Insecte",
+    "highestStats": [
+      "Défense"
+    ],
+    "highestValue": 99,
+    "generation": 5,
+    "flavor": "Protégé par sa solide carapace, il fonce sur ses ennemis en roulant comme un pneu."
+  },
+  {
+    "id": 565,
+    "name": "Mégapagos",
+    "primaryType": "Eau",
+    "highestStats": [
+      "Défense"
+    ],
+    "highestValue": 133,
+    "generation": 5,
+    "flavor": "Il vit sur terre et en mer. Ses bras surpuissants peuvent percer des trous dans la coque des paquebots."
+  },
+  {
+    "id": 586,
+    "name": "Haydaim",
+    "primaryType": "Normal",
+    "highestStats": [
+      "Attaque"
+    ],
+    "highestValue": 100,
+    "generation": 5,
+    "flavor": "Il change d’habitat selon les saisons. Les gens constatent le passage des saisons en regardant ses ramures."
+  },
+  {
+    "id": 607,
+    "name": "Funécire",
+    "primaryType": "Spectre",
+    "highestStats": [
+      "Attaque Spéciale"
+    ],
+    "highestValue": 65,
+    "generation": 5,
+    "flavor": "Sa flamme brûle en consumant l’énergie vitale des gens et des Pokémon."
+  },
+  {
+    "id": 628,
+    "name": "Gueriaigle",
+    "primaryType": "Normal",
+    "highestStats": [
+      "Attaque"
+    ],
+    "highestValue": 123,
+    "generation": 5,
+    "flavor": "Pour les siens, il combat au mépris du danger. Il est capable de soulever une voiture haut dans le ciel."
+  },
+  {
+    "id": 649,
+    "name": "Genesect",
+    "primaryType": "Insecte",
+    "highestStats": [
+      "Attaque",
+      "Attaque Spéciale"
+    ],
+    "highestValue": 120,
+    "generation": 5,
+    "flavor": "Il y a 300 millions d’années, il était craint comme l’ultime prédateur. Il a été modifié par la Team Plasma."
+  },
+  {
+    "id": 670,
+    "name": "Floette",
+    "primaryType": "Fée",
+    "highestStats": [
+      "Défense Spéciale"
+    ],
+    "highestValue": 98,
+    "generation": 6,
+    "flavor": "Il survole les champs de fleurs, et prend soin de celles qui sont sur le point de faner. Au combat, il fait appel à leur force cachée."
+  },
+  {
+    "id": 691,
+    "name": "Kravarech",
+    "primaryType": "Poison",
+    "highestStats": [
+      "Défense Spéciale"
+    ],
+    "highestValue": 123,
+    "generation": 6,
+    "flavor": "Il asperge tous ceux qui osent pénétrer sur son territoire d’un poison assez corrosif pour dissoudre la coque d’un pétrolier."
+  },
+  {
+    "id": 712,
+    "name": "Grelaçon",
+    "primaryType": "Glace",
+    "highestStats": [
+      "Défense"
+    ],
+    "highestValue": 85,
+    "generation": 6,
+    "flavor": "La glace qui couvre son corps bloque les attaques ennemies. Si elle se fissure, il la reconstitue immédiatement en soufflant de l’air glacé."
+  },
+  {
+    "id": 732,
+    "name": "Piclairon",
+    "primaryType": "Normal",
+    "highestStats": [
+      "Attaque"
+    ],
+    "highestValue": 85,
+    "generation": 7,
+    "flavor": "Il garde toujours dans son bec les pépins des fruits qu’il mange, ce qui lui permet de faire feu dès qu’un ennemi se présente."
+  },
+  {
+    "id": 753,
+    "name": "Mimantis",
+    "primaryType": "Plante",
+    "highestStats": [
+      "Attaque"
+    ],
+    "highestValue": 55,
+    "generation": 7,
+    "flavor": "La journée, il passe son temps à flâner au soleil et à faire la sieste. Le soir venu, il part à la recherche d’un lieu plus sûr pour passer la nuit."
+  },
+  {
+    "id": 774,
+    "name": "Météno",
+    "primaryType": "Roche",
+    "highestStats": [
+      "Défense",
+      "Défense Spéciale"
+    ],
+    "highestValue": 100,
+    "generation": 7,
+    "flavor": "Il vivait dans la couche d’ozone, avant que sa carapace, devenue trop lourde, ne finisse par le faire chuter sur la terre ferme."
+  },
+  {
+    "id": 795,
+    "name": "Cancrelove",
+    "primaryType": "Insecte",
+    "highestStats": [
+      "Vitesse"
+    ],
+    "highestValue": 151,
+    "generation": 7,
+    "flavor": "L’une des dangereuses Ultra-Chimères. On l’aurait aperçue en train de courir à une vitesse prodigieuse."
+  },
+  {
+    "id": 816,
+    "name": "Larméléon",
+    "primaryType": "Eau",
+    "highestStats": [
+      "Attaque Spéciale",
+      "Vitesse"
+    ],
+    "highestValue": 70,
+    "generation": 8,
+    "flavor": "Quand il a peur, il pleure des larmes contenant une substance lacrymogène d’une puissance équivalente à celle de cent oignons."
+  },
+  {
+    "id": 837,
+    "name": "Charbi",
+    "primaryType": "Roche",
+    "highestStats": [
+      "Défense",
+      "Défense Spéciale"
+    ],
+    "highestValue": 50,
+    "generation": 8,
+    "flavor": "On l’a découvert dans une mine il y a 400 ans. Son corps est presque entièrement composé d’une substance identique au charbon."
+  },
+  {
+    "id": 858,
+    "name": "Sorcilence",
+    "primaryType": "Psy",
+    "highestStats": [
+      "Attaque Spéciale"
+    ],
+    "highestValue": 136,
+    "generation": 8,
+    "flavor": "Il éloigne les autres êtres vivants en émettant des ondes psychiques pouvant donner des maux de tête épouvantables."
+  },
+  {
+    "id": 879,
+    "name": "Pachyradjah",
+    "primaryType": "Acier",
+    "highestStats": [
+      "Attaque"
+    ],
+    "highestValue": 130,
+    "generation": 8,
+    "flavor": "Sa peau verte résiste bien à l’eau. Il s’est installé dans la région il y a longtemps et a travaillé en coopération avec les Hommes."
+  },
+  {
+    "id": 900,
+    "name": "Hachécateur",
+    "primaryType": "Insecte",
+    "highestStats": [
+      "Attaque"
+    ],
+    "highestValue": 135,
+    "generation": 8,
+    "flavor": "Ce Pokémon porte le numéro 900 dans le Pokédex national."
+  },
+  {
+    "id": 921,
+    "name": "Pohm",
+    "primaryType": "Électrik",
+    "highestStats": [
+      "Vitesse"
+    ],
+    "highestValue": 60,
+    "generation": 9,
+    "flavor": "Ce Pokémon porte le numéro 921 dans le Pokédex national."
+  },
+  {
+    "id": 941,
+    "name": "Fulgulairo",
+    "primaryType": "Électrik",
+    "highestStats": [
+      "Vitesse"
+    ],
+    "highestValue": 125,
+    "generation": 9,
+    "flavor": "Ce Pokémon porte le numéro 941 dans le Pokédex national."
+  },
+  {
+    "id": 962,
+    "name": "Lestombaile",
+    "primaryType": "Vol",
+    "highestStats": [
+      "Attaque"
+    ],
+    "highestValue": 103,
+    "generation": 9,
+    "flavor": "Ce Pokémon porte le numéro 962 dans le Pokédex national."
+  },
+  {
+    "id": 983,
+    "name": "Scalpereur",
+    "primaryType": "Ténèbres",
+    "highestStats": [
+      "Attaque"
+    ],
+    "highestValue": 135,
+    "generation": 9,
+    "flavor": "Ce Pokémon porte le numéro 983 dans le Pokédex national."
+  },
+  {
+    "id": 1004,
+    "name": "Yuyu",
+    "primaryType": "Ténèbres",
+    "highestStats": [
+      "Attaque Spéciale"
+    ],
+    "highestValue": 135,
+    "generation": 9,
+    "flavor": "Ce Pokémon porte le numéro 1004 dans le Pokédex national."
+  },
+  {
+    "id": 1025,
+    "name": "Pêchaminus",
+    "primaryType": "Poison",
+    "highestStats": [
+      "Défense"
+    ],
+    "highestValue": 160,
+    "generation": 9,
+    "flavor": "Ce Pokémon porte le numéro 1025 dans le Pokédex national."
+  }
+]

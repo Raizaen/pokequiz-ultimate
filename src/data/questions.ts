@@ -1,4 +1,6 @@
 import type { Question } from '../domain/quiz'
+import { animeQuestions } from './animeQuestions'
+import { generatedQuestions } from './generatedQuestions'
 import { spriteQuestions } from './spriteQuestions'
 
 const textQuestions: Question[] = [
@@ -47,7 +49,7 @@ const textQuestions: Question[] = [
     points: 15, durationSeconds: 25,
   },
   {
-    id: 'anime-001', type: 'open', category: 'Anime', difficulty: 1,
+    id: 'legacy-anime-001', type: 'open', category: 'Anime', difficulty: 1,
     prompt: 'Quel Pokémon accompagne Sacha depuis le début de son voyage ?',
     acceptedAnswers: ['Pikachu'], explanation: 'Le Pikachu de Sacha est son premier Pokémon et son partenaire historique.',
     points: 10, durationSeconds: 30,
@@ -78,4 +80,4 @@ const textQuestions: Question[] = [
   },
 ]
 
-export const questions: Question[] = [...textQuestions, ...spriteQuestions]
+export const questions: Question[] = [...textQuestions, ...generatedQuestions, ...animeQuestions, ...spriteQuestions]

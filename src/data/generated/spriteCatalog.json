@@ -1,0 +1,2102 @@
+[
+  {
+    "id": 1,
+    "name": "Bulbizarre",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+    "difficulty": 1
+  },
+  {
+    "id": 5,
+    "name": "Reptincel",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+    "difficulty": 2
+  },
+  {
+    "id": 9,
+    "name": "Tortank",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
+    "difficulty": 3
+  },
+  {
+    "id": 13,
+    "name": "Aspicot",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
+    "difficulty": 4
+  },
+  {
+    "id": 17,
+    "name": "Roucoups",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
+    "difficulty": 5
+  },
+  {
+    "id": 22,
+    "name": "Rapasdepic",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png",
+    "difficulty": 1
+  },
+  {
+    "id": 26,
+    "name": "Raichu",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png",
+    "difficulty": 2
+  },
+  {
+    "id": 30,
+    "name": "Nidorina",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/30.png",
+    "difficulty": 3
+  },
+  {
+    "id": 34,
+    "name": "Nidoking",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/34.png",
+    "difficulty": 4
+  },
+  {
+    "id": 38,
+    "name": "Feunard",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png",
+    "difficulty": 5
+  },
+  {
+    "id": 42,
+    "name": "Nosferalto",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/42.png",
+    "difficulty": 1
+  },
+  {
+    "id": 46,
+    "name": "Paras",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/46.png",
+    "difficulty": 2
+  },
+  {
+    "id": 50,
+    "name": "Taupiqueur",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png",
+    "difficulty": 3
+  },
+  {
+    "id": 54,
+    "name": "Psykokwak",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png",
+    "difficulty": 4
+  },
+  {
+    "id": 59,
+    "name": "Arcanin",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png",
+    "difficulty": 5
+  },
+  {
+    "id": 63,
+    "name": "Abra",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/63.png",
+    "difficulty": 1
+  },
+  {
+    "id": 67,
+    "name": "Machopeur",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/67.png",
+    "difficulty": 2
+  },
+  {
+    "id": 71,
+    "name": "Empiflor",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/71.png",
+    "difficulty": 3
+  },
+  {
+    "id": 75,
+    "name": "Gravalanch",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/75.png",
+    "difficulty": 4
+  },
+  {
+    "id": 79,
+    "name": "Ramoloss",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/79.png",
+    "difficulty": 5
+  },
+  {
+    "id": 83,
+    "name": "Canarticho",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png",
+    "difficulty": 1
+  },
+  {
+    "id": 87,
+    "name": "Lamantine",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/87.png",
+    "difficulty": 2
+  },
+  {
+    "id": 91,
+    "name": "Crustabri",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/91.png",
+    "difficulty": 3
+  },
+  {
+    "id": 96,
+    "name": "Soporifik",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/96.png",
+    "difficulty": 4
+  },
+  {
+    "id": 100,
+    "name": "Voltorbe",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png",
+    "difficulty": 5
+  },
+  {
+    "id": 104,
+    "name": "Osselait",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/104.png",
+    "difficulty": 1
+  },
+  {
+    "id": 108,
+    "name": "Excelangue",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/108.png",
+    "difficulty": 2
+  },
+  {
+    "id": 112,
+    "name": "Rhinoféros",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png",
+    "difficulty": 3
+  },
+  {
+    "id": 116,
+    "name": "Hypotrempe",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/116.png",
+    "difficulty": 4
+  },
+  {
+    "id": 120,
+    "name": "Stari",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/120.png",
+    "difficulty": 5
+  },
+  {
+    "id": 124,
+    "name": "Lippoutou",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png",
+    "difficulty": 1
+  },
+  {
+    "id": 128,
+    "name": "Tauros",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/128.png",
+    "difficulty": 2
+  },
+  {
+    "id": 133,
+    "name": "Évoli",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png",
+    "difficulty": 3
+  },
+  {
+    "id": 137,
+    "name": "Porygon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/137.png",
+    "difficulty": 4
+  },
+  {
+    "id": 141,
+    "name": "Kabutops",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/141.png",
+    "difficulty": 5
+  },
+  {
+    "id": 145,
+    "name": "Électhor",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/145.png",
+    "difficulty": 1
+  },
+  {
+    "id": 149,
+    "name": "Dracolosse",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png",
+    "difficulty": 2
+  },
+  {
+    "id": 153,
+    "name": "Macronium",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/153.png",
+    "difficulty": 3
+  },
+  {
+    "id": 157,
+    "name": "Typhlosion",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/157.png",
+    "difficulty": 4
+  },
+  {
+    "id": 161,
+    "name": "Fouinette",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/161.png",
+    "difficulty": 5
+  },
+  {
+    "id": 165,
+    "name": "Coxy",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/165.png",
+    "difficulty": 1
+  },
+  {
+    "id": 170,
+    "name": "Loupio",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/170.png",
+    "difficulty": 2
+  },
+  {
+    "id": 174,
+    "name": "Toudoudou",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/174.png",
+    "difficulty": 3
+  },
+  {
+    "id": 178,
+    "name": "Xatu",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/178.png",
+    "difficulty": 4
+  },
+  {
+    "id": 182,
+    "name": "Joliflor",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/182.png",
+    "difficulty": 5
+  },
+  {
+    "id": 186,
+    "name": "Tarpaud",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/186.png",
+    "difficulty": 1
+  },
+  {
+    "id": 190,
+    "name": "Capumain",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/190.png",
+    "difficulty": 2
+  },
+  {
+    "id": 194,
+    "name": "Axoloto",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/194.png",
+    "difficulty": 3
+  },
+  {
+    "id": 198,
+    "name": "Cornèbre",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/198.png",
+    "difficulty": 4
+  },
+  {
+    "id": 203,
+    "name": "Girafarig",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/203.png",
+    "difficulty": 5
+  },
+  {
+    "id": 207,
+    "name": "Scorplane",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/207.png",
+    "difficulty": 1
+  },
+  {
+    "id": 211,
+    "name": "Qwilfish",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/211.png",
+    "difficulty": 2
+  },
+  {
+    "id": 215,
+    "name": "Farfuret",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/215.png",
+    "difficulty": 3
+  },
+  {
+    "id": 219,
+    "name": "Volcaropod",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/219.png",
+    "difficulty": 4
+  },
+  {
+    "id": 223,
+    "name": "Rémoraid",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/223.png",
+    "difficulty": 5
+  },
+  {
+    "id": 227,
+    "name": "Airmure",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/227.png",
+    "difficulty": 1
+  },
+  {
+    "id": 231,
+    "name": "Phanpy",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/231.png",
+    "difficulty": 2
+  },
+  {
+    "id": 235,
+    "name": "Queulorior",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/235.png",
+    "difficulty": 3
+  },
+  {
+    "id": 240,
+    "name": "Magby",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/240.png",
+    "difficulty": 4
+  },
+  {
+    "id": 244,
+    "name": "Entei",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/244.png",
+    "difficulty": 5
+  },
+  {
+    "id": 248,
+    "name": "Tyranocif",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/248.png",
+    "difficulty": 1
+  },
+  {
+    "id": 252,
+    "name": "Arcko",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/252.png",
+    "difficulty": 2
+  },
+  {
+    "id": 256,
+    "name": "Galifeu",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/256.png",
+    "difficulty": 3
+  },
+  {
+    "id": 260,
+    "name": "Laggron",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/260.png",
+    "difficulty": 4
+  },
+  {
+    "id": 264,
+    "name": "Linéon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/264.png",
+    "difficulty": 5
+  },
+  {
+    "id": 268,
+    "name": "Blindalys",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/268.png",
+    "difficulty": 1
+  },
+  {
+    "id": 272,
+    "name": "Ludicolo",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/272.png",
+    "difficulty": 2
+  },
+  {
+    "id": 277,
+    "name": "Hélédelle",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/277.png",
+    "difficulty": 3
+  },
+  {
+    "id": 281,
+    "name": "Kirlia",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/281.png",
+    "difficulty": 4
+  },
+  {
+    "id": 285,
+    "name": "Balignon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/285.png",
+    "difficulty": 5
+  },
+  {
+    "id": 289,
+    "name": "Monaflèmit",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/289.png",
+    "difficulty": 1
+  },
+  {
+    "id": 293,
+    "name": "Chuchmur",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/293.png",
+    "difficulty": 2
+  },
+  {
+    "id": 297,
+    "name": "Hariyama",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/297.png",
+    "difficulty": 3
+  },
+  {
+    "id": 301,
+    "name": "Delcatty",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/301.png",
+    "difficulty": 4
+  },
+  {
+    "id": 305,
+    "name": "Galegon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/305.png",
+    "difficulty": 5
+  },
+  {
+    "id": 309,
+    "name": "Dynavolt",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/309.png",
+    "difficulty": 1
+  },
+  {
+    "id": 314,
+    "name": "Lumivole",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/314.png",
+    "difficulty": 2
+  },
+  {
+    "id": 318,
+    "name": "Carvanha",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/318.png",
+    "difficulty": 3
+  },
+  {
+    "id": 322,
+    "name": "Chamallot",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/322.png",
+    "difficulty": 4
+  },
+  {
+    "id": 326,
+    "name": "Groret",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/326.png",
+    "difficulty": 5
+  },
+  {
+    "id": 330,
+    "name": "Libégon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/330.png",
+    "difficulty": 1
+  },
+  {
+    "id": 334,
+    "name": "Altaria",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/334.png",
+    "difficulty": 2
+  },
+  {
+    "id": 338,
+    "name": "Solaroc",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/338.png",
+    "difficulty": 3
+  },
+  {
+    "id": 342,
+    "name": "Colhomard",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/342.png",
+    "difficulty": 4
+  },
+  {
+    "id": 346,
+    "name": "Vacilys",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/346.png",
+    "difficulty": 5
+  },
+  {
+    "id": 351,
+    "name": "Morphéo",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/351.png",
+    "difficulty": 1
+  },
+  {
+    "id": 355,
+    "name": "Skelénox",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/355.png",
+    "difficulty": 2
+  },
+  {
+    "id": 359,
+    "name": "Absol",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/359.png",
+    "difficulty": 3
+  },
+  {
+    "id": 363,
+    "name": "Obalie",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/363.png",
+    "difficulty": 4
+  },
+  {
+    "id": 367,
+    "name": "Serpang",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/367.png",
+    "difficulty": 5
+  },
+  {
+    "id": 371,
+    "name": "Draby",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/371.png",
+    "difficulty": 1
+  },
+  {
+    "id": 375,
+    "name": "Métang",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/375.png",
+    "difficulty": 2
+  },
+  {
+    "id": 379,
+    "name": "Registeel",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/379.png",
+    "difficulty": 3
+  },
+  {
+    "id": 383,
+    "name": "Groudon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/383.png",
+    "difficulty": 4
+  },
+  {
+    "id": 388,
+    "name": "Boskara",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/388.png",
+    "difficulty": 5
+  },
+  {
+    "id": 392,
+    "name": "Simiabraz",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/392.png",
+    "difficulty": 1
+  },
+  {
+    "id": 396,
+    "name": "Étourmi",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/396.png",
+    "difficulty": 2
+  },
+  {
+    "id": 400,
+    "name": "Castorno",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/400.png",
+    "difficulty": 3
+  },
+  {
+    "id": 404,
+    "name": "Luxio",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/404.png",
+    "difficulty": 4
+  },
+  {
+    "id": 408,
+    "name": "Kranidos",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/408.png",
+    "difficulty": 5
+  },
+  {
+    "id": 412,
+    "name": "Cheniti",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/412.png",
+    "difficulty": 1
+  },
+  {
+    "id": 416,
+    "name": "Apireine",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/416.png",
+    "difficulty": 2
+  },
+  {
+    "id": 420,
+    "name": "Ceribou",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/420.png",
+    "difficulty": 3
+  },
+  {
+    "id": 425,
+    "name": "Baudrive",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/425.png",
+    "difficulty": 4
+  },
+  {
+    "id": 429,
+    "name": "Magirêve",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/429.png",
+    "difficulty": 5
+  },
+  {
+    "id": 433,
+    "name": "Korillon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/433.png",
+    "difficulty": 1
+  },
+  {
+    "id": 437,
+    "name": "Archéodong",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/437.png",
+    "difficulty": 2
+  },
+  {
+    "id": 441,
+    "name": "Pijako",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/441.png",
+    "difficulty": 3
+  },
+  {
+    "id": 445,
+    "name": "Carchacrok",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/445.png",
+    "difficulty": 4
+  },
+  {
+    "id": 449,
+    "name": "Hippopotas",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/449.png",
+    "difficulty": 5
+  },
+  {
+    "id": 453,
+    "name": "Cradopaud",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/453.png",
+    "difficulty": 1
+  },
+  {
+    "id": 457,
+    "name": "Luminéon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/457.png",
+    "difficulty": 2
+  },
+  {
+    "id": 462,
+    "name": "Magnézone",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/462.png",
+    "difficulty": 3
+  },
+  {
+    "id": 466,
+    "name": "Élekable",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/466.png",
+    "difficulty": 4
+  },
+  {
+    "id": 470,
+    "name": "Phyllali",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/470.png",
+    "difficulty": 5
+  },
+  {
+    "id": 474,
+    "name": "Porygon-Z",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/474.png",
+    "difficulty": 1
+  },
+  {
+    "id": 478,
+    "name": "Momartik",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/478.png",
+    "difficulty": 2
+  },
+  {
+    "id": 482,
+    "name": "Créfadet",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/482.png",
+    "difficulty": 3
+  },
+  {
+    "id": 486,
+    "name": "Regigigas",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/486.png",
+    "difficulty": 4
+  },
+  {
+    "id": 490,
+    "name": "Manaphy",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/490.png",
+    "difficulty": 5
+  },
+  {
+    "id": 494,
+    "name": "Victini",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/494.png",
+    "difficulty": 1
+  },
+  {
+    "id": 499,
+    "name": "Grotichon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/499.png",
+    "difficulty": 2
+  },
+  {
+    "id": 503,
+    "name": "Clamiral",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/503.png",
+    "difficulty": 3
+  },
+  {
+    "id": 507,
+    "name": "Ponchien",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/507.png",
+    "difficulty": 4
+  },
+  {
+    "id": 511,
+    "name": "Feuillajou",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/511.png",
+    "difficulty": 5
+  },
+  {
+    "id": 515,
+    "name": "Flotajou",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/515.png",
+    "difficulty": 1
+  },
+  {
+    "id": 519,
+    "name": "Poichigeon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/519.png",
+    "difficulty": 2
+  },
+  {
+    "id": 523,
+    "name": "Zéblitz",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/523.png",
+    "difficulty": 3
+  },
+  {
+    "id": 527,
+    "name": "Chovsourir",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/527.png",
+    "difficulty": 4
+  },
+  {
+    "id": 532,
+    "name": "Charpenti",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/532.png",
+    "difficulty": 5
+  },
+  {
+    "id": 536,
+    "name": "Batracné",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/536.png",
+    "difficulty": 1
+  },
+  {
+    "id": 540,
+    "name": "Larveyette",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/540.png",
+    "difficulty": 2
+  },
+  {
+    "id": 544,
+    "name": "Scobolide",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/544.png",
+    "difficulty": 3
+  },
+  {
+    "id": 548,
+    "name": "Chlorobule",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/548.png",
+    "difficulty": 4
+  },
+  {
+    "id": 552,
+    "name": "Escroco",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/552.png",
+    "difficulty": 5
+  },
+  {
+    "id": 556,
+    "name": "Maracachi",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/556.png",
+    "difficulty": 1
+  },
+  {
+    "id": 560,
+    "name": "Baggaïd",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/560.png",
+    "difficulty": 2
+  },
+  {
+    "id": 564,
+    "name": "Carapagos",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/564.png",
+    "difficulty": 3
+  },
+  {
+    "id": 569,
+    "name": "Miasmax",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/569.png",
+    "difficulty": 4
+  },
+  {
+    "id": 573,
+    "name": "Pashmilla",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/573.png",
+    "difficulty": 5
+  },
+  {
+    "id": 577,
+    "name": "Nucléos",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/577.png",
+    "difficulty": 1
+  },
+  {
+    "id": 581,
+    "name": "Lakmécygne",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/581.png",
+    "difficulty": 2
+  },
+  {
+    "id": 585,
+    "name": "Vivaldaim",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/585.png",
+    "difficulty": 3
+  },
+  {
+    "id": 589,
+    "name": "Lançargot",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/589.png",
+    "difficulty": 4
+  },
+  {
+    "id": 593,
+    "name": "Moyade (Male)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/593.png",
+    "difficulty": 5
+  },
+  {
+    "id": 597,
+    "name": "Grindur",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/597.png",
+    "difficulty": 1
+  },
+  {
+    "id": 601,
+    "name": "Cliticlic",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/601.png",
+    "difficulty": 2
+  },
+  {
+    "id": 606,
+    "name": "Neitram",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/606.png",
+    "difficulty": 3
+  },
+  {
+    "id": 610,
+    "name": "Coupenotte",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/610.png",
+    "difficulty": 4
+  },
+  {
+    "id": 614,
+    "name": "Polagriffe",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/614.png",
+    "difficulty": 5
+  },
+  {
+    "id": 618,
+    "name": "Limonde",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/618.png",
+    "difficulty": 1
+  },
+  {
+    "id": 622,
+    "name": "Gringolem",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/622.png",
+    "difficulty": 2
+  },
+  {
+    "id": 626,
+    "name": "Frison",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/626.png",
+    "difficulty": 3
+  },
+  {
+    "id": 630,
+    "name": "Vaututrice",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/630.png",
+    "difficulty": 4
+  },
+  {
+    "id": 634,
+    "name": "Diamat",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/634.png",
+    "difficulty": 5
+  },
+  {
+    "id": 638,
+    "name": "Cobaltium",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/638.png",
+    "difficulty": 1
+  },
+  {
+    "id": 643,
+    "name": "Reshiram",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/643.png",
+    "difficulty": 2
+  },
+  {
+    "id": 647,
+    "name": "Keldeo (Ordinaire)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/647.png",
+    "difficulty": 3
+  },
+  {
+    "id": 651,
+    "name": "Boguérisse",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/651.png",
+    "difficulty": 4
+  },
+  {
+    "id": 655,
+    "name": "Goupelin",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/655.png",
+    "difficulty": 5
+  },
+  {
+    "id": 659,
+    "name": "Sapereau",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/659.png",
+    "difficulty": 1
+  },
+  {
+    "id": 663,
+    "name": "Flambusard",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/663.png",
+    "difficulty": 2
+  },
+  {
+    "id": 667,
+    "name": "Hélionceau",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/667.png",
+    "difficulty": 3
+  },
+  {
+    "id": 671,
+    "name": "Florges",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/671.png",
+    "difficulty": 4
+  },
+  {
+    "id": 675,
+    "name": "Pandarbare",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/675.png",
+    "difficulty": 5
+  },
+  {
+    "id": 680,
+    "name": "Dimoclès",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/680.png",
+    "difficulty": 1
+  },
+  {
+    "id": 684,
+    "name": "Sucroquin",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/684.png",
+    "difficulty": 2
+  },
+  {
+    "id": 688,
+    "name": "Opermine",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/688.png",
+    "difficulty": 3
+  },
+  {
+    "id": 692,
+    "name": "Flingouste",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/692.png",
+    "difficulty": 4
+  },
+  {
+    "id": 696,
+    "name": "Ptyranidur",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/696.png",
+    "difficulty": 5
+  },
+  {
+    "id": 700,
+    "name": "Nymphali",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/700.png",
+    "difficulty": 1
+  },
+  {
+    "id": 704,
+    "name": "Mucuscule",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/704.png",
+    "difficulty": 2
+  },
+  {
+    "id": 708,
+    "name": "Brocélôme",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/708.png",
+    "difficulty": 3
+  },
+  {
+    "id": 712,
+    "name": "Grelaçon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/712.png",
+    "difficulty": 4
+  },
+  {
+    "id": 717,
+    "name": "Yveltal",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/717.png",
+    "difficulty": 5
+  },
+  {
+    "id": 721,
+    "name": "Volcanion",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/721.png",
+    "difficulty": 1
+  },
+  {
+    "id": 725,
+    "name": "Flamiaou",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/725.png",
+    "difficulty": 2
+  },
+  {
+    "id": 729,
+    "name": "Otarlette",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/729.png",
+    "difficulty": 3
+  },
+  {
+    "id": 733,
+    "name": "Bazoucan",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/733.png",
+    "difficulty": 4
+  },
+  {
+    "id": 737,
+    "name": "Chrysapile",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/737.png",
+    "difficulty": 5
+  },
+  {
+    "id": 741,
+    "name": "Plumeline (Baile)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/741.png",
+    "difficulty": 1
+  },
+  {
+    "id": 745,
+    "name": "Lougaroc (Diurne)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/745.png",
+    "difficulty": 2
+  },
+  {
+    "id": 749,
+    "name": "Tiboudet",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/749.png",
+    "difficulty": 3
+  },
+  {
+    "id": 754,
+    "name": "Floramantis",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/754.png",
+    "difficulty": 4
+  },
+  {
+    "id": 758,
+    "name": "Malamandre",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/758.png",
+    "difficulty": 5
+  },
+  {
+    "id": 762,
+    "name": "Candine",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/762.png",
+    "difficulty": 1
+  },
+  {
+    "id": 766,
+    "name": "Quartermac",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/766.png",
+    "difficulty": 2
+  },
+  {
+    "id": 770,
+    "name": "Trépassable",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/770.png",
+    "difficulty": 3
+  },
+  {
+    "id": 774,
+    "name": "Météno (Red Meteor)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/774.png",
+    "difficulty": 4
+  },
+  {
+    "id": 778,
+    "name": "Mimiqui (Disguised)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/778.png",
+    "difficulty": 5
+  },
+  {
+    "id": 782,
+    "name": "Bébécaille",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/782.png",
+    "difficulty": 1
+  },
+  {
+    "id": 786,
+    "name": "Tokopiyon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/786.png",
+    "difficulty": 2
+  },
+  {
+    "id": 791,
+    "name": "Solgaleo",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/791.png",
+    "difficulty": 3
+  },
+  {
+    "id": 795,
+    "name": "Cancrelove",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/795.png",
+    "difficulty": 4
+  },
+  {
+    "id": 799,
+    "name": "Engloutyran",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/799.png",
+    "difficulty": 5
+  },
+  {
+    "id": 803,
+    "name": "Vémini",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/803.png",
+    "difficulty": 1
+  },
+  {
+    "id": 807,
+    "name": "Zeraora",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/807.png",
+    "difficulty": 2
+  },
+  {
+    "id": 811,
+    "name": "Badabouin",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/811.png",
+    "difficulty": 3
+  },
+  {
+    "id": 815,
+    "name": "Pyrobut",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/815.png",
+    "difficulty": 4
+  },
+  {
+    "id": 819,
+    "name": "Rongourmand",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/819.png",
+    "difficulty": 5
+  },
+  {
+    "id": 823,
+    "name": "Corvaillus",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/823.png",
+    "difficulty": 1
+  },
+  {
+    "id": 828,
+    "name": "Roublenard",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/828.png",
+    "difficulty": 2
+  },
+  {
+    "id": 832,
+    "name": "Moumouflon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/832.png",
+    "difficulty": 3
+  },
+  {
+    "id": 836,
+    "name": "Fulgudog",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/836.png",
+    "difficulty": 4
+  },
+  {
+    "id": 840,
+    "name": "Verpom",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/840.png",
+    "difficulty": 5
+  },
+  {
+    "id": 844,
+    "name": "Dunaconda",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/844.png",
+    "difficulty": 1
+  },
+  {
+    "id": 848,
+    "name": "Toxizap",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/848.png",
+    "difficulty": 2
+  },
+  {
+    "id": 852,
+    "name": "Poulpaf",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/852.png",
+    "difficulty": 3
+  },
+  {
+    "id": 856,
+    "name": "Bibichut",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/856.png",
+    "difficulty": 4
+  },
+  {
+    "id": 861,
+    "name": "Angoliath",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/861.png",
+    "difficulty": 5
+  },
+  {
+    "id": 865,
+    "name": "Palarticho",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/865.png",
+    "difficulty": 1
+  },
+  {
+    "id": 869,
+    "name": "Charmilly",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/869.png",
+    "difficulty": 2
+  },
+  {
+    "id": 873,
+    "name": "Beldeneige",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/873.png",
+    "difficulty": 3
+  },
+  {
+    "id": 877,
+    "name": "Morpeko (Full Belly)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/877.png",
+    "difficulty": 4
+  },
+  {
+    "id": 881,
+    "name": "Galvagla",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/881.png",
+    "difficulty": 5
+  },
+  {
+    "id": 885,
+    "name": "Fantyrm",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/885.png",
+    "difficulty": 1
+  },
+  {
+    "id": 889,
+    "name": "Zamazenta",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/889.png",
+    "difficulty": 2
+  },
+  {
+    "id": 893,
+    "name": "Zarude",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/893.png",
+    "difficulty": 3
+  },
+  {
+    "id": 898,
+    "name": "Sylveroy",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/898.png",
+    "difficulty": 4
+  },
+  {
+    "id": 902,
+    "name": "Paragruel (Male)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/902.png",
+    "difficulty": 5
+  },
+  {
+    "id": 906,
+    "name": "Poussacha",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/906.png",
+    "difficulty": 1
+  },
+  {
+    "id": 910,
+    "name": "Crocogril",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/910.png",
+    "difficulty": 2
+  },
+  {
+    "id": 914,
+    "name": "Palmaval",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/914.png",
+    "difficulty": 3
+  },
+  {
+    "id": 918,
+    "name": "Filentrappe",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/918.png",
+    "difficulty": 4
+  },
+  {
+    "id": 922,
+    "name": "Pohmotte",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/922.png",
+    "difficulty": 5
+  },
+  {
+    "id": 926,
+    "name": "Pâtachiot",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/926.png",
+    "difficulty": 1
+  },
+  {
+    "id": 930,
+    "name": "Arboliva",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/930.png",
+    "difficulty": 2
+  },
+  {
+    "id": 935,
+    "name": "Charbambin",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/935.png",
+    "difficulty": 3
+  },
+  {
+    "id": 939,
+    "name": "Ampibidou",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/939.png",
+    "difficulty": 4
+  },
+  {
+    "id": 943,
+    "name": "Dogrino",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/943.png",
+    "difficulty": 5
+  },
+  {
+    "id": 947,
+    "name": "Virevorreur",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/947.png",
+    "difficulty": 1
+  },
+  {
+    "id": 951,
+    "name": "Pimito",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/951.png",
+    "difficulty": 2
+  },
+  {
+    "id": 955,
+    "name": "Flotillon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/955.png",
+    "difficulty": 3
+  },
+  {
+    "id": 959,
+    "name": "Forgelina",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/959.png",
+    "difficulty": 4
+  },
+  {
+    "id": 963,
+    "name": "Dofin",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/963.png",
+    "difficulty": 5
+  },
+  {
+    "id": 967,
+    "name": "Motorizard",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/967.png",
+    "difficulty": 1
+  },
+  {
+    "id": 972,
+    "name": "Tomberro",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/972.png",
+    "difficulty": 2
+  },
+  {
+    "id": 976,
+    "name": "Délestin",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/976.png",
+    "difficulty": 3
+  },
+  {
+    "id": 980,
+    "name": "Terraiste",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/980.png",
+    "difficulty": 4
+  },
+  {
+    "id": 984,
+    "name": "Fort-Ivoire",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/984.png",
+    "difficulty": 5
+  },
+  {
+    "id": 988,
+    "name": "Rampe-Ailes",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/988.png",
+    "difficulty": 1
+  },
+  {
+    "id": 992,
+    "name": "Paume-de-Fer",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/992.png",
+    "difficulty": 2
+  },
+  {
+    "id": 996,
+    "name": "Frigodo",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/996.png",
+    "difficulty": 3
+  },
+  {
+    "id": 1000,
+    "name": "Gromago",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1000.png",
+    "difficulty": 4
+  },
+  {
+    "id": 1004,
+    "name": "Yuyu",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1004.png",
+    "difficulty": 5
+  },
+  {
+    "id": 1009,
+    "name": "Serpente-Eau",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1009.png",
+    "difficulty": 1
+  },
+  {
+    "id": 1013,
+    "name": "Théffroyable",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1013.png",
+    "difficulty": 2
+  },
+  {
+    "id": 1017,
+    "name": "Ogerpon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1017.png",
+    "difficulty": 3
+  },
+  {
+    "id": 1021,
+    "name": "Ire-Foudre",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1021.png",
+    "difficulty": 4
+  },
+  {
+    "id": 1025,
+    "name": "Pêchaminus",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1025.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10006,
+    "name": "Shaymin (Céleste)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10006.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10007,
+    "name": "Giratina (Originelle)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10007.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10017,
+    "name": "Darumacho (Transe)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10017.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10019,
+    "name": "Boréas (Totémique)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10019.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10020,
+    "name": "Fulguris (Totémique)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10020.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10021,
+    "name": "Démétéros (Totémique)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10021.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10022,
+    "name": "Kyurem (Noir)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10022.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10023,
+    "name": "Kyurem (Blanc)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10023.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10033,
+    "name": "Méga Florizarre",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10033.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10034,
+    "name": "Méga X Dracaufeu",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10034.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10035,
+    "name": "Méga Y Dracaufeu",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10035.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10036,
+    "name": "Méga Tortank",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10036.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10037,
+    "name": "Méga Alakazam",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10037.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10038,
+    "name": "Méga Ectoplasma",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10038.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10039,
+    "name": "Méga Kangourex",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10039.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10040,
+    "name": "Méga Scarabrute",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10040.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10041,
+    "name": "Méga Léviator",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10041.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10042,
+    "name": "Méga Ptéra",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10042.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10043,
+    "name": "Méga X Mewtwo",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10043.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10044,
+    "name": "Méga Y Mewtwo",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10044.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10045,
+    "name": "Méga Pharamp",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10045.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10046,
+    "name": "Méga Cizayox",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10046.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10047,
+    "name": "Méga Scarhino",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10047.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10048,
+    "name": "Méga Démolosse",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10048.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10049,
+    "name": "Méga Tyranocif",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10049.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10050,
+    "name": "Méga Braségali",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10050.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10051,
+    "name": "Méga Gardevoir",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10051.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10052,
+    "name": "Méga Mysdibule",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10052.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10053,
+    "name": "Méga Galeking",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10053.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10054,
+    "name": "Méga Charmina",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10054.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10055,
+    "name": "Méga Élecsprint",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10055.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10056,
+    "name": "Méga Branette",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10056.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10057,
+    "name": "Méga Absol",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10057.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10058,
+    "name": "Méga Carchacrok",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10058.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10059,
+    "name": "Méga Lucario",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10059.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10060,
+    "name": "Méga Blizzaroi",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10060.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10062,
+    "name": "Méga Latias",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10062.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10063,
+    "name": "Méga Latios",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10063.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10064,
+    "name": "Méga Laggron",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10064.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10065,
+    "name": "Méga Jungko",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10065.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10066,
+    "name": "Méga Ténéfix",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10066.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10067,
+    "name": "Méga Altaria",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10067.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10068,
+    "name": "Méga Gallame",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10068.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10069,
+    "name": "Méga Nanméouïe",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10069.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10070,
+    "name": "Méga Sharpedo",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10070.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10071,
+    "name": "Méga Flagadoss",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10071.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10072,
+    "name": "Méga Steelix",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10072.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10073,
+    "name": "Méga Roucarnage",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10073.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10074,
+    "name": "Méga Oniglali",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10074.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10075,
+    "name": "Méga Diancie",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10075.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10076,
+    "name": "Méga Métalosse",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10076.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10077,
+    "name": "Kyogre (Primo)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10077.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10078,
+    "name": "Groudon (Primo)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10078.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10079,
+    "name": "Méga Rayquaza",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10079.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10087,
+    "name": "Méga Camérupt",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10087.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10088,
+    "name": "Méga Lockpin",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10088.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10089,
+    "name": "Méga Drattak",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10089.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10090,
+    "name": "Méga Dardargnan",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10090.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10091,
+    "name": "Rattata (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10091.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10092,
+    "name": "Rattatac (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10092.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10093,
+    "name": "Rattatac (Totem d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10093.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10094,
+    "name": "Pikachu (Original Cap)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10094.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10099,
+    "name": "Pikachu (d’Alola Cap)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10099.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10100,
+    "name": "Raichu (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10100.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10101,
+    "name": "Sabelette (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10101.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10102,
+    "name": "Sablaireau (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10102.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10103,
+    "name": "Goupix (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10103.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10104,
+    "name": "Feunard (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10104.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10105,
+    "name": "Taupiqueur (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10105.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10106,
+    "name": "Triopikeur (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10106.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10107,
+    "name": "Miaouss (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10107.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10108,
+    "name": "Persian (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10108.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10109,
+    "name": "Racaillou (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10109.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10110,
+    "name": "Gravalanch (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10110.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10111,
+    "name": "Grolem (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10111.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10112,
+    "name": "Tadmorv (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10112.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10113,
+    "name": "Grotadmorv (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10113.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10114,
+    "name": "Noadkoko (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10114.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10115,
+    "name": "Ossatueur (d’Alola)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10115.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10126,
+    "name": "Lougaroc (Nocturne)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10126.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10127,
+    "name": "Froussardine (Banc)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10127.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10147,
+    "name": "Magearna (Original)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10147.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10152,
+    "name": "Lougaroc (Crépusculaire)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10152.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10155,
+    "name": "Necrozma (Crépusculaire)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10155.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10161,
+    "name": "Miaouss (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10161.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10162,
+    "name": "Ponyta (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10162.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10163,
+    "name": "Galopa (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10163.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10164,
+    "name": "Ramoloss (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10164.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10165,
+    "name": "Flagadoss (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10165.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10166,
+    "name": "Canarticho (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10166.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10167,
+    "name": "Smogogo (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10167.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10168,
+    "name": "M. Mime (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10168.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10169,
+    "name": "Artikodin (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10169.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10170,
+    "name": "Électhor (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10170.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10171,
+    "name": "Sulfura (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10171.png",
+    "difficulty": 5
+  },
+  {
+    "id": 10172,
+    "name": "Roigada (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10172.png",
+    "difficulty": 1
+  },
+  {
+    "id": 10173,
+    "name": "Corayon (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10173.png",
+    "difficulty": 2
+  },
+  {
+    "id": 10174,
+    "name": "Zigzaton (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10174.png",
+    "difficulty": 3
+  },
+  {
+    "id": 10175,
+    "name": "Linéon (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10175.png",
+    "difficulty": 4
+  },
+  {
+    "id": 10176,
+    "name": "Darumarond (de Galar)",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10176.png",
+    "difficulty": 5
+  }
+]
