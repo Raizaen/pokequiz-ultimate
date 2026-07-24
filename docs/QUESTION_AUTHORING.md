@@ -34,3 +34,7 @@ Chaque question doit :
 ## Pack pilote Labo
 
 `src/data/curated/laboPilot.ts` sert de référence. Il combine QCM simple, QCM multiple et réponse ouverte autour de méthodes d’évolution classiques, régionales et atypiques.
+
+## Pack pilote Capacités
+
+`src/data/curated/movesPilot.ts` applique les mêmes règles aux caractéristiques de combat. Les questions dépendantes d’un équilibrage historique délimitent explicitement les générations concernées. Le pack couvre puissance, précision, PP, priorité, catégorie de dégâts, météo, effets secondaires et capacités signatures.
