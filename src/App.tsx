@@ -5,6 +5,7 @@ import { questions } from './data/questions'
 import type { GameState, Player } from './domain/quiz'
 import { createGame, nextQuestion, revealAnswer, submitAnswer, tick } from './engine/quizEngine'
 import { shuffleQuestions } from './engine/questionSelection'
+import { rankPlayers } from './engine/ranking'
 import { clearSavedGame, loadGame, saveGame } from './storage/gameStorage'
 
 type Screen = 'menu' | 'setup' | 'game'
@@ -81,12 +82,14 @@ export function App() {
 
   if (!game) return null
   if (game.finished) {
-    const ranking = [...game.players].sort((a, b) => b.score - a.score)
+    const ranking = rankPlayers(game.players)
+    const winners = ranking.filter(({ rank }) => rank === 1)
     return (
       <main className="app-shell results">
-        <Logo /><span className="eyebrow">HALL OF FAME</span><h1>Victoire de {ranking[0].name} !</h1>
+        <Logo /><span className="eyebrow">HALL OF FAME</span>
+        <h1>{winners.length > 1 ? `Égalité entre ${winners.length} Dresseurs !` : `Victoire de ${winners[0].player.name} !`}</h1>
         <div className="podium">
-          {ranking.map((player, index) => <div key={player.id}><span>{index + 1}</span><i>{player.avatar}</i><strong>{player.name}</strong><b>{player.score} pts</b></div>)}
+          {ranking.map(({ player, rank }) => <div className={rank === 1 ? 'winner' : ''} key={player.id}><span>{rank}{ranking.filter((entry) => entry.rank === rank).length > 1 ? ' ex æquo' : ''}</span><i>{player.avatar}</i><strong>{player.name}</strong><b>{player.score} pts</b></div>)}
         </div>
         <button className="primary" onClick={() => { clearSavedGame(); setPlayers([newPlayer(0)]); setGame(null); setScreen('menu') }}>Retour au menu</button>
       </main>
