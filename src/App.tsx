@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react'
 import { Logo } from './components/Logo'
 import { PlayerPanel } from './components/PlayerPanel'
 import { questions } from './data/questions'
+import { categories, difficultyPresets, type DifficultyPreset, type GameConfig } from './domain/gameConfig'
 import type { GameState, Player } from './domain/quiz'
 import { createGame, nextQuestion, revealAnswer, submitAnswer, tick } from './engine/quizEngine'
-import { shuffleQuestions } from './engine/questionSelection'
+import { questionsForConfig, selectQuestions } from './engine/questionSelection'
 import { rankPlayers } from './engine/ranking'
 import { clearSavedGame, loadGame, saveGame } from './storage/gameStorage'
 
@@ -20,7 +21,9 @@ export function App() {
   const [screen, setScreen] = useState<Screen>('menu')
   const [players, setPlayers] = useState<Player[]>([newPlayer(0)])
   const [game, setGame] = useState<GameState | null>(null)
+  const [config, setConfig] = useState<GameConfig>({ mode: 'mixed', difficulty: 'all' })
   const savedGame = loadGame()
+  const eligibleQuestions = questionsForConfig(questions, config)
 
   useEffect(() => {
     if (game) saveGame(game)
@@ -33,7 +36,7 @@ export function App() {
   }, [game])
 
   const startGame = () => {
-    setGame(createGame(players, shuffleQuestions(questions, 10)))
+    setGame(createGame(players, selectQuestions(questions, config, 10)))
     setScreen('game')
   }
 
@@ -71,9 +74,57 @@ export function App() {
               </div>
             ))}
           </div>
+          <section className="setup-section">
+            <div className="section-heading"><span>1</span><div><h2>Mode de jeu</h2><p>Change la façon dont les questions sont sélectionnées.</p></div></div>
+            <div className="mode-grid">
+              <button className={config.mode === 'mixed' ? 'selected' : ''} onClick={() => setConfig({ ...config, mode: 'mixed', category: undefined })}>
+                <i>🎲</i><strong>Questions en vrac</strong><small>Un mélange de toutes les catégories</small>
+              </button>
+              <button className={config.mode === 'category' ? 'selected' : ''} onClick={() => setConfig({ ...config, mode: 'category', category: config.category ?? 'Labo' })}>
+                <i>🎯</i><strong>Une catégorie</strong><small>Une manche entièrement thématique</small>
+              </button>
+            </div>
+          </section>
+
+          {config.mode === 'category' && (
+            <section className="setup-section">
+              <div className="section-heading"><span>2</span><div><h2>Catégorie</h2><p>Les catégories multimédias arriveront avec leur lecteur dédié.</p></div></div>
+              <div className="category-grid">
+                {categories.map((category) => {
+                  const count = questionsForConfig(questions, { ...config, category: category.id }).length
+                  const unavailable = category.requiresMedia || count === 0
+                  return (
+                    <button
+                      key={category.id}
+                      className={config.category === category.id ? 'selected' : ''}
+                      disabled={unavailable}
+                      onClick={() => setConfig({ ...config, category: category.id })}
+                    >
+                      <i>{category.icon}</i><strong>{category.label}</strong><small>{unavailable ? 'Bientôt disponible' : `${count} question${count > 1 ? 's' : ''}`}</small>
+                    </button>
+                  )
+                })}
+              </div>
+            </section>
+          )}
+
+          <section className="setup-section">
+            <div className="section-heading"><span>{config.mode === 'category' ? '3' : '2'}</span><div><h2>Difficulté</h2><p>Adapte le tirage au niveau des joueurs.</p></div></div>
+            <div className="difficulty-grid">
+              {difficultyPresets.map((preset) => (
+                <button key={preset.id} className={config.difficulty === preset.id ? 'selected' : ''} onClick={() => setConfig({ ...config, difficulty: preset.id as DifficultyPreset })}>
+                  <strong>{preset.label}</strong><small>{preset.description}</small>
+                </button>
+              ))}
+            </div>
+          </section>
+
           <div className="setup-actions">
             <button disabled={players.length >= 8} onClick={() => setPlayers([...players, newPlayer(players.length)])}>+ Ajouter un joueur</button>
-            <button className="primary" disabled={players.some((player) => !player.name.trim())} onClick={startGame}>Lancer la partie <span>→</span></button>
+            <div className="launch-area">
+              <small>{eligibleQuestions.length === 0 ? 'Aucune question pour cette combinaison' : `${Math.min(10, eligibleQuestions.length)} question${Math.min(10, eligibleQuestions.length) > 1 ? 's' : ''} dans cette partie`}</small>
+              <button className="primary" disabled={players.some((player) => !player.name.trim()) || eligibleQuestions.length === 0} onClick={startGame}>Lancer la partie <span>→</span></button>
+            </div>
           </div>
         </section>
       </main>

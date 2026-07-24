@@ -14,7 +14,7 @@ export const questions: Question[] = [
     explanation: 'Doublonville est la plus grande ville de Johto.', points: 10, durationSeconds: 20,
   },
   {
-    id: 'types-001', type: 'multiple-choice', category: 'Types', difficulty: 2,
+    id: 'types-001', type: 'multiple-choice', category: 'Labo', difficulty: 2,
     prompt: 'Quel type est super efficace contre le type Dragon ?',
     choices: ['Feu', 'Électrik', 'Fée', 'Combat'], acceptedAnswers: ['Fée'],
     explanation: 'Le type Fée est super efficace contre Dragon et immunisé aux capacités Dragon.', points: 10, durationSeconds: 20,
@@ -26,13 +26,13 @@ export const questions: Question[] = [
     points: 10, durationSeconds: 30,
   },
   {
-    id: 'evolution-001', type: 'open', category: 'Évolutions', difficulty: 1,
+    id: 'evolution-001', type: 'open', category: 'Labo', difficulty: 1,
     prompt: 'En quel Pokémon évolue Reptincel ?',
     acceptedAnswers: ['Dracaufeu'], explanation: 'Reptincel évolue en Dracaufeu à partir du niveau 36.',
     points: 10, durationSeconds: 30,
   },
   {
-    id: 'abilities-001', type: 'multiple-choice', category: 'Talents', difficulty: 3,
+    id: 'abilities-001', type: 'multiple-choice', category: 'Capacités et objets', difficulty: 3,
     prompt: 'Quel talent caractéristique de Munja limite ses faiblesses aux capacités super efficaces ?',
     choices: ['Garde Mystik', 'Lévitation', 'Inconscient', 'Armurbaston'], acceptedAnswers: ['Garde Mystik'],
     explanation: 'Garde Mystik empêche les dégâts directs des capacités qui ne sont pas super efficaces.',
@@ -52,13 +52,13 @@ export const questions: Question[] = [
     points: 10, durationSeconds: 30,
   },
   {
-    id: 'moves-001', type: 'multiple-choice', category: 'Capacités', difficulty: 2,
+    id: 'moves-001', type: 'multiple-choice', category: 'Capacités et objets', difficulty: 2,
     prompt: 'De quel type est la capacité Tonnerre ?',
     choices: ['Acier', 'Électrik', 'Normal', 'Psy'], acceptedAnswers: ['Électrik', 'Electrik'],
     explanation: 'Tonnerre est une capacité spéciale de type Électrik.', points: 10, durationSeconds: 20,
   },
   {
-    id: 'legends-001', type: 'open', category: 'Légendaires', difficulty: 2,
+    id: 'legends-001', type: 'open', category: 'Lore', difficulty: 2,
     prompt: 'Quel Pokémon légendaire est la mascotte de Pokémon Émeraude ?',
     acceptedAnswers: ['Rayquaza'], explanation: 'Rayquaza figure sur la jaquette de Pokémon Émeraude.',
     points: 10, durationSeconds: 30,

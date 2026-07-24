@@ -6,11 +6,13 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 
 - menu principal et reprise d’une partie sauvegardée ;
 - configuration de 1 à 8 joueurs ;
+- mode « Questions en vrac » ou partie dédiée à une catégorie ;
+- difficulté Découverte, Confirmé, Expert ou Tous niveaux ;
 - QCM avec un seul essai par joueur ;
 - questions ouvertes avec trois essais ;
 - validation tolérante aux accents, espaces, casse et ponctuation ;
 - chronomètre, score automatique et révélation expliquée ;
-- tirage aléatoire de dix questions ;
+- tirage aléatoire de dix questions respectant le mode et la difficulté ;
 - sauvegarde locale automatique ;
 - podium final ;
 - banque initiale de 12 questions ;
