@@ -46,3 +46,7 @@ Chaque question doit :
 ## Pack pilote Objets
 
 `src/data/curated/itemsPilot.ts` couvre les usages en combat, les Baies, les Balls et les objets d’évolution. Les QCM multiples servent à comparer des familles d’objets ou des conditions d’activation sans réduire la catégorie à une succession de définitions.
+
+## Pack pilote Pokédex
+
+`src/data/curated/pokedexPilot.ts` alterne numéros nationaux, types, talents, statistiques, évolutions et mensurations. Les comparaisons et QCM multiples sont privilégiés dès qu’ils apportent davantage qu’une simple restitution de fiche.
