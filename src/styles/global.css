@@ -43,9 +43,9 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .section-heading h2 { margin: 0; font-size: 20px; }
 .section-heading p { margin: 2px 0 0; font-size: 13px; }
 .mode-grid, .difficulty-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-.mode-grid button, .category-grid button, .difficulty-grid button { position: relative; color: #d9d9e8; background: #252641; border: 1px solid #ffffff0b; border-radius: 14px; padding: 16px; text-align: left; display: grid; gap: 3px; transition: .18s ease; }
-.mode-grid button:hover:not(:disabled), .category-grid button:hover:not(:disabled), .difficulty-grid button:hover:not(:disabled) { transform: translateY(-2px); background: #2d2e4b; }
-.mode-grid button.selected, .category-grid button.selected, .difficulty-grid button.selected { border-color: #f2c94c; background: #f2c94c12; box-shadow: inset 0 0 0 1px #f2c94c; }
+.mode-grid button, .category-grid button, .difficulty-grid button, .count-grid button { position: relative; color: #d9d9e8; background: #252641; border: 1px solid #ffffff0b; border-radius: 14px; padding: 16px; text-align: left; display: grid; gap: 3px; transition: .18s ease; }
+.mode-grid button:hover:not(:disabled), .category-grid button:hover:not(:disabled), .difficulty-grid button:hover:not(:disabled), .count-grid button:hover:not(:disabled) { transform: translateY(-2px); background: #2d2e4b; }
+.mode-grid button.selected, .category-grid button.selected, .difficulty-grid button.selected, .count-grid button.selected { border-color: #f2c94c; background: #f2c94c12; box-shadow: inset 0 0 0 1px #f2c94c; }
 .mode-grid i { position: absolute; right: 15px; top: 13px; font-size: 26px; font-style: normal; }
 .mode-grid strong { font-size: 16px; }
 .mode-grid small, .category-grid small, .difficulty-grid small { color: #8889a3; }
@@ -55,6 +55,10 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .category-grid i { font-size: 24px; font-style: normal; }
 .difficulty-grid { grid-template-columns: repeat(4, 1fr); }
 .difficulty-grid button { text-align: center; }
+.count-grid { display: flex; flex-wrap: wrap; gap: 9px; }
+.count-grid button { min-width: 92px; text-align: center; }
+.count-grid strong { font-size: 20px; }
+.count-grid small { color: #8889a3; }
 .setup-actions { display: flex; justify-content: space-between; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
 .launch-area { margin-left: auto; display: flex; align-items: center; gap: 14px; }
 .launch-area > small { color: #8889a3; max-width: 160px; text-align: right; line-height: 1.25; }

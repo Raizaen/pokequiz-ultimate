@@ -12,6 +12,7 @@ import { clearSavedGame, loadGame, saveGame } from './storage/gameStorage'
 type Screen = 'menu' | 'setup' | 'game'
 const avatars = ['⚡', '🔥', '💧', '🌿', '🌙', '⭐', '🐉', '🌀']
 const colors = ['#f2c94c', '#ff5b5b', '#4aa8ff', '#62d68b', '#a777e3', '#ff8f4c', '#35d0ba', '#ef6bad']
+const preferredQuestionCounts = [5, 10, 15, 20, 30, 50]
 
 function newPlayer(index: number): Player {
   return { id: crypto.randomUUID(), name: `Joueur ${index + 1}`, avatar: avatars[index], color: colors[index], score: 0 }
@@ -22,8 +23,15 @@ export function App() {
   const [players, setPlayers] = useState<Player[]>([newPlayer(0)])
   const [game, setGame] = useState<GameState | null>(null)
   const [config, setConfig] = useState<GameConfig>({ mode: 'mixed', difficulty: 'all' })
+  const [questionCount, setQuestionCount] = useState(10)
   const savedGame = loadGame()
   const eligibleQuestions = questionsForConfig(questions, config)
+  const effectiveQuestionCount = Math.min(questionCount, eligibleQuestions.length)
+  const availableQuestionCounts = [...new Set([
+    ...preferredQuestionCounts.filter((count) => count <= eligibleQuestions.length),
+    effectiveQuestionCount,
+    eligibleQuestions.length,
+  ])].filter((count) => count > 0).sort((left, right) => left - right)
 
   useEffect(() => {
     if (game) saveGame(game)
@@ -36,7 +44,7 @@ export function App() {
   }, [game])
 
   const startGame = () => {
-    setGame(createGame(players, selectQuestions(questions, config, 10)))
+    setGame(createGame(players, selectQuestions(questions, config, effectiveQuestionCount)))
     setScreen('game')
   }
 
@@ -119,10 +127,21 @@ export function App() {
             </div>
           </section>
 
+          <section className="setup-section">
+            <div className="section-heading"><span>{config.mode === 'category' ? '4' : '3'}</span><div><h2>Nombre de questions</h2><p>La sélection s’adapte au contenu disponible.</p></div></div>
+            <div className="count-grid">
+              {availableQuestionCounts.map((count) => (
+                <button key={count} className={effectiveQuestionCount === count ? 'selected' : ''} onClick={() => setQuestionCount(count)}>
+                  <strong>{count}</strong><small>question{count > 1 ? 's' : ''}</small>
+                </button>
+              ))}
+            </div>
+          </section>
+
           <div className="setup-actions">
             <button disabled={players.length >= 8} onClick={() => setPlayers([...players, newPlayer(players.length)])}>+ Ajouter un joueur</button>
             <div className="launch-area">
-              <small>{eligibleQuestions.length === 0 ? 'Aucune question pour cette combinaison' : `${Math.min(10, eligibleQuestions.length)} question${Math.min(10, eligibleQuestions.length) > 1 ? 's' : ''} dans cette partie`}</small>
+              <small>{eligibleQuestions.length === 0 ? 'Aucune question pour cette combinaison' : `${effectiveQuestionCount} question${effectiveQuestionCount > 1 ? 's' : ''} dans cette partie`}</small>
               <button className="primary" disabled={players.some((player) => !player.name.trim()) || eligibleQuestions.length === 0} onClick={startGame}>Lancer la partie <span>→</span></button>
             </div>
           </div>

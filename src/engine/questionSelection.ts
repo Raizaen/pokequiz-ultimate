@@ -2,7 +2,7 @@ import type { Question } from '../domain/quiz'
 import { difficultyPresets, type GameConfig } from '../domain/gameConfig'
 
 export function shuffleQuestions(questions: Question[], count = questions.length): Question[] {
-  const shuffled = [...questions]
+  const shuffled = [...new Map(questions.map((question) => [question.id, question])).values()]
   for (let index = shuffled.length - 1; index > 0; index -= 1) {
     const swapWith = Math.floor(Math.random() * (index + 1))
     ;[shuffled[index], shuffled[swapWith]] = [shuffled[swapWith], shuffled[index]]

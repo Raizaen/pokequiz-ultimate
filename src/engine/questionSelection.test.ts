@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Question } from '../domain/quiz'
-import { questionsForConfig } from './questionSelection'
+import { questionsForConfig, selectQuestions } from './questionSelection'
 
 const question = (id: string, category: string, difficulty: Question['difficulty']): Question => ({
   id,
@@ -29,5 +29,13 @@ describe('question selection', () => {
   it('filtre les questions selon la difficulté choisie', () => {
     expect(questionsForConfig(bank, { mode: 'mixed', difficulty: 'expert' }).map(({ id }) => id))
       .toEqual(['labo-hard', 'lore-medium'])
+  })
+
+  it('ne sélectionne jamais deux fois le même identifiant', () => {
+    const duplicatedBank = [...bank, { ...bank[0] }]
+    const selection = selectQuestions(duplicatedBank, { mode: 'mixed', difficulty: 'all' }, 10)
+
+    expect(selection).toHaveLength(3)
+    expect(new Set(selection.map(({ id }) => id)).size).toBe(selection.length)
   })
 })
