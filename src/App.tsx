@@ -100,7 +100,7 @@ export function App() {
               <div className="category-grid">
                 {categories.map((category) => {
                   const count = questionsForConfig(questions, { ...config, category: category.id }).length
-                  const unavailable = category.requiresMedia || count === 0
+                  const unavailable = count === 0
                   return (
                     <button
                       key={category.id}
@@ -174,6 +174,11 @@ export function App() {
       <section className="question-card">
         <div><span className="category">{question.category}</span><span className="difficulty">{'★'.repeat(question.difficulty)}{'☆'.repeat(5 - question.difficulty)}</span></div>
         <h1>{question.prompt}</h1>
+        {question.media?.kind === 'image' && (
+          <div className={`question-media ${question.media.pixelated ? 'pixelated' : ''}`}>
+            <img src={question.media.src} alt={question.media.alt} />
+          </div>
+        )}
         <p>{question.points} points</p>
       </section>
       <section className="player-grid">

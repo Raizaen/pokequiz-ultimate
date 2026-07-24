@@ -7,6 +7,7 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 - menu principal et reprise d’une partie sauvegardée ;
 - configuration de 1 à 8 joueurs ;
 - mode « Questions en vrac » ou partie dédiée à une catégorie ;
+- premier pack multimédia de 50 questions Sprites ;
 - difficulté Découverte, Confirmé, Expert ou Tous niveaux ;
 - choix du nombre de questions selon la sélection disponible ;
 - QCM avec un seul essai par joueur ;
@@ -52,3 +53,5 @@ src/
 ```
 
 Les choix d’architecture sont détaillés dans [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+
+Les sprites sont chargés depuis le dépôt public de PokéAPI. La catégorie Sprites nécessite donc une connexion internet.

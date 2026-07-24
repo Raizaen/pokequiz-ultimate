@@ -1,6 +1,7 @@
 import type { Question } from '../domain/quiz'
+import { spriteQuestions } from './spriteQuestions'
 
-export const questions: Question[] = [
+const textQuestions: Question[] = [
   {
     id: 'pokedex-001', type: 'multiple-choice', category: 'Pokédex', difficulty: 1,
     prompt: 'Quel Pokémon porte le numéro 025 dans le Pokédex national ?',
@@ -76,3 +77,5 @@ export const questions: Question[] = [
     points: 15, durationSeconds: 30,
   },
 ]
+
+export const questions: Question[] = [...textQuestions, ...spriteQuestions]

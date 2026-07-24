@@ -11,6 +11,12 @@ export interface Question {
   explanation: string
   points: number
   durationSeconds: number
+  media?: {
+    kind: 'image'
+    src: string
+    alt: string
+    pixelated?: boolean
+  }
 }
 
 export interface Player {
