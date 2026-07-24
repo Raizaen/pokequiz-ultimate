@@ -11,6 +11,17 @@ export interface Question {
   acceptedAnswers: string[]
   correctChoices?: string[]
   template?: string
+  tags?: string[]
+  generationScope?: number[] | 'all'
+  difficultyReason?: string
+  validation?: {
+    status: 'draft' | 'review' | 'validated'
+    verifiedAt?: string
+    sources: Array<{
+      label: string
+      url: string
+    }>
+  }
   explanation: string
   points: number
   durationSeconds: number

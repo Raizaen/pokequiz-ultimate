@@ -71,6 +71,7 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .question-card { text-align: center; width: min(930px, 100%); margin: auto; }
 .question-card > div { display: flex; justify-content: center; gap: 18px; align-items: center; }
 .category { padding: 7px 12px; border-radius: 8px; background: #6656db33; color: #b4aaff; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; font-weight: 900; }
+.validated-badge { padding: 7px 10px; border-radius: 8px; background: #62d68b1c; color: #62d68b; text-transform: uppercase; letter-spacing: 1px; font-size: 10px; font-weight: 900; }
 .difficulty { color: #f2c94c; letter-spacing: 3px; }
 .question-card h1 { font-size: clamp(30px, 4vw, 54px); max-width: 900px; line-height: 1.1; margin: 24px auto 10px; }
 .question-card > p { color: #85869c; }

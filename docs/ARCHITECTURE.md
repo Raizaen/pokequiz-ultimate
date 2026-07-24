@@ -21,6 +21,8 @@ La configuration d’une partie est elle aussi indépendante de l’interface. E
 
 Le script `scripts/generate-pokeapi-bank.mjs` importe puis met en cache les faits Pokémon, les capacités, les objets et le catalogue de sprites. Les générateurs alternent plusieurs modèles grâce au champ `template`, dont les tests contrôlent la diversité. L’application ne dépend donc pas de l’API au moment de jouer, à l’exception des fichiers PNG des sprites. Le mélange Fisher–Yates utilise l’aléatoire cryptographique du navigateur et déduplique les questions par identifiant avant le tirage.
 
+Les questions éditoriales ajoutent un périmètre de génération, une justification de difficulté et un dossier de validation sourcé. Les règles de rédaction sont détaillées dans [`QUESTION_AUTHORING.md`](QUESTION_AUTHORING.md).
+
 ## Prochains jalons
 
 1. Rotation persistante et anti-répétition par catégorie.

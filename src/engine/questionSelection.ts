@@ -31,5 +31,12 @@ export function questionsForConfig(questions: Question[], config: GameConfig): Q
 }
 
 export function selectQuestions(questions: Question[], config: GameConfig, count = 10): Question[] {
-  return shuffleQuestions(questionsForConfig(questions, config), count)
+  const eligible = questionsForConfig(questions, config)
+  if (config.mode !== 'category') return shuffleQuestions(eligible, count)
+
+  const validated = shuffleQuestions(eligible.filter(({ validation }) => validation?.status === 'validated'))
+  if (validated.length === 0) return shuffleQuestions(eligible, count)
+
+  const remaining = shuffleQuestions(eligible.filter(({ validation }) => validation?.status !== 'validated'))
+  return [...validated, ...remaining].slice(0, count)
 }

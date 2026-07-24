@@ -43,4 +43,14 @@ describe('question selection', () => {
     const shuffled = shuffleQuestions(bank, bank.length, () => 0)
     expect(shuffled.map(({ id }) => id)).not.toEqual(bank.map(({ id }) => id))
   })
+
+  it('priorise le contenu validé dans une partie par catégorie', () => {
+    const curated = {
+      ...bank[0],
+      id: 'labo-validated',
+      validation: { status: 'validated' as const, verifiedAt: '2026-07-25', sources: [{ label: 'Source', url: 'https://example.com' }] },
+    }
+    const selection = selectQuestions([...bank, curated], { mode: 'category', category: 'Labo', difficulty: 'all' }, 1)
+    expect(selection[0].id).toBe('labo-validated')
+  })
 })

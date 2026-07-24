@@ -21,6 +21,7 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 - podium final ;
 - au moins 50 questions dans chaque catégorie jouable ;
 - catégories Capacités et Objets indépendantes, avec plusieurs modèles de questions chacune ;
+- premier pack éditorial Labo de 20 questions validées, sourcées et calibrées ;
 - tests unitaires du moteur.
 
 ## Lancer le projet

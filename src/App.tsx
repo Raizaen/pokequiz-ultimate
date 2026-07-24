@@ -172,7 +172,11 @@ export function App() {
       <nav><Logo /><div className="progress">Question {game.questionIndex + 1} / {game.questions.length}</div><div className={`timer ${game.remainingSeconds <= 5 ? 'danger' : ''}`}>⏱ {game.remainingSeconds}s</div></nav>
       <div className="progress-bar"><i style={{ width: `${((game.questionIndex + 1) / game.questions.length) * 100}%` }} /></div>
       <section className="question-card">
-        <div><span className="category">{question.category}</span><span className="difficulty">{'★'.repeat(question.difficulty)}{'☆'.repeat(5 - question.difficulty)}</span></div>
+        <div>
+          <span className="category">{question.category}</span>
+          {question.validation?.status === 'validated' && <span className="validated-badge">✓ Validée</span>}
+          <span className="difficulty">{'★'.repeat(question.difficulty)}{'☆'.repeat(5 - question.difficulty)}</span>
+        </div>
         <h1>{question.prompt}</h1>
         {question.media?.kind === 'image' && (
           <div className={`question-media ${question.media.pixelated ? 'pixelated' : ''}`}>
