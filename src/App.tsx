@@ -12,7 +12,7 @@ import { clearSavedGame, loadGame, saveGame } from './storage/gameStorage'
 type Screen = 'menu' | 'setup' | 'game'
 const avatars = ['⚡', '🔥', '💧', '🌿', '🌙', '⭐', '🐉', '🌀']
 const colors = ['#f2c94c', '#ff5b5b', '#4aa8ff', '#62d68b', '#a777e3', '#ff8f4c', '#35d0ba', '#ef6bad']
-const preferredQuestionCounts = [5, 10, 15, 20, 30, 50]
+const preferredQuestionCounts = [5, 10, 15, 20, 30, 50, 75, 100]
 
 function newPlayer(index: number): Player {
   return { id: crypto.randomUUID(), name: `Joueur ${index + 1}`, avatar: avatars[index], color: colors[index], score: 0 }

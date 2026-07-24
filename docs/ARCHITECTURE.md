@@ -17,6 +17,10 @@ Le moteur ne dépend ni de React ni de Pokémon. Une question décrit son type, 
 
 La configuration d’une partie est elle aussi indépendante de l’interface. Elle définit le mode (`mixed` ou `category`), la catégorie éventuelle et un palier de difficulté. Le sélecteur filtre la banque avant d’effectuer le tirage aléatoire.
 
+## Données PokéAPI
+
+Le script `scripts/generate-pokeapi-bank.mjs` importe puis met en cache les faits Pokémon, les capacités et le catalogue de sprites. L’application ne dépend donc pas de l’API au moment de jouer, à l’exception des fichiers PNG des sprites. Le mélange Fisher–Yates utilise l’aléatoire cryptographique du navigateur et déduplique les questions par identifiant avant le tirage.
+
 ## Prochains jalons
 
 1. Rotation persistante et anti-répétition par catégorie.

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Question } from '../domain/quiz'
-import { questionsForConfig, selectQuestions } from './questionSelection'
+import { questionsForConfig, selectQuestions, shuffleQuestions } from './questionSelection'
 
 const question = (id: string, category: string, difficulty: Question['difficulty']): Question => ({
   id,
@@ -37,5 +37,10 @@ describe('question selection', () => {
 
     expect(selection).toHaveLength(3)
     expect(new Set(selection.map(({ id }) => id)).size).toBe(selection.length)
+  })
+
+  it('applique Fisher-Yates à la banque avant de la découper', () => {
+    const shuffled = shuffleQuestions(bank, bank.length, () => 0)
+    expect(shuffled.map(({ id }) => id)).not.toEqual(bank.map(({ id }) => id))
   })
 })

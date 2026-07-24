@@ -7,7 +7,7 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 - menu principal et reprise d’une partie sauvegardée ;
 - configuration de 1 à 8 joueurs ;
 - mode « Questions en vrac » ou partie dédiée à une catégorie ;
-- premier pack multimédia de 50 questions Sprites ;
+- catalogue multimédia de 350 questions Sprites, dont 100 formes spéciales ;
 - difficulté Découverte, Confirmé, Expert ou Tous niveaux ;
 - choix du nombre de questions selon la sélection disponible ;
 - QCM avec un seul essai par joueur ;
@@ -18,7 +18,7 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 - ordre aléatoire et déduplication stricte des questions au sein d’une partie ;
 - sauvegarde locale automatique ;
 - podium final ;
-- banque initiale de 12 questions ;
+- au moins 50 questions dans chaque catégorie jouable ;
 - tests unitaires du moteur.
 
 ## Lancer le projet
@@ -54,4 +54,4 @@ src/
 
 Les choix d’architecture sont détaillés dans [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
-Les sprites sont chargés depuis le dépôt public de PokéAPI. La catégorie Sprites nécessite donc une connexion internet.
+Les données structurées sont mises en cache dans `src/data/generated`. Elles proviennent de PokéAPI et peuvent être régénérées avec `npm run questions:sync`. Les images restent chargées depuis le dépôt public de sprites PokéAPI : la catégorie Sprites nécessite donc une connexion internet.

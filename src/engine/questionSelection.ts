@@ -1,10 +1,19 @@
 import type { Question } from '../domain/quiz'
 import { difficultyPresets, type GameConfig } from '../domain/gameConfig'
 
-export function shuffleQuestions(questions: Question[], count = questions.length): Question[] {
+function secureRandom(): number {
+  if (globalThis.crypto?.getRandomValues) {
+    const value = new Uint32Array(1)
+    globalThis.crypto.getRandomValues(value)
+    return value[0] / 2 ** 32
+  }
+  return Math.random()
+}
+
+export function shuffleQuestions(questions: Question[], count = questions.length, random = secureRandom): Question[] {
   const shuffled = [...new Map(questions.map((question) => [question.id, question])).values()]
   for (let index = shuffled.length - 1; index > 0; index -= 1) {
-    const swapWith = Math.floor(Math.random() * (index + 1))
+    const swapWith = Math.floor(random() * (index + 1))
     ;[shuffled[index], shuffled[swapWith]] = [shuffled[swapWith], shuffled[index]]
   }
   return shuffled.slice(0, Math.min(count, shuffled.length))
