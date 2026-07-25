@@ -8,6 +8,7 @@ const playableCategories = [
   'Capacités',
   'Objets',
   'Stratégie',
+  'Stats en Ordre',
   'Lore',
   'Jeux principaux',
   'Anime',

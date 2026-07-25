@@ -47,8 +47,8 @@ export function StatOrderPanel({ question, locked, onAnswer }: Props) {
       )}
 
       <div className="order-scale">
-        <span>Moins rapide</span>
-        <span>Plus rapide</span>
+        <span>Moins de {question.statLabel ?? 'statistique'}</span>
+        <span>Plus de {question.statLabel ?? 'statistique'}</span>
       </div>
 
       <div className="order-track">
@@ -99,7 +99,7 @@ export function StatOrderPanel({ question, locked, onAnswer }: Props) {
         </button>
       )}
       {!complete && pendingPosition === null && <p className="order-help">Choisis le cercle où insérer ce Pokémon.</p>}
-      {!complete && pendingPosition !== null && <p className="order-help">Confirme cette position pour révéler sa Vitesse et passer au Pokémon suivant.</p>}
+      {!complete && pendingPosition !== null && <p className="order-help">Confirme cette position pour révéler sa statistique et passer au Pokémon suivant.</p>}
     </div>
   )
 }

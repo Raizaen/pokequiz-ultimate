@@ -45,7 +45,7 @@ Chaque question doit :
 
 ### Stats en Ordre
 
-`src/data/curated/statOrderQuestions.ts` utilise le type natif `stat-order`. Une série contient cinq Pokémon disponibles dans Pokémon Champions, cinq valeurs distinctes et un ordre explicitement croissant ou décroissant. Le premier Pokémon sert de repère ; les quatre suivants sont révélés puis insérés successivement avant la validation finale.
+`src/data/curated/statOrderQuestions.ts` utilise le type natif `stat-order` et alimente la catégorie autonome `Stats en Ordre`. La banque contient dix séries pour chacune des six statistiques de base : PV, Attaque, Défense, Attaque Spéciale, Défense Spéciale et Vitesse. Une série contient cinq Pokémon disponibles dans Pokémon Champions et cinq valeurs distinctes. Le premier Pokémon sert de repère ; les quatre suivants sont insérés et confirmés successivement avant la validation finale. Chaque position exacte rapporte cinq points.
 
 ## Pack pilote Objets
 
