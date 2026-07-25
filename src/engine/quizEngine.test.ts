@@ -69,7 +69,7 @@ describe('quiz engine', () => {
 
   it('accorde les points du Lieu Perdu selon la distance', () => {
     const exact = submitAnswer(createGame([player], [mapLocation]), player.id, { x: 51, y: 51 })
-    const close = submitAnswer(createGame([player], [mapLocation]), player.id, { x: 60, y: 50 })
+    const close = submitAnswer(createGame([player], [mapLocation]), player.id, { x: 57, y: 50 })
     const far = submitAnswer(createGame([player], [mapLocation]), player.id, { x: 90, y: 90 })
     expect(exact.players[0].score).toBe(25)
     expect(close.players[0].score).toBe(15)

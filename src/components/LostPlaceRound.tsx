@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from 'react'
 import type { AnswersByPlayer, MapAnswer, Player, Question } from '../domain/quiz'
+import { mapAccuracyLabel } from '../engine/answerValidation'
 
 interface Props {
   players: Player[]
@@ -148,9 +149,12 @@ export function LostPlaceRound({ players, answers, question, revealed, onAnswer 
       {!revealed && !activePlayer && <p className="all-placed">Tous les marqueurs sont placés. Révélez maintenant la réponse.</p>}
       {revealed && (
         <div className="map-results">
+          <p className="map-solution">
+            La bonne réponse était <strong>{question.acceptedAnswers[0]}</strong>.
+          </p>
           {revealedMarkers.map(({ player, points, distance }) => (
             <span key={player.id} style={{ borderColor: player.color }}>
-              {player.avatar} {player.name} · <b>{points} pts</b> · écart {distance.toFixed(1)}
+              {player.avatar} {player.name} · <b>{points} pts</b> · {mapAccuracyLabel(distance)} · écart {distance.toFixed(1)}
             </span>
           ))}
         </div>

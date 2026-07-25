@@ -96,6 +96,8 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .active-map-player button { padding: 11px 16px; border-radius: 10px; color: #17182b; background: var(--player); font-weight: 900; }
 .all-placed { margin: 15px 0 0; color: #62d68b; text-align: center; font-weight: 900; }
 .map-results { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+.map-solution { flex-basis: 100%; margin: 0 0 4px; padding: 12px 14px; border-radius: 12px; background: #182d27; color: #b9f4d1; }
+.map-solution strong { color: #fff; }
 .map-results span { padding: 9px 12px; border: 1px solid; border-radius: 10px; background: #242541; }
 .map-results b { color: #f2c94c; }
 .player-grid { width: min(1100px, 100%); margin: 34px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }

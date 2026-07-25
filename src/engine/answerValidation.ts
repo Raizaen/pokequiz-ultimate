@@ -1,5 +1,34 @@
 import type { AnswerValue, Question } from '../domain/quiz'
 
+export function mapAnswerDistance(question: Question, answer: AnswerValue): number | null {
+  if (
+    question.type !== 'map-location'
+    || Array.isArray(answer)
+    || typeof answer === 'string'
+    || !question.mapTarget
+  ) return null
+
+  return Math.hypot(answer.x - question.mapTarget.x, answer.y - question.mapTarget.y)
+}
+
+export function mapPointsForDistance(distance: number): number {
+  if (distance <= 2.5) return 25
+  if (distance <= 5) return 20
+  if (distance <= 8) return 15
+  if (distance <= 12) return 10
+  if (distance <= 18) return 5
+  return 0
+}
+
+export function mapAccuracyLabel(distance: number): string {
+  if (distance <= 2.5) return 'Dans le mille !'
+  if (distance <= 5) return 'Excellent'
+  if (distance <= 8) return 'Très proche'
+  if (distance <= 12) return 'Bonne zone'
+  if (distance <= 18) return 'Pas très loin'
+  return 'Trop éloigné'
+}
+
 export function normalizeAnswer(value: string): string {
   return value
     .normalize('NFD')
@@ -10,8 +39,8 @@ export function normalizeAnswer(value: string): string {
 
 export function isAnswerCorrect(question: Question, answer: AnswerValue): boolean {
   if (question.type === 'map-location') {
-    if (Array.isArray(answer) || typeof answer === 'string' || !question.mapTarget) return false
-    return Math.hypot(answer.x - question.mapTarget.x, answer.y - question.mapTarget.y) <= 4
+    const distance = mapAnswerDistance(question, answer)
+    return distance !== null && distance <= 5
   }
   if (question.type === 'stat-order') {
     if (!Array.isArray(answer) || !question.orderEntries) return false
@@ -40,14 +69,8 @@ export function maxAttemptsFor(question: Question): number {
 
 export function pointsForAnswer(question: Question, answer: AnswerValue): number {
   if (question.type === 'map-location') {
-    if (Array.isArray(answer) || typeof answer === 'string' || !question.mapTarget) return 0
-    const distance = Math.hypot(answer.x - question.mapTarget.x, answer.y - question.mapTarget.y)
-    if (distance <= 4) return 25
-    if (distance <= 8) return 20
-    if (distance <= 14) return 15
-    if (distance <= 22) return 10
-    if (distance <= 32) return 5
-    return 0
+    const distance = mapAnswerDistance(question, answer)
+    return distance === null ? 0 : mapPointsForDistance(distance)
   }
   if (question.type !== 'stat-order') {
     return isAnswerCorrect(question, answer) ? question.points : 0

@@ -2,9 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { paldeaLostPlaceQuestions } from './paldeaLostPlaceQuestions'
 
 describe('prototype Lieu Perdu à Paldea', () => {
-  it('contient vingt-cinq lieux uniques et localisables', () => {
-    expect(paldeaLostPlaceQuestions).toHaveLength(25)
-    expect(new Set(paldeaLostPlaceQuestions.map(({ acceptedAnswers }) => acceptedAnswers[0])).size).toBe(25)
+  it('contient cinquante lieux uniques et localisables', () => {
+    expect(paldeaLostPlaceQuestions).toHaveLength(50)
+    expect(new Set(paldeaLostPlaceQuestions.map(({ acceptedAnswers }) => acceptedAnswers[0])).size).toBe(50)
     expect(paldeaLostPlaceQuestions.every(({ category, mapRegion, mapTarget, type }) =>
       category === 'Lieu Perdu'
       && type === 'map-location'
@@ -17,9 +17,9 @@ describe('prototype Lieu Perdu à Paldea', () => {
     )).toBe(true)
   })
 
-  it('propose six captures en jeu et dix-neuf descriptions', () => {
+  it('propose six captures en jeu et quarante-quatre descriptions', () => {
     expect(paldeaLostPlaceQuestions.filter(({ media }) => media).length).toBe(6)
-    expect(paldeaLostPlaceQuestions.filter(({ media }) => !media).length).toBe(19)
+    expect(paldeaLostPlaceQuestions.filter(({ media }) => !media).length).toBe(44)
     expect(paldeaLostPlaceQuestions.filter(({ media }) => media).every(({ media }) =>
       media?.src.startsWith('/assets/lost-place/paldea/'),
     )).toBe(true)

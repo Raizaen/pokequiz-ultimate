@@ -1,6 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import type { Question } from '../domain/quiz'
-import { isAnswerCorrect, maxAttemptsFor, normalizeAnswer } from './answerValidation'
+import {
+  isAnswerCorrect,
+  mapAccuracyLabel,
+  mapPointsForDistance,
+  maxAttemptsFor,
+  normalizeAnswer,
+} from './answerValidation'
 
 const openQuestion: Question = {
   id: 'test', type: 'open', category: 'Test', difficulty: 1, prompt: 'Test',
@@ -30,5 +36,12 @@ describe('answer validation', () => {
     expect(isAnswerCorrect(multipleQuestion, ['Charge'])).toBe(false)
     expect(isAnswerCorrect(multipleQuestion, ['Charge', 'Griffe', 'Flammèche'])).toBe(false)
     expect(maxAttemptsFor(multipleQuestion)).toBe(1)
+  })
+
+  it('calibre précisément le score des réponses cartographiques', () => {
+    expect([0, 2.5, 5, 8, 12, 18, 19].map(mapPointsForDistance))
+      .toEqual([25, 25, 20, 15, 10, 5, 0])
+    expect(mapAccuracyLabel(2)).toBe('Dans le mille !')
+    expect(mapAccuracyLabel(20)).toBe('Trop éloigné')
   })
 })

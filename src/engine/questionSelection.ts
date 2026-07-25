@@ -30,6 +30,29 @@ export function questionsForConfig(questions: Question[], config: GameConfig): Q
   })
 }
 
+function spreadMapLocations(questions: Question[], count: number): Question[] {
+  const selected: Question[] = []
+  const deferred: Question[] = []
+
+  questions.forEach((question) => {
+    if (!question.mapTarget || selected.length >= count) {
+      deferred.push(question)
+      return
+    }
+
+    const isFarEnough = selected.every((picked) => !picked.mapTarget
+      || Math.hypot(
+        question.mapTarget!.x - picked.mapTarget.x,
+        question.mapTarget!.y - picked.mapTarget.y,
+      ) >= 8)
+
+    if (isFarEnough) selected.push(question)
+    else deferred.push(question)
+  })
+
+  return [...selected, ...deferred].slice(0, count)
+}
+
 export function selectQuestions(questions: Question[], config: GameConfig, count = 10): Question[] {
   const eligible = questionsForConfig(questions, config)
   if (config.mode !== 'category') return shuffleQuestions(eligible, count)
@@ -38,5 +61,8 @@ export function selectQuestions(questions: Question[], config: GameConfig, count
   if (validated.length === 0) return shuffleQuestions(eligible, count)
 
   const remaining = shuffleQuestions(eligible.filter(({ validation }) => validation?.status !== 'validated'))
-  return [...validated, ...remaining].slice(0, count)
+  const ordered = [...validated, ...remaining]
+  return config.category === 'Lieu Perdu'
+    ? spreadMapLocations(ordered, count)
+    : ordered.slice(0, count)
 }
