@@ -92,6 +92,25 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .choice.is-selected span { color: #f2c94c; }
 .multi-select-hint { color: #f2c94c; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin: -3px 0 10px; }
 .validate-selection { width: 100%; margin-top: 10px; padding: 11px; border-radius: 10px; background: var(--player); color: #17182b; font-weight: 900; }
+.stat-order { display: grid; gap: 12px; }
+.stat-order-heading, .order-scale { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.stat-order-heading strong { color: #f2c94c; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; }
+.stat-order-heading span, .order-scale { color: #85869c; font-size: 11px; font-weight: 900; }
+.order-candidate { width: 126px; margin: 0 auto; padding: 9px; display: grid; place-items: center; gap: 3px; border-radius: 14px; background: linear-gradient(160deg, #363754, #22233d); border: 2px solid #f2c94c; box-shadow: 0 8px 24px #0004, 0 0 22px #f2c94c1f; }
+.order-candidate small { color: #f2c94c; text-transform: uppercase; letter-spacing: 1px; font-weight: 900; }
+.order-candidate img { width: 82px; height: 82px; object-fit: contain; }
+.order-candidate strong { font-size: 13px; }
+.order-candidate span { color: #77788f; font-size: 10px; }
+.order-track { display: flex; align-items: center; gap: 5px; overflow-x: auto; padding: 6px 2px 10px; scrollbar-width: thin; }
+.order-position { display: flex; align-items: center; gap: 5px; flex: 0 0 auto; }
+.order-pokemon { width: 86px; min-height: 116px; display: grid; place-items: center; align-content: center; gap: 2px; padding: 7px 4px; border-radius: 12px; background: #292a46; border: 1px solid #ffffff16; }
+.order-pokemon img { width: 66px; height: 66px; object-fit: contain; }
+.order-pokemon strong { width: 100%; overflow: hidden; text-overflow: ellipsis; font-size: 11px; text-align: center; white-space: nowrap; }
+.order-pokemon span { padding: 3px 6px; border-radius: 7px; color: #17182b; background: #f2c94c; font-size: 9px; font-weight: 900; }
+.insertion-slot { flex: 0 0 26px; width: 26px; height: 38px; display: grid; place-items: center; padding: 0; border-radius: 13px; color: #f2c94c; background: #f2c94c12; border: 1px dashed #f2c94c; font-size: 18px; transition: .18s ease; }
+.insertion-slot:hover:not(:disabled) { transform: scale(1.12); background: #f2c94c2b; }
+.validate-order { width: 100%; padding: 12px; border-radius: 10px; color: #17182b; background: var(--player); font-weight: 900; }
+.order-help { margin: 0; color: #77788f; font-size: 11px; text-align: center; }
 .open-answer { display: flex; gap: 8px; }
 .open-answer input { flex: 1; min-width: 0; border: 1px solid #ffffff16; color: #fff; background: #111225; padding: 12px; border-radius: 10px; outline: none; }
 .open-answer button { background: var(--player); color: #131426; border-radius: 10px; padding: 0 14px; font-weight: 900; }

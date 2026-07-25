@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { AnswerValue, Player, PlayerAnswer, Question } from '../domain/quiz'
+import { StatOrderPanel } from './StatOrderPanel'
 
 interface Props {
   player: Player
@@ -29,7 +30,9 @@ export function PlayerPanel({ player, question, answer, disabled, onAnswer }: Pr
         <b>{player.score} pts</b>
       </header>
 
-      {question.type === 'multiple-choice' ? (
+      {question.type === 'stat-order' ? (
+        <StatOrderPanel question={question} locked={Boolean(locked)} onAnswer={onAnswer} />
+      ) : question.type === 'multiple-choice' ? (
         <div className="choices">
           {question.choices?.map((choice, index) => (
             <button key={choice} className={`choice choice-${index}`} disabled={locked} onClick={() => onAnswer(choice)}>

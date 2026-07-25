@@ -43,6 +43,10 @@ Chaque question doit :
 
 `src/data/curated/strategyPilot.ts` privilégie les situations et interactions utiles en combat plutôt qu’un unique modèle fondé sur les statistiques de base. Il couvre EV, IV, natures, STAB, statuts, objets tenus, météo, écrans et interactions de talents. Les changements historiques sont toujours rattachés à une génération précise.
 
+### Stats en Ordre
+
+`src/data/curated/statOrderQuestions.ts` utilise le type natif `stat-order`. Une série contient cinq Pokémon disponibles dans Pokémon Champions, cinq valeurs distinctes et un ordre explicitement croissant ou décroissant. Le premier Pokémon sert de repère ; les quatre suivants sont révélés puis insérés successivement avant la validation finale.
+
 ## Pack pilote Objets
 
 `src/data/curated/itemsPilot.ts` couvre les usages en combat, les Baies, les Balls et les objets d’évolution. Les QCM multiples servent à comparer des familles d’objets ou des conditions d’activation sans réduire la catégorie à une succession de définitions.

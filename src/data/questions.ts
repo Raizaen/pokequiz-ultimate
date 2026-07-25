@@ -9,6 +9,7 @@ import { curatedMoveQuestions } from './curated/movesPilot'
 import { curatedPokedexQuestions } from './curated/pokedexPilot'
 import { curatedStrategyQuestions } from './curated/strategyPilot'
 import { spinOffQuestions } from './curated/spinOffQuestions'
+import { statOrderQuestions } from './curated/statOrderQuestions'
 import { generatedQuestions } from './generatedQuestions'
 import { spriteQuestions } from './spriteQuestions'
 
@@ -89,4 +90,4 @@ const textQuestions: Question[] = [
   },
 ]
 
-export const questions: Question[] = [...curatedLaboQuestions, ...curatedMoveQuestions, ...curatedStrategyQuestions, ...curatedItemQuestions, ...curatedPokedexQuestions, ...curatedGameQuestions, ...curatedLoreQuestions, ...curatedAnimeQuestions, ...spinOffQuestions, ...textQuestions, ...generatedQuestions, ...animeQuestions, ...spriteQuestions]
+export const questions: Question[] = [...curatedLaboQuestions, ...curatedMoveQuestions, ...curatedStrategyQuestions, ...statOrderQuestions, ...curatedItemQuestions, ...curatedPokedexQuestions, ...curatedGameQuestions, ...curatedLoreQuestions, ...curatedAnimeQuestions, ...spinOffQuestions, ...textQuestions, ...generatedQuestions, ...animeQuestions, ...spriteQuestions]

@@ -1,4 +1,4 @@
-export type QuestionType = 'multiple-choice' | 'multiple-select' | 'open'
+export type QuestionType = 'multiple-choice' | 'multiple-select' | 'open' | 'stat-order'
 export type AnswerValue = string | string[]
 
 export interface Question {
@@ -10,6 +10,14 @@ export interface Question {
   choices?: string[]
   acceptedAnswers: string[]
   correctChoices?: string[]
+  orderEntries?: Array<{
+    id: number
+    name: string
+    value: number
+    image: string
+  }>
+  orderDirection?: 'ascending' | 'descending'
+  statLabel?: string
   template?: string
   tags?: string[]
   generationScope?: number[] | 'all'

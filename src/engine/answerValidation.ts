@@ -9,6 +9,16 @@ export function normalizeAnswer(value: string): string {
 }
 
 export function isAnswerCorrect(question: Question, answer: AnswerValue): boolean {
+  if (question.type === 'stat-order') {
+    if (!Array.isArray(answer) || !question.orderEntries) return false
+    const direction = question.orderDirection === 'descending' ? -1 : 1
+    const expected = [...question.orderEntries]
+      .sort((left, right) => (left.value - right.value) * direction)
+      .map(({ name }) => normalizeAnswer(name))
+    const submitted = answer.map(normalizeAnswer)
+    return submitted.length === expected.length
+      && submitted.every((value, index) => value === expected[index])
+  }
   if (question.type === 'multiple-select') {
     if (!Array.isArray(answer) || !question.correctChoices) return false
     const submitted = [...new Set(answer.map(normalizeAnswer))].sort()
