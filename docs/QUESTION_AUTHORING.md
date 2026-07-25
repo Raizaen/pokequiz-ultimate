@@ -58,3 +58,7 @@ Chaque question doit :
 ## Pack pilote Lore
 
 `src/data/curated/lorePilot.ts` s’appuie sur les mythes et événements explicitement décrits dans les jeux. Les formulations distinguent les légendes racontées par les personnages, les faits montrés à l’écran et les origines volontairement laissées mystérieuses.
+
+## Pack pilote Anime
+
+`src/data/curated/animePilot.ts` couvre les séries centrées sur Sacha par les compagnons, objectifs, équipes et résultats en Ligue. Chaque question précise l’arc ou la compétition lorsque le contexte est nécessaire pour garantir une réponse unique.
