@@ -50,3 +50,7 @@ Chaque question doit :
 ## Pack pilote Pokédex
 
 `src/data/curated/pokedexPilot.ts` alterne numéros nationaux, types, talents, statistiques, évolutions et mensurations. Les comparaisons et QCM multiples sont privilégiés dès qu’ils apportent davantage qu’une simple restitution de fiche.
+
+## Pack pilote Jeux principaux
+
+`src/data/curated/gamesPilot.ts` traverse les générations par les régions, personnages, mécaniques, scénarios, remakes et contenus d’après-Ligue. Les questions dépendantes d’une version nomment toujours précisément le ou les jeux concernés.

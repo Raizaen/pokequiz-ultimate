@@ -1,0 +1,170 @@
+import type { Question } from '../../domain/quiz'
+
+const source = (page: string, label: string) => ({
+  label: `Bulbapedia — ${label}`,
+  url: `https://bulbapedia.bulbagarden.net/wiki/${page}`,
+})
+
+function validated(question: Question, pages: Array<[string, string]>): Question {
+  return {
+    ...question,
+    tags: ['jeux-principaux', 'pack-pilote'],
+    validation: {
+      status: 'validated',
+      verifiedAt: '2026-07-25',
+      sources: pages.map(([page, label]) => source(page, label)),
+    },
+  }
+}
+
+export const curatedGameQuestions: Question[] = [
+  validated({
+    id: 'curated-game-001', template: 'region-jeu', type: 'multiple-choice', category: 'Jeux principaux', difficulty: 1,
+    prompt: 'Dans quelle région se déroulent Pokémon Rouge et Bleu ?',
+    choices: ['Kanto', 'Johto', 'Hoenn', 'Sinnoh'], acceptedAnswers: ['Kanto'],
+    explanation: 'Pokémon Rouge et Bleu commencent au Bourg Palette, dans la région de Kanto.', points: 10, durationSeconds: 20,
+    generationScope: [1], difficultyReason: 'Association fondatrice de la série principale.',
+  }, [['Pokémon_Red_and_Blue', 'Pokémon Red and Blue']]),
+  validated({
+    id: 'curated-game-002', template: 'regions-accessibles', type: 'multiple-select', category: 'Jeux principaux', difficulty: 2,
+    prompt: 'Quelles régions peut-on explorer dans Pokémon Or et Argent ?',
+    choices: ['Kanto', 'Johto', 'Hoenn', 'Sinnoh'], correctChoices: ['Kanto', 'Johto'], acceptedAnswers: ['Kanto, Johto'],
+    explanation: 'L’aventure principale se déroule à Johto, puis Kanto devient accessible après la Ligue.', points: 15, durationSeconds: 30,
+    generationScope: [2], difficultyReason: 'Particularité majeure du contenu d’après-Ligue de la deuxième génération.',
+  }, [['Pokémon_Gold_and_Silver', 'Pokémon Gold and Silver']]),
+  validated({
+    id: 'curated-game-003', template: 'trio-depart', type: 'multiple-select', category: 'Jeux principaux', difficulty: 1,
+    prompt: 'Sélectionnez les trois Pokémon de départ de Hoenn.',
+    choices: ['Arcko', 'Poussifeu', 'Gobou', 'Ouisticram'], correctChoices: ['Arcko', 'Poussifeu', 'Gobou'],
+    acceptedAnswers: ['Arcko, Poussifeu, Gobou'],
+    explanation: 'Arcko, Poussifeu et Gobou forment le trio de départ de Pokémon Rubis et Saphir.', points: 15, durationSeconds: 30,
+    generationScope: [3, 6], difficultyReason: 'Trio de départ populaire avec un intrus d’une autre région.',
+  }, [['Pokémon_Ruby_and_Sapphire', 'Pokémon Ruby and Sapphire']]),
+  validated({
+    id: 'curated-game-004', template: 'professeur-region', type: 'multiple-choice', category: 'Jeux principaux', difficulty: 1,
+    prompt: 'Quel professeur Pokémon est associé à Sinnoh ?',
+    choices: ['Professeur Sorbier', 'Professeur Orme', 'Professeur Seko', 'Professeur Platane'], acceptedAnswers: ['Professeur Sorbier', 'Sorbier'],
+    explanation: 'Le Professeur Sorbier étudie l’évolution des Pokémon à Sinnoh.', points: 10, durationSeconds: 20,
+    generationScope: [4, 8], difficultyReason: 'Association courante entre une région et son professeur.',
+  }, [['Professor_Rowan', 'Professor Rowan']]),
+  validated({
+    id: 'curated-game-005', template: 'professeur-jeu', type: 'multiple-choice', category: 'Jeux principaux', difficulty: 2,
+    prompt: 'Quel professeur remet le Pokédex dans Pokémon Noir et Blanc ?',
+    choices: ['Professeure Keteleeria', 'Professeure Magnolia', 'Professeur Euphorbe', 'Professeur Chen'], acceptedAnswers: ['Professeure Keteleeria', 'Keteleeria'],
+    explanation: 'La Professeure Keteleeria est la professeure Pokémon de la région d’Unys.', points: 10, durationSeconds: 20,
+    generationScope: [5], difficultyReason: 'Connaissance des personnages principaux d’Unys.',
+  }, [['Professor_Juniper', 'Professor Juniper']]),
+  validated({
+    id: 'curated-game-006', template: 'region-jeu', type: 'open', category: 'Jeux principaux', difficulty: 1,
+    prompt: 'Comment s’appelle la région de Pokémon X et Y ?',
+    acceptedAnswers: ['Kalos'], explanation: 'Pokémon X et Y se déroulent dans la région de Kalos.',
+    points: 10, durationSeconds: 30, generationScope: [6], difficultyReason: 'Repère géographique central de la sixième génération.',
+  }, [['Pokémon_X_and_Y', 'Pokémon X and Y']]),
+  validated({
+    id: 'curated-game-007', template: 'mecanique-introduite', type: 'multiple-choice', category: 'Jeux principaux', difficulty: 1,
+    prompt: 'Quelle mécanique de combat majeure est introduite dans Pokémon X et Y ?',
+    choices: ['Méga-Évolution', 'Dynamax', 'Téracristallisation', 'Capacités Z'], acceptedAnswers: ['Méga-Évolution', 'Mega Evolution'],
+    explanation: 'Pokémon X et Y introduisent la Méga-Évolution au cœur de leur scénario et de leurs combats.', points: 10, durationSeconds: 20,
+    generationScope: [6], difficultyReason: 'Mécanique emblématique de la génération.',
+  }, [['Mega_Evolution', 'Mega Evolution']]),
+  validated({
+    id: 'curated-game-008', template: 'structure-aventure', type: 'multiple-choice', category: 'Jeux principaux', difficulty: 2,
+    prompt: 'Que remplace principalement la collecte des Badges d’Arène dans Pokémon Soleil et Lune ?',
+    choices: ['Le Tour des Îles', 'Le Pokéathlon', 'Les Concours', 'Le Défi des Maîtres'], acceptedAnswers: ['Le Tour des Îles'],
+    explanation: 'À Alola, le joueur accomplit le Tour des Îles et ses épreuves au lieu du parcours traditionnel de huit Arènes.', points: 10, durationSeconds: 20,
+    generationScope: [7], difficultyReason: 'Différence structurelle essentielle des jeux d’Alola.',
+  }, [['Island_challenge', 'Island challenge']]),
+  validated({
+    id: 'curated-game-009', template: 'mecanique-region', type: 'multiple-choice', category: 'Jeux principaux', difficulty: 1,
+    prompt: 'Quelle transformation géante est au centre des combats d’Arène de Pokémon Épée et Bouclier ?',
+    choices: ['Dynamax', 'Méga-Évolution', 'Téracristallisation', 'Synergie'], acceptedAnswers: ['Dynamax'],
+    explanation: 'Le Dynamax agrandit temporairement un Pokémon et transforme ses capacités dans les zones compatibles.', points: 10, durationSeconds: 20,
+    generationScope: [8], difficultyReason: 'Mécanique directement liée aux stades de Galar.',
+  }, [['Dynamax', 'Dynamax']]),
+  validated({
+    id: 'curated-game-010', template: 'professeurs-versions', type: 'multiple-select', category: 'Jeux principaux', difficulty: 2,
+    prompt: 'Sélectionnez toutes les associations correctes dans Pokémon Écarlate et Violet.',
+    choices: ['Écarlate — Professeure Olim', 'Violet — Professeur Turum', 'Écarlate — Professeur Turum', 'Violet — Professeure Olim'],
+    correctChoices: ['Écarlate — Professeure Olim', 'Violet — Professeur Turum'],
+    acceptedAnswers: ['Écarlate — Professeure Olim, Violet — Professeur Turum'],
+    explanation: 'La Professeure Olim apparaît dans Écarlate, tandis que le Professeur Turum apparaît dans Violet.', points: 15, durationSeconds: 30,
+    generationScope: [9], difficultyReason: 'Compare une différence narrative propre aux deux versions.',
+  }, [['Professor_Sada', 'Professor Sada'], ['Professor_Turo', 'Professor Turo']]),
+  validated({
+    id: 'curated-game-011', template: 'mascottes-versions', type: 'multiple-select', category: 'Jeux principaux', difficulty: 2,
+    prompt: 'Sélectionnez toutes les associations correctes entre jeu et Pokémon de jaquette.',
+    choices: ['Pokémon X — Xerneas', 'Pokémon Y — Yveltal', 'Pokémon X — Zygarde', 'Pokémon Y — Xerneas'],
+    correctChoices: ['Pokémon X — Xerneas', 'Pokémon Y — Yveltal'],
+    acceptedAnswers: ['Pokémon X — Xerneas, Pokémon Y — Yveltal'],
+    explanation: 'Xerneas est la mascotte de Pokémon X et Yveltal celle de Pokémon Y.', points: 15, durationSeconds: 30,
+    generationScope: [6], difficultyReason: 'Associe simultanément les deux versions à leur mascotte.',
+  }, [['Pokémon_X_and_Y', 'Pokémon X and Y']]),
+  validated({
+    id: 'curated-game-012', template: 'equipes-versions', type: 'multiple-select', category: 'Jeux principaux', difficulty: 2,
+    prompt: 'Dans les jeux originaux de Hoenn, sélectionnez les associations correctes.',
+    choices: ['Rubis — Team Magma', 'Saphir — Team Aqua', 'Rubis — Team Galaxie', 'Saphir — Team Rocket'],
+    correctChoices: ['Rubis — Team Magma', 'Saphir — Team Aqua'],
+    acceptedAnswers: ['Rubis — Team Magma, Saphir — Team Aqua'],
+    explanation: 'La Team Magma est l’adversaire principal de Rubis et la Team Aqua celui de Saphir.', points: 15, durationSeconds: 30,
+    generationScope: [3], difficultyReason: 'Différence de scénario entre les deux versions de Hoenn.',
+  }, [['Pokémon_Ruby_and_Sapphire', 'Pokémon Ruby and Sapphire']]),
+  validated({
+    id: 'curated-game-013', template: 'suite-directe', type: 'multiple-choice', category: 'Jeux principaux', difficulty: 2,
+    prompt: 'Quels jeux constituent une suite directe située deux ans après Pokémon Noir et Blanc ?',
+    choices: ['Pokémon Noir 2 et Blanc 2', 'Pokémon Ultra-Soleil et Ultra-Lune', 'Pokémon X et Y', 'Pokémon Épée et Bouclier'],
+    acceptedAnswers: ['Pokémon Noir 2 et Blanc 2', 'Noir 2 et Blanc 2'],
+    explanation: 'Noir 2 et Blanc 2 reprennent Unys deux ans après les événements des premiers jeux.', points: 10, durationSeconds: 20,
+    generationScope: [5], difficultyReason: 'Cas unique de suites numérotées dans la série principale.',
+  }, [['Pokémon_Black_2_and_White_2', 'Pokémon Black 2 and White 2']]),
+  validated({
+    id: 'curated-game-014', template: 'remakes-multiple', type: 'multiple-select', category: 'Jeux principaux', difficulty: 3,
+    prompt: 'Sélectionnez toutes les paires de remakes correctement associées à leur région.',
+    choices: ['Rouge Feu/Vert Feuille — Kanto', 'HeartGold/SoulSilver — Johto', 'Rubis Oméga/Saphir Alpha — Hoenn', 'Diamant Étincelant/Perle Scintillante — Unys'],
+    correctChoices: ['Rouge Feu/Vert Feuille — Kanto', 'HeartGold/SoulSilver — Johto', 'Rubis Oméga/Saphir Alpha — Hoenn'],
+    acceptedAnswers: ['Rouge Feu/Vert Feuille — Kanto, HeartGold/SoulSilver — Johto, Rubis Oméga/Saphir Alpha — Hoenn'],
+    explanation: 'Diamant Étincelant et Perle Scintillante revisitent Sinnoh, pas Unys.', points: 20, durationSeconds: 30,
+    generationScope: 'all', difficultyReason: 'Balaye trois générations de remakes avec un distracteur plausible.',
+  }, [['Pokémon_remake', 'Pokémon remake']]),
+  validated({
+    id: 'curated-game-015', template: 'ville-depart', type: 'multiple-choice', category: 'Jeux principaux', difficulty: 2,
+    prompt: 'Dans quelle ville le joueur commence-t-il Pokémon Rubis et Saphir ?',
+    choices: ['Bourg-en-Vol', 'Bourg Palette', 'Bourg Geon', 'Bonaugure'], acceptedAnswers: ['Bourg-en-Vol'],
+    explanation: 'Le joueur emménage à Bourg-en-Vol au début de Pokémon Rubis et Saphir.', points: 10, durationSeconds: 20,
+    generationScope: [3], difficultyReason: 'Lieu de départ moins cité que la région elle-même.',
+  }, [['Littleroot_Town', 'Littleroot Town']]),
+  validated({
+    id: 'curated-game-016', template: 'famille-joueur', type: 'multiple-choice', category: 'Jeux principaux', difficulty: 2,
+    prompt: 'Dans Pokémon Rubis et Saphir, quel rôle occupe le père du personnage joueur ?',
+    choices: ['Champion de l’Arène de Clémenti-Ville', 'Professeur Pokémon', 'Maître de la Ligue', 'Membre du Conseil 4'],
+    acceptedAnswers: ['Champion de l’Arène de Clémenti-Ville'],
+    explanation: 'Norman, le père du joueur, dirige l’Arène de Clémenti-Ville et se spécialise dans le type Normal.', points: 10, durationSeconds: 20,
+    generationScope: [3, 6], difficultyReason: 'Lien narratif inhabituel entre le héros et un Champion d’Arène.',
+  }, [['Norman', 'Norman']]),
+  validated({
+    id: 'curated-game-017', template: 'maitre-region', type: 'open', category: 'Jeux principaux', difficulty: 2,
+    prompt: 'Comment s’appelle la Maîtresse de la Ligue affrontée dans Pokémon Diamant et Perle ?',
+    acceptedAnswers: ['Cynthia'], explanation: 'Cynthia est la Maîtresse de la Ligue de Sinnoh dans Pokémon Diamant et Perle.',
+    points: 10, durationSeconds: 30, generationScope: [4, 8], difficultyReason: 'Personnage emblématique de la Ligue de Sinnoh.',
+  }, [['Cynthia', 'Cynthia']]),
+  validated({
+    id: 'curated-game-018', template: 'ligue-alola', type: 'multiple-choice', category: 'Jeux principaux', difficulty: 3,
+    prompt: 'Qui affronte le joueur après le Conseil 4 pour inaugurer le titre de premier Maître d’Alola dans Pokémon Soleil et Lune ?',
+    choices: ['Professeur Euphorbe', 'Tili', 'Pectorius', 'Gladio'], acceptedAnswers: ['Professeur Euphorbe', 'Euphorbe'],
+    explanation: 'Le Professeur Euphorbe prend place dans le fauteuil du Maître et défie le joueur avant son couronnement.', points: 15, durationSeconds: 25,
+    generationScope: [7], difficultyReason: 'Détail précis de la première Ligue d’Alola dans Soleil et Lune.',
+  }, [['Pokémon_Sun_and_Moon', 'Pokémon Sun and Moon']]),
+  validated({
+    id: 'curated-game-019', template: 'combat-postgame', type: 'multiple-choice', category: 'Jeux principaux', difficulty: 2,
+    prompt: 'Quel Dresseur attend au sommet du Mont Argenté dans Pokémon Or et Argent ?',
+    choices: ['Red', 'Blue', 'Peter', 'Giovanni'], acceptedAnswers: ['Red'],
+    explanation: 'Red constitue le combat ultime du jeu au sommet du Mont Argenté.', points: 10, durationSeconds: 20,
+    generationScope: [2, 4], difficultyReason: 'Combat d’après-Ligue devenu emblématique.',
+  }, [['Red_(game)', 'Red']]),
+  validated({
+    id: 'curated-game-020', template: 'region-historique', type: 'multiple-choice', category: 'Jeux principaux', difficulty: 1,
+    prompt: 'Quel ancien nom porte la région de Sinnoh dans Légendes Pokémon : Arceus ?',
+    choices: ['Hisui', 'Ransei', 'Fiore', 'Almia'], acceptedAnswers: ['Hisui'],
+    explanation: 'Légendes Pokémon : Arceus se déroule dans le passé de Sinnoh, lorsque la région s’appelait Hisui.', points: 10, durationSeconds: 20,
+    generationScope: [8], difficultyReason: 'Cadre historique central du jeu.',
+  }, [['Pokémon_Legends:_Arceus', 'Pokémon Legends: Arceus']]),
+]

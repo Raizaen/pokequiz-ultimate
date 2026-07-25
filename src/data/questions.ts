@@ -1,5 +1,6 @@
 import type { Question } from '../domain/quiz'
 import { animeQuestions } from './animeQuestions'
+import { curatedGameQuestions } from './curated/gamesPilot'
 import { curatedItemQuestions } from './curated/itemsPilot'
 import { curatedLaboQuestions } from './curated/laboPilot'
 import { curatedMoveQuestions } from './curated/movesPilot'
@@ -85,4 +86,4 @@ const textQuestions: Question[] = [
   },
 ]
 
-export const questions: Question[] = [...curatedLaboQuestions, ...curatedMoveQuestions, ...curatedStrategyQuestions, ...curatedItemQuestions, ...curatedPokedexQuestions, ...textQuestions, ...generatedQuestions, ...animeQuestions, ...spriteQuestions]
+export const questions: Question[] = [...curatedLaboQuestions, ...curatedMoveQuestions, ...curatedStrategyQuestions, ...curatedItemQuestions, ...curatedPokedexQuestions, ...curatedGameQuestions, ...textQuestions, ...generatedQuestions, ...animeQuestions, ...spriteQuestions]
