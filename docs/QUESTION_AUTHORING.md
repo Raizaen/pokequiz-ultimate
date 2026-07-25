@@ -47,6 +47,10 @@ Chaque question doit :
 
 `src/data/curated/statOrderQuestions.ts` utilise le type natif `stat-order` et alimente la catégorie autonome `Stats en Ordre`. La banque contient dix séries pour chacune des six statistiques de base : PV, Attaque, Défense, Attaque Spéciale, Défense Spéciale et Vitesse. Une série contient cinq Pokémon disponibles dans Pokémon Champions et cinq valeurs distinctes. Le premier Pokémon sert de repère ; les quatre suivants sont insérés et confirmés successivement avant la validation finale. Chaque position exacte rapporte cinq points.
 
+### Lieu Perdu
+
+`src/data/curated/paldeaLostPlaceQuestions.ts` utilise le type `map-location`. Chaque question possède une cible normalisée sur une carte de 100 × 100, un indice descriptif ou une scène visuelle et un barème calculé selon la distance. La carte partagée fait répondre les joueurs successivement sans montrer les marqueurs déjà validés. À la révélation, les positions, les traits de distance et les points deviennent visibles.
+
 ## Pack pilote Objets
 
 `src/data/curated/itemsPilot.ts` couvre les usages en combat, les Baies, les Balls et les objets d’évolution. Les QCM multiples servent à comparer des familles d’objets ou des conditions d’activation sans réduire la catégorie à une succession de définitions.

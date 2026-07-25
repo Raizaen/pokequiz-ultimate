@@ -27,6 +27,7 @@ export const categories: CategoryDefinition[] = [
   { id: 'Objets', label: 'Objets', icon: '🎒', description: 'Sac, prix, catégories et Dégommage' },
   { id: 'Stratégie', label: 'Stratégie', icon: '♟️', description: 'Statistiques et combat' },
   { id: 'Stats en Ordre', label: 'Stats en Ordre', icon: '📊', description: 'Classement des six statistiques' },
+  { id: 'Lieu Perdu', label: 'Lieu Perdu', icon: '📍', description: 'Localisation sur une carte interactive' },
   { id: 'Lore', label: 'Lore', icon: '📜', description: 'Légendes et univers' },
   { id: 'Spin-off', label: 'Spin-off', icon: '🎮', description: 'Jeux en dehors de la série principale' },
   { id: 'Jeux principaux', label: 'Jeux principaux', icon: '🗺️', description: 'Régions, personnages et aventures' },

@@ -18,6 +18,14 @@ const statOrder: Question = {
   ],
   points: 15,
 }
+const mapLocation: Question = {
+  ...qcm,
+  id: 'q4',
+  type: 'map-location',
+  acceptedAnswers: ['Mesaledo'],
+  mapTarget: { x: 50, y: 50 },
+  points: 25,
+}
 
 describe('quiz engine', () => {
   it('verrouille un QCM après un seul essai', () => {
@@ -57,5 +65,14 @@ describe('quiz engine', () => {
     const game = submitAnswer(createGame([player], [statOrder]), player.id, ['A', 'C', 'B'])
     expect(game.answers[player.id]).toMatchObject({ isCorrect: false, locked: true, pointsAwarded: 5 })
     expect(game.players[0].score).toBe(5)
+  })
+
+  it('accorde les points du Lieu Perdu selon la distance', () => {
+    const exact = submitAnswer(createGame([player], [mapLocation]), player.id, { x: 51, y: 51 })
+    const close = submitAnswer(createGame([player], [mapLocation]), player.id, { x: 60, y: 50 })
+    const far = submitAnswer(createGame([player], [mapLocation]), player.id, { x: 90, y: 90 })
+    expect(exact.players[0].score).toBe(25)
+    expect(close.players[0].score).toBe(15)
+    expect(far.players[0].score).toBe(0)
   })
 })

@@ -9,6 +9,10 @@ export function normalizeAnswer(value: string): string {
 }
 
 export function isAnswerCorrect(question: Question, answer: AnswerValue): boolean {
+  if (question.type === 'map-location') {
+    if (Array.isArray(answer) || typeof answer === 'string' || !question.mapTarget) return false
+    return Math.hypot(answer.x - question.mapTarget.x, answer.y - question.mapTarget.y) <= 4
+  }
   if (question.type === 'stat-order') {
     if (!Array.isArray(answer) || !question.orderEntries) return false
     const direction = question.orderDirection === 'descending' ? -1 : 1
@@ -25,7 +29,7 @@ export function isAnswerCorrect(question: Question, answer: AnswerValue): boolea
     const expected = [...new Set(question.correctChoices.map(normalizeAnswer))].sort()
     return submitted.length === expected.length && submitted.every((value, index) => value === expected[index])
   }
-  if (Array.isArray(answer)) return false
+  if (Array.isArray(answer) || typeof answer !== 'string') return false
   const normalized = normalizeAnswer(answer)
   return question.acceptedAnswers.some((accepted) => normalizeAnswer(accepted) === normalized)
 }
@@ -35,6 +39,16 @@ export function maxAttemptsFor(question: Question): number {
 }
 
 export function pointsForAnswer(question: Question, answer: AnswerValue): number {
+  if (question.type === 'map-location') {
+    if (Array.isArray(answer) || typeof answer === 'string' || !question.mapTarget) return 0
+    const distance = Math.hypot(answer.x - question.mapTarget.x, answer.y - question.mapTarget.y)
+    if (distance <= 4) return 25
+    if (distance <= 8) return 20
+    if (distance <= 14) return 15
+    if (distance <= 22) return 10
+    if (distance <= 32) return 5
+    return 0
+  }
   if (question.type !== 'stat-order') {
     return isAnswerCorrect(question, answer) ? question.points : 0
   }

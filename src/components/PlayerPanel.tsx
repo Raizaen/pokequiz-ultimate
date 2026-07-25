@@ -30,7 +30,7 @@ export function PlayerPanel({ player, question, answer, disabled, onAnswer }: Pr
         <b>{player.score} pts</b>
       </header>
 
-      {question.type === 'stat-order' ? (
+      {question.type === 'map-location' ? null : question.type === 'stat-order' ? (
         <StatOrderPanel question={question} locked={Boolean(locked)} onAnswer={onAnswer} />
       ) : question.type === 'multiple-choice' ? (
         <div className="choices">

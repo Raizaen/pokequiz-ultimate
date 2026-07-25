@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Logo } from './components/Logo'
 import { PlayerPanel } from './components/PlayerPanel'
+import { LostPlaceRound } from './components/LostPlaceRound'
 import { questions } from './data/questions'
 import { categories, difficultyPresets, type DifficultyPreset, type GameConfig } from './domain/gameConfig'
 import type { GameState, Player } from './domain/quiz'
@@ -179,17 +180,27 @@ export function App() {
         </div>
         <h1>{question.prompt}</h1>
         {question.media?.kind === 'image' && (
-          <div className={`question-media ${question.media.pixelated ? 'pixelated' : ''}`}>
+          <div className={`question-media ${question.media.pixelated ? 'pixelated' : ''} ${question.type === 'map-location' ? 'location-clue' : ''}`}>
             <img src={question.media.src} alt={question.media.alt} />
           </div>
         )}
         <p>{question.points} points</p>
       </section>
-      <section className="player-grid">
-        {game.players.map((player) => (
-          <PlayerPanel key={`${question.id}-${player.id}`} player={player} question={question} answer={game.answers[player.id]} disabled={game.revealed} onAnswer={(value) => setGame(submitAnswer(game, player.id, value))} />
-        ))}
-      </section>
+      {question.type === 'map-location' ? (
+        <LostPlaceRound
+          players={game.players}
+          answers={game.answers}
+          question={question}
+          revealed={game.revealed}
+          onAnswer={(playerId, value) => setGame(submitAnswer(game, playerId, value))}
+        />
+      ) : (
+        <section className="player-grid">
+          {game.players.map((player) => (
+            <PlayerPanel key={`${question.id}-${player.id}`} player={player} question={question} answer={game.answers[player.id]} disabled={game.revealed} onAnswer={(value) => setGame(submitAnswer(game, player.id, value))} />
+          ))}
+        </section>
+      )}
       {game.revealed ? (
         <section className="reveal">
           <span>Réponse</span><h2>{question.acceptedAnswers[0]}</h2><p>{question.explanation}</p>

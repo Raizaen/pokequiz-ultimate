@@ -1,5 +1,6 @@
-export type QuestionType = 'multiple-choice' | 'multiple-select' | 'open' | 'stat-order'
-export type AnswerValue = string | string[]
+export type QuestionType = 'multiple-choice' | 'multiple-select' | 'open' | 'stat-order' | 'map-location'
+export interface MapAnswer { x: number; y: number }
+export type AnswerValue = string | string[] | MapAnswer
 
 export interface Question {
   id: string
@@ -18,6 +19,8 @@ export interface Question {
   }>
   orderDirection?: 'ascending' | 'descending'
   statLabel?: string
+  mapTarget?: MapAnswer
+  mapRegion?: string
   template?: string
   tags?: string[]
   generationScope?: number[] | 'all'
