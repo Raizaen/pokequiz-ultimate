@@ -110,6 +110,10 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .insertion-slot { flex: 0 0 26px; width: 26px; height: 38px; display: grid; place-items: center; padding: 0; border-radius: 13px; color: #f2c94c; background: #f2c94c12; border: 1px dashed #f2c94c; font-size: 18px; transition: .18s ease; }
 .insertion-slot:hover:not(:disabled) { transform: scale(1.12); background: #f2c94c2b; }
 .validate-order { width: 100%; padding: 12px; border-radius: 10px; color: #17182b; background: var(--player); font-weight: 900; }
+.order-pokemon-pending { border: 2px dashed #f2c94c; box-shadow: 0 0 18px #f2c94c40; }
+.order-confirm-actions { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.order-confirm-actions .validate-order { width: auto; flex: 1 1 190px; }
+.cancel-order-position { flex: 1 1 150px; padding: 12px; border: 1px solid #ffffff30; border-radius: 10px; color: #fff; background: #ffffff12; font-weight: 800; }
 .order-help { margin: 0; color: #77788f; font-size: 11px; text-align: center; }
 .open-answer { display: flex; gap: 8px; }
 .open-answer input { flex: 1; min-width: 0; border: 1px solid #ffffff16; color: #fff; background: #111225; padding: 12px; border-radius: 10px; outline: none; }

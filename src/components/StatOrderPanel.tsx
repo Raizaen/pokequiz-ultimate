@@ -13,13 +13,19 @@ export function StatOrderPanel({ question, locked, onAnswer }: Props) {
   const entries = question.orderEntries ?? []
   const [placed, setPlaced] = useState<OrderEntry[]>(entries.slice(0, 1))
   const [nextIndex, setNextIndex] = useState(1)
+  const [pendingPosition, setPendingPosition] = useState<number | null>(null)
   const candidate = entries[nextIndex]
   const complete = placed.length === entries.length
 
-  const insertCandidate = (position: number) => {
-    if (!candidate || locked) return
-    setPlaced([...placed.slice(0, position), candidate, ...placed.slice(position)])
+  const confirmCandidate = () => {
+    if (!candidate || pendingPosition === null || locked) return
+    setPlaced([
+      ...placed.slice(0, pendingPosition),
+      candidate,
+      ...placed.slice(pendingPosition),
+    ])
     setNextIndex(nextIndex + 1)
+    setPendingPosition(null)
   }
 
   if (entries.length === 0) return <p>Épreuve indisponible.</p>
@@ -46,7 +52,16 @@ export function StatOrderPanel({ question, locked, onAnswer }: Props) {
       </div>
 
       <div className="order-track">
-        {!complete && <button className="insertion-slot" disabled={locked} onClick={() => insertCandidate(0)}>＋</button>}
+        {!complete && pendingPosition === 0 && candidate && (
+          <article className="order-pokemon order-pokemon-pending">
+            <img src={candidate.image} alt={candidate.name} />
+            <strong>{candidate.name}</strong>
+            <span>Position à confirmer</span>
+          </article>
+        )}
+        {!complete && pendingPosition === null && (
+          <button className="insertion-slot" disabled={locked} onClick={() => setPendingPosition(0)}>＋</button>
+        )}
         {placed.map((entry, index) => (
           <div className="order-position" key={entry.name}>
             <article className="order-pokemon">
@@ -54,17 +69,37 @@ export function StatOrderPanel({ question, locked, onAnswer }: Props) {
               <strong>{entry.name}</strong>
               <span>{question.statLabel ?? 'Stat.'} {entry.value}</span>
             </article>
-            {!complete && <button className="insertion-slot" disabled={locked} onClick={() => insertCandidate(index + 1)}>＋</button>}
+            {!complete && pendingPosition === index + 1 && candidate && (
+              <article className="order-pokemon order-pokemon-pending">
+                <img src={candidate.image} alt={candidate.name} />
+                <strong>{candidate.name}</strong>
+                <span>Position à confirmer</span>
+              </article>
+            )}
+            {!complete && pendingPosition === null && (
+              <button className="insertion-slot" disabled={locked} onClick={() => setPendingPosition(index + 1)}>＋</button>
+            )}
           </div>
         ))}
       </div>
 
+      {!complete && pendingPosition !== null && (
+        <div className="order-confirm-actions">
+          <button className="validate-order" disabled={locked} onClick={confirmCandidate}>
+            Valider cette position
+          </button>
+          <button className="cancel-order-position" disabled={locked} onClick={() => setPendingPosition(null)}>
+            Changer de position
+          </button>
+        </div>
+      )}
       {complete && (
         <button className="validate-order" disabled={locked} onClick={() => onAnswer(placed.map(({ name }) => name))}>
           Valider cet ordre
         </button>
       )}
-      {!complete && <p className="order-help">Choisis le cercle où insérer ce Pokémon.</p>}
+      {!complete && pendingPosition === null && <p className="order-help">Choisis le cercle où insérer ce Pokémon.</p>}
+      {!complete && pendingPosition !== null && <p className="order-help">Confirme cette position pour révéler sa Vitesse et passer au Pokémon suivant.</p>}
     </div>
   )
 }
