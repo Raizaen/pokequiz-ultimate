@@ -54,6 +54,7 @@ export interface PlayerAnswer {
   value: AnswerValue
   isCorrect: boolean
   locked: boolean
+  pointsAwarded?: number
 }
 
 export type AnswersByPlayer = Record<string, PlayerAnswer>

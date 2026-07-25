@@ -80,7 +80,13 @@ export function PlayerPanel({ player, question, answer, disabled, onAnswer }: Pr
       )}
 
       <p className="attempts">
-        {answer?.isCorrect ? '✓ Bonne réponse !' : locked && answer ? 'Réponse verrouillée' : `${attemptsLeft} essai${attemptsLeft > 1 ? 's' : ''} restant${attemptsLeft > 1 ? 's' : ''}`}
+        {question.type === 'stat-order' && answer
+          ? `${answer.pointsAwarded ?? 0} / 25 points remportés`
+          : answer?.isCorrect
+            ? '✓ Bonne réponse !'
+            : locked && answer
+              ? 'Réponse verrouillée'
+              : `${attemptsLeft} essai${attemptsLeft > 1 ? 's' : ''} restant${attemptsLeft > 1 ? 's' : ''}`}
       </p>
     </article>
   )

@@ -1,5 +1,5 @@
 import type { AnswersByPlayer, AnswerValue, GameState, Player, Question } from '../domain/quiz'
-import { isAnswerCorrect, maxAttemptsFor } from './answerValidation'
+import { isAnswerCorrect, maxAttemptsFor, pointsForAnswer } from './answerValidation'
 
 const emptyAnswers = (): AnswersByPlayer => ({})
 
@@ -28,15 +28,16 @@ export function submitAnswer(state: GameState, playerId: string, value: AnswerVa
 
   const attempts = (previous?.attempts ?? 0) + 1
   const isCorrect = isAnswerCorrect(question, value)
+  const pointsAwarded = pointsForAnswer(question, value)
   const locked = isCorrect || attempts >= maxAttemptsFor(question)
-  const wasAlreadyCorrect = previous?.isCorrect ?? false
+  const previouslyAwarded = previous?.pointsAwarded ?? 0
 
   return {
     ...state,
-    answers: { ...state.answers, [playerId]: { attempts, value, isCorrect, locked } },
+    answers: { ...state.answers, [playerId]: { attempts, value, isCorrect, locked, pointsAwarded } },
     players: state.players.map((player) =>
-      player.id === playerId && isCorrect && !wasAlreadyCorrect
-        ? { ...player, score: player.score + question.points }
+      player.id === playerId && pointsAwarded > previouslyAwarded
+        ? { ...player, score: player.score + pointsAwarded - previouslyAwarded }
         : player,
     ),
   }

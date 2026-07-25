@@ -16,6 +16,7 @@ const statOrder: Question = {
     { id: 2, name: 'A', value: 30, image: 'a.png' },
     { id: 3, name: 'C', value: 90, image: 'c.png' },
   ],
+  points: 15,
 }
 
 describe('quiz engine', () => {
@@ -48,7 +49,13 @@ describe('quiz engine', () => {
 
   it('accorde les points lorsque l’ordre statistique est exact', () => {
     const game = submitAnswer(createGame([player], [statOrder]), player.id, ['A', 'B', 'C'])
-    expect(game.answers[player.id]).toMatchObject({ isCorrect: true, locked: true })
+    expect(game.answers[player.id]).toMatchObject({ isCorrect: true, locked: true, pointsAwarded: 15 })
     expect(game.players[0].score).toBe(statOrder.points)
+  })
+
+  it('accorde cinq points par Pokémon placé à la bonne position', () => {
+    const game = submitAnswer(createGame([player], [statOrder]), player.id, ['A', 'C', 'B'])
+    expect(game.answers[player.id]).toMatchObject({ isCorrect: false, locked: true, pointsAwarded: 5 })
+    expect(game.players[0].score).toBe(5)
   })
 })

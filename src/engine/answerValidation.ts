@@ -33,3 +33,20 @@ export function isAnswerCorrect(question: Question, answer: AnswerValue): boolea
 export function maxAttemptsFor(question: Question): number {
   return question.type === 'open' ? 3 : 1
 }
+
+export function pointsForAnswer(question: Question, answer: AnswerValue): number {
+  if (question.type !== 'stat-order') {
+    return isAnswerCorrect(question, answer) ? question.points : 0
+  }
+  if (!Array.isArray(answer) || !question.orderEntries) return 0
+
+  const direction = question.orderDirection === 'descending' ? -1 : 1
+  const expected = [...question.orderEntries]
+    .sort((left, right) => (left.value - right.value) * direction)
+    .map(({ name }) => normalizeAnswer(name))
+
+  return answer.reduce(
+    (points, name, index) => points + (normalizeAnswer(name) === expected[index] ? 5 : 0),
+    0,
+  )
+}

@@ -74,7 +74,7 @@ export const statOrderQuestions: Question[] = series.map((names, index) => {
     orderDirection: 'ascending',
     statLabel: 'Vit.',
     explanation: `Du moins rapide au plus rapide : ${sorted.map(({ name, speed }) => `${name} (${speed})`).join(' → ')}.`,
-    points: 20,
+    points: 25,
     durationSeconds: 60,
     generationScope: 'all',
     difficultyReason: 'Épreuve progressive comparant cinq Vitesses de base sans égalité.',
