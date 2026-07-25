@@ -3,7 +3,13 @@ import { Logo } from './components/Logo'
 import { PlayerPanel } from './components/PlayerPanel'
 import { LostPlaceRound } from './components/LostPlaceRound'
 import { questions } from './data/questions'
-import { categories, difficultyPresets, type DifficultyPreset, type GameConfig } from './domain/gameConfig'
+import {
+  categories,
+  difficultyPresets,
+  type DifficultyPreset,
+  type GameConfig,
+  type RegionFilter,
+} from './domain/gameConfig'
 import type { GameState, Player } from './domain/quiz'
 import { createGame, nextQuestion, revealAnswer, submitAnswer, tick } from './engine/quizEngine'
 import { questionsForConfig, selectQuestions } from './engine/questionSelection'
@@ -14,6 +20,11 @@ type Screen = 'menu' | 'setup' | 'game'
 const avatars = ['⚡', '🔥', '💧', '🌿', '🌙', '⭐', '🐉', '🌀']
 const colors = ['#f2c94c', '#ff5b5b', '#4aa8ff', '#62d68b', '#a777e3', '#ff8f4c', '#35d0ba', '#ef6bad']
 const preferredQuestionCounts = [5, 10, 15, 20, 30, 50, 75, 100]
+const mapRegions: Array<{ id: RegionFilter; label: string; icon: string; description: string }> = [
+  { id: 'all', label: 'Toutes les régions', icon: '🌍', description: 'Paldea et Sinnoh mélangées' },
+  { id: 'Paldea', label: 'Paldea', icon: '☀️', description: '50 lieux disponibles' },
+  { id: 'Sinnoh', label: 'Sinnoh', icon: '🏔️', description: '30 lieux disponibles' },
+]
 
 function newPlayer(index: number): Player {
   return { id: crypto.randomUUID(), name: `Joueur ${index + 1}`, avatar: avatars[index], color: colors[index], score: 0 }
@@ -27,6 +38,7 @@ export function App() {
   const [questionCount, setQuestionCount] = useState(10)
   const savedGame = loadGame()
   const eligibleQuestions = questionsForConfig(questions, config)
+  const hasRegionSelection = config.mode === 'category' && config.category === 'Lieu Perdu'
   const effectiveQuestionCount = Math.min(questionCount, eligibleQuestions.length)
   const availableQuestionCounts = [...new Set([
     ...preferredQuestionCounts.filter((count) => count <= eligibleQuestions.length),
@@ -107,7 +119,11 @@ export function App() {
                       key={category.id}
                       className={config.category === category.id ? 'selected' : ''}
                       disabled={unavailable}
-                      onClick={() => setConfig({ ...config, category: category.id })}
+                      onClick={() => setConfig({
+                        ...config,
+                        category: category.id,
+                        region: category.id === 'Lieu Perdu' ? config.region ?? 'all' : undefined,
+                      })}
                     >
                       <i>{category.icon}</i><strong>{category.label}</strong><small>{unavailable ? 'Bientôt disponible' : `${count} question${count > 1 ? 's' : ''}`}</small>
                     </button>
@@ -117,8 +133,25 @@ export function App() {
             </section>
           )}
 
+          {hasRegionSelection && (
+            <section className="setup-section">
+              <div className="section-heading"><span>3</span><div><h2>Région</h2><p>Choisis une carte ou mélange les destinations.</p></div></div>
+              <div className="region-grid">
+                {mapRegions.map((region) => (
+                  <button
+                    key={region.id}
+                    className={(config.region ?? 'all') === region.id ? 'selected' : ''}
+                    onClick={() => setConfig({ ...config, region: region.id })}
+                  >
+                    <i>{region.icon}</i><strong>{region.label}</strong><small>{region.description}</small>
+                  </button>
+                ))}
+              </div>
+            </section>
+          )}
+
           <section className="setup-section">
-            <div className="section-heading"><span>{config.mode === 'category' ? '3' : '2'}</span><div><h2>Difficulté</h2><p>Adapte le tirage au niveau des joueurs.</p></div></div>
+            <div className="section-heading"><span>{hasRegionSelection ? '4' : config.mode === 'category' ? '3' : '2'}</span><div><h2>Difficulté</h2><p>Adapte le tirage au niveau des joueurs.</p></div></div>
             <div className="difficulty-grid">
               {difficultyPresets.map((preset) => (
                 <button key={preset.id} className={config.difficulty === preset.id ? 'selected' : ''} onClick={() => setConfig({ ...config, difficulty: preset.id as DifficultyPreset })}>
@@ -129,7 +162,7 @@ export function App() {
           </section>
 
           <section className="setup-section">
-            <div className="section-heading"><span>{config.mode === 'category' ? '4' : '3'}</span><div><h2>Nombre de questions</h2><p>La sélection s’adapte au contenu disponible.</p></div></div>
+            <div className="section-heading"><span>{hasRegionSelection ? '5' : config.mode === 'category' ? '4' : '3'}</span><div><h2>Nombre de questions</h2><p>La sélection s’adapte au contenu disponible.</p></div></div>
             <div className="count-grid">
               {availableQuestionCounts.map((count) => (
                 <button key={count} className={effectiveQuestionCount === count ? 'selected' : ''} onClick={() => setQuestionCount(count)}>

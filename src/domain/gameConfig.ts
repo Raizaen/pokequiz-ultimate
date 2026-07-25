@@ -2,11 +2,13 @@ import type { Question } from './quiz'
 
 export type GameMode = 'mixed' | 'category'
 export type DifficultyPreset = 'discovery' | 'confirmed' | 'expert' | 'all'
+export type RegionFilter = 'all' | 'Paldea' | 'Sinnoh'
 
 export interface GameConfig {
   mode: GameMode
   category?: string
   difficulty: DifficultyPreset
+  region?: RegionFilter
 }
 
 export interface CategoryDefinition {

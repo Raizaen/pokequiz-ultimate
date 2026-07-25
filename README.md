@@ -10,6 +10,7 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 - catalogue multimédia de 350 questions Sprites, dont 100 formes spéciales ;
 - difficulté Découverte, Confirmé, Expert ou Tous niveaux ;
 - choix du nombre de questions selon la sélection disponible ;
+- épreuve cartographique « Lieu Perdu » avec 50 lieux à Paldea, 30 à Sinnoh et sélection de la région ;
 - QCM avec un seul essai par joueur ;
 - QCM multiples avec plusieurs propositions à cocher ;
 - questions ouvertes avec trois essais ;

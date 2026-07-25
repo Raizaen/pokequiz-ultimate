@@ -11,6 +11,10 @@ interface Props {
 }
 
 const initialView = { x: 0, y: 0, width: 100, height: 100 }
+const mapAssets: Record<string, { src: string; aspectRatio: string }> = {
+  Paldea: { src: '/assets/maps/paldea-map-clean.png', aspectRatio: '1 / 1' },
+  Sinnoh: { src: '/assets/maps/sinnoh-map.png', aspectRatio: '1268 / 734' },
+}
 
 export function LostPlaceRound({ players, answers, question, revealed, onAnswer }: Props) {
   const [marker, setMarker] = useState<MapAnswer | null>(null)
@@ -20,6 +24,7 @@ export function LostPlaceRound({ players, answers, question, revealed, onAnswer 
   const activePlayer = players.find((player) => !answers[player.id])
   const submitted = players.filter((player) => answers[player.id]).length
   const target = question.mapTarget
+  const mapAsset = mapAssets[question.mapRegion ?? 'Paldea'] ?? mapAssets.Paldea
 
   const zoom = (factor: number) => setView((current) => {
     const width = Math.max(35, Math.min(100, current.width * factor))
@@ -116,9 +121,10 @@ export function LostPlaceRound({ players, answers, question, revealed, onAnswer 
         </div>
       </header>
 
-      <div className="paldea-map-frame">
+      <div className="region-map-frame">
         <svg
-          className="paldea-map"
+          className="region-map"
+          style={{ aspectRatio: mapAsset.aspectRatio }}
           viewBox={`${view.x} ${view.y} ${view.width} ${view.height}`}
           onClick={placeMarker}
           onPointerDown={startDrag}
@@ -127,9 +133,9 @@ export function LostPlaceRound({ players, answers, question, revealed, onAnswer 
           onPointerCancel={stopDrag}
           onWheel={wheelZoom}
           role="img"
-          aria-label="Carte interactive stylisée de Paldea"
+          aria-label={`Carte interactive de ${question.mapRegion ?? 'Paldea'}`}
         >
-          <image href="/assets/maps/paldea-map-clean.png" x="0" y="0" width="100" height="100" preserveAspectRatio="none" />
+          <image href={mapAsset.src} x="0" y="0" width="100" height="100" preserveAspectRatio="none" />
           {marker && !revealed && <g><circle cx={marker.x} cy={marker.y} r="2.8" fill={activePlayer?.color} stroke="#fff" strokeWidth=".8" /><path d={`M${marker.x} ${marker.y - 6} L${marker.x - 2.5} ${marker.y - 2} L${marker.x + 2.5} ${marker.y - 2}Z`} fill={activePlayer?.color} /></g>}
           {revealed && target && <circle cx={target.x} cy={target.y} r="4" fill="none" stroke="#62d68b" strokeWidth="1.5" />}
           {revealed && target && revealedMarkers.map(({ player, point }) => (

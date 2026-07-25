@@ -31,6 +31,26 @@ describe('question selection', () => {
       .toEqual(['labo-hard', 'lore-medium'])
   })
 
+  it('filtre les lieux perdus selon la région choisie', () => {
+    const locations: Question[] = [
+      { ...question('paldea', 'Lieu Perdu', 2), type: 'map-location', mapRegion: 'Paldea', mapTarget: { x: 10, y: 10 } },
+      { ...question('sinnoh', 'Lieu Perdu', 2), type: 'map-location', mapRegion: 'Sinnoh', mapTarget: { x: 20, y: 20 } },
+    ]
+
+    expect(questionsForConfig(locations, {
+      mode: 'category',
+      category: 'Lieu Perdu',
+      difficulty: 'all',
+      region: 'Sinnoh',
+    }).map(({ id }) => id)).toEqual(['sinnoh'])
+    expect(questionsForConfig(locations, {
+      mode: 'category',
+      category: 'Lieu Perdu',
+      difficulty: 'all',
+      region: 'all',
+    })).toHaveLength(2)
+  })
+
   it('ne sélectionne jamais deux fois le même identifiant', () => {
     const duplicatedBank = [...bank, { ...bank[0] }]
     const selection = selectQuestions(duplicatedBank, { mode: 'mixed', difficulty: 'all' }, 10)

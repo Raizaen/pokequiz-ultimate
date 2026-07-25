@@ -26,7 +26,11 @@ export function questionsForConfig(questions: Question[], config: GameConfig): Q
   return questions.filter((question) => {
     const matchesDifficulty = question.difficulty >= minimum && question.difficulty <= maximum
     const matchesCategory = config.mode === 'mixed' || question.category === config.category
-    return matchesDifficulty && matchesCategory
+    const matchesRegion = config.category !== 'Lieu Perdu'
+      || !config.region
+      || config.region === 'all'
+      || question.mapRegion === config.region
+    return matchesDifficulty && matchesCategory && matchesRegion
   })
 }
 

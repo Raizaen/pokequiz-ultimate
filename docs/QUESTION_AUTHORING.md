@@ -49,7 +49,7 @@ Chaque question doit :
 
 ### Lieu Perdu
 
-`src/data/curated/paldeaLostPlaceQuestions.ts` utilise le type `map-location`. La banque pilote contient vingt-cinq cibles normalisées sur une carte de 100 × 100, dont six accompagnées d’une capture en jeu. La carte partagée fait répondre les joueurs successivement sans montrer les marqueurs déjà validés. Elle accepte le déplacement direct, le zoom à la molette et les contrôles dédiés. À la révélation, les positions, les traits, les écarts numériques et les points deviennent visibles.
+`src/data/curated/paldeaLostPlaceQuestions.ts` et `sinnohLostPlaceQuestions.ts` utilisent le type `map-location`. La banque contient 50 cibles à Paldea et 30 à Sinnoh, normalisées sur des cartes de 100 × 100. Le joueur peut sélectionner une région ou mélanger les deux avant la partie. La carte partagée fait répondre les joueurs successivement sans montrer les marqueurs déjà validés. Elle accepte le déplacement direct, le zoom à la molette et les contrôles dédiés. À la révélation, la solution, les positions, les traits, les écarts numériques, une appréciation de précision et les points deviennent visibles.
 
 ## Pack pilote Objets
 
