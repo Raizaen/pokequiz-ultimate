@@ -62,3 +62,7 @@ Chaque question doit :
 ## Pack pilote Anime
 
 `src/data/curated/animePilot.ts` couvre les séries centrées sur Sacha par les compagnons, objectifs, équipes et résultats en Ligue. Chaque question précise l’arc ou la compétition lorsque le contexte est nécessaire pour garantir une réponse unique.
+
+## Pack initial Spin-off
+
+`src/data/curated/spinOffQuestions.ts` rend la catégorie jouable dès son activation avec 50 questions validées. Le pack équilibre Snap, Donjon Mystère, Ranger, Colosseum/XD, GO, UNITE, Masters EX et plusieurs jeux autonomes.

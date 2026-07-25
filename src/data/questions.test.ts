@@ -11,6 +11,7 @@ const playableCategories = [
   'Lore',
   'Jeux principaux',
   'Anime',
+  'Spin-off',
 ]
 
 describe('question bank', () => {
