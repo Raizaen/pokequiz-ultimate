@@ -62,6 +62,11 @@ export interface PlayerAnswer {
 
 export type AnswersByPlayer = Record<string, PlayerAnswer>
 
+export interface QuestionResult {
+  questionId: string
+  answers: AnswersByPlayer
+}
+
 export interface GameState {
   players: Player[]
   questions: Question[]
@@ -70,4 +75,5 @@ export interface GameState {
   remainingSeconds: number
   revealed: boolean
   finished: boolean
+  history: QuestionResult[]
 }

@@ -1,6 +1,8 @@
 import { useMemo, useRef, useState } from 'react'
 import type { AnswersByPlayer, MapAnswer, Player, Question } from '../domain/quiz'
+import { mapAssetFor } from '../data/mapAssets'
 import { mapAccuracyLabel } from '../engine/answerValidation'
+import { MapPin } from './MapPin'
 
 interface Props {
   players: Player[]
@@ -11,25 +13,6 @@ interface Props {
 }
 
 const initialView = { x: 0, y: 0, width: 100, height: 100 }
-const mapAssets: Record<string, { src: string; aspectRatio: string }> = {
-  Paldea: { src: '/assets/maps/paldea-map-clean.png', aspectRatio: '1 / 1' },
-  Sinnoh: { src: '/assets/maps/sinnoh-map.png', aspectRatio: '1268 / 734' },
-}
-
-function MapPin({ x, y, color }: MapAnswer & { color: string }) {
-  return (
-    <g transform={`translate(${x} ${y})`} className="map-pin">
-      <path
-        d="M0 0C-1.7-2-2.1-3.1-2.1-4.1a2.1 2.1 0 1 1 4.2 0C2.1-3.1 1.7-2 0 0Z"
-        fill={color}
-        stroke="#fff"
-        strokeWidth=".55"
-      />
-      <circle cy="-4.1" r=".65" fill="#fff" />
-    </g>
-  )
-}
-
 export function LostPlaceRound({ players, answers, question, revealed, onAnswer }: Props) {
   const [marker, setMarker] = useState<MapAnswer | null>(null)
   const [view, setView] = useState(initialView)
@@ -38,7 +21,7 @@ export function LostPlaceRound({ players, answers, question, revealed, onAnswer 
   const activePlayer = players.find((player) => !answers[player.id])
   const submitted = players.filter((player) => answers[player.id]).length
   const target = question.mapTarget
-  const mapAsset = mapAssets[question.mapRegion ?? 'Paldea'] ?? mapAssets.Paldea
+  const mapAsset = mapAssetFor(question.mapRegion)
 
   const zoom = (factor: number) => setView((current) => {
     const width = Math.max(35, Math.min(100, current.width * factor))

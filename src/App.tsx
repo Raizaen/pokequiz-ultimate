@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Logo } from './components/Logo'
 import { PlayerPanel } from './components/PlayerPanel'
 import { LostPlaceRound } from './components/LostPlaceRound'
+import { LostPlaceSummary } from './components/LostPlaceSummary'
 import { questions } from './data/questions'
 import {
   categories,
@@ -195,6 +196,7 @@ export function App() {
         <div className="podium">
           {ranking.map(({ player, rank }) => <div className={rank === 1 ? 'winner' : ''} key={player.id}><span>{rank}{ranking.filter((entry) => entry.rank === rank).length > 1 ? ' ex æquo' : ''}</span><i>{player.avatar}</i><strong>{player.name}</strong><b>{player.score} pts</b></div>)}
         </div>
+        <LostPlaceSummary game={game} />
         <button className="primary" onClick={() => { clearSavedGame(); setPlayers([newPlayer(0)]); setGame(null); setScreen('menu') }}>Retour au menu</button>
       </main>
     )

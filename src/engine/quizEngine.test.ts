@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Player, Question } from '../domain/quiz'
-import { createGame, nextQuestion, submitAnswer, tick } from './quizEngine'
+import { createGame, nextQuestion, revealAnswer, submitAnswer, tick } from './quizEngine'
 
 const player: Player = { id: 'p1', name: 'Red', avatar: '⚡', color: '#fff', score: 0 }
 const qcm: Question = { id: 'q1', type: 'multiple-choice', category: 'Test', difficulty: 1, prompt: 'Qui ?', choices: ['Pikachu', 'Évoli'], acceptedAnswers: ['Pikachu'], explanation: '', points: 10, durationSeconds: 2 }
@@ -53,6 +53,17 @@ describe('quiz engine', () => {
     game = tick(tick(game))
     expect(game.revealed).toBe(true)
     expect(nextQuestion(game).finished).toBe(true)
+  })
+
+  it('archive les réponses avant de passer à la question suivante', () => {
+    let game = submitAnswer(createGame([player], [qcm, open]), player.id, 'Pikachu')
+    game = nextQuestion(revealAnswer(game))
+
+    expect(game.history).toHaveLength(1)
+    expect(game.history[0]).toMatchObject({
+      questionId: qcm.id,
+      answers: { [player.id]: { pointsAwarded: 10 } },
+    })
   })
 
   it('accorde les points lorsque l’ordre statistique est exact', () => {

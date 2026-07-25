@@ -10,7 +10,8 @@ export function loadGame(): GameState | null {
   const saved = localStorage.getItem(STORAGE_KEY)
   if (!saved) return null
   try {
-    return JSON.parse(saved) as GameState
+    const game = JSON.parse(saved) as GameState
+    return { ...game, history: game.history ?? [] }
   } catch {
     localStorage.removeItem(STORAGE_KEY)
     return null

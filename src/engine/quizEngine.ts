@@ -17,6 +17,7 @@ export function createGame(players: Player[], questions: Question[]): GameState 
     remainingSeconds: questions[0].durationSeconds,
     revealed: false,
     finished: false,
+    history: [],
   }
 }
 
@@ -58,9 +59,16 @@ export function revealAnswer(state: GameState): GameState {
 
 export function nextQuestion(state: GameState): GameState {
   const nextIndex = state.questionIndex + 1
-  if (nextIndex >= state.questions.length) return { ...state, finished: true }
+  const history = state.history ?? []
+  const questionId = state.questions[state.questionIndex].id
+  const archivedHistory = history.some((result) => result.questionId === questionId)
+    ? history
+    : [...history, { questionId, answers: state.answers }]
+
+  if (nextIndex >= state.questions.length) return { ...state, history: archivedHistory, finished: true }
   return {
     ...state,
+    history: archivedHistory,
     questionIndex: nextIndex,
     answers: emptyAnswers(),
     remainingSeconds: state.questions[nextIndex].durationSeconds,
