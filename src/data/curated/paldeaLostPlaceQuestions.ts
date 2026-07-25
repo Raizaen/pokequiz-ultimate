@@ -15,18 +15,18 @@ interface Place {
 }
 
 const places: Place[] = [
-  { name: 'Mesaledo', x: 50, y: 64, clue: 'Cette immense ville abrite l’Académie et se rejoint après Plato Real.', visual: { sky: '#78c8ef', ground: '#d9a06c', landmark: 'ACADEMIE', accent: '#8d5bb8' }, difficulty: 1 },
-  { name: 'Cuchalaga', x: 72, y: 86, clue: 'Ce petit village côtier du sud-est est le point de départ du héros.', visual: { sky: '#76c9ed', ground: '#6fbf62', landmark: 'MAISON', accent: '#e9d5a3' }, difficulty: 1 },
-  { name: 'Plato Real', x: 56, y: 77, clue: 'Ce village fleuri se trouve entre le point de départ et Mesaledo.', difficulty: 1 },
-  { name: 'Cuencia', x: 76, y: 61, clue: 'Cette ville de l’est accueille le Champion de type Plante et son moulin.', visual: { sky: '#84cdec', ground: '#78bb5d', landmark: 'MOULIN', accent: '#ead889' }, difficulty: 2 },
-  { name: 'Levalendura', x: 88, y: 45, clue: 'Cette métropole lumineuse de la côte est accueille Mashynn.', visual: { sky: '#769be4', ground: '#596486', landmark: 'NEONS', accent: '#ef68c2' }, difficulty: 2 },
-  { name: 'Jarramanca', x: 33, y: 55, clue: 'Cette ville est construite autour d’une oasis et accueille Kombu.', difficulty: 2 },
-  { name: 'Mezclamora', x: 39, y: 32, clue: 'Dans cette ville, le restaurant Trésor Culinaire sert également d’Arène.', visual: { sky: '#9dcdec', ground: '#c58e65', landmark: 'RESTAURANT', accent: '#eecc74' }, difficulty: 3 },
-  { name: 'Frigao', x: 57, y: 16, clue: 'Cette ville enneigée accueille l’Arène de type Spectre de Laïm.', difficulty: 2 },
-  { name: 'Alforneira', x: 20, y: 78, clue: 'Cette ville du sud-ouest, proche d’une caverne, accueille Tully.', visual: { sky: '#b58ed8', ground: '#bb8f70', landmark: 'CAVERNE', accent: '#e5b7ec' }, difficulty: 3 },
-  { name: 'Porto Marinada', x: 18, y: 42, clue: 'Son marché aux enchères se trouve sur la côte occidentale de Paldea.', difficulty: 2 },
-  { name: 'Lac Asrol', x: 28, y: 21, clue: 'Cette vaste étendue d’eau du nord-ouest abrite de nombreuses îles.', difficulty: 3 },
-  { name: 'Zone Zéro', x: 55, y: 48, clue: 'Ce lieu interdit occupe le gigantesque cratère au centre de Paldea.', difficulty: 1 },
+  { name: 'Mesaledo', x: 47, y: 76, clue: 'Cette immense ville abrite l’Académie et se rejoint après Plato Real.', visual: { sky: '#78c8ef', ground: '#d9a06c', landmark: 'ACADEMIE', accent: '#8d5bb8' }, difficulty: 1 },
+  { name: 'Cuchalaga', x: 47, y: 96, clue: 'Ce petit village côtier du sud est le point de départ du héros.', visual: { sky: '#76c9ed', ground: '#6fbf62', landmark: 'MAISON', accent: '#e9d5a3' }, difficulty: 1 },
+  { name: 'Plato Real', x: 47, y: 89, clue: 'Ce village fleuri se trouve entre le point de départ et Mesaledo.', difficulty: 1 },
+  { name: 'Cuencia', x: 76, y: 75, clue: 'Cette ville de l’est accueille le Champion de type Plante et son moulin.', visual: { sky: '#84cdec', ground: '#78bb5d', landmark: 'MOULIN', accent: '#ead889' }, difficulty: 2 },
+  { name: 'Levalendura', x: 84, y: 58, clue: 'Cette métropole lumineuse de la côte est accueille Mashynn.', visual: { sky: '#769be4', ground: '#596486', landmark: 'NEONS', accent: '#ef68c2' }, difficulty: 2 },
+  { name: 'Jarramanca', x: 30, y: 43, clue: 'Cette ville est construite autour d’une oasis et accueille Kombu.', difficulty: 2 },
+  { name: 'Mezclamora', x: 42, y: 31, clue: 'Dans cette ville, le restaurant Trésor Culinaire sert également d’Arène.', visual: { sky: '#9dcdec', ground: '#c58e65', landmark: 'RESTAURANT', accent: '#eecc74' }, difficulty: 3 },
+  { name: 'Frigao', x: 55, y: 29, clue: 'Cette ville enneigée accueille l’Arène de type Spectre de Laïm.', difficulty: 2 },
+  { name: 'Alforneira', x: 18, y: 89, clue: 'Cette ville du sud-ouest, proche d’une caverne, accueille Tully.', visual: { sky: '#b58ed8', ground: '#bb8f70', landmark: 'CAVERNE', accent: '#e5b7ec' }, difficulty: 3 },
+  { name: 'Porto Marinada', x: 8, y: 48, clue: 'Son marché aux enchères se trouve sur la côte occidentale de Paldea.', difficulty: 2 },
+  { name: 'Lac Asrol', x: 22, y: 28, clue: 'Cette vaste étendue d’eau du nord-ouest abrite de nombreuses îles.', difficulty: 3 },
+  { name: 'Zone Zéro', x: 50, y: 52, clue: 'Ce lieu interdit occupe le gigantesque cratère au centre de Paldea.', difficulty: 1 },
 ]
 
 function sceneDataUri(place: Place): string | undefined {

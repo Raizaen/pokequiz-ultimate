@@ -87,8 +87,8 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .lost-place-toolbar small { color: #85869c; }
 .map-controls { display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end; }
 .map-controls button { min-width: 34px; padding: 8px; border-radius: 9px; color: #fff; background: #2d2e49; font-weight: 900; }
-.paldea-map-frame { overflow: hidden; border-radius: 18px; border: 2px solid #ffffff1c; background: #4da8bd; box-shadow: inset 0 0 45px #0004; }
-.paldea-map { display: block; width: 100%; aspect-ratio: 16 / 9; cursor: crosshair; touch-action: none; }
+.paldea-map-frame { width: min(820px, 100%); margin: auto; overflow: hidden; border-radius: 18px; border: 2px solid #ffffff1c; background: #4da8bd; box-shadow: inset 0 0 45px #0004; }
+.paldea-map { display: block; width: 100%; aspect-ratio: 1; cursor: crosshair; touch-action: none; }
 .active-map-player { display: flex; align-items: center; gap: 12px; margin-top: 14px; padding: 13px; border-radius: 14px; background: #242541; border-left: 4px solid var(--player); }
 .active-map-player > span { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: var(--player); font-size: 21px; }
 .active-map-player > div { display: grid; flex: 1; }

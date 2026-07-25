@@ -83,27 +83,7 @@ export function LostPlaceRound({ players, answers, question, revealed, onAnswer 
           role="img"
           aria-label="Carte interactive stylisée de Paldea"
         >
-          <defs>
-            <radialGradient id="paldea-land" cx="50%" cy="55%">
-              <stop offset="0" stopColor="#d7c77c" />
-              <stop offset=".48" stopColor="#91c86d" />
-              <stop offset="1" stopColor="#c58d62" />
-            </radialGradient>
-          </defs>
-          <rect width="100" height="100" fill="#4da8bd" />
-          <path d="M8 18 L27 7 48 10 68 5 88 17 94 38 89 58 96 80 78 94 55 91 35 98 13 85 6 62 10 44Z" fill="url(#paldea-land)" stroke="#e6d895" strokeWidth="1.2" />
-          <path d="M45 35 Q55 27 65 37 L68 57 Q56 65 44 56Z" fill="#927d71" stroke="#d9c7aa" />
-          <ellipse cx="55" cy="47" rx="7" ry="10" fill="#292b46" />
-          <path d="M12 25 Q24 18 34 24 M14 71 Q29 65 38 75 M66 15 Q79 18 88 31" fill="none" stroke="#7eb35f" strokeWidth="6" />
-          <path d="M20 44 Q37 42 47 52 M61 60 Q74 58 88 48 M50 67 Q48 79 35 88" fill="none" stroke="#d9b974" strokeWidth="2" strokeDasharray="2 2" />
-          <path d="M19 17 Q28 10 39 15 L34 27 23 28Z" fill="#6aaec2" />
-          <circle cx="28" cy="21" r="3" fill="#4f8da8" />
-          <path d="M51 7 L60 17 55 24 44 20Z" fill="#dce9ee" stroke="#9bb7c5" />
-          <path d="M9 77 L24 69 29 89 16 89Z" fill="#caa6d4" opacity=".75" />
-          <path d="M73 72 L91 65 90 84 79 91Z" fill="#e4c778" opacity=".8" />
-          {[{ x: 50, y: 64 }, { x: 76, y: 61 }, { x: 88, y: 45 }, { x: 33, y: 55 }, { x: 39, y: 32 }, { x: 57, y: 16 }, { x: 20, y: 78 }, { x: 18, y: 42 }].map((city) => (
-            <circle key={`${city.x}-${city.y}`} cx={city.x} cy={city.y} r="1.2" fill="#f8e8a9" stroke="#554d55" strokeWidth=".5" />
-          ))}
+          <image href="/assets/maps/paldea-map-clean.png" x="0" y="0" width="100" height="100" preserveAspectRatio="none" />
           {marker && !revealed && <g><circle cx={marker.x} cy={marker.y} r="2.8" fill={activePlayer?.color} stroke="#fff" strokeWidth=".8" /><path d={`M${marker.x} ${marker.y - 6} L${marker.x - 2.5} ${marker.y - 2} L${marker.x + 2.5} ${marker.y - 2}Z`} fill={activePlayer?.color} /></g>}
           {revealed && target && <circle cx={target.x} cy={target.y} r="4" fill="none" stroke="#62d68b" strokeWidth="1.5" />}
           {revealed && target && revealedMarkers.map(({ player, point }) => (
