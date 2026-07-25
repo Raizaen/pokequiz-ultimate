@@ -49,7 +49,7 @@ Chaque question doit :
 
 ### Lieu Perdu
 
-`src/data/curated/paldeaLostPlaceQuestions.ts` utilise le type `map-location`. Chaque question possède une cible normalisée sur une carte de 100 × 100, un indice descriptif ou une scène visuelle et un barème calculé selon la distance. La carte partagée fait répondre les joueurs successivement sans montrer les marqueurs déjà validés. À la révélation, les positions, les traits de distance et les points deviennent visibles.
+`src/data/curated/paldeaLostPlaceQuestions.ts` utilise le type `map-location`. La banque pilote contient vingt-cinq cibles normalisées sur une carte de 100 × 100, dont six accompagnées d’une capture en jeu. La carte partagée fait répondre les joueurs successivement sans montrer les marqueurs déjà validés. Elle accepte le déplacement direct, le zoom à la molette et les contrôles dédiés. À la révélation, les positions, les traits, les écarts numériques et les points deviennent visibles.
 
 ## Pack pilote Objets
 

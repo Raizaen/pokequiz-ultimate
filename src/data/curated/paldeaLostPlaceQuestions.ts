@@ -5,44 +5,37 @@ interface Place {
   x: number
   y: number
   clue: string
-  visual?: {
-    sky: string
-    ground: string
-    landmark: string
-    accent: string
-  }
+  visual?: string
   difficulty: Question['difficulty']
 }
 
 const places: Place[] = [
-  { name: 'Mesaledo', x: 47, y: 76, clue: 'Cette immense ville abrite l’Académie et se rejoint après Plato Real.', visual: { sky: '#78c8ef', ground: '#d9a06c', landmark: 'ACADEMIE', accent: '#8d5bb8' }, difficulty: 1 },
-  { name: 'Cuchalaga', x: 47, y: 96, clue: 'Ce petit village côtier du sud est le point de départ du héros.', visual: { sky: '#76c9ed', ground: '#6fbf62', landmark: 'MAISON', accent: '#e9d5a3' }, difficulty: 1 },
+  { name: 'Mesaledo', x: 47, y: 76, clue: 'Cette immense ville abrite l’Académie et se rejoint après Plato Real.', visual: 'mesaledo.png', difficulty: 1 },
+  { name: 'Cuchalaga', x: 47, y: 96, clue: 'Ce petit village côtier du sud est le point de départ du héros.', visual: 'cuchalaga.png', difficulty: 1 },
   { name: 'Plato Real', x: 47, y: 89, clue: 'Ce village fleuri se trouve entre le point de départ et Mesaledo.', difficulty: 1 },
-  { name: 'Cuencia', x: 76, y: 75, clue: 'Cette ville de l’est accueille le Champion de type Plante et son moulin.', visual: { sky: '#84cdec', ground: '#78bb5d', landmark: 'MOULIN', accent: '#ead889' }, difficulty: 2 },
-  { name: 'Levalendura', x: 84, y: 58, clue: 'Cette métropole lumineuse de la côte est accueille Mashynn.', visual: { sky: '#769be4', ground: '#596486', landmark: 'NEONS', accent: '#ef68c2' }, difficulty: 2 },
+  { name: 'Cuencia', x: 76, y: 75, clue: 'Cette ville de l’est accueille le Champion de type Plante et son moulin.', visual: 'cuencia.png', difficulty: 2 },
+  { name: 'Levalendura', x: 84, y: 58, clue: 'Cette métropole lumineuse de la côte est accueille Mashynn.', visual: 'levalendura.png', difficulty: 2 },
   { name: 'Jarramanca', x: 29.5, y: 52.5, clue: 'Cette ville est construite autour d’une oasis et accueille Kombu.', difficulty: 2 },
-  { name: 'Mezclamora', x: 41.5, y: 45.8, clue: 'Dans cette ville, le restaurant Trésor Culinaire sert également d’Arène.', visual: { sky: '#9dcdec', ground: '#c58e65', landmark: 'RESTAURANT', accent: '#eecc74' }, difficulty: 3 },
+  { name: 'Mezclamora', x: 41.5, y: 45.8, clue: 'Dans cette ville, le restaurant Trésor Culinaire sert également d’Arène.', visual: 'mezclamora.png', difficulty: 3 },
   { name: 'Frigao', x: 55, y: 29, clue: 'Cette ville enneigée accueille l’Arène de type Spectre de Laïm.', difficulty: 2 },
-  { name: 'Alforneira', x: 18, y: 89, clue: 'Cette ville du sud-ouest, proche d’une caverne, accueille Tully.', visual: { sky: '#b58ed8', ground: '#bb8f70', landmark: 'CAVERNE', accent: '#e5b7ec' }, difficulty: 3 },
+  { name: 'Alforneira', x: 18, y: 89, clue: 'Cette ville du sud-ouest, proche d’une caverne, accueille Tully.', visual: 'alforneira.png', difficulty: 3 },
   { name: 'Porto Marinada', x: 8, y: 48, clue: 'Son marché aux enchères se trouve sur la côte occidentale de Paldea.', difficulty: 2 },
   { name: 'Lac Asrol', x: 19.5, y: 29.5, clue: 'Cette vaste étendue d’eau du nord-ouest abrite de nombreuses îles.', difficulty: 3 },
   { name: 'Zone Zéro', x: 50, y: 60.5, clue: 'Ce lieu interdit occupe le gigantesque cratère au centre de Paldea.', difficulty: 1 },
+  { name: 'Sevaro', x: 30, y: 75, clue: 'Cette ville entourée d’oliveraies accueille l’Arène de type Insecte d’Éra.', difficulty: 2 },
+  { name: 'Pinchoria', x: 68, y: 63, clue: 'Cette petite ville minière de l’est se trouve au milieu d’un terrain rocheux.', difficulty: 3 },
+  { name: 'Ligue Pokémon', x: 38.5, y: 68, clue: 'Ce bâtiment se trouve au nord-ouest de Mesaledo, au pied du Grand Cratère.', difficulty: 1 },
+  { name: 'Désert Rôtissable', x: 20, y: 53, clue: 'Cette immense étendue sableuse occupe l’ouest de Paldea, près de Jarramanca.', difficulty: 1 },
+  { name: 'Mont Nappé', x: 55, y: 24, clue: 'Le point culminant enneigé de Paldea domine toute la partie nord de la région.', difficulty: 1 },
+  { name: 'Bosquet Tagué', x: 69, y: 47, clue: 'Cette forêt colorée de l’est abrite le repaire du Groupe Tsih.', difficulty: 3 },
+  { name: 'Forêt Toastée', x: 17, y: 21, clue: 'Ce sentier boisé borde le Lac Asrol dans le nord-ouest de Paldea.', difficulty: 4 },
+  { name: 'Tunnel Mezcla-Pincho', x: 47, y: 39, clue: 'Ce tunnel permet de traverser les reliefs entre Mezclamora et Pinchoria.', difficulty: 4 },
+  { name: 'Repaire du Groupe Segin', x: 23, y: 67, clue: 'Le repaire Ténèbres de la Team Star se trouve dans la partie occidentale de Paldea.', difficulty: 3 },
+  { name: 'Repaire du Groupe Schedar', x: 67, y: 69, clue: 'Le repaire Feu de la Team Star est installé dans la partie orientale de Paldea.', difficulty: 3 },
+  { name: 'Repaire du Groupe Tsih', x: 70, y: 45, clue: 'Le repaire Poison de la Team Star se cache au cœur du Bosquet Tagué.', difficulty: 4 },
+  { name: 'Repaire du Groupe Ruchbah', x: 78, y: 24, clue: 'Le repaire Fée de la Team Star se situe tout au nord de Paldea.', difficulty: 4 },
+  { name: 'Repaire du Groupe Caph', x: 28, y: 31, clue: 'Le repaire Combat de la Team Star se trouve dans le nord-ouest, non loin du Lac Asrol.', difficulty: 4 },
 ]
-
-function sceneDataUri(place: Place): string | undefined {
-  if (!place.visual) return undefined
-  const { sky, ground, landmark, accent } = place.visual
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
-    <defs><linearGradient id="s" x2="0" y2="1"><stop stop-color="${sky}"/><stop offset="1" stop-color="#eef7ff"/></linearGradient></defs>
-    <rect width="640" height="360" fill="url(#s)"/><path d="M0 230 Q110 175 220 225 T430 205 T640 220 V360 H0Z" fill="${ground}"/>
-    <path d="M0 290 Q140 245 280 285 T640 260" fill="none" stroke="#e9d8ad" stroke-width="35"/>
-    <rect x="245" y="105" width="150" height="155" rx="8" fill="${accent}" stroke="#fff8" stroke-width="5"/>
-    <path d="M225 110 L320 45 415 110Z" fill="#42465f"/><circle cx="320" cy="155" r="28" fill="#f8df72"/>
-    <g fill="#5ba453"><circle cx="110" cy="235" r="38"/><circle cx="525" cy="220" r="45"/><rect x="103" y="235" width="14" height="70" fill="#73513e"/><rect x="518" y="220" width="14" height="82" fill="#73513e"/></g>
-    <rect x="205" y="300" width="230" height="42" rx="20" fill="#17182bcc"/><text x="320" y="328" fill="white" font-family="Arial" font-size="20" font-weight="700" text-anchor="middle">${landmark}</text>
-  </svg>`
-  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`
-}
 
 export const paldeaLostPlaceQuestions: Question[] = places.map((place, index) => ({
   id: `paldea-lost-place-${String(index + 1).padStart(2, '0')}`,
@@ -59,8 +52,8 @@ export const paldeaLostPlaceQuestions: Question[] = places.map((place, index) =>
   mapRegion: 'Paldea',
   media: place.visual ? {
     kind: 'image',
-    src: sceneDataUri(place) ?? '',
-    alt: `Scène stylisée donnant un indice sur ${place.name}`,
+    src: `/assets/lost-place/paldea/${place.visual}`,
+    alt: `Capture en jeu donnant un indice sur ${place.name}`,
   } : undefined,
   tags: ['lieu-perdu', 'paldea', place.visual ? 'visuel' : 'description'],
   generationScope: [9],
@@ -68,9 +61,15 @@ export const paldeaLostPlaceQuestions: Question[] = places.map((place, index) =>
   validation: {
     status: 'validated',
     verifiedAt: '2026-07-25',
-    sources: [{
-      label: 'Poképédia — Paldea',
-      url: 'https://www.pokepedia.fr/Paldea',
-    }],
+    sources: [
+      {
+        label: 'Poképédia — Paldea',
+        url: 'https://www.pokepedia.fr/Paldea',
+      },
+      ...(place.visual ? [{
+        label: `Poképédia — capture de ${place.name}`,
+        url: `https://www.pokepedia.fr/Fichier:${encodeURIComponent(place.name)}_EV.png`,
+      }] : []),
+    ],
   },
 }))

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import type { AnswersByPlayer, MapAnswer, Player, Question } from '../domain/quiz'
 
 interface Props {
@@ -14,6 +14,8 @@ const initialView = { x: 0, y: 0, width: 100, height: 100 }
 export function LostPlaceRound({ players, answers, question, revealed, onAnswer }: Props) {
   const [marker, setMarker] = useState<MapAnswer | null>(null)
   const [view, setView] = useState(initialView)
+  const drag = useRef<{ x: number; y: number; viewX: number; viewY: number } | null>(null)
+  const dragged = useRef(false)
   const activePlayer = players.find((player) => !answers[player.id])
   const submitted = players.filter((player) => answers[player.id]).length
   const target = question.mapTarget
@@ -39,16 +41,54 @@ export function LostPlaceRound({ players, answers, question, revealed, onAnswer 
     const value = answers[player.id]?.value
     return !revealed || !value || typeof value === 'string' || Array.isArray(value)
       ? []
-      : [{ player, point: value, points: answers[player.id]?.pointsAwarded ?? 0 }]
-  }), [answers, players, revealed])
+      : [{
+          player,
+          point: value,
+          points: answers[player.id]?.pointsAwarded ?? 0,
+          distance: target ? Math.hypot(value.x - target.x, value.y - target.y) : 0,
+        }]
+  }), [answers, players, revealed, target])
 
   const placeMarker = (event: React.MouseEvent<SVGSVGElement>) => {
+    if (dragged.current) {
+      dragged.current = false
+      return
+    }
     if (!activePlayer || revealed) return
     const bounds = event.currentTarget.getBoundingClientRect()
     setMarker({
       x: view.x + ((event.clientX - bounds.left) / bounds.width) * view.width,
       y: view.y + ((event.clientY - bounds.top) / bounds.height) * view.height,
     })
+  }
+
+  const startDrag = (event: React.PointerEvent<SVGSVGElement>) => {
+    drag.current = { x: event.clientX, y: event.clientY, viewX: view.x, viewY: view.y }
+    dragged.current = false
+    event.currentTarget.setPointerCapture(event.pointerId)
+  }
+
+  const moveDrag = (event: React.PointerEvent<SVGSVGElement>) => {
+    if (!drag.current) return
+    const bounds = event.currentTarget.getBoundingClientRect()
+    const dx = ((event.clientX - drag.current.x) / bounds.width) * view.width
+    const dy = ((event.clientY - drag.current.y) / bounds.height) * view.height
+    if (Math.abs(dx) + Math.abs(dy) > 0.4) dragged.current = true
+    setView((current) => ({
+      ...current,
+      x: Math.max(0, Math.min(100 - current.width, drag.current!.viewX - dx)),
+      y: Math.max(0, Math.min(100 - current.height, drag.current!.viewY - dy)),
+    }))
+  }
+
+  const stopDrag = (event: React.PointerEvent<SVGSVGElement>) => {
+    drag.current = null
+    event.currentTarget.releasePointerCapture(event.pointerId)
+  }
+
+  const wheelZoom = (event: React.WheelEvent<SVGSVGElement>) => {
+    event.preventDefault()
+    zoom(event.deltaY > 0 ? 1.18 : 0.84)
   }
 
   const validate = () => {
@@ -62,7 +102,7 @@ export function LostPlaceRound({ players, answers, question, revealed, onAnswer 
       <header className="lost-place-toolbar">
         <div>
           <strong>Carte de {question.mapRegion ?? 'Paldea'}</strong>
-          <small>{submitted} / {players.length} réponses validées</small>
+          <small>{submitted} / {players.length} réponses · glisse pour déplacer · molette pour zoomer</small>
         </div>
         <div className="map-controls">
           <button onClick={() => zoom(1.25)}>−</button>
@@ -80,6 +120,11 @@ export function LostPlaceRound({ players, answers, question, revealed, onAnswer 
           className="paldea-map"
           viewBox={`${view.x} ${view.y} ${view.width} ${view.height}`}
           onClick={placeMarker}
+          onPointerDown={startDrag}
+          onPointerMove={moveDrag}
+          onPointerUp={stopDrag}
+          onPointerCancel={stopDrag}
+          onWheel={wheelZoom}
           role="img"
           aria-label="Carte interactive stylisée de Paldea"
         >
@@ -103,7 +148,11 @@ export function LostPlaceRound({ players, answers, question, revealed, onAnswer 
       {!revealed && !activePlayer && <p className="all-placed">Tous les marqueurs sont placés. Révélez maintenant la réponse.</p>}
       {revealed && (
         <div className="map-results">
-          {revealedMarkers.map(({ player, points }) => <span key={player.id} style={{ borderColor: player.color }}>{player.avatar} {player.name} · <b>{points} pts</b></span>)}
+          {revealedMarkers.map(({ player, points, distance }) => (
+            <span key={player.id} style={{ borderColor: player.color }}>
+              {player.avatar} {player.name} · <b>{points} pts</b> · écart {distance.toFixed(1)}
+            </span>
+          ))}
         </div>
       )}
     </section>

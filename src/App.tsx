@@ -188,6 +188,7 @@ export function App() {
       </section>
       {question.type === 'map-location' ? (
         <LostPlaceRound
+          key={question.id}
           players={game.players}
           answers={game.answers}
           question={question}
