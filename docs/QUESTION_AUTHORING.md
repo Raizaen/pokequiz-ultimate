@@ -54,3 +54,7 @@ Chaque question doit :
 ## Pack pilote Jeux principaux
 
 `src/data/curated/gamesPilot.ts` traverse les générations par les régions, personnages, mécaniques, scénarios, remakes et contenus d’après-Ligue. Les questions dépendantes d’une version nomment toujours précisément le ou les jeux concernés.
+
+## Pack pilote Lore
+
+`src/data/curated/lorePilot.ts` s’appuie sur les mythes et événements explicitement décrits dans les jeux. Les formulations distinguent les légendes racontées par les personnages, les faits montrés à l’écran et les origines volontairement laissées mystérieuses.
