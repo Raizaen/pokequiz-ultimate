@@ -16,6 +16,20 @@ const mapAssets: Record<string, { src: string; aspectRatio: string }> = {
   Sinnoh: { src: '/assets/maps/sinnoh-map.png', aspectRatio: '1268 / 734' },
 }
 
+function MapPin({ x, y, color }: MapAnswer & { color: string }) {
+  return (
+    <g transform={`translate(${x} ${y})`} className="map-pin">
+      <path
+        d="M0 0C-1.7-2-2.1-3.1-2.1-4.1a2.1 2.1 0 1 1 4.2 0C2.1-3.1 1.7-2 0 0Z"
+        fill={color}
+        stroke="#fff"
+        strokeWidth=".55"
+      />
+      <circle cy="-4.1" r=".65" fill="#fff" />
+    </g>
+  )
+}
+
 export function LostPlaceRound({ players, answers, question, revealed, onAnswer }: Props) {
   const [marker, setMarker] = useState<MapAnswer | null>(null)
   const [view, setView] = useState(initialView)
@@ -136,12 +150,17 @@ export function LostPlaceRound({ players, answers, question, revealed, onAnswer 
           aria-label={`Carte interactive de ${question.mapRegion ?? 'Paldea'}`}
         >
           <image href={mapAsset.src} x="0" y="0" width="100" height="100" preserveAspectRatio="none" />
-          {marker && !revealed && <g><circle cx={marker.x} cy={marker.y} r="2.8" fill={activePlayer?.color} stroke="#fff" strokeWidth=".8" /><path d={`M${marker.x} ${marker.y - 6} L${marker.x - 2.5} ${marker.y - 2} L${marker.x + 2.5} ${marker.y - 2}Z`} fill={activePlayer?.color} /></g>}
-          {revealed && target && <circle cx={target.x} cy={target.y} r="4" fill="none" stroke="#62d68b" strokeWidth="1.5" />}
+          {marker && !revealed && <MapPin {...marker} color={activePlayer?.color ?? '#f2c94c'} />}
+          {revealed && target && (
+            <g className="map-target">
+              <circle cx={target.x} cy={target.y} r="2.7" fill="#62d68b22" stroke="#62d68b" strokeWidth=".8" />
+              <circle cx={target.x} cy={target.y} r=".75" fill="#62d68b" stroke="#fff" strokeWidth=".35" />
+            </g>
+          )}
           {revealed && target && revealedMarkers.map(({ player, point }) => (
             <line key={`line-${player.id}`} x1={point.x} y1={point.y} x2={target.x} y2={target.y} stroke={player.color} strokeWidth=".7" strokeDasharray="2 1" opacity=".8" />
           ))}
-          {revealedMarkers.map(({ player, point }) => <circle key={player.id} cx={point.x} cy={point.y} r="2.5" fill={player.color} stroke="#fff" strokeWidth=".7" />)}
+          {revealedMarkers.map(({ player, point }) => <MapPin key={player.id} {...point} color={player.color} />)}
         </svg>
       </div>
 
