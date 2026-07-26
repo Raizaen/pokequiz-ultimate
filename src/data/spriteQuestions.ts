@@ -30,7 +30,9 @@ export const spriteQuestions: Question[] = spriteCatalog.map((entry, index) => (
   media: {
     kind: 'image',
     src: entry.sprite,
+    shinySrc: entry.shinySprite ?? undefined,
     alt: 'Sprite mystère à identifier',
     pixelated: true,
+    spriteVariant: 'normal',
   },
 }))

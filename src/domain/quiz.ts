@@ -39,8 +39,10 @@ export interface Question {
   media?: {
     kind: 'image'
     src: string
+    shinySrc?: string
     alt: string
     pixelated?: boolean
+    spriteVariant?: 'normal' | 'silhouette' | 'progressive' | 'shiny' | 'zoom' | 'flipped'
   }
 }
 

@@ -5,6 +5,8 @@ export type DifficultyPreset = 'discovery' | 'confirmed' | 'expert' | 'all'
 export type RegionFilter = 'all' | 'Paldea' | 'Sinnoh'
 export type TimerSetting = 10 | 15 | 20 | 30 | null
 export type SpriteGenerationFilter = number[] | 'all'
+export type SpriteVariant = 'normal' | 'silhouette' | 'progressive' | 'shiny' | 'zoom' | 'flipped'
+export type SpriteVariantFilter = SpriteVariant[] | 'all'
 
 export interface GameConfig {
   mode: GameMode
@@ -12,6 +14,7 @@ export interface GameConfig {
   difficulty: DifficultyPreset
   region?: RegionFilter
   spriteGenerations?: SpriteGenerationFilter
+  spriteVariants?: SpriteVariantFilter
   timerSeconds?: TimerSetting
 }
 

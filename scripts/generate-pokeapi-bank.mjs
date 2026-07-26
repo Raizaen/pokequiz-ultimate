@@ -130,17 +130,24 @@ function formLabel(baseName, speciesSlug, pokemonName) {
   return pokemonName.includes('-mega') ? `${translated} ${baseName}` : `${baseName} (${translated})`
 }
 
-async function spriteEntry(resource, index) {
+async function spriteEntry(resource) {
   const pokemon = await fetchJson(resource.url)
   if (!pokemon.sprites.front_default) return null
   const species = await fetchJson(pokemon.species.url)
   const baseName = localName(species.names, pokemon.species.name)
+  const isSpecialForm = pokemon.name !== pokemon.species.name
+  const rarityDifficulty = species.capture_rate >= 190 ? 1
+    : species.capture_rate >= 90 ? 2
+      : species.capture_rate >= 45 ? 3
+        : species.capture_rate >= 10 ? 4
+          : 5
   return {
     id: pokemon.id,
     name: formLabel(baseName, pokemon.species.name, pokemon.name),
     sprite: pokemon.sprites.front_default,
+    shinySprite: pokemon.sprites.front_shiny,
     generation: generationNumber(species.generation.name),
-    difficulty: index % 5 + 1,
+    difficulty: Math.min(5, rarityDifficulty + (isSpecialForm ? 1 : 0)),
   }
 }
 

@@ -11,6 +11,7 @@ import {
   type GameConfig,
   type RegionFilter,
   type SpriteGenerationFilter,
+  type SpriteVariant,
   type TimerSetting,
 } from './domain/gameConfig'
 import type { GameState, Player } from './domain/quiz'
@@ -36,6 +37,14 @@ const timerSettings: Array<{ value: TimerSetting; label: string; description: st
   { value: null, label: 'Sans timer', description: 'Aucune limite de temps' },
 ]
 const spriteGenerations = Array.from({ length: 9 }, (_, index) => index + 1)
+const spriteVariantOptions: Array<{ id: SpriteVariant; label: string; icon: string; description: string }> = [
+  { id: 'normal', label: 'Normal', icon: '👾', description: 'Sprite classique' },
+  { id: 'silhouette', label: 'Silhouette', icon: '❓', description: 'Entièrement noir' },
+  { id: 'progressive', label: 'Révélation', icon: '✨', description: 'De plus en plus net' },
+  { id: 'shiny', label: 'Chromatique', icon: '🌟', description: 'Couleurs shiny' },
+  { id: 'zoom', label: 'Fragment', icon: '🔍', description: 'Vue fortement zoomée' },
+  { id: 'flipped', label: 'Retourné', icon: '↔️', description: 'Sprite inversé' },
+]
 
 function newPlayer(index: number): Player {
   return { id: crypto.randomUUID(), name: `Joueur ${index + 1}`, avatar: avatars[index], color: colors[index], score: 0 }
@@ -45,14 +54,23 @@ export function App() {
   const [screen, setScreen] = useState<Screen>('menu')
   const [players, setPlayers] = useState<Player[]>([newPlayer(0)])
   const [game, setGame] = useState<GameState | null>(null)
-  const [config, setConfig] = useState<GameConfig>({ mode: 'mixed', difficulty: 'all', spriteGenerations: 'all', timerSeconds: 20 })
+  const [config, setConfig] = useState<GameConfig>({
+    mode: 'mixed',
+    difficulty: 'all',
+    spriteGenerations: 'all',
+    spriteVariants: 'all',
+    timerSeconds: 20,
+  })
   const [questionCount, setQuestionCount] = useState(10)
   const savedGame = loadGame()
+  const gameQuestions = game?.questions
+  const gameQuestionIndex = game?.questionIndex
+  const gameFinished = game?.finished
   const eligibleQuestions = questionsForConfig(questions, config)
   const hasRegionSelection = config.mode === 'category' && config.category === 'Lieu Perdu'
   const hasSpriteGenerationSelection = config.mode === 'category' && config.category === 'Sprites'
-  const hasCategoryOptionSelection = hasRegionSelection || hasSpriteGenerationSelection
-  const difficultyStep = hasCategoryOptionSelection ? 4 : config.mode === 'category' ? 3 : 2
+  const categoryOptionSteps = hasSpriteGenerationSelection ? 2 : hasRegionSelection ? 1 : 0
+  const difficultyStep = config.mode === 'category' ? 3 + categoryOptionSteps : 2
   const timerStep = difficultyStep + 1
   const questionCountStep = timerStep + 1
   const effectiveQuestionCount = Math.min(questionCount, eligibleQuestions.length)
@@ -72,6 +90,17 @@ export function App() {
     return () => window.clearInterval(timer)
   }, [game])
 
+  useEffect(() => {
+    if (!gameQuestions || gameFinished || gameQuestionIndex === undefined) return
+    gameQuestions
+      .slice(gameQuestionIndex, gameQuestionIndex + 3)
+      .forEach((question) => {
+        if (!question.media?.src) return
+        const image = new Image()
+        image.src = question.media.src
+      })
+  }, [gameFinished, gameQuestionIndex, gameQuestions])
+
   const startGame = () => {
     setGame(createGame(players, selectQuestions(questions, config, effectiveQuestionCount), config.timerSeconds))
     setScreen('game')
@@ -89,6 +118,20 @@ export function App() {
       : [...current, generation].sort((left, right) => left - right)
 
     if (next.length > 0) setConfig({ ...config, spriteGenerations: next as SpriteGenerationFilter })
+  }
+
+  const toggleSpriteVariant = (variant: SpriteVariant) => {
+    const current = config.spriteVariants
+    if (!current || current === 'all') {
+      setConfig({ ...config, spriteVariants: [variant] })
+      return
+    }
+
+    const next = current.includes(variant)
+      ? current.filter((item) => item !== variant)
+      : [...current, variant]
+
+    if (next.length > 0) setConfig({ ...config, spriteVariants: next })
   }
 
   if (screen === 'menu') {
@@ -154,6 +197,7 @@ export function App() {
                         category: category.id,
                         region: category.id === 'Lieu Perdu' ? config.region ?? 'all' : undefined,
                         spriteGenerations: category.id === 'Sprites' ? config.spriteGenerations ?? 'all' : config.spriteGenerations,
+                        spriteVariants: category.id === 'Sprites' ? config.spriteVariants ?? 'all' : config.spriteVariants,
                       })}
                     >
                       <i>{category.icon}</i><strong>{category.label}</strong><small>{unavailable ? 'Bientôt disponible' : `${count} question${count > 1 ? 's' : ''}`}</small>
@@ -205,6 +249,33 @@ export function App() {
                       onClick={() => toggleSpriteGeneration(generation)}
                     >
                       <strong>Génération {generation}</strong><small>{count} sprite{count > 1 ? 's' : ''}</small>
+                    </button>
+                  )
+                })}
+              </div>
+            </section>
+          )}
+
+          {hasSpriteGenerationSelection && (
+            <section className="setup-section">
+              <div className="section-heading"><span>4</span><div><h2>Variantes visuelles</h2><p>Choisis un ou plusieurs défis visuels pour les sprites.</p></div></div>
+              <div className="sprite-variant-grid">
+                <button
+                  className={(config.spriteVariants ?? 'all') === 'all' ? 'selected' : ''}
+                  onClick={() => setConfig({ ...config, spriteVariants: 'all' })}
+                >
+                  <i>🎲</i><strong>Tout mélanger</strong><small>Les six variantes au hasard</small>
+                </button>
+                {spriteVariantOptions.map((variant) => {
+                  const selected = config.spriteVariants !== 'all'
+                    && config.spriteVariants?.includes(variant.id)
+                  return (
+                    <button
+                      key={variant.id}
+                      className={selected ? 'selected' : ''}
+                      onClick={() => toggleSpriteVariant(variant.id)}
+                    >
+                      <i>{variant.icon}</i><strong>{variant.label}</strong><small>{variant.description}</small>
                     </button>
                   )
                 })}
@@ -291,7 +362,10 @@ export function App() {
         </div>
         <h1>{question.prompt}</h1>
         {question.media?.kind === 'image' && (
-          <div className={`question-media ${question.media.pixelated ? 'pixelated' : ''} ${question.type === 'map-location' ? 'location-clue' : ''}`}>
+          <div
+            key={question.id}
+            className={`question-media ${question.media.pixelated ? 'pixelated' : ''} sprite-${question.media.spriteVariant ?? 'normal'} ${game.revealed ? 'revealed' : ''} ${question.type === 'map-location' ? 'location-clue' : ''}`}
+          >
             <img src={question.media.src} alt={question.media.alt} />
           </div>
         )}

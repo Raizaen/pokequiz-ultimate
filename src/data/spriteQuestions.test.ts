@@ -33,4 +33,9 @@ describe('sprite question pack', () => {
       && generationScope[0] <= 9,
     )).toBe(true)
   })
+
+  it('fournit une version chromatique pour la banque visuelle', () => {
+    expect(spriteQuestions.filter(({ media }) => Boolean(media?.shinySrc)).length)
+      .toBeGreaterThanOrEqual(1200)
+  })
 })

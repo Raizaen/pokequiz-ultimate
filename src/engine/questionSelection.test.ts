@@ -72,6 +72,50 @@ describe('question selection', () => {
     })).toHaveLength(3)
   })
 
+  it('applique uniquement les variantes visuelles choisies aux sprites', () => {
+    const sprite: Question = {
+      ...question('pikachu', 'Sprites', 1),
+      media: {
+        kind: 'image',
+        src: 'pikachu.png',
+        shinySrc: 'pikachu-shiny.png',
+        alt: 'Pikachu',
+      },
+    }
+
+    const [shiny] = selectQuestions([sprite], {
+      mode: 'category',
+      category: 'Sprites',
+      difficulty: 'all',
+      spriteVariants: ['shiny'],
+    }, 1)
+    expect(shiny.media?.spriteVariant).toBe('shiny')
+    expect(shiny.media?.src).toBe('pikachu-shiny.png')
+
+    const [silhouette] = selectQuestions([sprite], {
+      mode: 'category',
+      category: 'Sprites',
+      difficulty: 'all',
+      spriteVariants: ['silhouette'],
+    }, 1)
+    expect(silhouette.media?.spriteVariant).toBe('silhouette')
+    expect(silhouette.media?.src).toBe('pikachu.png')
+  })
+
+  it('écarte un sprite sans image chromatique en mode shiny exclusif', () => {
+    const sprite: Question = {
+      ...question('sans-shiny', 'Sprites', 1),
+      media: { kind: 'image', src: 'normal.png', alt: 'Sprite' },
+    }
+
+    expect(questionsForConfig([sprite], {
+      mode: 'category',
+      category: 'Sprites',
+      difficulty: 'all',
+      spriteVariants: ['shiny'],
+    })).toHaveLength(0)
+  })
+
   it('ne sélectionne jamais deux fois le même identifiant', () => {
     const duplicatedBank = [...bank, { ...bank[0] }]
     const selection = selectQuestions(duplicatedBank, { mode: 'mixed', difficulty: 'all' }, 10)
