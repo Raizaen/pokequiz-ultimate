@@ -14,6 +14,7 @@ export function PlayerPanel({ player, question, answer, disabled, onAnswer }: Pr
   const [draft, setDraft] = useState('')
   const [selectedChoices, setSelectedChoices] = useState<string[]>([])
   const locked = disabled || answer?.locked
+  const isWrong = Boolean(answer && answer.attempts > 0 && answer.locked && !answer.isCorrect)
   const attemptsLeft = question.type === 'open' ? 3 - (answer?.attempts ?? 0) : (answer ? 0 : 1)
 
   const submit = () => {
@@ -23,7 +24,7 @@ export function PlayerPanel({ player, question, answer, disabled, onAnswer }: Pr
   }
 
   return (
-    <article className={`player-panel ${answer?.isCorrect ? 'is-correct' : ''}`} style={{ '--player': player.color } as React.CSSProperties}>
+    <article className={`player-panel ${answer?.isCorrect ? 'is-correct' : isWrong ? 'is-wrong' : ''}`} style={{ '--player': player.color } as React.CSSProperties}>
       <header>
         <span className="avatar">{player.avatar}</span>
         <strong>{player.name}</strong>
