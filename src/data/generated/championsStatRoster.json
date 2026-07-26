@@ -1,0 +1,4770 @@
+[
+  {
+    "id": 1,
+    "key": "venusaur",
+    "nationalId": 3,
+    "name": "Florizarre",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/venusaur.png",
+    "stats": {
+      "hp": 80,
+      "attack": 82,
+      "defense": 83,
+      "specialAttack": 100,
+      "specialDefense": 100,
+      "speed": 80
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 2,
+    "key": "venusaurmega",
+    "nationalId": 3,
+    "name": "Méga-Florizarre",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/venusaurmega.png",
+    "stats": {
+      "hp": 80,
+      "attack": 100,
+      "defense": 123,
+      "specialAttack": 122,
+      "specialDefense": 120,
+      "speed": 80
+    },
+    "sourceForm": "Mega Venusaur"
+  },
+  {
+    "id": 3,
+    "key": "charizard",
+    "nationalId": 6,
+    "name": "Dracaufeu",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/charizard.png",
+    "stats": {
+      "hp": 78,
+      "attack": 84,
+      "defense": 78,
+      "specialAttack": 109,
+      "specialDefense": 85,
+      "speed": 100
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 4,
+    "key": "charizardmegax",
+    "nationalId": 6,
+    "name": "Méga-Dracaufeu X",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/charizardmegax.png",
+    "stats": {
+      "hp": 78,
+      "attack": 130,
+      "defense": 111,
+      "specialAttack": 130,
+      "specialDefense": 85,
+      "speed": 100
+    },
+    "sourceForm": "Mega Charizard X"
+  },
+  {
+    "id": 5,
+    "key": "charizardmegay",
+    "nationalId": 6,
+    "name": "Méga-Dracaufeu Y",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/charizardmegay.png",
+    "stats": {
+      "hp": 78,
+      "attack": 104,
+      "defense": 78,
+      "specialAttack": 159,
+      "specialDefense": 115,
+      "speed": 100
+    },
+    "sourceForm": "Mega Charizard Y"
+  },
+  {
+    "id": 6,
+    "key": "blastoisemega",
+    "nationalId": 9,
+    "name": "Méga-Tortank",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/blastoisemega.png",
+    "stats": {
+      "hp": 79,
+      "attack": 103,
+      "defense": 120,
+      "specialAttack": 135,
+      "specialDefense": 115,
+      "speed": 78
+    },
+    "sourceForm": "Mega Blastoise"
+  },
+  {
+    "id": 7,
+    "key": "blastoise",
+    "nationalId": 9,
+    "name": "Tortank",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/blastoise.png",
+    "stats": {
+      "hp": 79,
+      "attack": 83,
+      "defense": 100,
+      "specialAttack": 85,
+      "specialDefense": 105,
+      "speed": 78
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 8,
+    "key": "beedrill",
+    "nationalId": 15,
+    "name": "Dardargnan",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/beedrill.png",
+    "stats": {
+      "hp": 65,
+      "attack": 90,
+      "defense": 40,
+      "specialAttack": 45,
+      "specialDefense": 80,
+      "speed": 75
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 9,
+    "key": "beedrillmega",
+    "nationalId": 15,
+    "name": "Méga-Dardargnan",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/beedrillmega.png",
+    "stats": {
+      "hp": 65,
+      "attack": 150,
+      "defense": 40,
+      "specialAttack": 15,
+      "specialDefense": 80,
+      "speed": 145
+    },
+    "sourceForm": "Mega Beedrill"
+  },
+  {
+    "id": 10,
+    "key": "pidgeotmega",
+    "nationalId": 18,
+    "name": "Méga-Roucarnage",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/pidgeotmega.png",
+    "stats": {
+      "hp": 83,
+      "attack": 80,
+      "defense": 80,
+      "specialAttack": 135,
+      "specialDefense": 80,
+      "speed": 121
+    },
+    "sourceForm": "Mega Pidgeot"
+  },
+  {
+    "id": 11,
+    "key": "pidgeot",
+    "nationalId": 18,
+    "name": "Roucarnage",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/pidgeot.png",
+    "stats": {
+      "hp": 83,
+      "attack": 80,
+      "defense": 75,
+      "specialAttack": 70,
+      "specialDefense": 70,
+      "speed": 101
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 12,
+    "key": "arbok",
+    "nationalId": 24,
+    "name": "Arbok",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/arbok.png",
+    "stats": {
+      "hp": 60,
+      "attack": 95,
+      "defense": 69,
+      "specialAttack": 65,
+      "specialDefense": 79,
+      "speed": 80
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 13,
+    "key": "pikachu",
+    "nationalId": 25,
+    "name": "Pikachu",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/pikachu.png",
+    "stats": {
+      "hp": 35,
+      "attack": 55,
+      "defense": 40,
+      "specialAttack": 50,
+      "specialDefense": 50,
+      "speed": 90
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 14,
+    "key": "raichumegax",
+    "nationalId": 26,
+    "name": "Méga-Raichu X",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/raichumegax.png",
+    "stats": {
+      "hp": 60,
+      "attack": 135,
+      "defense": 95,
+      "specialAttack": 90,
+      "specialDefense": 95,
+      "speed": 110
+    },
+    "sourceForm": "Mega Raichu X"
+  },
+  {
+    "id": 15,
+    "key": "raichumegay",
+    "nationalId": 26,
+    "name": "Méga-Raichu Y",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/raichumegay.png",
+    "stats": {
+      "hp": 60,
+      "attack": 100,
+      "defense": 55,
+      "specialAttack": 160,
+      "specialDefense": 80,
+      "speed": 130
+    },
+    "sourceForm": "Mega Raichu Y"
+  },
+  {
+    "id": 16,
+    "key": "raichu",
+    "nationalId": 26,
+    "name": "Raichu",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/raichu.png",
+    "stats": {
+      "hp": 60,
+      "attack": 90,
+      "defense": 55,
+      "specialAttack": 90,
+      "specialDefense": 80,
+      "speed": 110
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 17,
+    "key": "raichualola",
+    "nationalId": 26,
+    "name": "Raichu — Forme d'Alola",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/raichualola.png",
+    "stats": {
+      "hp": 60,
+      "attack": 85,
+      "defense": 50,
+      "specialAttack": 95,
+      "specialDefense": 85,
+      "speed": 110
+    },
+    "sourceForm": "Alolan Form"
+  },
+  {
+    "id": 18,
+    "key": "clefablemega",
+    "nationalId": 36,
+    "name": "Méga-Mélodelfe",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/clefablemega.png",
+    "stats": {
+      "hp": 95,
+      "attack": 80,
+      "defense": 93,
+      "specialAttack": 135,
+      "specialDefense": 110,
+      "speed": 70
+    },
+    "sourceForm": "Mega Clefable"
+  },
+  {
+    "id": 19,
+    "key": "clefable",
+    "nationalId": 36,
+    "name": "Mélodelfe",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/clefable.png",
+    "stats": {
+      "hp": 95,
+      "attack": 70,
+      "defense": 73,
+      "specialAttack": 95,
+      "specialDefense": 90,
+      "speed": 60
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 20,
+    "key": "ninetales",
+    "nationalId": 38,
+    "name": "Feunard",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/ninetales.png",
+    "stats": {
+      "hp": 73,
+      "attack": 76,
+      "defense": 75,
+      "specialAttack": 81,
+      "specialDefense": 100,
+      "speed": 100
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 21,
+    "key": "ninetalesalola",
+    "nationalId": 38,
+    "name": "Feunard — Forme d'Alola",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/ninetalesalola.png",
+    "stats": {
+      "hp": 73,
+      "attack": 67,
+      "defense": 75,
+      "specialAttack": 81,
+      "specialDefense": 100,
+      "speed": 109
+    },
+    "sourceForm": "Alolan Form"
+  },
+  {
+    "id": 22,
+    "key": "vileplume",
+    "nationalId": 45,
+    "name": "Rafflesia",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/vileplume.png",
+    "stats": {
+      "hp": 75,
+      "attack": 80,
+      "defense": 85,
+      "specialAttack": 110,
+      "specialDefense": 90,
+      "speed": 50
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 23,
+    "key": "arcanine",
+    "nationalId": 59,
+    "name": "Arcanin",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/arcanine.png",
+    "stats": {
+      "hp": 90,
+      "attack": 110,
+      "defense": 80,
+      "specialAttack": 100,
+      "specialDefense": 80,
+      "speed": 95
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 24,
+    "key": "arcaninehisui",
+    "nationalId": 59,
+    "name": "Arcanin — Forme de Hisui",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/arcaninehisui.png",
+    "stats": {
+      "hp": 95,
+      "attack": 115,
+      "defense": 80,
+      "specialAttack": 95,
+      "specialDefense": 80,
+      "speed": 90
+    },
+    "sourceForm": "Hisuian Form"
+  },
+  {
+    "id": 25,
+    "key": "alakazam",
+    "nationalId": 65,
+    "name": "Alakazam",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/alakazam.png",
+    "stats": {
+      "hp": 55,
+      "attack": 50,
+      "defense": 45,
+      "specialAttack": 135,
+      "specialDefense": 95,
+      "speed": 120
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 26,
+    "key": "alakazammega",
+    "nationalId": 65,
+    "name": "Méga-Alakazam",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/alakazammega.png",
+    "stats": {
+      "hp": 55,
+      "attack": 50,
+      "defense": 65,
+      "specialAttack": 175,
+      "specialDefense": 105,
+      "speed": 150
+    },
+    "sourceForm": "Mega Alakazam"
+  },
+  {
+    "id": 27,
+    "key": "machamp",
+    "nationalId": 68,
+    "name": "Mackogneur",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/machamp.png",
+    "stats": {
+      "hp": 90,
+      "attack": 130,
+      "defense": 80,
+      "specialAttack": 65,
+      "specialDefense": 85,
+      "speed": 55
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 28,
+    "key": "victreebel",
+    "nationalId": 71,
+    "name": "Empiflor",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/victreebel.png",
+    "stats": {
+      "hp": 80,
+      "attack": 105,
+      "defense": 65,
+      "specialAttack": 100,
+      "specialDefense": 70,
+      "speed": 70
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 29,
+    "key": "victreebelmega",
+    "nationalId": 71,
+    "name": "Méga-Empiflor",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/victreebelmega.png",
+    "stats": {
+      "hp": 80,
+      "attack": 125,
+      "defense": 85,
+      "specialAttack": 135,
+      "specialDefense": 95,
+      "speed": 70
+    },
+    "sourceForm": "Mega Victreebel"
+  },
+  {
+    "id": 30,
+    "key": "slowbro",
+    "nationalId": 80,
+    "name": "Flagadoss",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/slowbro.png",
+    "stats": {
+      "hp": 95,
+      "attack": 75,
+      "defense": 110,
+      "specialAttack": 100,
+      "specialDefense": 80,
+      "speed": 30
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 31,
+    "key": "slowbrogalar",
+    "nationalId": 80,
+    "name": "Flagadoss — Forme de Galar",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/slowbrogalar.png",
+    "stats": {
+      "hp": 95,
+      "attack": 100,
+      "defense": 95,
+      "specialAttack": 100,
+      "specialDefense": 70,
+      "speed": 30
+    },
+    "sourceForm": "Galarian Form"
+  },
+  {
+    "id": 32,
+    "key": "slowbromega",
+    "nationalId": 80,
+    "name": "Méga-Flagadoss",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/slowbromega.png",
+    "stats": {
+      "hp": 95,
+      "attack": 75,
+      "defense": 180,
+      "specialAttack": 130,
+      "specialDefense": 80,
+      "speed": 30
+    },
+    "sourceForm": "Mega Slowbro"
+  },
+  {
+    "id": 33,
+    "key": "gengar",
+    "nationalId": 94,
+    "name": "Ectoplasma",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/gengar.png",
+    "stats": {
+      "hp": 60,
+      "attack": 65,
+      "defense": 60,
+      "specialAttack": 130,
+      "specialDefense": 75,
+      "speed": 110
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 34,
+    "key": "gengarmega",
+    "nationalId": 94,
+    "name": "Méga-Ectoplasma",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/gengarmega.png",
+    "stats": {
+      "hp": 60,
+      "attack": 65,
+      "defense": 80,
+      "specialAttack": 170,
+      "specialDefense": 95,
+      "speed": 130
+    },
+    "sourceForm": "Mega Gengar"
+  },
+  {
+    "id": 35,
+    "key": "kangaskhan",
+    "nationalId": 115,
+    "name": "Kangourex",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/kangaskhan.png",
+    "stats": {
+      "hp": 105,
+      "attack": 95,
+      "defense": 80,
+      "specialAttack": 40,
+      "specialDefense": 80,
+      "speed": 90
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 36,
+    "key": "kangaskhanmega",
+    "nationalId": 115,
+    "name": "Méga-Kangourex",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/kangaskhanmega.png",
+    "stats": {
+      "hp": 105,
+      "attack": 125,
+      "defense": 100,
+      "specialAttack": 60,
+      "specialDefense": 100,
+      "speed": 100
+    },
+    "sourceForm": "Mega Kangaskhan"
+  },
+  {
+    "id": 37,
+    "key": "starmiemega",
+    "nationalId": 121,
+    "name": "Méga-Staross",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/starmiemega.png",
+    "stats": {
+      "hp": 60,
+      "attack": 100,
+      "defense": 105,
+      "specialAttack": 130,
+      "specialDefense": 105,
+      "speed": 120
+    },
+    "sourceForm": "Mega Starmie"
+  },
+  {
+    "id": 38,
+    "key": "starmie",
+    "nationalId": 121,
+    "name": "Staross",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/starmie.png",
+    "stats": {
+      "hp": 60,
+      "attack": 75,
+      "defense": 85,
+      "specialAttack": 100,
+      "specialDefense": 85,
+      "speed": 115
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 39,
+    "key": "pinsirmega",
+    "nationalId": 127,
+    "name": "Méga-Scarabrute",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/pinsirmega.png",
+    "stats": {
+      "hp": 65,
+      "attack": 155,
+      "defense": 120,
+      "specialAttack": 65,
+      "specialDefense": 90,
+      "speed": 105
+    },
+    "sourceForm": "Mega Pinsir"
+  },
+  {
+    "id": 40,
+    "key": "pinsir",
+    "nationalId": 127,
+    "name": "Scarabrute",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/pinsir.png",
+    "stats": {
+      "hp": 65,
+      "attack": 125,
+      "defense": 100,
+      "specialAttack": 55,
+      "specialDefense": 70,
+      "speed": 85
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 41,
+    "key": "tauros",
+    "nationalId": 128,
+    "name": "Tauros",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/tauros.png",
+    "stats": {
+      "hp": 75,
+      "attack": 100,
+      "defense": 95,
+      "specialAttack": 40,
+      "specialDefense": 70,
+      "speed": 110
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 42,
+    "key": "taurospaldeaaqua",
+    "nationalId": 128,
+    "name": "Tauros — Forme de Paldea (Race Aquatique)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/taurospaldeaaqua.png",
+    "stats": {
+      "hp": 75,
+      "attack": 110,
+      "defense": 105,
+      "specialAttack": 30,
+      "specialDefense": 70,
+      "speed": 100
+    },
+    "sourceForm": "Paldean Form<br>(Aqua Breed)"
+  },
+  {
+    "id": 43,
+    "key": "taurospaldeacombat",
+    "nationalId": 128,
+    "name": "Tauros — Forme de Paldea (Race Combative)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/taurospaldeacombat.png",
+    "stats": {
+      "hp": 75,
+      "attack": 110,
+      "defense": 105,
+      "specialAttack": 30,
+      "specialDefense": 70,
+      "speed": 100
+    },
+    "sourceForm": "Paldean Form<br>(Combat Breed)"
+  },
+  {
+    "id": 44,
+    "key": "taurospaldeablaze",
+    "nationalId": 128,
+    "name": "Tauros — Forme de Paldea (Race Flamboyante)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/taurospaldeablaze.png",
+    "stats": {
+      "hp": 75,
+      "attack": 110,
+      "defense": 105,
+      "specialAttack": 30,
+      "specialDefense": 70,
+      "speed": 100
+    },
+    "sourceForm": "Paldean Form<br>(Blaze Breed)"
+  },
+  {
+    "id": 45,
+    "key": "gyarados",
+    "nationalId": 130,
+    "name": "Léviator",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/gyarados.png",
+    "stats": {
+      "hp": 95,
+      "attack": 125,
+      "defense": 79,
+      "specialAttack": 60,
+      "specialDefense": 100,
+      "speed": 81
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 46,
+    "key": "gyaradosmega",
+    "nationalId": 130,
+    "name": "Méga-Léviator",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/gyaradosmega.png",
+    "stats": {
+      "hp": 95,
+      "attack": 155,
+      "defense": 109,
+      "specialAttack": 70,
+      "specialDefense": 130,
+      "speed": 81
+    },
+    "sourceForm": "Mega Gyarados"
+  },
+  {
+    "id": 47,
+    "key": "ditto",
+    "nationalId": 132,
+    "name": "Métamorph",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/ditto.png",
+    "stats": {
+      "hp": 48,
+      "attack": 48,
+      "defense": 48,
+      "specialAttack": 48,
+      "specialDefense": 48,
+      "speed": 48
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 48,
+    "key": "vaporeon",
+    "nationalId": 134,
+    "name": "Aquali",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/vaporeon.png",
+    "stats": {
+      "hp": 130,
+      "attack": 65,
+      "defense": 60,
+      "specialAttack": 110,
+      "specialDefense": 95,
+      "speed": 65
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 49,
+    "key": "jolteon",
+    "nationalId": 135,
+    "name": "Voltali",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/jolteon.png",
+    "stats": {
+      "hp": 65,
+      "attack": 65,
+      "defense": 60,
+      "specialAttack": 110,
+      "specialDefense": 95,
+      "speed": 130
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 50,
+    "key": "flareon",
+    "nationalId": 136,
+    "name": "Pyroli",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/flareon.png",
+    "stats": {
+      "hp": 65,
+      "attack": 130,
+      "defense": 60,
+      "specialAttack": 95,
+      "specialDefense": 110,
+      "speed": 65
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 51,
+    "key": "aerodactylmega",
+    "nationalId": 142,
+    "name": "Méga-Ptéra",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/aerodactylmega.png",
+    "stats": {
+      "hp": 80,
+      "attack": 135,
+      "defense": 85,
+      "specialAttack": 70,
+      "specialDefense": 95,
+      "speed": 150
+    },
+    "sourceForm": "Mega Aerodactyl"
+  },
+  {
+    "id": 52,
+    "key": "aerodactyl",
+    "nationalId": 142,
+    "name": "Ptéra",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/aerodactyl.png",
+    "stats": {
+      "hp": 80,
+      "attack": 105,
+      "defense": 65,
+      "specialAttack": 60,
+      "specialDefense": 75,
+      "speed": 130
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 53,
+    "key": "snorlax",
+    "nationalId": 143,
+    "name": "Ronflex",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/snorlax.png",
+    "stats": {
+      "hp": 160,
+      "attack": 110,
+      "defense": 65,
+      "specialAttack": 65,
+      "specialDefense": 110,
+      "speed": 30
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 54,
+    "key": "dragonite",
+    "nationalId": 149,
+    "name": "Dracolosse",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/dragonite.png",
+    "stats": {
+      "hp": 91,
+      "attack": 134,
+      "defense": 95,
+      "specialAttack": 100,
+      "specialDefense": 100,
+      "speed": 80
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 55,
+    "key": "dragonitemega",
+    "nationalId": 149,
+    "name": "Méga-Dracolosse",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/dragonitemega.png",
+    "stats": {
+      "hp": 91,
+      "attack": 124,
+      "defense": 115,
+      "specialAttack": 145,
+      "specialDefense": 125,
+      "speed": 100
+    },
+    "sourceForm": "Mega Dragonite"
+  },
+  {
+    "id": 56,
+    "key": "meganiummega",
+    "nationalId": 154,
+    "name": "Méga-Méganium",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/meganiummega.png",
+    "stats": {
+      "hp": 80,
+      "attack": 92,
+      "defense": 115,
+      "specialAttack": 143,
+      "specialDefense": 115,
+      "speed": 80
+    },
+    "sourceForm": "Mega Meganium"
+  },
+  {
+    "id": 57,
+    "key": "meganium",
+    "nationalId": 154,
+    "name": "Méganium",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/meganium.png",
+    "stats": {
+      "hp": 80,
+      "attack": 82,
+      "defense": 100,
+      "specialAttack": 83,
+      "specialDefense": 100,
+      "speed": 80
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 58,
+    "key": "typhlosion",
+    "nationalId": 157,
+    "name": "Typhlosion",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/typhlosion.png",
+    "stats": {
+      "hp": 78,
+      "attack": 84,
+      "defense": 78,
+      "specialAttack": 109,
+      "specialDefense": 85,
+      "speed": 100
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 59,
+    "key": "typhlosionhisui",
+    "nationalId": 157,
+    "name": "Typhlosion — Forme de Hisui",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/typhlosionhisui.png",
+    "stats": {
+      "hp": 73,
+      "attack": 84,
+      "defense": 78,
+      "specialAttack": 119,
+      "specialDefense": 85,
+      "speed": 95
+    },
+    "sourceForm": "Hisuian Form"
+  },
+  {
+    "id": 60,
+    "key": "feraligatr",
+    "nationalId": 160,
+    "name": "Aligatueur",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/feraligatr.png",
+    "stats": {
+      "hp": 85,
+      "attack": 105,
+      "defense": 100,
+      "specialAttack": 79,
+      "specialDefense": 83,
+      "speed": 78
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 61,
+    "key": "feraligatrmega",
+    "nationalId": 160,
+    "name": "Méga-Aligatueur",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/feraligatrmega.png",
+    "stats": {
+      "hp": 85,
+      "attack": 160,
+      "defense": 125,
+      "specialAttack": 89,
+      "specialDefense": 93,
+      "speed": 78
+    },
+    "sourceForm": "Mega Feraligatr"
+  },
+  {
+    "id": 62,
+    "key": "ariados",
+    "nationalId": 168,
+    "name": "Migalos",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/ariados.png",
+    "stats": {
+      "hp": 70,
+      "attack": 90,
+      "defense": 70,
+      "specialAttack": 60,
+      "specialDefense": 70,
+      "speed": 40
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 63,
+    "key": "ampharosmega",
+    "nationalId": 181,
+    "name": "Méga-Pharamp",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/ampharosmega.png",
+    "stats": {
+      "hp": 90,
+      "attack": 95,
+      "defense": 105,
+      "specialAttack": 165,
+      "specialDefense": 110,
+      "speed": 45
+    },
+    "sourceForm": "Mega Ampharos"
+  },
+  {
+    "id": 64,
+    "key": "ampharos",
+    "nationalId": 181,
+    "name": "Pharamp",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/ampharos.png",
+    "stats": {
+      "hp": 90,
+      "attack": 75,
+      "defense": 85,
+      "specialAttack": 115,
+      "specialDefense": 90,
+      "speed": 55
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 65,
+    "key": "azumarill",
+    "nationalId": 184,
+    "name": "Azumarill",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/azumarill.png",
+    "stats": {
+      "hp": 100,
+      "attack": 50,
+      "defense": 80,
+      "specialAttack": 60,
+      "specialDefense": 80,
+      "speed": 50
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 66,
+    "key": "politoed",
+    "nationalId": 186,
+    "name": "Tarpaud",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/politoed.png",
+    "stats": {
+      "hp": 90,
+      "attack": 75,
+      "defense": 75,
+      "specialAttack": 90,
+      "specialDefense": 100,
+      "speed": 70
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 67,
+    "key": "espeon",
+    "nationalId": 196,
+    "name": "Mentali",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/espeon.png",
+    "stats": {
+      "hp": 65,
+      "attack": 65,
+      "defense": 60,
+      "specialAttack": 130,
+      "specialDefense": 95,
+      "speed": 110
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 68,
+    "key": "umbreon",
+    "nationalId": 197,
+    "name": "Noctali",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/umbreon.png",
+    "stats": {
+      "hp": 95,
+      "attack": 65,
+      "defense": 110,
+      "specialAttack": 60,
+      "specialDefense": 130,
+      "speed": 65
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 69,
+    "key": "slowking",
+    "nationalId": 199,
+    "name": "Roigada",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/slowking.png",
+    "stats": {
+      "hp": 95,
+      "attack": 75,
+      "defense": 80,
+      "specialAttack": 100,
+      "specialDefense": 110,
+      "speed": 30
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 70,
+    "key": "slowkinggalar",
+    "nationalId": 199,
+    "name": "Roigada — Forme de Galar",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/slowkinggalar.png",
+    "stats": {
+      "hp": 95,
+      "attack": 65,
+      "defense": 80,
+      "specialAttack": 110,
+      "specialDefense": 110,
+      "speed": 30
+    },
+    "sourceForm": "Galarian Form"
+  },
+  {
+    "id": 71,
+    "key": "forretress",
+    "nationalId": 205,
+    "name": "Foretress",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/forretress.png",
+    "stats": {
+      "hp": 75,
+      "attack": 90,
+      "defense": 140,
+      "specialAttack": 60,
+      "specialDefense": 60,
+      "speed": 40
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 72,
+    "key": "steelixmega",
+    "nationalId": 208,
+    "name": "Méga-Steelix",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/steelixmega.png",
+    "stats": {
+      "hp": 75,
+      "attack": 125,
+      "defense": 230,
+      "specialAttack": 55,
+      "specialDefense": 95,
+      "speed": 30
+    },
+    "sourceForm": "Mega Steelix"
+  },
+  {
+    "id": 73,
+    "key": "steelix",
+    "nationalId": 208,
+    "name": "Steelix",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/steelix.png",
+    "stats": {
+      "hp": 75,
+      "attack": 85,
+      "defense": 200,
+      "specialAttack": 55,
+      "specialDefense": 65,
+      "speed": 30
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 74,
+    "key": "qwilfish",
+    "nationalId": 211,
+    "name": "Qwilfish",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/qwilfish.png",
+    "stats": {
+      "hp": 65,
+      "attack": 95,
+      "defense": 85,
+      "specialAttack": 55,
+      "specialDefense": 55,
+      "speed": 85
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 75,
+    "key": "scizor",
+    "nationalId": 212,
+    "name": "Cizayox",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/scizor.png",
+    "stats": {
+      "hp": 70,
+      "attack": 130,
+      "defense": 100,
+      "specialAttack": 55,
+      "specialDefense": 80,
+      "speed": 65
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 76,
+    "key": "scizormega",
+    "nationalId": 212,
+    "name": "Méga-Cizayox",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/scizormega.png",
+    "stats": {
+      "hp": 70,
+      "attack": 150,
+      "defense": 140,
+      "specialAttack": 65,
+      "specialDefense": 100,
+      "speed": 75
+    },
+    "sourceForm": "Mega Scizor"
+  },
+  {
+    "id": 77,
+    "key": "heracrossmega",
+    "nationalId": 214,
+    "name": "Méga-Scarhino",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/heracrossmega.png",
+    "stats": {
+      "hp": 80,
+      "attack": 185,
+      "defense": 115,
+      "specialAttack": 40,
+      "specialDefense": 105,
+      "speed": 75
+    },
+    "sourceForm": "Mega Heracross"
+  },
+  {
+    "id": 78,
+    "key": "heracross",
+    "nationalId": 214,
+    "name": "Scarhino",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/heracross.png",
+    "stats": {
+      "hp": 80,
+      "attack": 125,
+      "defense": 75,
+      "specialAttack": 40,
+      "specialDefense": 95,
+      "speed": 85
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 79,
+    "key": "skarmory",
+    "nationalId": 227,
+    "name": "Airmure",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/skarmory.png",
+    "stats": {
+      "hp": 65,
+      "attack": 80,
+      "defense": 140,
+      "specialAttack": 40,
+      "specialDefense": 70,
+      "speed": 70
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 80,
+    "key": "skarmorymega",
+    "nationalId": 227,
+    "name": "Méga-Airmure",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/skarmorymega.png",
+    "stats": {
+      "hp": 65,
+      "attack": 140,
+      "defense": 110,
+      "specialAttack": 40,
+      "specialDefense": 100,
+      "speed": 110
+    },
+    "sourceForm": "Mega Skarmory"
+  },
+  {
+    "id": 81,
+    "key": "houndoom",
+    "nationalId": 229,
+    "name": "Démolosse",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/houndoom.png",
+    "stats": {
+      "hp": 75,
+      "attack": 90,
+      "defense": 50,
+      "specialAttack": 110,
+      "specialDefense": 80,
+      "speed": 95
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 82,
+    "key": "houndoommega",
+    "nationalId": 229,
+    "name": "Méga-Démolosse",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/houndoommega.png",
+    "stats": {
+      "hp": 75,
+      "attack": 90,
+      "defense": 90,
+      "specialAttack": 140,
+      "specialDefense": 90,
+      "speed": 115
+    },
+    "sourceForm": "Mega Houndoom"
+  },
+  {
+    "id": 83,
+    "key": "tyranitarmega",
+    "nationalId": 248,
+    "name": "Méga-Tyranocif",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/tyranitarmega.png",
+    "stats": {
+      "hp": 100,
+      "attack": 164,
+      "defense": 150,
+      "specialAttack": 95,
+      "specialDefense": 120,
+      "speed": 71
+    },
+    "sourceForm": "Mega Tyranitar"
+  },
+  {
+    "id": 84,
+    "key": "tyranitar",
+    "nationalId": 248,
+    "name": "Tyranocif",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/tyranitar.png",
+    "stats": {
+      "hp": 100,
+      "attack": 134,
+      "defense": 110,
+      "specialAttack": 95,
+      "specialDefense": 100,
+      "speed": 61
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 85,
+    "key": "sceptile",
+    "nationalId": 254,
+    "name": "Jungko",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/sceptile.png",
+    "stats": {
+      "hp": 70,
+      "attack": 85,
+      "defense": 65,
+      "specialAttack": 105,
+      "specialDefense": 85,
+      "speed": 120
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 86,
+    "key": "sceptilemega",
+    "nationalId": 254,
+    "name": "Méga-Jungko",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/sceptilemega.png",
+    "stats": {
+      "hp": 70,
+      "attack": 110,
+      "defense": 75,
+      "specialAttack": 145,
+      "specialDefense": 85,
+      "speed": 145
+    },
+    "sourceForm": "Mega Sceptile"
+  },
+  {
+    "id": 87,
+    "key": "blaziken",
+    "nationalId": 257,
+    "name": "Braségali",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/blaziken.png",
+    "stats": {
+      "hp": 80,
+      "attack": 120,
+      "defense": 70,
+      "specialAttack": 110,
+      "specialDefense": 70,
+      "speed": 80
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 88,
+    "key": "blazikenmega",
+    "nationalId": 257,
+    "name": "Méga-Braségali",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/blazikenmega.png",
+    "stats": {
+      "hp": 80,
+      "attack": 160,
+      "defense": 80,
+      "specialAttack": 130,
+      "specialDefense": 80,
+      "speed": 100
+    },
+    "sourceForm": "Mega Blaziken"
+  },
+  {
+    "id": 89,
+    "key": "swampert",
+    "nationalId": 260,
+    "name": "Laggron",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/swampert.png",
+    "stats": {
+      "hp": 100,
+      "attack": 110,
+      "defense": 90,
+      "specialAttack": 85,
+      "specialDefense": 90,
+      "speed": 60
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 90,
+    "key": "swampertmega",
+    "nationalId": 260,
+    "name": "Méga-Laggron",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/swampertmega.png",
+    "stats": {
+      "hp": 100,
+      "attack": 150,
+      "defense": 110,
+      "specialAttack": 95,
+      "specialDefense": 110,
+      "speed": 70
+    },
+    "sourceForm": "Mega Swampert"
+  },
+  {
+    "id": 91,
+    "key": "pelipper",
+    "nationalId": 279,
+    "name": "Bekipan",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/pelipper.png",
+    "stats": {
+      "hp": 60,
+      "attack": 50,
+      "defense": 100,
+      "specialAttack": 95,
+      "specialDefense": 70,
+      "speed": 65
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 92,
+    "key": "gardevoir",
+    "nationalId": 282,
+    "name": "Gardevoir",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/gardevoir.png",
+    "stats": {
+      "hp": 68,
+      "attack": 65,
+      "defense": 65,
+      "specialAttack": 125,
+      "specialDefense": 115,
+      "speed": 80
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 93,
+    "key": "gardevoirmega",
+    "nationalId": 282,
+    "name": "Méga-Gardevoir",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/gardevoirmega.png",
+    "stats": {
+      "hp": 68,
+      "attack": 85,
+      "defense": 65,
+      "specialAttack": 165,
+      "specialDefense": 135,
+      "speed": 100
+    },
+    "sourceForm": "Mega Gardevoir"
+  },
+  {
+    "id": 94,
+    "key": "sableyemega",
+    "nationalId": 302,
+    "name": "Méga-Ténéfix",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/sableyemega.png",
+    "stats": {
+      "hp": 50,
+      "attack": 85,
+      "defense": 125,
+      "specialAttack": 85,
+      "specialDefense": 115,
+      "speed": 20
+    },
+    "sourceForm": "Mega Sableye"
+  },
+  {
+    "id": 95,
+    "key": "sableye",
+    "nationalId": 302,
+    "name": "Ténéfix",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/sableye.png",
+    "stats": {
+      "hp": 50,
+      "attack": 75,
+      "defense": 75,
+      "specialAttack": 65,
+      "specialDefense": 65,
+      "speed": 50
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 96,
+    "key": "mawilemega",
+    "nationalId": 303,
+    "name": "Méga-Mysdibule",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/mawilemega.png",
+    "stats": {
+      "hp": 50,
+      "attack": 105,
+      "defense": 125,
+      "specialAttack": 55,
+      "specialDefense": 95,
+      "speed": 50
+    },
+    "sourceForm": "Mega Mawile"
+  },
+  {
+    "id": 97,
+    "key": "mawile",
+    "nationalId": 303,
+    "name": "Mysdibule",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/mawile.png",
+    "stats": {
+      "hp": 50,
+      "attack": 85,
+      "defense": 85,
+      "specialAttack": 55,
+      "specialDefense": 55,
+      "speed": 50
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 98,
+    "key": "aggron",
+    "nationalId": 306,
+    "name": "Galeking",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/aggron.png",
+    "stats": {
+      "hp": 70,
+      "attack": 110,
+      "defense": 180,
+      "specialAttack": 60,
+      "specialDefense": 60,
+      "speed": 50
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 99,
+    "key": "aggronmega",
+    "nationalId": 306,
+    "name": "Méga-Galeking",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/aggronmega.png",
+    "stats": {
+      "hp": 70,
+      "attack": 140,
+      "defense": 230,
+      "specialAttack": 60,
+      "specialDefense": 80,
+      "speed": 50
+    },
+    "sourceForm": "Mega Aggron"
+  },
+  {
+    "id": 100,
+    "key": "medicham",
+    "nationalId": 308,
+    "name": "Charmina",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/medicham.png",
+    "stats": {
+      "hp": 60,
+      "attack": 60,
+      "defense": 75,
+      "specialAttack": 60,
+      "specialDefense": 75,
+      "speed": 80
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 101,
+    "key": "medichammega",
+    "nationalId": 308,
+    "name": "Méga-Charmina",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/medichammega.png",
+    "stats": {
+      "hp": 60,
+      "attack": 100,
+      "defense": 85,
+      "specialAttack": 80,
+      "specialDefense": 85,
+      "speed": 100
+    },
+    "sourceForm": "Mega Medicham"
+  },
+  {
+    "id": 102,
+    "key": "manectric",
+    "nationalId": 310,
+    "name": "Élecsprint",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/manectric.png",
+    "stats": {
+      "hp": 70,
+      "attack": 75,
+      "defense": 60,
+      "specialAttack": 105,
+      "specialDefense": 60,
+      "speed": 105
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 103,
+    "key": "manectricmega",
+    "nationalId": 310,
+    "name": "Méga-Élecsprint",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/manectricmega.png",
+    "stats": {
+      "hp": 70,
+      "attack": 75,
+      "defense": 80,
+      "specialAttack": 135,
+      "specialDefense": 80,
+      "speed": 135
+    },
+    "sourceForm": "Mega Manectric"
+  },
+  {
+    "id": 104,
+    "key": "sharpedomega",
+    "nationalId": 319,
+    "name": "Méga-Sharpedo",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/sharpedomega.png",
+    "stats": {
+      "hp": 70,
+      "attack": 140,
+      "defense": 70,
+      "specialAttack": 110,
+      "specialDefense": 65,
+      "speed": 105
+    },
+    "sourceForm": "Mega Sharpedo"
+  },
+  {
+    "id": 105,
+    "key": "sharpedo",
+    "nationalId": 319,
+    "name": "Sharpedo",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/sharpedo.png",
+    "stats": {
+      "hp": 70,
+      "attack": 120,
+      "defense": 40,
+      "specialAttack": 95,
+      "specialDefense": 40,
+      "speed": 95
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 106,
+    "key": "camerupt",
+    "nationalId": 323,
+    "name": "Camérupt",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/camerupt.png",
+    "stats": {
+      "hp": 70,
+      "attack": 100,
+      "defense": 70,
+      "specialAttack": 105,
+      "specialDefense": 75,
+      "speed": 40
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 107,
+    "key": "cameruptmega",
+    "nationalId": 323,
+    "name": "Méga-Camérupt",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/cameruptmega.png",
+    "stats": {
+      "hp": 70,
+      "attack": 120,
+      "defense": 100,
+      "specialAttack": 145,
+      "specialDefense": 105,
+      "speed": 20
+    },
+    "sourceForm": "Mega Camerupt"
+  },
+  {
+    "id": 108,
+    "key": "torkoal",
+    "nationalId": 324,
+    "name": "Chartor",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/torkoal.png",
+    "stats": {
+      "hp": 70,
+      "attack": 85,
+      "defense": 140,
+      "specialAttack": 85,
+      "specialDefense": 70,
+      "speed": 20
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 109,
+    "key": "altaria",
+    "nationalId": 334,
+    "name": "Altaria",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/altaria.png",
+    "stats": {
+      "hp": 75,
+      "attack": 70,
+      "defense": 90,
+      "specialAttack": 70,
+      "specialDefense": 105,
+      "speed": 80
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 110,
+    "key": "altariamega",
+    "nationalId": 334,
+    "name": "Méga-Altaria",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/altariamega.png",
+    "stats": {
+      "hp": 75,
+      "attack": 110,
+      "defense": 110,
+      "specialAttack": 110,
+      "specialDefense": 105,
+      "speed": 80
+    },
+    "sourceForm": "Mega Altaria"
+  },
+  {
+    "id": 111,
+    "key": "milotic",
+    "nationalId": 350,
+    "name": "Milobellus",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/milotic.png",
+    "stats": {
+      "hp": 95,
+      "attack": 60,
+      "defense": 79,
+      "specialAttack": 100,
+      "specialDefense": 125,
+      "speed": 81
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 112,
+    "key": "castform",
+    "nationalId": 351,
+    "name": "Morphéo",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/castform.png",
+    "stats": {
+      "hp": 70,
+      "attack": 70,
+      "defense": 70,
+      "specialAttack": 70,
+      "specialDefense": 70,
+      "speed": 70
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 113,
+    "key": "banette",
+    "nationalId": 354,
+    "name": "Branette",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/banette.png",
+    "stats": {
+      "hp": 64,
+      "attack": 115,
+      "defense": 65,
+      "specialAttack": 83,
+      "specialDefense": 63,
+      "speed": 65
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 114,
+    "key": "banettemega",
+    "nationalId": 354,
+    "name": "Méga-Branette",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/banettemega.png",
+    "stats": {
+      "hp": 64,
+      "attack": 165,
+      "defense": 75,
+      "specialAttack": 93,
+      "specialDefense": 83,
+      "speed": 75
+    },
+    "sourceForm": "Mega Banette"
+  },
+  {
+    "id": 115,
+    "key": "chimecho",
+    "nationalId": 358,
+    "name": "Éoko",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/chimecho.png",
+    "stats": {
+      "hp": 75,
+      "attack": 50,
+      "defense": 80,
+      "specialAttack": 95,
+      "specialDefense": 90,
+      "speed": 65
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 116,
+    "key": "chimechomega",
+    "nationalId": 358,
+    "name": "Méga-Éoko",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/chimechomega.png",
+    "stats": {
+      "hp": 75,
+      "attack": 50,
+      "defense": 110,
+      "specialAttack": 135,
+      "specialDefense": 120,
+      "speed": 65
+    },
+    "sourceForm": "Mega Chimecho"
+  },
+  {
+    "id": 117,
+    "key": "absol",
+    "nationalId": 359,
+    "name": "Absol",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/absol.png",
+    "stats": {
+      "hp": 65,
+      "attack": 130,
+      "defense": 60,
+      "specialAttack": 75,
+      "specialDefense": 60,
+      "speed": 75
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 118,
+    "key": "absolmega",
+    "nationalId": 359,
+    "name": "Méga-Absol",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/absolmega.png",
+    "stats": {
+      "hp": 65,
+      "attack": 150,
+      "defense": 60,
+      "specialAttack": 115,
+      "specialDefense": 60,
+      "speed": 115
+    },
+    "sourceForm": "Mega Absol"
+  },
+  {
+    "id": 119,
+    "key": "glaliemega",
+    "nationalId": 362,
+    "name": "Méga-Oniglali",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/glaliemega.png",
+    "stats": {
+      "hp": 80,
+      "attack": 120,
+      "defense": 80,
+      "specialAttack": 120,
+      "specialDefense": 80,
+      "speed": 100
+    },
+    "sourceForm": "Mega Glalie"
+  },
+  {
+    "id": 120,
+    "key": "glalie",
+    "nationalId": 362,
+    "name": "Oniglali",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/glalie.png",
+    "stats": {
+      "hp": 80,
+      "attack": 80,
+      "defense": 80,
+      "specialAttack": 80,
+      "specialDefense": 80,
+      "speed": 80
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 121,
+    "key": "metagrossmega",
+    "nationalId": 376,
+    "name": "Méga-Métalosse",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/metagrossmega.png",
+    "stats": {
+      "hp": 80,
+      "attack": 145,
+      "defense": 150,
+      "specialAttack": 105,
+      "specialDefense": 110,
+      "speed": 110
+    },
+    "sourceForm": "Mega Metagross"
+  },
+  {
+    "id": 122,
+    "key": "metagross",
+    "nationalId": 376,
+    "name": "Métalosse",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/metagross.png",
+    "stats": {
+      "hp": 80,
+      "attack": 135,
+      "defense": 130,
+      "specialAttack": 95,
+      "specialDefense": 90,
+      "speed": 70
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 123,
+    "key": "torterra",
+    "nationalId": 389,
+    "name": "Torterra",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/torterra.png",
+    "stats": {
+      "hp": 95,
+      "attack": 109,
+      "defense": 105,
+      "specialAttack": 75,
+      "specialDefense": 85,
+      "speed": 56
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 124,
+    "key": "infernape",
+    "nationalId": 392,
+    "name": "Simiabraz",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/infernape.png",
+    "stats": {
+      "hp": 76,
+      "attack": 104,
+      "defense": 71,
+      "specialAttack": 104,
+      "specialDefense": 71,
+      "speed": 108
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 125,
+    "key": "empoleon",
+    "nationalId": 395,
+    "name": "Pingoléon",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/empoleon.png",
+    "stats": {
+      "hp": 84,
+      "attack": 86,
+      "defense": 88,
+      "specialAttack": 111,
+      "specialDefense": 101,
+      "speed": 60
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 126,
+    "key": "staraptor",
+    "nationalId": 398,
+    "name": "Étouraptor",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/staraptor.png",
+    "stats": {
+      "hp": 85,
+      "attack": 120,
+      "defense": 70,
+      "specialAttack": 50,
+      "specialDefense": 60,
+      "speed": 100
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 127,
+    "key": "staraptormega",
+    "nationalId": 398,
+    "name": "Méga-Étouraptor",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/staraptormega.png",
+    "stats": {
+      "hp": 85,
+      "attack": 140,
+      "defense": 100,
+      "specialAttack": 60,
+      "specialDefense": 90,
+      "speed": 110
+    },
+    "sourceForm": "Mega Staraptor"
+  },
+  {
+    "id": 128,
+    "key": "luxray",
+    "nationalId": 405,
+    "name": "Luxray",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/luxray.png",
+    "stats": {
+      "hp": 80,
+      "attack": 120,
+      "defense": 79,
+      "specialAttack": 95,
+      "specialDefense": 79,
+      "speed": 70
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 129,
+    "key": "roserade",
+    "nationalId": 407,
+    "name": "Roserade",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/roserade.png",
+    "stats": {
+      "hp": 60,
+      "attack": 70,
+      "defense": 65,
+      "specialAttack": 125,
+      "specialDefense": 105,
+      "speed": 90
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 130,
+    "key": "rampardos",
+    "nationalId": 409,
+    "name": "Charkos",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/rampardos.png",
+    "stats": {
+      "hp": 97,
+      "attack": 165,
+      "defense": 60,
+      "specialAttack": 65,
+      "specialDefense": 50,
+      "speed": 58
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 131,
+    "key": "bastiodon",
+    "nationalId": 411,
+    "name": "Bastiodon",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/bastiodon.png",
+    "stats": {
+      "hp": 60,
+      "attack": 52,
+      "defense": 168,
+      "specialAttack": 47,
+      "specialDefense": 138,
+      "speed": 30
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 132,
+    "key": "lopunny",
+    "nationalId": 428,
+    "name": "Lockpin",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/lopunny.png",
+    "stats": {
+      "hp": 65,
+      "attack": 76,
+      "defense": 84,
+      "specialAttack": 54,
+      "specialDefense": 96,
+      "speed": 105
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 133,
+    "key": "lopunnymega",
+    "nationalId": 428,
+    "name": "Méga-Lockpin",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/lopunnymega.png",
+    "stats": {
+      "hp": 65,
+      "attack": 136,
+      "defense": 94,
+      "specialAttack": 54,
+      "specialDefense": 96,
+      "speed": 135
+    },
+    "sourceForm": "Mega Lopunny"
+  },
+  {
+    "id": 134,
+    "key": "spiritomb",
+    "nationalId": 442,
+    "name": "Spiritomb",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/spiritomb.png",
+    "stats": {
+      "hp": 50,
+      "attack": 92,
+      "defense": 108,
+      "specialAttack": 92,
+      "specialDefense": 108,
+      "speed": 35
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 135,
+    "key": "garchomp",
+    "nationalId": 445,
+    "name": "Carchacrok",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/garchomp.png",
+    "stats": {
+      "hp": 108,
+      "attack": 130,
+      "defense": 95,
+      "specialAttack": 80,
+      "specialDefense": 85,
+      "speed": 102
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 136,
+    "key": "garchompmega",
+    "nationalId": 445,
+    "name": "Méga-Carchacrok",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/garchompmega.png",
+    "stats": {
+      "hp": 108,
+      "attack": 170,
+      "defense": 115,
+      "specialAttack": 120,
+      "specialDefense": 95,
+      "speed": 92
+    },
+    "sourceForm": "Mega Garchomp"
+  },
+  {
+    "id": 137,
+    "key": "lucario",
+    "nationalId": 448,
+    "name": "Lucario",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/lucario.png",
+    "stats": {
+      "hp": 70,
+      "attack": 110,
+      "defense": 70,
+      "specialAttack": 115,
+      "specialDefense": 70,
+      "speed": 90
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 138,
+    "key": "lucariomega",
+    "nationalId": 448,
+    "name": "Méga-Lucario",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/lucariomega.png",
+    "stats": {
+      "hp": 70,
+      "attack": 145,
+      "defense": 88,
+      "specialAttack": 140,
+      "specialDefense": 70,
+      "speed": 112
+    },
+    "sourceForm": "Mega Lucario"
+  },
+  {
+    "id": 139,
+    "key": "hippowdon",
+    "nationalId": 450,
+    "name": "Hippodocus",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/hippowdon.png",
+    "stats": {
+      "hp": 108,
+      "attack": 112,
+      "defense": 118,
+      "specialAttack": 68,
+      "specialDefense": 72,
+      "speed": 47
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 140,
+    "key": "toxicroak",
+    "nationalId": 454,
+    "name": "Coatox",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/toxicroak.png",
+    "stats": {
+      "hp": 83,
+      "attack": 106,
+      "defense": 65,
+      "specialAttack": 86,
+      "specialDefense": 65,
+      "speed": 85
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 141,
+    "key": "abomasnow",
+    "nationalId": 460,
+    "name": "Blizzaroi",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/abomasnow.png",
+    "stats": {
+      "hp": 90,
+      "attack": 92,
+      "defense": 75,
+      "specialAttack": 92,
+      "specialDefense": 85,
+      "speed": 60
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 142,
+    "key": "abomasnowmega",
+    "nationalId": 460,
+    "name": "Méga-Blizzaroi",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/abomasnowmega.png",
+    "stats": {
+      "hp": 90,
+      "attack": 132,
+      "defense": 105,
+      "specialAttack": 132,
+      "specialDefense": 105,
+      "speed": 30
+    },
+    "sourceForm": "Mega Abomasnow"
+  },
+  {
+    "id": 143,
+    "key": "weavile",
+    "nationalId": 461,
+    "name": "Dimoret",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/weavile.png",
+    "stats": {
+      "hp": 70,
+      "attack": 120,
+      "defense": 65,
+      "specialAttack": 45,
+      "specialDefense": 85,
+      "speed": 125
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 144,
+    "key": "rhyperior",
+    "nationalId": 464,
+    "name": "Rhinastoc",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/rhyperior.png",
+    "stats": {
+      "hp": 115,
+      "attack": 140,
+      "defense": 130,
+      "specialAttack": 55,
+      "specialDefense": 55,
+      "speed": 40
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 145,
+    "key": "leafeon",
+    "nationalId": 470,
+    "name": "Phyllali",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/leafeon.png",
+    "stats": {
+      "hp": 65,
+      "attack": 110,
+      "defense": 130,
+      "specialAttack": 60,
+      "specialDefense": 65,
+      "speed": 95
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 146,
+    "key": "glaceon",
+    "nationalId": 471,
+    "name": "Givrali",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/glaceon.png",
+    "stats": {
+      "hp": 65,
+      "attack": 60,
+      "defense": 110,
+      "specialAttack": 130,
+      "specialDefense": 95,
+      "speed": 65
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 147,
+    "key": "gliscor",
+    "nationalId": 472,
+    "name": "Scorvol",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/gliscor.png",
+    "stats": {
+      "hp": 75,
+      "attack": 95,
+      "defense": 125,
+      "specialAttack": 45,
+      "specialDefense": 75,
+      "speed": 95
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 148,
+    "key": "mamoswine",
+    "nationalId": 473,
+    "name": "Mammochon",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/mamoswine.png",
+    "stats": {
+      "hp": 110,
+      "attack": 130,
+      "defense": 80,
+      "specialAttack": 70,
+      "specialDefense": 60,
+      "speed": 80
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 149,
+    "key": "gallade",
+    "nationalId": 475,
+    "name": "Gallame",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/gallade.png",
+    "stats": {
+      "hp": 68,
+      "attack": 125,
+      "defense": 65,
+      "specialAttack": 65,
+      "specialDefense": 115,
+      "speed": 80
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 150,
+    "key": "gallademega",
+    "nationalId": 475,
+    "name": "Méga-Gallame",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/gallademega.png",
+    "stats": {
+      "hp": 68,
+      "attack": 165,
+      "defense": 95,
+      "specialAttack": 65,
+      "specialDefense": 115,
+      "speed": 110
+    },
+    "sourceForm": "Mega Gallade"
+  },
+  {
+    "id": 151,
+    "key": "froslassmega",
+    "nationalId": 478,
+    "name": "Méga-Momartik",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/froslassmega.png",
+    "stats": {
+      "hp": 70,
+      "attack": 80,
+      "defense": 70,
+      "specialAttack": 140,
+      "specialDefense": 100,
+      "speed": 120
+    },
+    "sourceForm": "Mega Froslass"
+  },
+  {
+    "id": 152,
+    "key": "froslass",
+    "nationalId": 478,
+    "name": "Momartik",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/froslass.png",
+    "stats": {
+      "hp": 70,
+      "attack": 80,
+      "defense": 70,
+      "specialAttack": 80,
+      "specialDefense": 70,
+      "speed": 110
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 153,
+    "key": "rotom",
+    "nationalId": 479,
+    "name": "Motisma",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/rotom.png",
+    "stats": {
+      "hp": 50,
+      "attack": 50,
+      "defense": 77,
+      "specialAttack": 95,
+      "specialDefense": 77,
+      "speed": 91
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 154,
+    "key": "serperior",
+    "nationalId": 497,
+    "name": "Majaspic",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/serperior.png",
+    "stats": {
+      "hp": 75,
+      "attack": 75,
+      "defense": 95,
+      "specialAttack": 75,
+      "specialDefense": 95,
+      "speed": 113
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 155,
+    "key": "emboarmega",
+    "nationalId": 500,
+    "name": "Méga-Roitiflam",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/emboarmega.png",
+    "stats": {
+      "hp": 110,
+      "attack": 148,
+      "defense": 75,
+      "specialAttack": 110,
+      "specialDefense": 110,
+      "speed": 75
+    },
+    "sourceForm": "Mega Emboar"
+  },
+  {
+    "id": 156,
+    "key": "emboar",
+    "nationalId": 500,
+    "name": "Roitiflam",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/emboar.png",
+    "stats": {
+      "hp": 110,
+      "attack": 123,
+      "defense": 65,
+      "specialAttack": 100,
+      "specialDefense": 65,
+      "speed": 65
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 157,
+    "key": "samurott",
+    "nationalId": 503,
+    "name": "Clamiral",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/samurott.png",
+    "stats": {
+      "hp": 95,
+      "attack": 100,
+      "defense": 85,
+      "specialAttack": 108,
+      "specialDefense": 70,
+      "speed": 70
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 158,
+    "key": "samurotthisui",
+    "nationalId": 503,
+    "name": "Clamiral — Forme de Hisui",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/samurotthisui.png",
+    "stats": {
+      "hp": 90,
+      "attack": 108,
+      "defense": 80,
+      "specialAttack": 100,
+      "specialDefense": 65,
+      "speed": 85
+    },
+    "sourceForm": "Hisuian Form"
+  },
+  {
+    "id": 159,
+    "key": "watchog",
+    "nationalId": 505,
+    "name": "Miradar",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/watchog.png",
+    "stats": {
+      "hp": 60,
+      "attack": 85,
+      "defense": 69,
+      "specialAttack": 60,
+      "specialDefense": 69,
+      "speed": 77
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 160,
+    "key": "liepard",
+    "nationalId": 510,
+    "name": "Léopardus",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/liepard.png",
+    "stats": {
+      "hp": 64,
+      "attack": 88,
+      "defense": 50,
+      "specialAttack": 88,
+      "specialDefense": 50,
+      "speed": 106
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 161,
+    "key": "simisage",
+    "nationalId": 512,
+    "name": "Feuiloutan",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/simisage.png",
+    "stats": {
+      "hp": 75,
+      "attack": 98,
+      "defense": 63,
+      "specialAttack": 98,
+      "specialDefense": 63,
+      "speed": 101
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 162,
+    "key": "simisear",
+    "nationalId": 514,
+    "name": "Flamoutan",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/simisear.png",
+    "stats": {
+      "hp": 75,
+      "attack": 98,
+      "defense": 63,
+      "specialAttack": 98,
+      "specialDefense": 63,
+      "speed": 101
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 163,
+    "key": "simipour",
+    "nationalId": 516,
+    "name": "Flotoutan",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/simipour.png",
+    "stats": {
+      "hp": 75,
+      "attack": 98,
+      "defense": 63,
+      "specialAttack": 98,
+      "specialDefense": 63,
+      "speed": 101
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 164,
+    "key": "musharna",
+    "nationalId": 518,
+    "name": "Mushana",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/musharna.png",
+    "stats": {
+      "hp": 116,
+      "attack": 55,
+      "defense": 85,
+      "specialAttack": 107,
+      "specialDefense": 95,
+      "speed": 29
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 165,
+    "key": "excadrillmega",
+    "nationalId": 530,
+    "name": "Méga-Minotaupe",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/excadrillmega.png",
+    "stats": {
+      "hp": 110,
+      "attack": 165,
+      "defense": 100,
+      "specialAttack": 65,
+      "specialDefense": 65,
+      "speed": 103
+    },
+    "sourceForm": "Mega Excadrill"
+  },
+  {
+    "id": 166,
+    "key": "excadrill",
+    "nationalId": 530,
+    "name": "Minotaupe",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/excadrill.png",
+    "stats": {
+      "hp": 110,
+      "attack": 135,
+      "defense": 60,
+      "specialAttack": 50,
+      "specialDefense": 65,
+      "speed": 88
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 167,
+    "key": "audinomega",
+    "nationalId": 531,
+    "name": "Méga-Nanméouïe",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/audinomega.png",
+    "stats": {
+      "hp": 103,
+      "attack": 60,
+      "defense": 126,
+      "specialAttack": 80,
+      "specialDefense": 126,
+      "speed": 50
+    },
+    "sourceForm": "Mega Audino"
+  },
+  {
+    "id": 168,
+    "key": "audino",
+    "nationalId": 531,
+    "name": "Nanméouïe",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/audino.png",
+    "stats": {
+      "hp": 103,
+      "attack": 60,
+      "defense": 86,
+      "specialAttack": 60,
+      "specialDefense": 86,
+      "speed": 50
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 169,
+    "key": "conkeldurr",
+    "nationalId": 534,
+    "name": "Bétochef",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/conkeldurr.png",
+    "stats": {
+      "hp": 105,
+      "attack": 140,
+      "defense": 95,
+      "specialAttack": 55,
+      "specialDefense": 65,
+      "speed": 45
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 170,
+    "key": "scolipede",
+    "nationalId": 545,
+    "name": "Brutapode",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/scolipede.png",
+    "stats": {
+      "hp": 60,
+      "attack": 100,
+      "defense": 89,
+      "specialAttack": 55,
+      "specialDefense": 69,
+      "speed": 112
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 171,
+    "key": "scolipedemega",
+    "nationalId": 545,
+    "name": "Méga-Brutapode",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/scolipedemega.png",
+    "stats": {
+      "hp": 60,
+      "attack": 140,
+      "defense": 149,
+      "specialAttack": 75,
+      "specialDefense": 99,
+      "speed": 62
+    },
+    "sourceForm": "Mega Scolipede"
+  },
+  {
+    "id": 172,
+    "key": "whimsicott",
+    "nationalId": 547,
+    "name": "Farfaduvet",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/whimsicott.png",
+    "stats": {
+      "hp": 60,
+      "attack": 67,
+      "defense": 85,
+      "specialAttack": 77,
+      "specialDefense": 75,
+      "speed": 116
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 173,
+    "key": "krookodile",
+    "nationalId": 553,
+    "name": "Crocorible",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/krookodile.png",
+    "stats": {
+      "hp": 95,
+      "attack": 117,
+      "defense": 80,
+      "specialAttack": 65,
+      "specialDefense": 70,
+      "speed": 92
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 174,
+    "key": "scrafty",
+    "nationalId": 560,
+    "name": "Baggaïd",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/scrafty.png",
+    "stats": {
+      "hp": 65,
+      "attack": 90,
+      "defense": 115,
+      "specialAttack": 45,
+      "specialDefense": 115,
+      "speed": 58
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 175,
+    "key": "scraftymega",
+    "nationalId": 560,
+    "name": "Méga-Baggaïd",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/scraftymega.png",
+    "stats": {
+      "hp": 65,
+      "attack": 130,
+      "defense": 135,
+      "specialAttack": 55,
+      "specialDefense": 135,
+      "speed": 68
+    },
+    "sourceForm": "Mega Scrafty"
+  },
+  {
+    "id": 176,
+    "key": "cofagrigus",
+    "nationalId": 563,
+    "name": "Tutankafer",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/cofagrigus.png",
+    "stats": {
+      "hp": 58,
+      "attack": 50,
+      "defense": 145,
+      "specialAttack": 95,
+      "specialDefense": 105,
+      "speed": 30
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 177,
+    "key": "garbodor",
+    "nationalId": 569,
+    "name": "Miasmax",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/garbodor.png",
+    "stats": {
+      "hp": 80,
+      "attack": 95,
+      "defense": 82,
+      "specialAttack": 60,
+      "specialDefense": 82,
+      "speed": 75
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 178,
+    "key": "zoroark",
+    "nationalId": 571,
+    "name": "Zoroark",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/zoroark.png",
+    "stats": {
+      "hp": 60,
+      "attack": 105,
+      "defense": 60,
+      "specialAttack": 120,
+      "specialDefense": 60,
+      "speed": 105
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 179,
+    "key": "zoroarkhisui",
+    "nationalId": 571,
+    "name": "Zoroark — Forme de Hisui",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/zoroarkhisui.png",
+    "stats": {
+      "hp": 55,
+      "attack": 100,
+      "defense": 60,
+      "specialAttack": 125,
+      "specialDefense": 60,
+      "speed": 110
+    },
+    "sourceForm": "Hisuian Form"
+  },
+  {
+    "id": 180,
+    "key": "reuniclus",
+    "nationalId": 579,
+    "name": "Symbios",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/reuniclus.png",
+    "stats": {
+      "hp": 110,
+      "attack": 65,
+      "defense": 75,
+      "specialAttack": 125,
+      "specialDefense": 85,
+      "speed": 30
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 181,
+    "key": "vanilluxe",
+    "nationalId": 584,
+    "name": "Sorbouboul",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/vanilluxe.png",
+    "stats": {
+      "hp": 71,
+      "attack": 95,
+      "defense": 85,
+      "specialAttack": 110,
+      "specialDefense": 95,
+      "speed": 79
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 182,
+    "key": "emolga",
+    "nationalId": 587,
+    "name": "Emolga",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/emolga.png",
+    "stats": {
+      "hp": 55,
+      "attack": 75,
+      "defense": 60,
+      "specialAttack": 75,
+      "specialDefense": 60,
+      "speed": 103
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 183,
+    "key": "eelektrossmega",
+    "nationalId": 604,
+    "name": "Méga-Ohmassacre",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/eelektrossmega.png",
+    "stats": {
+      "hp": 85,
+      "attack": 145,
+      "defense": 80,
+      "specialAttack": 135,
+      "specialDefense": 90,
+      "speed": 80
+    },
+    "sourceForm": "Mega Eelektross"
+  },
+  {
+    "id": 184,
+    "key": "eelektross",
+    "nationalId": 604,
+    "name": "Ohmassacre",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/eelektross.png",
+    "stats": {
+      "hp": 85,
+      "attack": 115,
+      "defense": 80,
+      "specialAttack": 105,
+      "specialDefense": 80,
+      "speed": 50
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 185,
+    "key": "chandelure",
+    "nationalId": 609,
+    "name": "Lugulabre",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/chandelure.png",
+    "stats": {
+      "hp": 60,
+      "attack": 55,
+      "defense": 90,
+      "specialAttack": 145,
+      "specialDefense": 90,
+      "speed": 80
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 186,
+    "key": "chandeluremega",
+    "nationalId": 609,
+    "name": "Méga-Lugulabre",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/chandeluremega.png",
+    "stats": {
+      "hp": 60,
+      "attack": 75,
+      "defense": 110,
+      "specialAttack": 175,
+      "specialDefense": 110,
+      "speed": 90
+    },
+    "sourceForm": "Mega Chandelure"
+  },
+  {
+    "id": 187,
+    "key": "beartic",
+    "nationalId": 614,
+    "name": "Polagriffe",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/beartic.png",
+    "stats": {
+      "hp": 95,
+      "attack": 130,
+      "defense": 80,
+      "specialAttack": 70,
+      "specialDefense": 80,
+      "speed": 50
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 188,
+    "key": "stunfisk",
+    "nationalId": 618,
+    "name": "Limonde",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/stunfisk.png",
+    "stats": {
+      "hp": 109,
+      "attack": 66,
+      "defense": 84,
+      "specialAttack": 81,
+      "specialDefense": 99,
+      "speed": 32
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 189,
+    "key": "stunfiskgalar",
+    "nationalId": 618,
+    "name": "Limonde — Forme de Galar",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/stunfiskgalar.png",
+    "stats": {
+      "hp": 109,
+      "attack": 81,
+      "defense": 99,
+      "specialAttack": 66,
+      "specialDefense": 84,
+      "speed": 32
+    },
+    "sourceForm": "Galarian Form"
+  },
+  {
+    "id": 190,
+    "key": "golurk",
+    "nationalId": 623,
+    "name": "Golemastoc",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/golurk.png",
+    "stats": {
+      "hp": 89,
+      "attack": 124,
+      "defense": 80,
+      "specialAttack": 55,
+      "specialDefense": 80,
+      "speed": 55
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 191,
+    "key": "golurkmega",
+    "nationalId": 623,
+    "name": "Méga-Golemastoc",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/golurkmega.png",
+    "stats": {
+      "hp": 89,
+      "attack": 159,
+      "defense": 105,
+      "specialAttack": 70,
+      "specialDefense": 105,
+      "speed": 55
+    },
+    "sourceForm": "Mega Golurk"
+  },
+  {
+    "id": 192,
+    "key": "hydreigon",
+    "nationalId": 635,
+    "name": "Trioxhydre",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/hydreigon.png",
+    "stats": {
+      "hp": 92,
+      "attack": 105,
+      "defense": 90,
+      "specialAttack": 125,
+      "specialDefense": 90,
+      "speed": 98
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 193,
+    "key": "volcarona",
+    "nationalId": 637,
+    "name": "Pyrax",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/volcarona.png",
+    "stats": {
+      "hp": 85,
+      "attack": 60,
+      "defense": 65,
+      "specialAttack": 135,
+      "specialDefense": 105,
+      "speed": 100
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 194,
+    "key": "chesnaught",
+    "nationalId": 652,
+    "name": "Blindépique",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/chesnaught.png",
+    "stats": {
+      "hp": 88,
+      "attack": 107,
+      "defense": 122,
+      "specialAttack": 74,
+      "specialDefense": 75,
+      "speed": 64
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 195,
+    "key": "chesnaughtmega",
+    "nationalId": 652,
+    "name": "Méga-Blindépique",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/chesnaughtmega.png",
+    "stats": {
+      "hp": 88,
+      "attack": 137,
+      "defense": 172,
+      "specialAttack": 74,
+      "specialDefense": 115,
+      "speed": 44
+    },
+    "sourceForm": "Mega Chesnaught"
+  },
+  {
+    "id": 196,
+    "key": "delphox",
+    "nationalId": 655,
+    "name": "Goupelin",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/delphox.png",
+    "stats": {
+      "hp": 75,
+      "attack": 69,
+      "defense": 72,
+      "specialAttack": 114,
+      "specialDefense": 100,
+      "speed": 104
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 197,
+    "key": "delphoxmega",
+    "nationalId": 655,
+    "name": "Méga-Goupelin",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/delphoxmega.png",
+    "stats": {
+      "hp": 75,
+      "attack": 69,
+      "defense": 72,
+      "specialAttack": 159,
+      "specialDefense": 125,
+      "speed": 134
+    },
+    "sourceForm": "Mega Delphox"
+  },
+  {
+    "id": 198,
+    "key": "greninja",
+    "nationalId": 658,
+    "name": "Amphinobi",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/greninja.png",
+    "stats": {
+      "hp": 72,
+      "attack": 95,
+      "defense": 67,
+      "specialAttack": 103,
+      "specialDefense": 71,
+      "speed": 122
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 199,
+    "key": "greninjamega",
+    "nationalId": 658,
+    "name": "Méga-Amphinobi",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/greninjamega.png",
+    "stats": {
+      "hp": 72,
+      "attack": 125,
+      "defense": 77,
+      "specialAttack": 133,
+      "specialDefense": 81,
+      "speed": 142
+    },
+    "sourceForm": "Mega Greninja"
+  },
+  {
+    "id": 200,
+    "key": "diggersby",
+    "nationalId": 660,
+    "name": "Excavarenne",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/diggersby.png",
+    "stats": {
+      "hp": 85,
+      "attack": 56,
+      "defense": 77,
+      "specialAttack": 50,
+      "specialDefense": 77,
+      "speed": 78
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 201,
+    "key": "talonflame",
+    "nationalId": 663,
+    "name": "Flambusard",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/talonflame.png",
+    "stats": {
+      "hp": 78,
+      "attack": 81,
+      "defense": 71,
+      "specialAttack": 74,
+      "specialDefense": 69,
+      "speed": 126
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 202,
+    "key": "vivillon",
+    "nationalId": 666,
+    "name": "Prismillon",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/vivillon.png",
+    "stats": {
+      "hp": 80,
+      "attack": 52,
+      "defense": 50,
+      "specialAttack": 90,
+      "specialDefense": 50,
+      "speed": 89
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 203,
+    "key": "pyroarmega",
+    "nationalId": 668,
+    "name": "Méga-Némélios (Male)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/pyroarmega.png",
+    "stats": {
+      "hp": 86,
+      "attack": 88,
+      "defense": 92,
+      "specialAttack": 129,
+      "specialDefense": 86,
+      "speed": 126
+    },
+    "sourceForm": "Mega Pyroar"
+  },
+  {
+    "id": 204,
+    "key": "pyroar",
+    "nationalId": 668,
+    "name": "Némélios (Male)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/pyroar.png",
+    "stats": {
+      "hp": 86,
+      "attack": 68,
+      "defense": 72,
+      "specialAttack": 109,
+      "specialDefense": 66,
+      "speed": 106
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 205,
+    "key": "floetteeternal",
+    "nationalId": 670,
+    "name": "Floette",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/floetteeternal.png",
+    "stats": {
+      "hp": 74,
+      "attack": 65,
+      "defense": 67,
+      "specialAttack": 125,
+      "specialDefense": 128,
+      "speed": 92
+    },
+    "sourceForm": "Eternal Flower"
+  },
+  {
+    "id": 206,
+    "key": "floettemega",
+    "nationalId": 670,
+    "name": "Méga-Floette",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/floettemega.png",
+    "stats": {
+      "hp": 74,
+      "attack": 85,
+      "defense": 87,
+      "specialAttack": 155,
+      "specialDefense": 148,
+      "speed": 102
+    },
+    "sourceForm": "Mega Floette"
+  },
+  {
+    "id": 207,
+    "key": "florges",
+    "nationalId": 671,
+    "name": "Florges",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/florges.png",
+    "stats": {
+      "hp": 78,
+      "attack": 65,
+      "defense": 68,
+      "specialAttack": 112,
+      "specialDefense": 154,
+      "speed": 75
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 208,
+    "key": "pangoro",
+    "nationalId": 675,
+    "name": "Pandarbare",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/pangoro.png",
+    "stats": {
+      "hp": 95,
+      "attack": 124,
+      "defense": 78,
+      "specialAttack": 69,
+      "specialDefense": 71,
+      "speed": 58
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 209,
+    "key": "furfrou",
+    "nationalId": 676,
+    "name": "Couafarel",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/furfrou.png",
+    "stats": {
+      "hp": 75,
+      "attack": 80,
+      "defense": 60,
+      "specialAttack": 65,
+      "specialDefense": 90,
+      "speed": 102
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 210,
+    "key": "meowsticmega",
+    "nationalId": 678,
+    "name": "Méga-Mistigrix (Male)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/meowsticmega.png",
+    "stats": {
+      "hp": 74,
+      "attack": 48,
+      "defense": 76,
+      "specialAttack": 143,
+      "specialDefense": 101,
+      "speed": 124
+    },
+    "sourceForm": "Mega Meowstic"
+  },
+  {
+    "id": 211,
+    "key": "meowstic",
+    "nationalId": 678,
+    "name": "Mistigrix (Male)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/meowstic.png",
+    "stats": {
+      "hp": 74,
+      "attack": 48,
+      "defense": 76,
+      "specialAttack": 83,
+      "specialDefense": 81,
+      "speed": 104
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 212,
+    "key": "aegislash",
+    "nationalId": 681,
+    "name": "Exagide (Parade)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/aegislash.png",
+    "stats": {
+      "hp": 60,
+      "attack": 50,
+      "defense": 140,
+      "specialAttack": 50,
+      "specialDefense": 140,
+      "speed": 60
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 213,
+    "key": "aromatisse",
+    "nationalId": 683,
+    "name": "Cocotine",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/aromatisse.png",
+    "stats": {
+      "hp": 101,
+      "attack": 72,
+      "defense": 72,
+      "specialAttack": 99,
+      "specialDefense": 89,
+      "speed": 29
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 214,
+    "key": "slurpuff",
+    "nationalId": 685,
+    "name": "Cupcanaille",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/slurpuff.png",
+    "stats": {
+      "hp": 82,
+      "attack": 80,
+      "defense": 86,
+      "specialAttack": 85,
+      "specialDefense": 75,
+      "speed": 72
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 215,
+    "key": "malamarmega",
+    "nationalId": 687,
+    "name": "Méga-Sepiatroce",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/malamarmega.png",
+    "stats": {
+      "hp": 86,
+      "attack": 102,
+      "defense": 88,
+      "specialAttack": 98,
+      "specialDefense": 120,
+      "speed": 88
+    },
+    "sourceForm": "Mega Malamar"
+  },
+  {
+    "id": 216,
+    "key": "malamar",
+    "nationalId": 687,
+    "name": "Sepiatroce",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/malamar.png",
+    "stats": {
+      "hp": 86,
+      "attack": 92,
+      "defense": 88,
+      "specialAttack": 68,
+      "specialDefense": 75,
+      "speed": 73
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 217,
+    "key": "barbaracle",
+    "nationalId": 689,
+    "name": "Golgopathe",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/barbaracle.png",
+    "stats": {
+      "hp": 72,
+      "attack": 105,
+      "defense": 115,
+      "specialAttack": 54,
+      "specialDefense": 86,
+      "speed": 68
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 218,
+    "key": "barbaraclemega",
+    "nationalId": 689,
+    "name": "Méga-Golgopathe",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/barbaraclemega.png",
+    "stats": {
+      "hp": 72,
+      "attack": 140,
+      "defense": 130,
+      "specialAttack": 64,
+      "specialDefense": 106,
+      "speed": 88
+    },
+    "sourceForm": "Mega Barbaracle"
+  },
+  {
+    "id": 219,
+    "key": "dragalge",
+    "nationalId": 691,
+    "name": "Kravarech",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/dragalge.png",
+    "stats": {
+      "hp": 65,
+      "attack": 75,
+      "defense": 90,
+      "specialAttack": 97,
+      "specialDefense": 123,
+      "speed": 44
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 220,
+    "key": "dragalgemega",
+    "nationalId": 691,
+    "name": "Méga-Kravarech",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/dragalgemega.png",
+    "stats": {
+      "hp": 65,
+      "attack": 85,
+      "defense": 105,
+      "specialAttack": 132,
+      "specialDefense": 163,
+      "speed": 44
+    },
+    "sourceForm": "Mega Dragalge"
+  },
+  {
+    "id": 221,
+    "key": "clawitzer",
+    "nationalId": 693,
+    "name": "Gamblast",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/clawitzer.png",
+    "stats": {
+      "hp": 71,
+      "attack": 73,
+      "defense": 88,
+      "specialAttack": 120,
+      "specialDefense": 89,
+      "speed": 59
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 222,
+    "key": "heliolisk",
+    "nationalId": 695,
+    "name": "Iguolta",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/heliolisk.png",
+    "stats": {
+      "hp": 62,
+      "attack": 55,
+      "defense": 52,
+      "specialAttack": 109,
+      "specialDefense": 94,
+      "speed": 109
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 223,
+    "key": "tyrantrum",
+    "nationalId": 697,
+    "name": "Rexillius",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/tyrantrum.png",
+    "stats": {
+      "hp": 82,
+      "attack": 121,
+      "defense": 119,
+      "specialAttack": 69,
+      "specialDefense": 59,
+      "speed": 71
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 224,
+    "key": "aurorus",
+    "nationalId": 699,
+    "name": "Dragmara",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/aurorus.png",
+    "stats": {
+      "hp": 123,
+      "attack": 77,
+      "defense": 72,
+      "specialAttack": 99,
+      "specialDefense": 92,
+      "speed": 58
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 225,
+    "key": "sylveon",
+    "nationalId": 700,
+    "name": "Nymphali",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/sylveon.png",
+    "stats": {
+      "hp": 95,
+      "attack": 65,
+      "defense": 65,
+      "specialAttack": 110,
+      "specialDefense": 130,
+      "speed": 60
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 226,
+    "key": "hawlucha",
+    "nationalId": 701,
+    "name": "Brutalibré",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/hawlucha.png",
+    "stats": {
+      "hp": 78,
+      "attack": 92,
+      "defense": 75,
+      "specialAttack": 74,
+      "specialDefense": 63,
+      "speed": 118
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 227,
+    "key": "hawluchamega",
+    "nationalId": 701,
+    "name": "Méga-Brutalibré",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/hawluchamega.png",
+    "stats": {
+      "hp": 78,
+      "attack": 137,
+      "defense": 100,
+      "specialAttack": 74,
+      "specialDefense": 93,
+      "speed": 118
+    },
+    "sourceForm": "Mega Hawlucha"
+  },
+  {
+    "id": 228,
+    "key": "dedenne",
+    "nationalId": 702,
+    "name": "Dedenne",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/dedenne.png",
+    "stats": {
+      "hp": 67,
+      "attack": 58,
+      "defense": 57,
+      "specialAttack": 81,
+      "specialDefense": 67,
+      "speed": 101
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 229,
+    "key": "goodra",
+    "nationalId": 706,
+    "name": "Muplodocus",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/goodra.png",
+    "stats": {
+      "hp": 90,
+      "attack": 100,
+      "defense": 70,
+      "specialAttack": 110,
+      "specialDefense": 150,
+      "speed": 80
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 230,
+    "key": "goodrahisui",
+    "nationalId": 706,
+    "name": "Muplodocus — Forme de Hisui",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/goodrahisui.png",
+    "stats": {
+      "hp": 80,
+      "attack": 100,
+      "defense": 100,
+      "specialAttack": 110,
+      "specialDefense": 150,
+      "speed": 60
+    },
+    "sourceForm": "Hisuian Form"
+  },
+  {
+    "id": 231,
+    "key": "klefki",
+    "nationalId": 707,
+    "name": "Trousselin",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/klefki.png",
+    "stats": {
+      "hp": 57,
+      "attack": 80,
+      "defense": 91,
+      "specialAttack": 80,
+      "specialDefense": 87,
+      "speed": 75
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 232,
+    "key": "trevenant",
+    "nationalId": 709,
+    "name": "Desséliande",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/trevenant.png",
+    "stats": {
+      "hp": 85,
+      "attack": 110,
+      "defense": 76,
+      "specialAttack": 65,
+      "specialDefense": 82,
+      "speed": 56
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 233,
+    "key": "gourgeist",
+    "nationalId": 711,
+    "name": "Banshitrouye (Average)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/gourgeist.png",
+    "stats": {
+      "hp": 65,
+      "attack": 90,
+      "defense": 122,
+      "specialAttack": 58,
+      "specialDefense": 75,
+      "speed": 84
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 234,
+    "key": "avalugg",
+    "nationalId": 713,
+    "name": "Séracrawl",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/avalugg.png",
+    "stats": {
+      "hp": 95,
+      "attack": 117,
+      "defense": 184,
+      "specialAttack": 44,
+      "specialDefense": 46,
+      "speed": 28
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 235,
+    "key": "avalugghisui",
+    "nationalId": 713,
+    "name": "Séracrawl — Forme de Hisui",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/avalugghisui.png",
+    "stats": {
+      "hp": 95,
+      "attack": 127,
+      "defense": 184,
+      "specialAttack": 34,
+      "specialDefense": 36,
+      "speed": 38
+    },
+    "sourceForm": "Hisuian Form"
+  },
+  {
+    "id": 236,
+    "key": "noivern",
+    "nationalId": 715,
+    "name": "Bruyverne",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/noivern.png",
+    "stats": {
+      "hp": 85,
+      "attack": 70,
+      "defense": 80,
+      "specialAttack": 97,
+      "specialDefense": 80,
+      "speed": 123
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 237,
+    "key": "decidueye",
+    "nationalId": 724,
+    "name": "Archéduc",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/decidueye.png",
+    "stats": {
+      "hp": 78,
+      "attack": 107,
+      "defense": 75,
+      "specialAttack": 100,
+      "specialDefense": 100,
+      "speed": 70
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 238,
+    "key": "decidueyehisui",
+    "nationalId": 724,
+    "name": "Archéduc — Forme de Hisui",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/decidueyehisui.png",
+    "stats": {
+      "hp": 88,
+      "attack": 112,
+      "defense": 80,
+      "specialAttack": 95,
+      "specialDefense": 95,
+      "speed": 60
+    },
+    "sourceForm": "Hisuian Form"
+  },
+  {
+    "id": 239,
+    "key": "incineroar",
+    "nationalId": 727,
+    "name": "Félinferno",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/incineroar.png",
+    "stats": {
+      "hp": 95,
+      "attack": 115,
+      "defense": 90,
+      "specialAttack": 80,
+      "specialDefense": 90,
+      "speed": 60
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 240,
+    "key": "primarina",
+    "nationalId": 730,
+    "name": "Oratoria",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/primarina.png",
+    "stats": {
+      "hp": 80,
+      "attack": 74,
+      "defense": 74,
+      "specialAttack": 126,
+      "specialDefense": 116,
+      "speed": 60
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 241,
+    "key": "toucannon",
+    "nationalId": 733,
+    "name": "Bazoucan",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/toucannon.png",
+    "stats": {
+      "hp": 80,
+      "attack": 120,
+      "defense": 75,
+      "specialAttack": 75,
+      "specialDefense": 75,
+      "speed": 60
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 242,
+    "key": "crabominable",
+    "nationalId": 740,
+    "name": "Crabominable",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/crabominable.png",
+    "stats": {
+      "hp": 97,
+      "attack": 132,
+      "defense": 77,
+      "specialAttack": 62,
+      "specialDefense": 67,
+      "speed": 43
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 243,
+    "key": "crabominablemega",
+    "nationalId": 740,
+    "name": "Méga-Crabominable",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/crabominablemega.png",
+    "stats": {
+      "hp": 97,
+      "attack": 157,
+      "defense": 122,
+      "specialAttack": 62,
+      "specialDefense": 107,
+      "speed": 33
+    },
+    "sourceForm": "Mega Crabominable"
+  },
+  {
+    "id": 244,
+    "key": "lycanroc",
+    "nationalId": 745,
+    "name": "Lougaroc (Diurne)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/lycanroc.png",
+    "stats": {
+      "hp": 75,
+      "attack": 115,
+      "defense": 65,
+      "specialAttack": 55,
+      "specialDefense": 65,
+      "speed": 112
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 245,
+    "key": "toxapex",
+    "nationalId": 748,
+    "name": "Prédastérie",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/toxapex.png",
+    "stats": {
+      "hp": 50,
+      "attack": 63,
+      "defense": 152,
+      "specialAttack": 53,
+      "specialDefense": 142,
+      "speed": 35
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 246,
+    "key": "mudsdale",
+    "nationalId": 750,
+    "name": "Bourrinos",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/mudsdale.png",
+    "stats": {
+      "hp": 100,
+      "attack": 125,
+      "defense": 100,
+      "specialAttack": 55,
+      "specialDefense": 85,
+      "speed": 35
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 247,
+    "key": "araquanid",
+    "nationalId": 752,
+    "name": "Tarenbulle",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/araquanid.png",
+    "stats": {
+      "hp": 68,
+      "attack": 70,
+      "defense": 92,
+      "specialAttack": 50,
+      "specialDefense": 132,
+      "speed": 42
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 248,
+    "key": "salazzle",
+    "nationalId": 758,
+    "name": "Malamandre",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/salazzle.png",
+    "stats": {
+      "hp": 68,
+      "attack": 64,
+      "defense": 60,
+      "specialAttack": 111,
+      "specialDefense": 60,
+      "speed": 117
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 249,
+    "key": "tsareena",
+    "nationalId": 763,
+    "name": "Sucreine",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/tsareena.png",
+    "stats": {
+      "hp": 72,
+      "attack": 120,
+      "defense": 98,
+      "specialAttack": 50,
+      "specialDefense": 98,
+      "speed": 72
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 250,
+    "key": "oranguru",
+    "nationalId": 765,
+    "name": "Gouroutan",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/oranguru.png",
+    "stats": {
+      "hp": 90,
+      "attack": 60,
+      "defense": 80,
+      "specialAttack": 90,
+      "specialDefense": 110,
+      "speed": 60
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 251,
+    "key": "passimian",
+    "nationalId": 766,
+    "name": "Quartermac",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/passimian.png",
+    "stats": {
+      "hp": 100,
+      "attack": 120,
+      "defense": 90,
+      "specialAttack": 40,
+      "specialDefense": 60,
+      "speed": 80
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 252,
+    "key": "mimikyu",
+    "nationalId": 778,
+    "name": "Mimiqui (Disguised)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/mimikyu.png",
+    "stats": {
+      "hp": 55,
+      "attack": 90,
+      "defense": 80,
+      "specialAttack": 50,
+      "specialDefense": 105,
+      "speed": 96
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 253,
+    "key": "drampa",
+    "nationalId": 780,
+    "name": "Draïeul",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/drampa.png",
+    "stats": {
+      "hp": 78,
+      "attack": 60,
+      "defense": 85,
+      "specialAttack": 135,
+      "specialDefense": 91,
+      "speed": 36
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 254,
+    "key": "drampamega",
+    "nationalId": 780,
+    "name": "Méga-Draïeul",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/drampamega.png",
+    "stats": {
+      "hp": 78,
+      "attack": 85,
+      "defense": 110,
+      "specialAttack": 160,
+      "specialDefense": 116,
+      "speed": 36
+    },
+    "sourceForm": "Mega Drampa"
+  },
+  {
+    "id": 255,
+    "key": "kommoo",
+    "nationalId": 784,
+    "name": "Ékaïser",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/kommoo.png",
+    "stats": {
+      "hp": 75,
+      "attack": 110,
+      "defense": 125,
+      "specialAttack": 100,
+      "specialDefense": 105,
+      "speed": 85
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 256,
+    "key": "corviknight",
+    "nationalId": 823,
+    "name": "Corvaillus",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/corviknight.png",
+    "stats": {
+      "hp": 98,
+      "attack": 87,
+      "defense": 105,
+      "specialAttack": 53,
+      "specialDefense": 85,
+      "speed": 67
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 257,
+    "key": "flapple",
+    "nationalId": 841,
+    "name": "Pomdrapi",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/flapple.png",
+    "stats": {
+      "hp": 70,
+      "attack": 110,
+      "defense": 80,
+      "specialAttack": 95,
+      "specialDefense": 60,
+      "speed": 70
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 258,
+    "key": "appletun",
+    "nationalId": 842,
+    "name": "Dratatin",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/appletun.png",
+    "stats": {
+      "hp": 110,
+      "attack": 85,
+      "defense": 80,
+      "specialAttack": 100,
+      "specialDefense": 80,
+      "speed": 30
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 259,
+    "key": "sandaconda",
+    "nationalId": 844,
+    "name": "Dunaconda",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/sandaconda.png",
+    "stats": {
+      "hp": 72,
+      "attack": 107,
+      "defense": 125,
+      "specialAttack": 65,
+      "specialDefense": 70,
+      "speed": 71
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 260,
+    "key": "polteageist",
+    "nationalId": 855,
+    "name": "Polthégeist",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/polteageist.png",
+    "stats": {
+      "hp": 60,
+      "attack": 65,
+      "defense": 65,
+      "specialAttack": 134,
+      "specialDefense": 114,
+      "speed": 70
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 261,
+    "key": "hatterene",
+    "nationalId": 858,
+    "name": "Sorcilence",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/hatterene.png",
+    "stats": {
+      "hp": 57,
+      "attack": 90,
+      "defense": 95,
+      "specialAttack": 136,
+      "specialDefense": 103,
+      "speed": 29
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 262,
+    "key": "grimmsnarl",
+    "nationalId": 861,
+    "name": "Angoliath",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/grimmsnarl.png",
+    "stats": {
+      "hp": 95,
+      "attack": 120,
+      "defense": 65,
+      "specialAttack": 95,
+      "specialDefense": 75,
+      "speed": 60
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 263,
+    "key": "mrrime",
+    "nationalId": 866,
+    "name": "M. Glaquette",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/mrrime.png",
+    "stats": {
+      "hp": 80,
+      "attack": 85,
+      "defense": 75,
+      "specialAttack": 110,
+      "specialDefense": 100,
+      "speed": 70
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 264,
+    "key": "runerigus",
+    "nationalId": 867,
+    "name": "Tutétékri",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/runerigus.png",
+    "stats": {
+      "hp": 58,
+      "attack": 95,
+      "defense": 145,
+      "specialAttack": 50,
+      "specialDefense": 105,
+      "speed": 30
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 265,
+    "key": "alcremie",
+    "nationalId": 869,
+    "name": "Charmilly",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/alcremie.png",
+    "stats": {
+      "hp": 65,
+      "attack": 60,
+      "defense": 75,
+      "specialAttack": 110,
+      "specialDefense": 121,
+      "speed": 64
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 266,
+    "key": "falinks",
+    "nationalId": 870,
+    "name": "Hexadron",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/falinks.png",
+    "stats": {
+      "hp": 65,
+      "attack": 100,
+      "defense": 100,
+      "specialAttack": 70,
+      "specialDefense": 60,
+      "speed": 75
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 267,
+    "key": "falinksmega",
+    "nationalId": 870,
+    "name": "Méga-Hexadron",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/falinksmega.png",
+    "stats": {
+      "hp": 65,
+      "attack": 135,
+      "defense": 135,
+      "specialAttack": 70,
+      "specialDefense": 65,
+      "speed": 100
+    },
+    "sourceForm": "Mega Falinks"
+  },
+  {
+    "id": 268,
+    "key": "morpeko",
+    "nationalId": 877,
+    "name": "Morpeko (Full Belly)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/morpeko.png",
+    "stats": {
+      "hp": 58,
+      "attack": 95,
+      "defense": 58,
+      "specialAttack": 70,
+      "specialDefense": 58,
+      "speed": 97
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 269,
+    "key": "dragapult",
+    "nationalId": 887,
+    "name": "Lanssorien",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/dragapult.png",
+    "stats": {
+      "hp": 88,
+      "attack": 120,
+      "defense": 75,
+      "specialAttack": 100,
+      "specialDefense": 75,
+      "speed": 142
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 270,
+    "key": "wyrdeer",
+    "nationalId": 899,
+    "name": "Cerbyllin",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/wyrdeer.png",
+    "stats": {
+      "hp": 103,
+      "attack": 105,
+      "defense": 72,
+      "specialAttack": 105,
+      "specialDefense": 75,
+      "speed": 65
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 271,
+    "key": "kleavor",
+    "nationalId": 900,
+    "name": "Hachécateur",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/kleavor.png",
+    "stats": {
+      "hp": 70,
+      "attack": 135,
+      "defense": 95,
+      "specialAttack": 45,
+      "specialDefense": 70,
+      "speed": 85
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 272,
+    "key": "basculegion",
+    "nationalId": 902,
+    "name": "Paragruel (Male)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/basculegion.png",
+    "stats": {
+      "hp": 120,
+      "attack": 112,
+      "defense": 65,
+      "specialAttack": 80,
+      "specialDefense": 75,
+      "speed": 78
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 273,
+    "key": "sneasler",
+    "nationalId": 903,
+    "name": "Farfurex",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/sneasler.png",
+    "stats": {
+      "hp": 80,
+      "attack": 130,
+      "defense": 60,
+      "specialAttack": 40,
+      "specialDefense": 80,
+      "speed": 120
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 274,
+    "key": "overqwil",
+    "nationalId": 904,
+    "name": "Qwilpik",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/overqwil.png",
+    "stats": {
+      "hp": 85,
+      "attack": 115,
+      "defense": 95,
+      "specialAttack": 65,
+      "specialDefense": 65,
+      "speed": 85
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 275,
+    "key": "meowscarada",
+    "nationalId": 908,
+    "name": "Miascarade",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/meowscarada.png",
+    "stats": {
+      "hp": 76,
+      "attack": 110,
+      "defense": 70,
+      "specialAttack": 81,
+      "specialDefense": 70,
+      "speed": 123
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 276,
+    "key": "skeledirge",
+    "nationalId": 911,
+    "name": "Flâmigator",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/skeledirge.png",
+    "stats": {
+      "hp": 104,
+      "attack": 75,
+      "defense": 100,
+      "specialAttack": 110,
+      "specialDefense": 75,
+      "speed": 66
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 277,
+    "key": "quaquaval",
+    "nationalId": 914,
+    "name": "Palmaval",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/quaquaval.png",
+    "stats": {
+      "hp": 85,
+      "attack": 120,
+      "defense": 80,
+      "specialAttack": 85,
+      "specialDefense": 75,
+      "speed": 85
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 278,
+    "key": "maushold",
+    "nationalId": 925,
+    "name": "Famignol (Family Of Four)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/maushold.png",
+    "stats": {
+      "hp": 74,
+      "attack": 75,
+      "defense": 70,
+      "specialAttack": 65,
+      "specialDefense": 75,
+      "speed": 111
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 279,
+    "key": "garganacl",
+    "nationalId": 934,
+    "name": "Gigansel",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/garganacl.png",
+    "stats": {
+      "hp": 100,
+      "attack": 100,
+      "defense": 130,
+      "specialAttack": 45,
+      "specialDefense": 90,
+      "speed": 35
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 280,
+    "key": "armarouge",
+    "nationalId": 936,
+    "name": "Carmadura",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/armarouge.png",
+    "stats": {
+      "hp": 85,
+      "attack": 60,
+      "defense": 100,
+      "specialAttack": 125,
+      "specialDefense": 80,
+      "speed": 75
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 281,
+    "key": "ceruledge",
+    "nationalId": 937,
+    "name": "Malvalame",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/ceruledge.png",
+    "stats": {
+      "hp": 75,
+      "attack": 125,
+      "defense": 80,
+      "specialAttack": 60,
+      "specialDefense": 100,
+      "speed": 85
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 282,
+    "key": "bellibolt",
+    "nationalId": 939,
+    "name": "Ampibidou",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/bellibolt.png",
+    "stats": {
+      "hp": 109,
+      "attack": 64,
+      "defense": 91,
+      "specialAttack": 103,
+      "specialDefense": 83,
+      "speed": 45
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 283,
+    "key": "scovillainmega",
+    "nationalId": 952,
+    "name": "Méga-Scovilain",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/scovillainmega.png",
+    "stats": {
+      "hp": 65,
+      "attack": 138,
+      "defense": 85,
+      "specialAttack": 138,
+      "specialDefense": 85,
+      "speed": 75
+    },
+    "sourceForm": "Mega Scovillain"
+  },
+  {
+    "id": 284,
+    "key": "scovillain",
+    "nationalId": 952,
+    "name": "Scovilain",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/scovillain.png",
+    "stats": {
+      "hp": 65,
+      "attack": 108,
+      "defense": 65,
+      "specialAttack": 108,
+      "specialDefense": 65,
+      "speed": 75
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 285,
+    "key": "espathra",
+    "nationalId": 956,
+    "name": "Cléopsytra",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/espathra.png",
+    "stats": {
+      "hp": 95,
+      "attack": 60,
+      "defense": 60,
+      "specialAttack": 101,
+      "specialDefense": 60,
+      "speed": 105
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 286,
+    "key": "tinkaton",
+    "nationalId": 959,
+    "name": "Forgelina",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/tinkaton.png",
+    "stats": {
+      "hp": 85,
+      "attack": 75,
+      "defense": 77,
+      "specialAttack": 70,
+      "specialDefense": 105,
+      "speed": 94
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 287,
+    "key": "palafin",
+    "nationalId": 964,
+    "name": "Superdofin (Zero)",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/palafin.png",
+    "stats": {
+      "hp": 100,
+      "attack": 70,
+      "defense": 72,
+      "specialAttack": 53,
+      "specialDefense": 62,
+      "speed": 100
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 288,
+    "key": "orthworm",
+    "nationalId": 968,
+    "name": "Ferdeter",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/orthworm.png",
+    "stats": {
+      "hp": 70,
+      "attack": 85,
+      "defense": 145,
+      "specialAttack": 60,
+      "specialDefense": 55,
+      "speed": 65
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 289,
+    "key": "glimmora",
+    "nationalId": 970,
+    "name": "Floréclat",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/glimmora.png",
+    "stats": {
+      "hp": 83,
+      "attack": 55,
+      "defense": 90,
+      "specialAttack": 130,
+      "specialDefense": 81,
+      "speed": 86
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 290,
+    "key": "glimmoramega",
+    "nationalId": 970,
+    "name": "Méga-Floréclat",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/glimmoramega.png",
+    "stats": {
+      "hp": 83,
+      "attack": 90,
+      "defense": 105,
+      "specialAttack": 150,
+      "specialDefense": 96,
+      "speed": 101
+    },
+    "sourceForm": "Mega Glimmora"
+  },
+  {
+    "id": 291,
+    "key": "houndstone",
+    "nationalId": 972,
+    "name": "Tomberro",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/houndstone.png",
+    "stats": {
+      "hp": 72,
+      "attack": 101,
+      "defense": 100,
+      "specialAttack": 50,
+      "specialDefense": 97,
+      "speed": 68
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 292,
+    "key": "annihilape",
+    "nationalId": 979,
+    "name": "Courrousinge",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/annihilape.png",
+    "stats": {
+      "hp": 110,
+      "attack": 115,
+      "defense": 80,
+      "specialAttack": 50,
+      "specialDefense": 90,
+      "speed": 90
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 293,
+    "key": "farigiraf",
+    "nationalId": 981,
+    "name": "Farigiraf",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/farigiraf.png",
+    "stats": {
+      "hp": 120,
+      "attack": 90,
+      "defense": 70,
+      "specialAttack": 110,
+      "specialDefense": 70,
+      "speed": 60
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 294,
+    "key": "kingambit",
+    "nationalId": 983,
+    "name": "Scalpereur",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/kingambit.png",
+    "stats": {
+      "hp": 100,
+      "attack": 135,
+      "defense": 120,
+      "specialAttack": 60,
+      "specialDefense": 85,
+      "speed": 50
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 295,
+    "key": "gholdengo",
+    "nationalId": 1000,
+    "name": "Gromago",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/gholdengo.png",
+    "stats": {
+      "hp": 87,
+      "attack": 60,
+      "defense": 95,
+      "specialAttack": 133,
+      "specialDefense": 91,
+      "speed": 84
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 296,
+    "key": "sinistcha",
+    "nationalId": 1013,
+    "name": "Théffroyable",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/sinistcha.png",
+    "stats": {
+      "hp": 71,
+      "attack": 60,
+      "defense": 106,
+      "specialAttack": 121,
+      "specialDefense": 80,
+      "speed": 70
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 297,
+    "key": "archaludon",
+    "nationalId": 1018,
+    "name": "Pondralugon",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/archaludon.png",
+    "stats": {
+      "hp": 90,
+      "attack": 105,
+      "defense": 130,
+      "specialAttack": 125,
+      "specialDefense": 65,
+      "speed": 85
+    },
+    "sourceForm": null
+  },
+  {
+    "id": 298,
+    "key": "hydrapple",
+    "nationalId": 1019,
+    "name": "Pomdorochi",
+    "image": "https://play.pokemonshowdown.com/sprites/gen5/hydrapple.png",
+    "stats": {
+      "hp": 106,
+      "attack": 80,
+      "defense": 110,
+      "specialAttack": 120,
+      "specialDefense": 80,
+      "speed": 44
+    },
+    "sourceForm": null
+  }
+]

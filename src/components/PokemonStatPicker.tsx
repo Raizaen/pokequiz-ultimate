@@ -15,6 +15,9 @@ const namesFromValue = (value: string) => value
 export function PokemonStatPicker({ statLabel, value, onChange }: Props) {
   const [query, setQuery] = useState('')
   const selectedNames = namesFromValue(value)
+  const selectedValues = new Set(selectedNames.map((selectedName) =>
+    championsStatCatalog.find((candidate) => candidate.name === selectedName)?.stats[statLabel],
+  ))
   const visible = useMemo(() => championsStatCatalog.filter((pokemon) =>
     pokemon.stats[statLabel] !== undefined
     && pokemon.name.toLocaleLowerCase('fr').includes(query.toLocaleLowerCase('fr')),
@@ -40,8 +43,18 @@ export function PokemonStatPicker({ statLabel, value, onChange }: Props) {
       <div>
         {visible.map((pokemon) => {
           const selected = selectedNames.includes(pokemon.name)
+          const sameValueAlreadySelected = !selected && selectedValues.has(pokemon.stats[statLabel])
+          const selectionFull = !selected && selectedNames.length >= 5
+          const disabled = sameValueAlreadySelected || selectionFull
           return (
-            <button type="button" className={selected ? 'selected' : ''} key={pokemon.name} onClick={() => toggle(pokemon.name)}>
+            <button
+              type="button"
+              className={selected ? 'selected' : ''}
+              disabled={disabled}
+              title={sameValueAlreadySelected ? `${statLabel} ${pokemon.stats[statLabel]} est déjà sélectionnée` : undefined}
+              key={pokemon.name}
+              onClick={() => toggle(pokemon.name)}
+            >
               <img src={pokemon.image} alt="" />
               <strong>{pokemon.name}</strong>
               <small>{statLabel} {pokemon.stats[statLabel]}</small>

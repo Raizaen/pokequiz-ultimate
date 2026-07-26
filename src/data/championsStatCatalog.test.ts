@@ -14,10 +14,11 @@ describe('Pokémon Champions stat catalog', () => {
   })
 
   it('contient un catalogue complet avec image et six valeurs par Pokémon', () => {
-    expect(championsStatCatalog.length).toBeGreaterThanOrEqual(30)
+    expect(championsStatCatalog.length).toBeGreaterThanOrEqual(290)
     expect(championsStatCatalog.every((pokemon) =>
       pokemon.image.startsWith('https://')
       && championStatLabels.every((label) => Number.isFinite(pokemon.stats[label])),
     )).toBe(true)
+    expect(new Set(championsStatCatalog.map(({ name }) => name)).size).toBe(championsStatCatalog.length)
   })
 })

@@ -19,7 +19,7 @@ export const championStatLabels = [
 export const championsStatCatalog: ChampionsPokemonStat[] = championPokemon.map((pokemon) => ({
   id: pokemon.id,
   name: pokemon.name,
-  image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`,
+  image: pokemon.image,
   stats: {
     PV: pokemon.stats.hp,
     Attaque: pokemon.stats.attack,
