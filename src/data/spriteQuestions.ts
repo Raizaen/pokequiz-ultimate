@@ -20,6 +20,7 @@ export const spriteQuestions: Question[] = spriteCatalog.map((entry, index) => (
   type: 'multiple-choice',
   category: 'Sprites',
   difficulty: entry.difficulty as Question['difficulty'],
+  generationScope: [entry.generation],
   prompt: 'Quel est ce Pokémon ou cette forme ?',
   choices: choicesFor(index),
   acceptedAnswers: [entry.name],

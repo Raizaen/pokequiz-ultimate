@@ -10,6 +10,7 @@ import {
   type DifficultyPreset,
   type GameConfig,
   type RegionFilter,
+  type SpriteGenerationFilter,
   type TimerSetting,
 } from './domain/gameConfig'
 import type { GameState, Player } from './domain/quiz'
@@ -34,6 +35,7 @@ const timerSettings: Array<{ value: TimerSetting; label: string; description: st
   { value: 30, label: '30 secondes', description: 'Temps de réflexion' },
   { value: null, label: 'Sans timer', description: 'Aucune limite de temps' },
 ]
+const spriteGenerations = Array.from({ length: 9 }, (_, index) => index + 1)
 
 function newPlayer(index: number): Player {
   return { id: crypto.randomUUID(), name: `Joueur ${index + 1}`, avatar: avatars[index], color: colors[index], score: 0 }
@@ -43,12 +45,14 @@ export function App() {
   const [screen, setScreen] = useState<Screen>('menu')
   const [players, setPlayers] = useState<Player[]>([newPlayer(0)])
   const [game, setGame] = useState<GameState | null>(null)
-  const [config, setConfig] = useState<GameConfig>({ mode: 'mixed', difficulty: 'all', timerSeconds: 20 })
+  const [config, setConfig] = useState<GameConfig>({ mode: 'mixed', difficulty: 'all', spriteGenerations: 'all', timerSeconds: 20 })
   const [questionCount, setQuestionCount] = useState(10)
   const savedGame = loadGame()
   const eligibleQuestions = questionsForConfig(questions, config)
   const hasRegionSelection = config.mode === 'category' && config.category === 'Lieu Perdu'
-  const difficultyStep = hasRegionSelection ? 4 : config.mode === 'category' ? 3 : 2
+  const hasSpriteGenerationSelection = config.mode === 'category' && config.category === 'Sprites'
+  const hasCategoryOptionSelection = hasRegionSelection || hasSpriteGenerationSelection
+  const difficultyStep = hasCategoryOptionSelection ? 4 : config.mode === 'category' ? 3 : 2
   const timerStep = difficultyStep + 1
   const questionCountStep = timerStep + 1
   const effectiveQuestionCount = Math.min(questionCount, eligibleQuestions.length)
@@ -71,6 +75,20 @@ export function App() {
   const startGame = () => {
     setGame(createGame(players, selectQuestions(questions, config, effectiveQuestionCount), config.timerSeconds))
     setScreen('game')
+  }
+
+  const toggleSpriteGeneration = (generation: number) => {
+    const current = config.spriteGenerations
+    if (!current || current === 'all') {
+      setConfig({ ...config, spriteGenerations: [generation] })
+      return
+    }
+
+    const next = current.includes(generation)
+      ? current.filter((item) => item !== generation)
+      : [...current, generation].sort((left, right) => left - right)
+
+    if (next.length > 0) setConfig({ ...config, spriteGenerations: next as SpriteGenerationFilter })
   }
 
   if (screen === 'menu') {
@@ -135,6 +153,7 @@ export function App() {
                         ...config,
                         category: category.id,
                         region: category.id === 'Lieu Perdu' ? config.region ?? 'all' : undefined,
+                        spriteGenerations: category.id === 'Sprites' ? config.spriteGenerations ?? 'all' : config.spriteGenerations,
                       })}
                     >
                       <i>{category.icon}</i><strong>{category.label}</strong><small>{unavailable ? 'Bientôt disponible' : `${count} question${count > 1 ? 's' : ''}`}</small>
@@ -158,6 +177,37 @@ export function App() {
                     <i>{region.icon}</i><strong>{region.label}</strong><small>{region.description}</small>
                   </button>
                 ))}
+              </div>
+            </section>
+          )}
+
+          {hasSpriteGenerationSelection && (
+            <section className="setup-section">
+              <div className="section-heading"><span>3</span><div><h2>Générations</h2><p>Sélectionne une, plusieurs ou toutes les générations.</p></div></div>
+              <div className="generation-grid">
+                <button
+                  className={(config.spriteGenerations ?? 'all') === 'all' ? 'selected' : ''}
+                  onClick={() => setConfig({ ...config, spriteGenerations: 'all' })}
+                >
+                  <strong>Toutes</strong><small>Générations 1 à 9</small>
+                </button>
+                {spriteGenerations.map((generation) => {
+                  const selected = config.spriteGenerations !== 'all'
+                    && config.spriteGenerations?.includes(generation)
+                  const count = questionsForConfig(questions, {
+                    ...config,
+                    spriteGenerations: [generation],
+                  }).length
+                  return (
+                    <button
+                      key={generation}
+                      className={selected ? 'selected' : ''}
+                      onClick={() => toggleSpriteGeneration(generation)}
+                    >
+                      <strong>Génération {generation}</strong><small>{count} sprite{count > 1 ? 's' : ''}</small>
+                    </button>
+                  )
+                })}
               </div>
             </section>
           )}

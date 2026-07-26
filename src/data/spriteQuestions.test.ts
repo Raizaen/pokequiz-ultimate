@@ -24,4 +24,13 @@ describe('sprite question pack', () => {
   it('propose quatre choix distincts pour chaque sprite', () => {
     expect(spriteQuestions.every(({ choices }) => new Set(choices).size === 4)).toBe(true)
   })
+
+  it('associe chaque sprite à une génération valide', () => {
+    expect(spriteQuestions.every(({ generationScope }) =>
+      Array.isArray(generationScope)
+      && generationScope.length === 1
+      && generationScope[0] >= 1
+      && generationScope[0] <= 9,
+    )).toBe(true)
+  })
 })

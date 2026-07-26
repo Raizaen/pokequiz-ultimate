@@ -22,6 +22,7 @@ export function shuffleQuestions(questions: Question[], count = questions.length
 export function questionsForConfig(questions: Question[], config: GameConfig): Question[] {
   const preset = difficultyPresets.find(({ id }) => id === config.difficulty)
   const [minimum, maximum] = preset?.range ?? [1, 5]
+  const selectedSpriteGenerations = config.spriteGenerations
 
   return questions.filter((question) => {
     const matchesDifficulty = question.difficulty >= minimum && question.difficulty <= maximum
@@ -30,7 +31,12 @@ export function questionsForConfig(questions: Question[], config: GameConfig): Q
       || !config.region
       || config.region === 'all'
       || question.mapRegion === config.region
-    return matchesDifficulty && matchesCategory && matchesRegion
+    const matchesSpriteGeneration = config.category !== 'Sprites'
+      || !selectedSpriteGenerations
+      || selectedSpriteGenerations === 'all'
+      || question.generationScope === 'all'
+      || question.generationScope?.some((generation) => selectedSpriteGenerations.includes(generation))
+    return matchesDifficulty && matchesCategory && matchesRegion && matchesSpriteGeneration
   })
 }
 

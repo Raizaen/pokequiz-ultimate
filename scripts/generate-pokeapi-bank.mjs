@@ -139,6 +139,7 @@ async function spriteEntry(resource, index) {
     id: pokemon.id,
     name: formLabel(baseName, pokemon.species.name, pokemon.name),
     sprite: pokemon.sprites.front_default,
+    generation: generationNumber(species.generation.name),
     difficulty: index % 5 + 1,
   }
 }

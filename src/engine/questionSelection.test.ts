@@ -51,6 +51,27 @@ describe('question selection', () => {
     })).toHaveLength(2)
   })
 
+  it('filtre les sprites sur une ou plusieurs générations', () => {
+    const sprites: Question[] = [
+      { ...question('bulbizarre', 'Sprites', 1), generationScope: [1] },
+      { ...question('germignon', 'Sprites', 1), generationScope: [2] },
+      { ...question('poussacha', 'Sprites', 1), generationScope: [9] },
+    ]
+
+    expect(questionsForConfig(sprites, {
+      mode: 'category',
+      category: 'Sprites',
+      difficulty: 'all',
+      spriteGenerations: [1, 9],
+    }).map(({ id }) => id)).toEqual(['bulbizarre', 'poussacha'])
+    expect(questionsForConfig(sprites, {
+      mode: 'category',
+      category: 'Sprites',
+      difficulty: 'all',
+      spriteGenerations: 'all',
+    })).toHaveLength(3)
+  })
+
   it('ne sélectionne jamais deux fois le même identifiant', () => {
     const duplicatedBank = [...bank, { ...bank[0] }]
     const selection = selectQuestions(duplicatedBank, { mode: 'mixed', difficulty: 'all' }, 10)
