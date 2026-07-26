@@ -2,8 +2,14 @@ import type { AnswersByPlayer, AnswerValue, GameState, Player, Question } from '
 import { isAnswerCorrect, maxAttemptsFor, pointsForAnswer } from './answerValidation'
 
 const emptyAnswers = (): AnswersByPlayer => ({})
+const questionDuration = (question: Question, timerSeconds: number | null | undefined) =>
+  timerSeconds === undefined ? question.durationSeconds : timerSeconds
 
-export function createGame(players: Player[], questions: Question[]): GameState {
+export function createGame(
+  players: Player[],
+  questions: Question[],
+  timerSeconds?: number | null,
+): GameState {
   if (players.length < 1 || players.length > 8) {
     throw new Error('Une partie doit contenir entre 1 et 8 joueurs.')
   }
@@ -14,7 +20,8 @@ export function createGame(players: Player[], questions: Question[]): GameState 
     questions,
     questionIndex: 0,
     answers: emptyAnswers(),
-    remainingSeconds: questions[0].durationSeconds,
+    remainingSeconds: questionDuration(questions[0], timerSeconds),
+    timerSeconds,
     revealed: false,
     finished: false,
     history: [],
@@ -22,7 +29,7 @@ export function createGame(players: Player[], questions: Question[]): GameState 
 }
 
 export function submitAnswer(state: GameState, playerId: string, value: AnswerValue): GameState {
-  if (state.finished || state.revealed || state.remainingSeconds <= 0) return state
+  if (state.finished || state.revealed || state.remainingSeconds === 0) return state
   const question = state.questions[state.questionIndex]
   const previous = state.answers[playerId]
   if (previous?.locked) return state
@@ -78,13 +85,13 @@ export function nextQuestion(state: GameState): GameState {
     history: archivedHistory,
     questionIndex: nextIndex,
     answers: emptyAnswers(),
-    remainingSeconds: state.questions[nextIndex].durationSeconds,
+    remainingSeconds: questionDuration(state.questions[nextIndex], state.timerSeconds),
     revealed: false,
   }
 }
 
 export function tick(state: GameState): GameState {
-  if (state.finished || state.revealed || state.remainingSeconds <= 0) return state
+  if (state.finished || state.revealed || state.remainingSeconds === null || state.remainingSeconds <= 0) return state
   const remainingSeconds = state.remainingSeconds - 1
   return remainingSeconds === 0 ? revealAnswer({ ...state, remainingSeconds }) : { ...state, remainingSeconds }
 }

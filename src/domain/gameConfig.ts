@@ -3,12 +3,14 @@ import type { Question } from './quiz'
 export type GameMode = 'mixed' | 'category'
 export type DifficultyPreset = 'discovery' | 'confirmed' | 'expert' | 'all'
 export type RegionFilter = 'all' | 'Paldea' | 'Sinnoh'
+export type TimerSetting = 10 | 15 | 20 | 30 | null
 
 export interface GameConfig {
   mode: GameMode
   category?: string
   difficulty: DifficultyPreset
   region?: RegionFilter
+  timerSeconds?: TimerSetting
 }
 
 export interface CategoryDefinition {

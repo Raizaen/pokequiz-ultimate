@@ -10,6 +10,7 @@ import {
   type DifficultyPreset,
   type GameConfig,
   type RegionFilter,
+  type TimerSetting,
 } from './domain/gameConfig'
 import type { GameState, Player } from './domain/quiz'
 import { createGame, nextQuestion, revealAnswer, submitAnswer, tick } from './engine/quizEngine'
@@ -26,6 +27,13 @@ const mapRegions: Array<{ id: RegionFilter; label: string; icon: string; descrip
   { id: 'Paldea', label: 'Paldea', icon: '☀️', description: '50 lieux disponibles' },
   { id: 'Sinnoh', label: 'Sinnoh', icon: '🏔️', description: '30 lieux disponibles' },
 ]
+const timerSettings: Array<{ value: TimerSetting; label: string; description: string }> = [
+  { value: 10, label: '10 secondes', description: 'Réflexes éclair' },
+  { value: 15, label: '15 secondes', description: 'Partie rapide' },
+  { value: 20, label: '20 secondes', description: 'Équilibré' },
+  { value: 30, label: '30 secondes', description: 'Temps de réflexion' },
+  { value: null, label: 'Sans timer', description: 'Aucune limite de temps' },
+]
 
 function newPlayer(index: number): Player {
   return { id: crypto.randomUUID(), name: `Joueur ${index + 1}`, avatar: avatars[index], color: colors[index], score: 0 }
@@ -35,11 +43,14 @@ export function App() {
   const [screen, setScreen] = useState<Screen>('menu')
   const [players, setPlayers] = useState<Player[]>([newPlayer(0)])
   const [game, setGame] = useState<GameState | null>(null)
-  const [config, setConfig] = useState<GameConfig>({ mode: 'mixed', difficulty: 'all' })
+  const [config, setConfig] = useState<GameConfig>({ mode: 'mixed', difficulty: 'all', timerSeconds: 20 })
   const [questionCount, setQuestionCount] = useState(10)
   const savedGame = loadGame()
   const eligibleQuestions = questionsForConfig(questions, config)
   const hasRegionSelection = config.mode === 'category' && config.category === 'Lieu Perdu'
+  const difficultyStep = hasRegionSelection ? 4 : config.mode === 'category' ? 3 : 2
+  const timerStep = difficultyStep + 1
+  const questionCountStep = timerStep + 1
   const effectiveQuestionCount = Math.min(questionCount, eligibleQuestions.length)
   const availableQuestionCounts = [...new Set([
     ...preferredQuestionCounts.filter((count) => count <= eligibleQuestions.length),
@@ -52,13 +63,13 @@ export function App() {
   }, [game])
 
   useEffect(() => {
-    if (!game || game.finished || game.revealed) return
+    if (!game || game.finished || game.revealed || game.remainingSeconds === null) return
     const timer = window.setInterval(() => setGame((current) => current ? tick(current) : current), 1000)
     return () => window.clearInterval(timer)
   }, [game])
 
   const startGame = () => {
-    setGame(createGame(players, selectQuestions(questions, config, effectiveQuestionCount)))
+    setGame(createGame(players, selectQuestions(questions, config, effectiveQuestionCount), config.timerSeconds))
     setScreen('game')
   }
 
@@ -152,7 +163,7 @@ export function App() {
           )}
 
           <section className="setup-section">
-            <div className="section-heading"><span>{hasRegionSelection ? '4' : config.mode === 'category' ? '3' : '2'}</span><div><h2>Difficulté</h2><p>Adapte le tirage au niveau des joueurs.</p></div></div>
+            <div className="section-heading"><span>{difficultyStep}</span><div><h2>Difficulté</h2><p>Adapte le tirage au niveau des joueurs.</p></div></div>
             <div className="difficulty-grid">
               {difficultyPresets.map((preset) => (
                 <button key={preset.id} className={config.difficulty === preset.id ? 'selected' : ''} onClick={() => setConfig({ ...config, difficulty: preset.id as DifficultyPreset })}>
@@ -163,7 +174,22 @@ export function App() {
           </section>
 
           <section className="setup-section">
-            <div className="section-heading"><span>{hasRegionSelection ? '5' : config.mode === 'category' ? '4' : '3'}</span><div><h2>Nombre de questions</h2><p>La sélection s’adapte au contenu disponible.</p></div></div>
+            <div className="section-heading"><span>{timerStep}</span><div><h2>Temps par question</h2><p>Choisis le rythme de la partie.</p></div></div>
+            <div className="timer-grid">
+              {timerSettings.map((setting) => (
+                <button
+                  key={setting.value ?? 'none'}
+                  className={config.timerSeconds === setting.value ? 'selected' : ''}
+                  onClick={() => setConfig({ ...config, timerSeconds: setting.value })}
+                >
+                  <strong>{setting.label}</strong><small>{setting.description}</small>
+                </button>
+              ))}
+            </div>
+          </section>
+
+          <section className="setup-section">
+            <div className="section-heading"><span>{questionCountStep}</span><div><h2>Nombre de questions</h2><p>La sélection s’adapte au contenu disponible.</p></div></div>
             <div className="count-grid">
               {availableQuestionCounts.map((count) => (
                 <button key={count} className={effectiveQuestionCount === count ? 'selected' : ''} onClick={() => setQuestionCount(count)}>
@@ -205,7 +231,7 @@ export function App() {
   const question = game.questions[game.questionIndex]
   return (
     <main className="app-shell game">
-      <nav><Logo /><div className="progress">Question {game.questionIndex + 1} / {game.questions.length}</div><div className={`timer ${game.remainingSeconds <= 5 ? 'danger' : ''}`}>⏱ {game.remainingSeconds}s</div></nav>
+      <nav><Logo /><div className="progress">Question {game.questionIndex + 1} / {game.questions.length}</div><div className={`timer ${game.remainingSeconds !== null && game.remainingSeconds <= 5 ? 'danger' : ''}`}>{game.remainingSeconds === null ? '∞ Sans limite' : `⏱ ${game.remainingSeconds}s`}</div></nav>
       <div className="progress-bar"><i style={{ width: `${((game.questionIndex + 1) / game.questions.length) * 100}%` }} /></div>
       <section className="question-card">
         <div>

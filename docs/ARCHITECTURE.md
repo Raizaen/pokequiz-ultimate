@@ -15,7 +15,7 @@ La V3 ne dépend pas du code de la V2.5. L’archive historique reste à la raci
 
 Le moteur ne dépend ni de React ni de Pokémon. Une question décrit son type, ses réponses acceptées, sa durée et sa valeur. Les QCM simples et multiples autorisent un essai ; les questions ouvertes en autorisent trois. Pour un QCM multiple, le moteur compare les ensembles normalisés de choix sans tenir compte de leur ordre. L’interface appelle le moteur et sauvegarde chaque nouvel état dans `localStorage`.
 
-La configuration d’une partie est elle aussi indépendante de l’interface. Elle définit le mode (`mixed` ou `category`), la catégorie éventuelle et un palier de difficulté. Le sélecteur filtre la banque avant d’effectuer le tirage aléatoire.
+La configuration d’une partie est elle aussi indépendante de l’interface. Elle définit le mode (`mixed` ou `category`), la catégorie éventuelle, un palier de difficulté et un timer global optionnel. Le sélecteur filtre la banque avant d’effectuer le tirage aléatoire. Le moteur applique ensuite 10, 15, 20 ou 30 secondes à chaque question, ou désactive totalement le décompte.
 
 ## Données PokéAPI
 

@@ -69,6 +69,19 @@ describe('quiz engine', () => {
     expect(nextQuestion(game).finished).toBe(true)
   })
 
+  it('applique le timer choisi à toutes les questions', () => {
+    let game = createGame([player], [qcm, open], 15)
+    expect(game.remainingSeconds).toBe(15)
+    game = nextQuestion(revealAnswer(game))
+    expect(game.remainingSeconds).toBe(15)
+  })
+
+  it('ne décompte rien en mode sans timer', () => {
+    const game = createGame([player], [qcm], null)
+    expect(game.remainingSeconds).toBeNull()
+    expect(tick(game)).toEqual(game)
+  })
+
   it('archive les réponses avant de passer à la question suivante', () => {
     let game = submitAnswer(createGame([player], [qcm, open]), player.id, 'Pikachu')
     game = nextQuestion(revealAnswer(game))

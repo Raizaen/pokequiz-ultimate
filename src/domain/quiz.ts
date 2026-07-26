@@ -72,7 +72,8 @@ export interface GameState {
   questions: Question[]
   questionIndex: number
   answers: AnswersByPlayer
-  remainingSeconds: number
+  remainingSeconds: number | null
+  timerSeconds?: number | null
   revealed: boolean
   finished: boolean
   history: QuestionResult[]

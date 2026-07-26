@@ -11,6 +11,7 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 - mode « Questions en vrac » ou partie dédiée à une catégorie ;
 - catalogue multimédia de 350 questions Sprites, dont 100 formes spéciales ;
 - difficulté Découverte, Confirmé, Expert ou Tous niveaux ;
+- timer configurable de 10, 15, 20 ou 30 secondes, avec un mode sans limite ;
 - choix du nombre de questions selon la sélection disponible ;
 - épreuve cartographique « Lieu Perdu » avec 50 lieux à Paldea, 30 à Sinnoh et sélection de la région ;
 - récapitulatif cartographique final avec distances, tirs parfaits, meilleurs clics et cartes de synthèse ;
