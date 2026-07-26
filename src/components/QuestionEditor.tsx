@@ -142,6 +142,7 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
   const [form, setForm] = useState<FormState | null>(null)
   const [query, setQuery] = useState('')
   const [status, setStatus] = useState<PublicationStatus | 'all'>('all')
+  const [category, setCategory] = useState('all')
   const [message, setMessage] = useState('')
   const [busy, setBusy] = useState(false)
   const [migrationProgress, setMigrationProgress] = useState<number | null>(null)
@@ -158,11 +159,17 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
     void refresh()
   }, [])
 
+  const availableCategories = useMemo(
+    () => [...new Set(rows.map((row) => row.payload.category))].sort((left, right) => left.localeCompare(right, 'fr')),
+    [rows],
+  )
+
   const filtered = useMemo(() => rows.filter((row) => {
     const text = `${row.payload.prompt} ${row.payload.category}`.toLocaleLowerCase('fr')
     return (status === 'all' || row.publicationStatus === status)
+      && (category === 'all' || row.payload.category === category)
       && text.includes(query.toLocaleLowerCase('fr'))
-  }), [query, rows, status])
+  }), [category, query, rows, status])
   const visibleRows = filtered.slice(0, 100)
 
   const submit = async (event: FormEvent) => {
@@ -386,6 +393,10 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
       </header>
       <div className="question-bank-tools">
         <input type="search" placeholder="Rechercher une question…" value={query} onChange={(event) => setQuery(event.target.value)} />
+        <select value={category} onChange={(event) => setCategory(event.target.value)}>
+          <option value="all">Toutes les catégories</option>
+          {availableCategories.map((item) => <option key={item} value={item}>{item}</option>)}
+        </select>
         <select value={status} onChange={(event) => setStatus(event.target.value as PublicationStatus | 'all')}>
           <option value="all">Tous les états</option>
           <option value="draft">Brouillons</option>
