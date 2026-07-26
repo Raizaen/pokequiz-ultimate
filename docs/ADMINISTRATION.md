@@ -26,3 +26,13 @@ on conflict (user_id) do nothing;
 
 La clé secrète/service role et le mot de passe de la base ne doivent jamais être
 placés dans le navigateur, le dépôt Git ou les variables commençant par `VITE_`.
+
+## Workflow éditorial et historique
+
+Après la migration initiale, exécuter
+`supabase/migrations/002_editorial_workflow.sql` dans le SQL Editor. Elle ajoute :
+
+- les états À vérifier, Validée et Contestée ;
+- l’obligation d’une source avant publication ;
+- une révision automatique avant chaque modification ou suppression ;
+- une fonction de restauration réservée aux administrateurs.
