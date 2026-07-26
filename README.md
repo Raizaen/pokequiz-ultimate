@@ -39,6 +39,8 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 - pack éditorial Capacités de 20 questions validées, dont quatre QCM multiples ;
 - tests unitaires du moteur.
 - espace d’administration protégé par Supabase Auth et règles d’accès en base ;
+- éditeur administrateur avec recherche, aperçu, brouillons, publication et archivage ;
+- ajout automatique des questions personnalisées publiées à la banque jouable ;
 
 La mise en place du compte administrateur est décrite dans
 [`docs/ADMINISTRATION.md`](docs/ADMINISTRATION.md).

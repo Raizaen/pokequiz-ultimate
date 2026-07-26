@@ -1,14 +1,16 @@
 import { useEffect, useState, type FormEvent } from 'react'
 import type { User } from '@supabase/supabase-js'
 import { isSupabaseConfigured, supabase } from '../lib/supabase'
+import { QuestionEditor } from './QuestionEditor'
 
 type AccessState = 'checking' | 'anonymous' | 'forbidden' | 'admin'
 
 interface Props {
   onBack: () => void
+  onQuestionsChanged: () => void
 }
 
-export function AdminPanel({ onBack }: Props) {
+export function AdminPanel({ onBack, onQuestionsChanged }: Props) {
   const [email, setEmail] = useState('')
   const [user, setUser] = useState<User | null>(null)
   const [access, setAccess] = useState<AccessState>('checking')
@@ -79,7 +81,7 @@ export function AdminPanel({ onBack }: Props) {
         <span className="admin-badge">Administration</span>
       </nav>
 
-      <section className="admin-card">
+      <section className={`admin-card ${access === 'admin' ? 'editor-enabled' : ''}`}>
         <span className="eyebrow">ESPACE PROTÉGÉ</span>
         <h1>Gestion de PokéQuiz</h1>
 
@@ -126,8 +128,8 @@ export function AdminPanel({ onBack }: Props) {
               <strong>✓ Accès administrateur confirmé</strong>
               <span>{user?.email}</span>
             </div>
-            <p>La protection est active. Le prochain lot ajoutera ici la banque, les brouillons et l’éditeur de questions.</p>
-            <button onClick={signOut}>Se déconnecter</button>
+            <QuestionEditor user={user!} onQuestionsChanged={onQuestionsChanged} />
+            <button className="admin-signout" onClick={signOut}>Se déconnecter</button>
           </>
         )}
       </section>

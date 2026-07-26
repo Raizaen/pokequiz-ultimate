@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Logo } from './components/Logo'
 import { PlayerPanel } from './components/PlayerPanel'
 import { LostPlaceRound } from './components/LostPlaceRound'
@@ -6,7 +6,7 @@ import { LostPlaceSummary } from './components/LostPlaceSummary'
 import { GameStats } from './components/GameStats'
 import { SpriteImage } from './components/SpriteImage'
 import { AdminPanel } from './components/AdminPanel'
-import { questions } from './data/questions'
+import { questions as bundledQuestions } from './data/questions'
 import {
   categories,
   difficultyPresets,
@@ -36,6 +36,8 @@ import {
   rememberQuestions,
   saveGame,
 } from './storage/gameStorage'
+import { loadPublishedQuestions } from './services/questionRepository'
+import type { Question } from './domain/quiz'
 
 type Screen = 'menu' | 'setup' | 'game' | 'admin'
 const avatars = ['⚡', '🔥', '💧', '🌿', '🌙', '⭐', '🐉', '🌀']
@@ -79,11 +81,17 @@ export function App() {
     timerSeconds: 20,
   })
   const [questionCount, setQuestionCount] = useState(10)
+  const [remoteQuestions, setRemoteQuestions] = useState<Question[]>([])
+  const [remoteRefreshKey, setRemoteRefreshKey] = useState(0)
+  const questionBank = useMemo(
+    () => [...new Map([...bundledQuestions, ...remoteQuestions].map((question) => [question.id, question])).values()],
+    [remoteQuestions],
+  )
   const savedGame = loadGame()
   const gameQuestions = game?.questions
   const gameQuestionIndex = game?.questionIndex
   const gameFinished = game?.finished
-  const eligibleQuestions = questionsForConfig(questions, config)
+  const eligibleQuestions = questionsForConfig(questionBank, config)
   const hasRegionSelection = config.mode === 'category' && config.category === 'Lieu Perdu'
   const hasSpriteGenerationSelection = config.mode === 'category' && config.category === 'Sprites'
   const hasPokopiaSelection = config.mode === 'category' && config.category === 'Pokopia'
@@ -101,6 +109,12 @@ export function App() {
   useEffect(() => {
     if (game) saveGame(game)
   }, [game])
+
+  useEffect(() => {
+    void loadPublishedQuestions()
+      .then(setRemoteQuestions)
+      .catch(() => setRemoteQuestions([]))
+  }, [remoteRefreshKey])
 
   useEffect(() => {
     if (!game || game.finished || game.revealed) return
@@ -128,12 +142,12 @@ export function App() {
 
   const startGame = () => {
     const history = new Set(loadQuestionHistory())
-    const fresh = questions.filter(({ id }) => !history.has(id))
+    const fresh = questionBank.filter(({ id }) => !history.has(id))
     const freshSelection = selectQuestions(fresh, config, effectiveQuestionCount)
     const selectedIds = new Set(freshSelection.map(({ id }) => id))
     const fallback = freshSelection.length < effectiveQuestionCount
       ? selectQuestions(
-        questions.filter(({ id }) => !selectedIds.has(id)),
+        questionBank.filter(({ id }) => !selectedIds.has(id)),
         config,
         effectiveQuestionCount - freshSelection.length,
       )
@@ -173,7 +187,7 @@ export function App() {
   }
 
   if (screen === 'admin') {
-    return <AdminPanel onBack={() => setScreen('menu')} />
+    return <AdminPanel onBack={() => setScreen('menu')} onQuestionsChanged={() => setRemoteRefreshKey((value) => value + 1)} />
   }
 
   if (screen === 'menu') {
@@ -228,7 +242,7 @@ export function App() {
               <div className="section-heading"><span>2</span><div><h2>Catégorie</h2><p>Les catégories multimédias arriveront avec leur lecteur dédié.</p></div></div>
               <div className="category-grid">
                 {categories.map((category) => {
-                  const count = questionsForConfig(questions, { ...config, category: category.id }).length
+                  const count = questionsForConfig(questionBank, { ...config, category: category.id }).length
                   const unavailable = count === 0
                   return (
                     <button
@@ -282,7 +296,7 @@ export function App() {
                 {spriteGenerations.map((generation) => {
                   const selected = config.spriteGenerations !== 'all'
                     && config.spriteGenerations?.includes(generation)
-                  const count = questionsForConfig(questions, {
+                  const count = questionsForConfig(questionBank, {
                     ...config,
                     spriteGenerations: [generation],
                   }).length
