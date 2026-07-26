@@ -31,4 +31,28 @@ describe('pack Pokémon Pokopia', () => {
     expect(safe.every((question) => !question.tags?.includes('pokopia-spoiler'))).toBe(true)
     expect(complete).toHaveLength(50)
   })
+
+  it('conserve les appellations officielles françaises auditées', () => {
+    const serialized = JSON.stringify(pokopiaQuestions)
+    for (const term of [
+      'Feuillage',
+      'Éclate-Roc',
+      'Vol Plané',
+      'Professeur Bouldeneu',
+      'Pikapâle',
+      'Ronflex Moussu',
+      'Maître Queulorior',
+      'Terrassec',
+      'Grisemer',
+      'Collinangle',
+      'Flotîles-Millefeux',
+      'Rongragoût',
+      'Cheffelina',
+      'DJ Motisma',
+    ]) {
+      expect(serialized).toContain(term)
+    }
+    expect(pokopiaQuestions[43].acceptedAnswers[0])
+      .toBe('The Pokémon Company, GAME FREAK et KOEI TECMO GAMES')
+  })
 })
