@@ -248,6 +248,9 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .admin-success strong { color: #62d68b; }
 .admin-success span { color: #aaaabe; font-size: 13px; }
 .question-bank, .question-editor { margin-top: 28px; padding-top: 28px; border-top: 1px solid #ffffff10; text-align: left; }
+.admin-view-tabs { display: flex; gap: 8px; margin-bottom: 25px; padding: 5px; border-radius: 13px; background: #101122; }
+.admin-view-tabs button { flex: 1; padding: 11px; border-radius: 9px; background: transparent; color: #8f90a9; font-weight: 900; }
+.admin-view-tabs button.selected { background: #30314f; color: #fff; box-shadow: 0 6px 18px #0003; }
 .question-bank > header, .question-editor > header { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .question-bank h2, .question-editor h2 { margin: 0; font-size: clamp(26px, 4vw, 38px); }
 .question-bank header p { margin: 3px 0 0; color: #8889a3; }
@@ -257,6 +260,7 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .question-bank-tools { display: grid; grid-template-columns: minmax(240px, 1fr) repeat(3, minmax(155px, 205px)); gap: 10px; margin: 22px 0 14px; }
 .question-bank-tools input, .question-bank-tools select, .question-form input, .question-form select, .question-form textarea { width: 100%; border: 1px solid #ffffff12; border-radius: 11px; outline: none; background: #242541; color: #fff; padding: 12px 13px; }
 .question-bank-tools input:focus, .question-bank-tools select:focus, .question-form input:focus, .question-form select:focus, .question-form textarea:focus { border-color: #f2c94c; }
+.active-quality-filter { margin: 0 0 12px; padding: 7px 10px; border-radius: 999px; background: #f2c94c1f; color: #f2c94c; font-size: 11px; font-weight: 900; }
 .question-bank-list { display: grid; gap: 9px; max-height: 540px; overflow: auto; }
 .question-bank-list > article { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 15px; border: 1px solid #ffffff0d; border-radius: 14px; background: #23243e; }
 .question-bank-list article > div:first-child { display: grid; gap: 4px; min-width: 0; }
@@ -288,6 +292,40 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .map-coordinate-preview { position: relative; min-height: 96px; overflow: hidden; border: 1px solid #ffffff12; border-radius: 12px; background: radial-gradient(circle at 50% 55%, #99b776 0 25%, #5885a1 26% 45%, #343650 46%); }
 .map-coordinate-preview > span { position: absolute; width: 13px; height: 13px; border: 3px solid #fff; border-radius: 50%; background: #ef445d; box-shadow: 0 0 0 4px #ef445d55; transform: translate(-50%, -50%); }
 .map-coordinate-preview > small { position: absolute; left: 8px; bottom: 6px; padding: 3px 6px; border-radius: 6px; background: #101122cc; color: #aaaabe; font-size: 9px; }
+.admin-map-picker { overflow: hidden; border: 1px solid #ffffff14; border-radius: 15px; background: #101122; }
+.admin-map-picker svg { display: block; width: 100%; max-height: 560px; cursor: crosshair; }
+.admin-map-picker small { display: block; padding: 9px; color: #aaaabe; text-align: center; }
+.admin-map-target { filter: drop-shadow(0 2px 2px #0008); pointer-events: none; }
+.pokemon-stat-picker { padding: 14px; border: 1px solid #ffffff12; border-radius: 15px; background: #101122; }
+.pokemon-stat-picker > header { display: grid; grid-template-columns: 1fr minmax(180px, 280px); gap: 12px; align-items: center; }
+.pokemon-stat-picker header > div { display: grid; }
+.pokemon-stat-picker header small { color: #8889a3; }
+.pokemon-stat-picker header input { width: 100%; border: 1px solid #ffffff12; border-radius: 10px; background: #242541; color: #fff; padding: 10px; }
+.pokemon-stat-picker > div { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; max-height: 360px; margin-top: 13px; overflow: auto; }
+.pokemon-stat-picker button { position: relative; display: grid; place-items: center; min-height: 145px; padding: 9px; border: 1px solid #ffffff0d; border-radius: 11px; background: #242541; color: #fff; }
+.pokemon-stat-picker button.selected { border-color: #f2c94c; background: #f2c94c13; box-shadow: inset 0 0 0 1px #f2c94c; }
+.pokemon-stat-picker img { width: 82px; height: 82px; object-fit: contain; }
+.pokemon-stat-picker button small { color: #aaaabe; }
+.pokemon-stat-picker button i { position: absolute; top: 7px; right: 7px; display: grid; width: 22px; height: 22px; place-items: center; border-radius: 50%; background: #f2c94c; color: #17182b; font-size: 11px; font-style: normal; font-weight: 900; }
+.quality-dashboard > header { text-align: center; }
+.quality-dashboard h2 { margin: 0; font-size: clamp(30px, 5vw, 46px); }
+.quality-dashboard header p { margin: 5px 0 24px; color: #9192aa; }
+.quality-kpis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 9px; }
+.quality-kpis button { display: grid; gap: 2px; padding: 16px 8px; border: 1px solid #ffffff0d; border-radius: 13px; background: #242541; color: #fff; text-align: center; }
+.quality-kpis button:hover { border-color: #f2c94c66; transform: translateY(-1px); }
+.quality-kpis strong { color: #f2c94c; font-size: 25px; }
+.quality-kpis span { color: #9b9cb2; font-size: 11px; font-weight: 900; text-transform: uppercase; }
+.quality-kpis button.alert strong { color: #ff7d7d; }
+.quality-kpis button.good strong { color: #62d68b; }
+.quality-category-list { margin-top: 20px; overflow-x: auto; border-radius: 14px; background: #101122; }
+.quality-category-head, .quality-category-list > button { display: grid; grid-template-columns: minmax(150px, 1.4fr) 120px 85px minmax(180px, 1fr) 75px; gap: 12px; align-items: center; min-width: 720px; padding: 12px 15px; }
+.quality-category-head { color: #85869c; font-size: 10px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+.quality-category-list > button { width: 100%; border-top: 1px solid #ffffff09; background: transparent; color: #fff; text-align: left; }
+.quality-category-list > button:hover { background: #ffffff08; }
+.quality-category-list small { color: #85869c; }
+.difficulty-bars { display: flex; align-items: flex-end; gap: 5px; height: 30px; }
+.difficulty-bars i { width: 16px; min-height: 4px; border-radius: 4px 4px 1px 1px; background: linear-gradient(#f2c94c, #ef445d); }
+.quality-warning { color: #ff8a8a; font-weight: 900; }
 .migration-progress { position: relative; height: 28px; margin: 12px 0; overflow: hidden; border-radius: 9px; background: #101122; }
 .migration-progress i { display: block; height: 100%; background: linear-gradient(90deg, #ef445d, #f2c94c); transition: width .25s; }
 .migration-progress span { position: absolute; inset: 0; display: grid; place-items: center; font-size: 11px; font-weight: 900; text-shadow: 0 1px 3px #000; }
@@ -323,4 +361,6 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
   .question-form { grid-template-columns: 1fr 1fr; }
   .question-preview > div { grid-template-columns: 1fr; }
   .revision-list article { align-items: stretch; flex-direction: column; }
+  .quality-kpis { grid-template-columns: repeat(2, 1fr); }
+  .pokemon-stat-picker > header { grid-template-columns: 1fr; }
 }

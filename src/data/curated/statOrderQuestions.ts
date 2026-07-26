@@ -2,13 +2,13 @@ import type { Question } from '../../domain/quiz'
 
 type StatKey = 'hp' | 'attack' | 'defense' | 'specialAttack' | 'specialDefense' | 'speed'
 
-interface ChampionPokemon {
+export interface ChampionPokemon {
   id: number
   name: string
   stats: Record<StatKey, number>
 }
 
-const pokemon: ChampionPokemon[] = [
+export const championPokemon: ChampionPokemon[] = [
   { id: 3, name: 'Florizarre', stats: { hp: 80, attack: 82, defense: 83, specialAttack: 100, specialDefense: 100, speed: 80 } },
   { id: 6, name: 'Dracaufeu', stats: { hp: 78, attack: 84, defense: 78, specialAttack: 109, specialDefense: 85, speed: 100 } },
   { id: 9, name: 'Tortank', stats: { hp: 79, attack: 83, defense: 100, specialAttack: 85, specialDefense: 105, speed: 78 } },
@@ -58,16 +58,16 @@ const artwork = (id: number) =>
 function createSeries(stat: StatKey, statIndex: number, seriesIndex: number): ChampionPokemon[] {
   const selected: ChampionPokemon[] = []
   const values = new Set<number>()
-  let cursor = (statIndex * 5 + seriesIndex * 3) % pokemon.length
+  let cursor = (statIndex * 5 + seriesIndex * 3) % championPokemon.length
 
   while (selected.length < 5) {
-    const candidate = pokemon[cursor]
+    const candidate = championPokemon[cursor]
     const value = candidate.stats[stat]
     if (!values.has(value)) {
       selected.push(candidate)
       values.add(value)
     }
-    cursor = (cursor + strides[statIndex]) % pokemon.length
+    cursor = (cursor + strides[statIndex]) % championPokemon.length
   }
 
   return selected

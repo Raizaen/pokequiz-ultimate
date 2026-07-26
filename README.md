@@ -43,6 +43,9 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 - ajout automatique des questions personnalisées publiées à la banque jouable ;
 - synchronisation relançable de la banque historique vers Supabase, sans doublons ;
 - édition spécialisée des Sprites, Stats en ordre et questions cartographiques Lieu Perdu ;
+- tableau de bord qualité avec indicateurs et raccourcis filtrés par catégorie ;
+- placement visuel des réponses Lieu Perdu directement sur les cartes de Paldea et Sinnoh ;
+- catalogue Pokémon Champions pour composer Stats en ordre avec valeurs et images automatiques ;
 
 La mise en place du compte administrateur est décrite dans
 [`docs/ADMINISTRATION.md`](docs/ADMINISTRATION.md).

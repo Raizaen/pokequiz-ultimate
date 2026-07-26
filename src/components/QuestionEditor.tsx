@@ -4,6 +4,10 @@ import { categories } from '../domain/gameConfig'
 import type { Question, QuestionType } from '../domain/quiz'
 import { questions as bundledQuestions } from '../data/questions'
 import { questionFingerprint } from '../engine/questionIdentity'
+import { championStatLabels } from '../data/championsStatCatalog'
+import { MapTargetPicker } from './MapTargetPicker'
+import { PokemonStatPicker } from './PokemonStatPicker'
+import { QualityDashboard } from './QualityDashboard'
 import {
   importQuestions,
   loadAdminQuestions,
@@ -159,6 +163,8 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
   const [status, setStatus] = useState<PublicationStatus | 'all'>('all')
   const [category, setCategory] = useState('all')
   const [editorialStatus, setEditorialStatus] = useState<EditorialStatus | 'all'>('all')
+  const [qualityFilter, setQualityFilter] = useState<'unsourced' | 'duplicates' | null>(null)
+  const [view, setView] = useState<'dashboard' | 'bank'>('dashboard')
   const [message, setMessage] = useState('')
   const [busy, setBusy] = useState(false)
   const [migrationProgress, setMigrationProgress] = useState<number | null>(null)
@@ -181,14 +187,24 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
     () => [...new Set(rows.map((row) => row.payload.category))].sort((left, right) => left.localeCompare(right, 'fr')),
     [rows],
   )
+  const duplicateFingerprints = useMemo(() => {
+    const counts = new Map<string, number>()
+    rows.filter((row) => row.publicationStatus !== 'archived').forEach((row) => {
+      const fingerprint = questionFingerprint(row.payload)
+      counts.set(fingerprint, (counts.get(fingerprint) ?? 0) + 1)
+    })
+    return new Set([...counts].filter(([, count]) => count > 1).map(([fingerprint]) => fingerprint))
+  }, [rows])
 
   const filtered = useMemo(() => rows.filter((row) => {
     const text = `${row.payload.prompt} ${row.payload.category}`.toLocaleLowerCase('fr')
     return (status === 'all' || row.publicationStatus === status)
       && (category === 'all' || row.payload.category === category)
       && (editorialStatus === 'all' || row.validationStatus === editorialStatus)
+      && (qualityFilter !== 'unsourced' || (row.payload.validation?.sources.length ?? 0) === 0)
+      && (qualityFilter !== 'duplicates' || duplicateFingerprints.has(questionFingerprint(row.payload)))
       && text.includes(query.toLocaleLowerCase('fr'))
-  }), [category, editorialStatus, query, rows, status])
+  }), [category, duplicateFingerprints, editorialStatus, qualityFilter, query, rows, status])
   const visibleRows = filtered.slice(0, 100)
 
   const submit = async (event: FormEvent) => {
@@ -300,6 +316,21 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
     }
   }
 
+  const openBank = (filters: {
+    category?: string
+    publicationStatus?: PublicationStatus
+    editorialStatus?: EditorialStatus
+    query?: string
+    quality?: 'unsourced' | 'duplicates'
+  } = {}) => {
+    setCategory(filters.category ?? 'all')
+    setStatus(filters.publicationStatus ?? 'all')
+    setEditorialStatus(filters.editorialStatus ?? 'all')
+    setQuery(filters.query ?? '')
+    setQualityFilter(filters.quality ?? null)
+    setView('bank')
+  }
+
   if (form) {
     const preview = buildQuestion(form)
     return (
@@ -402,16 +433,22 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
               <label>Position verticale Y (%)
                 <input type="number" min="0" max="100" step=".1" value={form.mapY} onChange={(event) => setForm({ ...form, mapY: Number(event.target.value) })} />
               </label>
-              <div className="map-coordinate-preview">
-                <span style={{ left: `${form.mapX}%`, top: `${form.mapY}%` }} />
-                <small>Aperçu de la position</small>
+              <div className="wide">
+                <MapTargetPicker
+                  region={form.mapRegion}
+                  x={form.mapX}
+                  y={form.mapY}
+                  onChange={(point) => setForm({ ...form, mapX: point.x, mapY: point.y })}
+                />
               </div>
             </>
           )}
           {form.type === 'stat-order' && (
             <>
               <label>Statistique
-                <input value={form.statLabel} onChange={(event) => setForm({ ...form, statLabel: event.target.value })} />
+                <select value={form.statLabel} onChange={(event) => setForm({ ...form, statLabel: event.target.value, orderEntries: '' })}>
+                  {championStatLabels.map((label) => <option key={label}>{label}</option>)}
+                </select>
               </label>
               <label>Ordre
                 <select value={form.orderDirection} onChange={(event) => setForm({ ...form, orderDirection: event.target.value as FormState['orderDirection'] })}>
@@ -419,6 +456,13 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
                   <option value="descending">Décroissant</option>
                 </select>
               </label>
+              <div className="wide">
+                <PokemonStatPicker
+                  statLabel={form.statLabel}
+                  value={form.orderEntries}
+                  onChange={(orderEntries) => setForm({ ...form, orderEntries })}
+                />
+              </div>
               <label className="wide">Cinq Pokémon — Nom | Valeur | URL de l’image
                 <textarea value={form.orderEntries} onChange={(event) => setForm({ ...form, orderEntries: event.target.value })} rows={7} placeholder={'Pikachu | 90 | https://…\nRaichu | 110 | https://…'} />
               </label>
@@ -451,8 +495,25 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
     )
   }
 
+  if (view === 'dashboard') {
+    return (
+      <section className="question-bank">
+        <div className="admin-view-tabs">
+          <button className="selected">Tableau de bord</button>
+          <button onClick={() => openBank()}>Banque de questions</button>
+        </div>
+        {message && <p className="admin-message">{message}</p>}
+        <QualityDashboard rows={rows} onOpenBank={openBank} />
+      </section>
+    )
+  }
+
   return (
     <section className="question-bank">
+      <div className="admin-view-tabs">
+        <button onClick={() => setView('dashboard')}>Tableau de bord</button>
+        <button className="selected">Banque de questions</button>
+      </div>
       <header>
         <div><span className="eyebrow">BANQUE PARTAGÉE</span><h2>Banque de questions</h2><p>{rows.length} question{rows.length > 1 ? 's' : ''} dans Supabase</p></div>
         <div className="bank-header-actions">
@@ -479,6 +540,11 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
           <option value="contested">Contestées</option>
         </select>
       </div>
+      {qualityFilter && (
+        <button className="active-quality-filter" onClick={() => setQualityFilter(null)}>
+          Filtre qualité : {qualityFilter === 'unsourced' ? 'sans source' : 'doublons'} ×
+        </button>
+      )}
       {message && <p className="admin-message">{message}</p>}
       {migrationProgress !== null && <div className="migration-progress"><i style={{ width: `${migrationProgress}%` }} /><span>{migrationProgress}%</span></div>}
       <div className="question-bank-list">
