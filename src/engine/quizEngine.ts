@@ -33,7 +33,7 @@ export function submitAnswer(state: GameState, playerId: string, value: AnswerVa
   const locked = isCorrect || attempts >= maxAttemptsFor(question)
   const previouslyAwarded = previous?.pointsAwarded ?? 0
 
-  return {
+  const nextState: GameState = {
     ...state,
     answers: { ...state.answers, [playerId]: { attempts, value, isCorrect, locked, pointsAwarded } },
     players: state.players.map((player) =>
@@ -42,6 +42,13 @@ export function submitAnswer(state: GameState, playerId: string, value: AnswerVa
         : player,
     ),
   }
+
+  const everyPlayerHasFinished = nextState.players.every((player) => nextState.answers[player.id]?.locked)
+  const hasCorrectAnswer = Object.values(nextState.answers).some((answer) => answer.isCorrect)
+
+  return everyPlayerHasFinished && hasCorrectAnswer
+    ? revealAnswer(nextState)
+    : nextState
 }
 
 export function revealAnswer(state: GameState): GameState {

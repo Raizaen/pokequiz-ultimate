@@ -39,6 +39,20 @@ describe('quiz engine', () => {
     expect(game.players[0].score).toBe(10)
   })
 
+  it('révèle immédiatement une bonne réponse en solo', () => {
+    const game = submitAnswer(createGame([player], [qcm]), player.id, 'Pikachu')
+    expect(game.revealed).toBe(true)
+  })
+
+  it('attend tous les joueurs avant la révélation automatique', () => {
+    const secondPlayer: Player = { ...player, id: 'p2', name: 'Blue' }
+    let game = submitAnswer(createGame([player, secondPlayer], [qcm]), player.id, 'Pikachu')
+    expect(game.revealed).toBe(false)
+
+    game = submitAnswer(game, secondPlayer.id, 'Évoli')
+    expect(game.revealed).toBe(true)
+  })
+
   it('laisse trois essais sur une question ouverte', () => {
     let game = createGame([player], [open])
     game = submitAnswer(game, player.id, 'A')
