@@ -1,6 +1,14 @@
 import { describe, expect, it } from 'vitest'
 import type { Player, Question } from '../domain/quiz'
-import { createGame, nextQuestion, revealAnswer, submitAnswer, tick } from './quizEngine'
+import {
+  availablePoints,
+  createGame,
+  nextQuestion,
+  progressiveRevealStage,
+  revealAnswer,
+  submitAnswer,
+  tick,
+} from './quizEngine'
 
 const player: Player = { id: 'p1', name: 'Red', avatar: '⚡', color: '#fff', score: 0 }
 const qcm: Question = { id: 'q1', type: 'multiple-choice', category: 'Test', difficulty: 1, prompt: 'Qui ?', choices: ['Pikachu', 'Évoli'], acceptedAnswers: ['Pikachu'], explanation: '', points: 10, durationSeconds: 2 }
@@ -25,6 +33,18 @@ const mapLocation: Question = {
   acceptedAnswers: ['Mesaledo'],
   mapTarget: { x: 50, y: 50 },
   points: 25,
+}
+const progressiveSprite: Question = {
+  ...qcm,
+  id: 'sprite-progressive',
+  category: 'Sprites',
+  points: 20,
+  media: {
+    kind: 'image',
+    src: 'pikachu.png',
+    alt: 'Sprite mystère',
+    spriteVariant: 'progressive',
+  },
 }
 
 describe('quiz engine', () => {
@@ -80,6 +100,32 @@ describe('quiz engine', () => {
     const game = createGame([player], [qcm], null)
     expect(game.remainingSeconds).toBeNull()
     expect(tick(game)).toEqual(game)
+  })
+
+  it('réduit les points de la révélation progressive par paliers', () => {
+    expect(progressiveRevealStage(progressiveSprite, 0, 20)).toBe(0)
+    expect(availablePoints(progressiveSprite, 0, 20)).toBe(20)
+    expect(availablePoints(progressiveSprite, 5, 20)).toBe(15)
+    expect(availablePoints(progressiveSprite, 10, 20)).toBe(10)
+    expect(availablePoints(progressiveSprite, 15, 20)).toBe(5)
+  })
+
+  it('accorde les points du palier exact au moment de la réponse', () => {
+    let game = createGame([player], [progressiveSprite], 20)
+    for (let second = 0; second < 6; second += 1) game = tick(game)
+    game = submitAnswer(game, player.id, 'Pikachu')
+
+    expect(game.answers[player.id].pointsAwarded).toBe(15)
+    expect(game.players[0].score).toBe(15)
+  })
+
+  it('fait progresser la révélation même sans timer', () => {
+    let game = createGame([player], [progressiveSprite], null)
+    game = tick(tick(tick(game)))
+
+    expect(game.remainingSeconds).toBeNull()
+    expect(game.questionElapsedSeconds).toBe(3)
+    expect(availablePoints(progressiveSprite, game.questionElapsedSeconds, null)).toBe(15)
   })
 
   it('archive les réponses avant de passer à la question suivante', () => {

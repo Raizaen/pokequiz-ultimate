@@ -15,7 +15,15 @@ import {
   type TimerSetting,
 } from './domain/gameConfig'
 import type { GameState, Player } from './domain/quiz'
-import { createGame, nextQuestion, revealAnswer, submitAnswer, tick } from './engine/quizEngine'
+import {
+  availablePoints,
+  createGame,
+  nextQuestion,
+  progressiveRevealStage,
+  revealAnswer,
+  submitAnswer,
+  tick,
+} from './engine/quizEngine'
 import { questionsForConfig, selectQuestions } from './engine/questionSelection'
 import { rankPlayers } from './engine/ranking'
 import { clearSavedGame, loadGame, saveGame } from './storage/gameStorage'
@@ -85,7 +93,9 @@ export function App() {
   }, [game])
 
   useEffect(() => {
-    if (!game || game.finished || game.revealed || game.remainingSeconds === null) return
+    if (!game || game.finished || game.revealed) return
+    const question = game.questions[game.questionIndex]
+    if (game.remainingSeconds === null && question.media?.spriteVariant !== 'progressive') return
     const timer = window.setInterval(() => setGame((current) => current ? tick(current) : current), 1000)
     return () => window.clearInterval(timer)
   }, [game])
@@ -350,6 +360,8 @@ export function App() {
   }
 
   const question = game.questions[game.questionIndex]
+  const revealStage = progressiveRevealStage(question, game.questionElapsedSeconds, game.timerSeconds)
+  const currentPoints = availablePoints(question, game.questionElapsedSeconds, game.timerSeconds)
   return (
     <main className="app-shell game">
       <nav><Logo /><div className="progress">Question {game.questionIndex + 1} / {game.questions.length}</div><div className={`timer ${game.remainingSeconds !== null && game.remainingSeconds <= 5 ? 'danger' : ''}`}>{game.remainingSeconds === null ? '∞ Sans limite' : `⏱ ${game.remainingSeconds}s`}</div></nav>
@@ -364,12 +376,12 @@ export function App() {
         {question.media?.kind === 'image' && (
           <div
             key={question.id}
-            className={`question-media ${question.media.pixelated ? 'pixelated' : ''} sprite-${question.media.spriteVariant ?? 'normal'} ${game.revealed ? 'revealed' : ''} ${question.type === 'map-location' ? 'location-clue' : ''}`}
+            className={`question-media ${question.media.pixelated ? 'pixelated' : ''} sprite-${question.media.spriteVariant ?? 'normal'} reveal-stage-${revealStage} ${game.revealed ? 'revealed' : ''} ${question.type === 'map-location' ? 'location-clue' : ''}`}
           >
             <img src={question.media.src} alt={question.media.alt} />
           </div>
         )}
-        <p>{question.points} points</p>
+        <p>{question.media?.spriteVariant === 'progressive' ? `${currentPoints} points disponibles` : `${question.points} points`}</p>
       </section>
       {question.type === 'map-location' ? (
         <LostPlaceRound

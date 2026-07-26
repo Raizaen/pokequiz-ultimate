@@ -65,6 +65,7 @@ function applySpriteVariants(selected: Question[], config: GameConfig): Question
     const variant = variants[Math.floor(secureRandom() * variants.length)]
     return {
       ...question,
+      points: variant === 'progressive' ? 20 : question.points,
       media: {
         ...question.media,
         src: variant === 'shiny' ? question.media.shinySrc ?? question.media.src : question.media.src,

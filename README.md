@@ -12,6 +12,7 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 - catalogue exhaustif des sprites disponibles : les 1025 espèces nationales et leurs formes spéciales ;
 - filtre Sprites permettant de jouer une, plusieurs ou toutes les générations ;
 - variantes Sprites configurables : normal, silhouette, révélation progressive, chromatique, zoom et retourné ;
+- révélation progressive synchronisée avec un score décroissant de 20, 15, 10 puis 5 points ;
 - préchargement des images de la question en cours et des deux suivantes ;
 - difficulté Découverte, Confirmé, Expert ou Tous niveaux ;
 - timer configurable de 10, 15, 20 ou 30 secondes, avec un mode sans limite ;
