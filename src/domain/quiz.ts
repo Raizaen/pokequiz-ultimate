@@ -9,6 +9,7 @@ export interface Question {
   difficulty: 1 | 2 | 3 | 4 | 5
   prompt: string
   choices?: string[]
+  choiceMedia?: Record<string, string>
   acceptedAnswers: string[]
   correctChoices?: string[]
   orderEntries?: Array<{
@@ -60,6 +61,7 @@ export interface PlayerAnswer {
   isCorrect: boolean
   locked: boolean
   pointsAwarded?: number
+  responseSeconds?: number
 }
 
 export type AnswersByPlayer = Record<string, PlayerAnswer>

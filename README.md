@@ -14,6 +14,9 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 - variantes Sprites configurables : normal, silhouette, révélation progressive, chromatique, zoom et retourné ;
 - révélation progressive synchronisée avec un score décroissant de 20, 15, 10 puis 5 points ;
 - préchargement des images de la question en cours et des deux suivantes ;
+- épreuve visuelle « Qui est l’intrus ? » intégrée au Labo ;
+- récapitulatif de configuration avant lancement et statistiques détaillées au podium ;
+- rotation des questions entre les parties et cache local des images déjà consultées ;
 - difficulté Découverte, Confirmé, Expert ou Tous niveaux ;
 - timer configurable de 10, 15, 20 ou 30 secondes, avec un mode sans limite ;
 - choix du nombre de questions selon la sélection disponible ;

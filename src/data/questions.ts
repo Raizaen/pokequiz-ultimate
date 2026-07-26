@@ -14,6 +14,7 @@ import { paldeaLostPlaceQuestions } from './curated/paldeaLostPlaceQuestions'
 import { sinnohLostPlaceQuestions } from './curated/sinnohLostPlaceQuestions'
 import { generatedQuestions } from './generatedQuestions'
 import { spriteQuestions } from './spriteQuestions'
+import { intruderQuestions } from './curated/intruderQuestions'
 
 const textQuestions: Question[] = [
   {
@@ -92,4 +93,4 @@ const textQuestions: Question[] = [
   },
 ]
 
-export const questions: Question[] = [...curatedLaboQuestions, ...curatedMoveQuestions, ...curatedStrategyQuestions, ...statOrderQuestions, ...paldeaLostPlaceQuestions, ...sinnohLostPlaceQuestions, ...curatedItemQuestions, ...curatedPokedexQuestions, ...curatedGameQuestions, ...curatedLoreQuestions, ...curatedAnimeQuestions, ...spinOffQuestions, ...textQuestions, ...generatedQuestions, ...animeQuestions, ...spriteQuestions]
+export const questions: Question[] = [...curatedLaboQuestions, ...intruderQuestions, ...curatedMoveQuestions, ...curatedStrategyQuestions, ...statOrderQuestions, ...paldeaLostPlaceQuestions, ...sinnohLostPlaceQuestions, ...curatedItemQuestions, ...curatedPokedexQuestions, ...curatedGameQuestions, ...curatedLoreQuestions, ...curatedAnimeQuestions, ...spinOffQuestions, ...textQuestions, ...generatedQuestions, ...animeQuestions, ...spriteQuestions]

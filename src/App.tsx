@@ -3,6 +3,7 @@ import { Logo } from './components/Logo'
 import { PlayerPanel } from './components/PlayerPanel'
 import { LostPlaceRound } from './components/LostPlaceRound'
 import { LostPlaceSummary } from './components/LostPlaceSummary'
+import { GameStats } from './components/GameStats'
 import { questions } from './data/questions'
 import {
   categories,
@@ -26,7 +27,13 @@ import {
 } from './engine/quizEngine'
 import { questionsForConfig, selectQuestions } from './engine/questionSelection'
 import { rankPlayers } from './engine/ranking'
-import { clearSavedGame, loadGame, saveGame } from './storage/gameStorage'
+import {
+  clearSavedGame,
+  loadGame,
+  loadQuestionHistory,
+  rememberQuestions,
+  saveGame,
+} from './storage/gameStorage'
 
 type Screen = 'menu' | 'setup' | 'game'
 const avatars = ['⚡', '🔥', '💧', '🌿', '🌙', '⭐', '🐉', '🌀']
@@ -105,14 +112,32 @@ export function App() {
     gameQuestions
       .slice(gameQuestionIndex, gameQuestionIndex + 3)
       .forEach((question) => {
-        if (!question.media?.src) return
-        const image = new Image()
-        image.src = question.media.src
+        const sources = [
+          ...(question.media?.src ? [question.media.src] : []),
+          ...Object.values(question.choiceMedia ?? {}),
+        ]
+        sources.forEach((src) => {
+          const image = new Image()
+          image.src = src
+        })
       })
   }, [gameFinished, gameQuestionIndex, gameQuestions])
 
   const startGame = () => {
-    setGame(createGame(players, selectQuestions(questions, config, effectiveQuestionCount), config.timerSeconds))
+    const history = new Set(loadQuestionHistory())
+    const fresh = questions.filter(({ id }) => !history.has(id))
+    const freshSelection = selectQuestions(fresh, config, effectiveQuestionCount)
+    const selectedIds = new Set(freshSelection.map(({ id }) => id))
+    const fallback = freshSelection.length < effectiveQuestionCount
+      ? selectQuestions(
+        questions.filter(({ id }) => !selectedIds.has(id)),
+        config,
+        effectiveQuestionCount - freshSelection.length,
+      )
+      : []
+    const selection = [...freshSelection, ...fallback]
+    rememberQuestions(selection.map(({ id }) => id))
+    setGame(createGame(players, selection, config.timerSeconds))
     setScreen('game')
   }
 
@@ -330,6 +355,20 @@ export function App() {
             </div>
           </section>
 
+          <section className="setup-summary">
+            <div><span>Joueurs</span><strong>{players.map(({ name }) => name || 'Sans nom').join(', ')}</strong></div>
+            <div><span>Mode</span><strong>{config.mode === 'mixed' ? 'Questions en vrac' : config.category}</strong></div>
+            {hasSpriteGenerationSelection && (
+              <div><span>Générations</span><strong>{config.spriteGenerations === 'all' ? 'Toutes' : config.spriteGenerations?.join(', ')}</strong></div>
+            )}
+            {hasSpriteGenerationSelection && (
+              <div><span>Variantes</span><strong>{config.spriteVariants === 'all' ? 'Tout mélanger' : config.spriteVariants?.length}</strong></div>
+            )}
+            <div><span>Difficulté</span><strong>{difficultyPresets.find(({ id }) => id === config.difficulty)?.label}</strong></div>
+            <div><span>Timer</span><strong>{config.timerSeconds === null ? 'Sans limite' : `${config.timerSeconds}s`}</strong></div>
+            <div><span>Questions</span><strong>{effectiveQuestionCount}</strong></div>
+          </section>
+
           <div className="setup-actions">
             <button disabled={players.length >= 8} onClick={() => setPlayers([...players, newPlayer(players.length)])}>+ Ajouter un joueur</button>
             <div className="launch-area">
@@ -354,6 +393,7 @@ export function App() {
           {ranking.map(({ player, rank }) => <div className={rank === 1 ? 'winner' : ''} key={player.id}><span>{rank}{ranking.filter((entry) => entry.rank === rank).length > 1 ? ' ex æquo' : ''}</span><i>{player.avatar}</i><strong>{player.name}</strong><b>{player.score} pts</b></div>)}
         </div>
         <LostPlaceSummary game={game} />
+        <GameStats game={game} />
         <button className="primary" onClick={() => { clearSavedGame(); setPlayers([newPlayer(0)]); setGame(null); setScreen('menu') }}>Retour au menu</button>
       </main>
     )
@@ -366,7 +406,7 @@ export function App() {
     <main className="app-shell game">
       <nav><Logo /><div className="progress">Question {game.questionIndex + 1} / {game.questions.length}</div><div className={`timer ${game.remainingSeconds !== null && game.remainingSeconds <= 5 ? 'danger' : ''}`}>{game.remainingSeconds === null ? '∞ Sans limite' : `⏱ ${game.remainingSeconds}s`}</div></nav>
       <div className="progress-bar"><i style={{ width: `${((game.questionIndex + 1) / game.questions.length) * 100}%` }} /></div>
-      <section className="question-card">
+      <section className="question-card" key={question.id}>
         <div>
           <span className="category">{question.category}</span>
           {question.validation?.status === 'validated' && <span className="validated-badge">✓ Validée</span>}

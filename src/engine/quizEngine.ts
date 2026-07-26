@@ -66,7 +66,17 @@ export function submitAnswer(state: GameState, playerId: string, value: AnswerVa
 
   const nextState: GameState = {
     ...state,
-    answers: { ...state.answers, [playerId]: { attempts, value, isCorrect, locked, pointsAwarded } },
+    answers: {
+      ...state.answers,
+      [playerId]: {
+        attempts,
+        value,
+        isCorrect,
+        locked,
+        pointsAwarded,
+        responseSeconds: state.questionElapsedSeconds ?? 0,
+      },
+    },
     players: state.players.map((player) =>
       player.id === playerId && pointsAwarded > previouslyAwarded
         ? { ...player, score: player.score + pointsAwarded - previouslyAwarded }

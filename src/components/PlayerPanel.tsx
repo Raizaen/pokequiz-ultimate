@@ -37,6 +37,7 @@ export function PlayerPanel({ player, question, answer, disabled, onAnswer }: Pr
         <div className="choices">
           {question.choices?.map((choice, index) => (
             <button key={choice} className={`choice choice-${index}`} disabled={locked} onClick={() => onAnswer(choice)}>
+              {question.choiceMedia?.[choice] && <img className="choice-image" src={question.choiceMedia[choice]} alt="" />}
               <span>{['▲', '◆', '●', '■'][index]}</span>{choice}
             </button>
           ))}

@@ -70,6 +70,10 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .count-grid strong { font-size: 20px; }
 .count-grid small { color: #8889a3; }
 .setup-actions { display: flex; justify-content: space-between; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+.setup-summary { margin-top: 24px; padding: 18px; border-radius: 18px; background: #191a31; display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 10px; }
+.setup-summary div { padding: 10px; border-radius: 12px; background: #242541; display: grid; gap: 4px; }
+.setup-summary span { color: #8889a3; font-size: 12px; text-transform: uppercase; font-weight: 900; }
+.setup-summary strong { color: #fff; overflow-wrap: anywhere; }
 .launch-area { margin-left: auto; display: flex; align-items: center; gap: 14px; }
 .launch-area > small { color: #8889a3; max-width: 160px; text-align: right; line-height: 1.25; }
 .game nav { position: relative; z-index: 2; }
@@ -78,7 +82,7 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .timer.danger { color: #ff7070; animation: pulse .7s infinite alternate; }
 .progress-bar { height: 5px; background: #292a42; margin: 24px 0 36px; border-radius: 9px; overflow: hidden; }
 .progress-bar i { display: block; height: 100%; background: linear-gradient(90deg, #ef445d, #f2c94c); transition: width .3s; }
-.question-card { text-align: center; width: min(930px, 100%); margin: auto; }
+.question-card { text-align: center; width: min(930px, 100%); margin: auto; animation: question-enter .35s ease both; }
 .question-card > div { display: flex; justify-content: center; gap: 18px; align-items: center; }
 .category { padding: 7px 12px; border-radius: 8px; background: #6656db33; color: #b4aaff; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; font-weight: 900; }
 .validated-badge { padding: 7px 10px; border-radius: 8px; background: #62d68b1c; color: #62d68b; text-transform: uppercase; letter-spacing: 1px; font-size: 10px; font-weight: 900; }
@@ -128,6 +132,7 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .player-panel header b { margin-left: auto; color: #f2c94c; }
 .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .choice { color: #fff; border-radius: 10px; padding: 11px 8px; text-align: left; font-weight: 800; background: #31324d; }
+.choice-image { display: block; width: 72px; height: 72px; object-fit: contain; margin: 0 auto 5px; }
 .choice span { margin-right: 7px; }
 .choice-0 span { color: #ff5c68; }.choice-1 span { color: #4d9dff; }.choice-2 span { color: #e9c43e; }.choice-3 span { color: #54cf84; }
 .choice:hover:not(:disabled) { transform: translateY(-2px); background: #3b3c5c; }
@@ -174,6 +179,27 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .podium div { width: 160px; background: #20213b; padding: 18px; border-radius: 18px; display: grid; gap: 7px; }
 .podium div.winner { border: 2px solid #f2c94c; transform: translateY(-12px); }
 .podium span { color: #f2c94c; font-weight: 900; }.podium i { font-style: normal; font-size: 36px; }.podium b { color: #9b9cb2; }
+.game-stats { width: min(980px, 100%); margin: 10px auto 28px; }
+.game-stats h2 { margin-bottom: 15px; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.stats-grid article { padding: 16px; border-radius: 18px; background: #20213b; display: grid; grid-template-columns: 1fr 1fr; gap: 9px; text-align: left; }
+.stats-grid header { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; font-size: 18px; }
+.stats-grid header i { font-style: normal; font-size: 26px; }
+.stats-grid article div { padding: 10px; border-radius: 11px; background: #292a47; display: grid; gap: 3px; }
+.stats-grid article b { color: #f2c94c; }
+.stats-grid article span { color: #9394aa; font-size: 11px; }
+.stats-grid .category-breakdown { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+.stats-grid .category-breakdown span { padding: 6px 8px; border-radius: 8px; background: #18192f; }
+.answer-details { margin-top: 15px; border-radius: 16px; background: #20213b; text-align: left; overflow: hidden; }
+.answer-details summary { padding: 16px; cursor: pointer; font-weight: 900; color: #f2c94c; }
+.answer-details > div { padding: 0 16px 16px; display: grid; gap: 8px; }
+.answer-details article { padding: 12px; border-radius: 11px; background: #292a47; display: flex; flex-wrap: wrap; gap: 8px 14px; }
+.answer-details article strong { flex-basis: 100%; }
+.answer-details article span { color: #aaaabe; font-size: 12px; }
+@keyframes question-enter {
+  from { opacity: 0; transform: translateY(14px) scale(.985); }
+  to { opacity: 1; transform: none; }
+}
 .lost-place-summary { width: min(1180px, 100%); margin: 20px auto 36px; padding: clamp(20px, 4vw, 38px); border: 1px solid #ffffff12; border-radius: 26px; background: #17182dcc; text-align: left; box-shadow: 0 24px 70px #0004; }
 .lost-place-summary > header { text-align: center; }
 .lost-place-summary > header .eyebrow { margin-bottom: 8px; }
