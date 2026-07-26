@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { questions } from './questions'
+import { questionFingerprint } from '../engine/questionIdentity'
 
 const playableCategories = [
   'Labo',
@@ -24,6 +25,10 @@ describe('question bank', () => {
 
   it('utilise un identifiant unique pour chaque question', () => {
     expect(new Set(questions.map(({ id }) => id)).size).toBe(questions.length)
+  })
+
+  it('ne contient aucun doublon sémantique', () => {
+    expect(new Set(questions.map(questionFingerprint)).size).toBe(questions.length)
   })
 
   it('fournit quatre choix contenant la solution pour chaque QCM', () => {

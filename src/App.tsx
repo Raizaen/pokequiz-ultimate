@@ -38,6 +38,7 @@ import {
 } from './storage/gameStorage'
 import { loadPublishedQuestions } from './services/questionRepository'
 import type { Question } from './domain/quiz'
+import { mergeQuestionBanks } from './engine/questionIdentity'
 
 type Screen = 'menu' | 'setup' | 'game' | 'admin'
 const avatars = ['⚡', '🔥', '💧', '🌿', '🌙', '⭐', '🐉', '🌀']
@@ -84,7 +85,7 @@ export function App() {
   const [remoteQuestions, setRemoteQuestions] = useState<Question[]>([])
   const [remoteRefreshKey, setRemoteRefreshKey] = useState(0)
   const questionBank = useMemo(
-    () => [...new Map([...bundledQuestions, ...remoteQuestions].map((question) => [question.id, question])).values()],
+    () => mergeQuestionBanks(remoteQuestions, bundledQuestions),
     [remoteQuestions],
   )
   const savedGame = loadGame()

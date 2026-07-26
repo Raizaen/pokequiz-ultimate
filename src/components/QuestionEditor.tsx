@@ -3,6 +3,7 @@ import type { User } from '@supabase/supabase-js'
 import { categories } from '../domain/gameConfig'
 import type { Question, QuestionType } from '../domain/quiz'
 import { questions as bundledQuestions } from '../data/questions'
+import { questionFingerprint } from '../engine/questionIdentity'
 import {
   importQuestions,
   loadAdminQuestions,
@@ -197,6 +198,15 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
     const answers = question.acceptedAnswers
     if (!question.prompt || !question.explanation || answers.length === 0) {
       setMessage('La question, la réponse et l’explication sont obligatoires.')
+      return
+    }
+    const fingerprint = questionFingerprint(question)
+    const duplicate = [
+      ...bundledQuestions,
+      ...rows.map((row) => row.payload),
+    ].find((candidate) => candidate.id !== question.id && questionFingerprint(candidate) === fingerprint)
+    if (duplicate) {
+      setMessage(`Doublon détecté : cette question existe déjà sous l’identifiant ${duplicate.id}.`)
       return
     }
     const isChoiceQuestion = question.type === 'multiple-choice' || question.type === 'multiple-select'

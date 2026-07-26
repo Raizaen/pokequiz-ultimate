@@ -16,6 +16,7 @@ import { generatedQuestions } from './generatedQuestions'
 import { spriteQuestions } from './spriteQuestions'
 import { intruderQuestions } from './curated/intruderQuestions'
 import { pokopiaQuestions } from './curated/pokopiaQuestions'
+import { deduplicateQuestions } from '../engine/questionIdentity'
 
 const textQuestions: Question[] = [
   {
@@ -94,4 +95,4 @@ const textQuestions: Question[] = [
   },
 ]
 
-export const questions: Question[] = [...curatedLaboQuestions, ...intruderQuestions, ...pokopiaQuestions, ...curatedMoveQuestions, ...curatedStrategyQuestions, ...statOrderQuestions, ...paldeaLostPlaceQuestions, ...sinnohLostPlaceQuestions, ...curatedItemQuestions, ...curatedPokedexQuestions, ...curatedGameQuestions, ...curatedLoreQuestions, ...curatedAnimeQuestions, ...spinOffQuestions, ...textQuestions, ...generatedQuestions, ...animeQuestions, ...spriteQuestions]
+export const questions: Question[] = deduplicateQuestions([...curatedLaboQuestions, ...intruderQuestions, ...pokopiaQuestions, ...curatedMoveQuestions, ...curatedStrategyQuestions, ...statOrderQuestions, ...paldeaLostPlaceQuestions, ...sinnohLostPlaceQuestions, ...curatedItemQuestions, ...curatedPokedexQuestions, ...curatedGameQuestions, ...curatedLoreQuestions, ...curatedAnimeQuestions, ...spinOffQuestions, ...textQuestions, ...generatedQuestions, ...animeQuestions, ...spriteQuestions])
