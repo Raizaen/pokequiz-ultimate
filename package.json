@@ -12,10 +12,11 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.110.8",
     "@vitejs/plugin-react": "^5.0.4",
-    "vite": "^7.1.9",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "vite": "^7.1.9"
   },
   "devDependencies": {
     "@eslint/js": "^9.37.0",

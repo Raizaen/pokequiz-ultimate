@@ -230,6 +230,22 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .summary-map-legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; }
 .summary-map-legend .correct-location { background: #62d68b; border: 1px solid #fff; }
 .results > .primary { margin-top: 6px; }
+.admin-entry { position: fixed; right: 24px; bottom: 20px; z-index: 2; border: 0; background: transparent; color: #77788f; font-size: 12px; }
+.admin-entry:hover { color: #f2c94c; }
+.admin-shell nav { max-width: 920px; margin: 0 auto; }
+.admin-badge { padding: 8px 12px; border: 1px solid #f2c94c55; border-radius: 999px; color: #f2c94c; font-size: 11px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+.admin-card { width: min(580px, 100%); margin: 70px auto; padding: clamp(26px, 5vw, 48px); border: 1px solid #ffffff14; border-radius: 28px; background: #191a31e8; box-shadow: 0 28px 80px #0005; text-align: center; }
+.admin-card h1 { margin: 10px 0 12px; font-size: clamp(34px, 6vw, 54px); }
+.admin-card > p { color: #aaaabe; line-height: 1.6; }
+.admin-login { display: grid; gap: 10px; margin-top: 26px; text-align: left; }
+.admin-login label { color: #aaaabe; font-size: 12px; font-weight: 800; }
+.admin-login input { width: 100%; box-sizing: border-box; }
+.admin-login .primary { margin-top: 8px; }
+.admin-message { padding: 12px; border-radius: 12px; background: #252640; }
+.admin-warning { padding: 14px; border: 1px solid #ff5b5b66; border-radius: 14px; background: #ff5b5b12; color: #ff9b9b !important; }
+.admin-success { display: grid; gap: 5px; margin: 24px 0; padding: 18px; border: 1px solid #62d68b66; border-radius: 16px; background: #62d68b12; }
+.admin-success strong { color: #62d68b; }
+.admin-success span { color: #aaaabe; font-size: 13px; }
 @keyframes pulse { to { transform: scale(1.06); } }
 @media (max-width: 620px) {
   .app-shell { padding: 20px 14px 40px; }

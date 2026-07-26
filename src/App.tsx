@@ -5,6 +5,7 @@ import { LostPlaceRound } from './components/LostPlaceRound'
 import { LostPlaceSummary } from './components/LostPlaceSummary'
 import { GameStats } from './components/GameStats'
 import { SpriteImage } from './components/SpriteImage'
+import { AdminPanel } from './components/AdminPanel'
 import { questions } from './data/questions'
 import {
   categories,
@@ -36,7 +37,7 @@ import {
   saveGame,
 } from './storage/gameStorage'
 
-type Screen = 'menu' | 'setup' | 'game'
+type Screen = 'menu' | 'setup' | 'game' | 'admin'
 const avatars = ['⚡', '🔥', '💧', '🌿', '🌙', '⭐', '🐉', '🌀']
 const colors = ['#f2c94c', '#ff5b5b', '#4aa8ff', '#62d68b', '#a777e3', '#ff8f4c', '#35d0ba', '#ef6bad']
 const preferredQuestionCounts = [5, 10, 15, 20, 30, 50, 75, 100]
@@ -171,6 +172,10 @@ export function App() {
     if (next.length > 0) setConfig({ ...config, spriteVariants: next })
   }
 
+  if (screen === 'admin') {
+    return <AdminPanel onBack={() => setScreen('menu')} />
+  }
+
   if (screen === 'menu') {
     return (
       <main className="app-shell hero">
@@ -185,6 +190,7 @@ export function App() {
           </div>
           <div className="feature-strip"><span>👥 1–8 joueurs</span><span>⚡ QCM & questions ouvertes</span><span>💾 Sauvegarde automatique</span></div>
         </section>
+        <button className="admin-entry" onClick={() => setScreen('admin')}>Administration</button>
         <div className="orb orb-one" /><div className="orb orb-two" />
       </main>
     )
