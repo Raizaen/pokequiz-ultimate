@@ -14,6 +14,7 @@ const playableCategories = [
   'Jeux principaux',
   'Anime',
   'Spin-off',
+  'Pokopia',
 ]
 
 describe('question bank', () => {

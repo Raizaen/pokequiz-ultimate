@@ -7,6 +7,7 @@ export type TimerSetting = 10 | 15 | 20 | 30 | null
 export type SpriteGenerationFilter = number[] | 'all'
 export type SpriteVariant = 'normal' | 'silhouette' | 'progressive' | 'shiny' | 'zoom' | 'flipped'
 export type SpriteVariantFilter = SpriteVariant[] | 'all'
+export type PokopiaSpoilerFilter = 'safe' | 'all'
 
 export interface GameConfig {
   mode: GameMode
@@ -15,6 +16,7 @@ export interface GameConfig {
   region?: RegionFilter
   spriteGenerations?: SpriteGenerationFilter
   spriteVariants?: SpriteVariantFilter
+  pokopiaSpoilers?: PokopiaSpoilerFilter
   timerSeconds?: TimerSetting
 }
 
@@ -39,6 +41,7 @@ export const categories: CategoryDefinition[] = [
   { id: 'Lieu Perdu', label: 'Lieu Perdu', icon: '📍', description: 'Localisation sur une carte interactive' },
   { id: 'Lore', label: 'Lore', icon: '📜', description: 'Légendes et univers' },
   { id: 'Spin-off', label: 'Spin-off', icon: '🎮', description: 'Jeux en dehors de la série principale' },
+  { id: 'Pokopia', label: 'Pokopia', icon: '🏡', description: 'Construction, habitants et monde cosy' },
   { id: 'Jeux principaux', label: 'Jeux principaux', icon: '🗺️', description: 'Régions, personnages et aventures' },
   { id: 'Anime', label: 'Anime', icon: '📺', description: 'Sacha et ses compagnons' },
 ]

@@ -84,7 +84,8 @@ export function App() {
   const eligibleQuestions = questionsForConfig(questions, config)
   const hasRegionSelection = config.mode === 'category' && config.category === 'Lieu Perdu'
   const hasSpriteGenerationSelection = config.mode === 'category' && config.category === 'Sprites'
-  const categoryOptionSteps = hasSpriteGenerationSelection ? 2 : hasRegionSelection ? 1 : 0
+  const hasPokopiaSelection = config.mode === 'category' && config.category === 'Pokopia'
+  const categoryOptionSteps = hasSpriteGenerationSelection ? 2 : hasRegionSelection || hasPokopiaSelection ? 1 : 0
   const difficultyStep = config.mode === 'category' ? 3 + categoryOptionSteps : 2
   const timerStep = difficultyStep + 1
   const questionCountStep = timerStep + 1
@@ -233,6 +234,7 @@ export function App() {
                         region: category.id === 'Lieu Perdu' ? config.region ?? 'all' : undefined,
                         spriteGenerations: category.id === 'Sprites' ? config.spriteGenerations ?? 'all' : config.spriteGenerations,
                         spriteVariants: category.id === 'Sprites' ? config.spriteVariants ?? 'all' : config.spriteVariants,
+                        pokopiaSpoilers: category.id === 'Pokopia' ? config.pokopiaSpoilers ?? 'safe' : config.pokopiaSpoilers,
                       })}
                     >
                       <i>{category.icon}</i><strong>{category.label}</strong><small>{unavailable ? 'Bientôt disponible' : `${count} question${count > 1 ? 's' : ''}`}</small>
@@ -287,6 +289,26 @@ export function App() {
                     </button>
                   )
                 })}
+              </div>
+            </section>
+          )}
+
+          {hasPokopiaSelection && (
+            <section className="setup-section">
+              <div className="section-heading"><span>3</span><div><h2>Niveau de spoilers</h2><p>Protège les joueurs qui commencent leur aventure.</p></div></div>
+              <div className="mode-grid">
+                <button
+                  className={(config.pokopiaSpoilers ?? 'safe') === 'safe' ? 'selected' : ''}
+                  onClick={() => setConfig({ ...config, pokopiaSpoilers: 'safe' })}
+                >
+                  <i>🌱</i><strong>Sans spoilers</strong><small>Gameplay et informations de présentation</small>
+                </button>
+                <button
+                  className={config.pokopiaSpoilers === 'all' ? 'selected' : ''}
+                  onClick={() => setConfig({ ...config, pokopiaSpoilers: 'all' })}
+                >
+                  <i>🏡</i><strong>Partie complète</strong><small>Inclut histoire, zones et rencontres</small>
+                </button>
               </div>
             </section>
           )}
@@ -363,6 +385,9 @@ export function App() {
             )}
             {hasSpriteGenerationSelection && (
               <div><span>Variantes</span><strong>{config.spriteVariants === 'all' ? 'Tout mélanger' : config.spriteVariants?.length}</strong></div>
+            )}
+            {hasPokopiaSelection && (
+              <div><span>Spoilers</span><strong>{config.pokopiaSpoilers === 'all' ? 'Partie complète' : 'Sans spoilers'}</strong></div>
             )}
             <div><span>Difficulté</span><strong>{difficultyPresets.find(({ id }) => id === config.difficulty)?.label}</strong></div>
             <div><span>Timer</span><strong>{config.timerSeconds === null ? 'Sans limite' : `${config.timerSeconds}s`}</strong></div>

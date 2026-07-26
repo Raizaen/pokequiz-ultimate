@@ -48,7 +48,10 @@ export function questionsForConfig(questions: Question[], config: GameConfig): Q
       || config.spriteVariants.length !== 1
       || config.spriteVariants[0] !== 'shiny'
       || Boolean(question.media?.shinySrc)
-    return matchesDifficulty && matchesCategory && matchesRegion && matchesSpriteGeneration && matchesSpriteVariant
+    const matchesPokopiaSpoilers = config.category !== 'Pokopia'
+      || config.pokopiaSpoilers !== 'safe'
+      || !question.tags?.includes('pokopia-spoiler')
+    return matchesDifficulty && matchesCategory && matchesRegion && matchesSpriteGeneration && matchesSpriteVariant && matchesPokopiaSpoilers
   })
 }
 

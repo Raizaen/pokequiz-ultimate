@@ -15,6 +15,7 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 - révélation progressive synchronisée avec un score décroissant de 20, 15, 10 puis 5 points ;
 - préchargement des images de la question en cours et des deux suivantes ;
 - épreuve visuelle « Qui est l’intrus ? » intégrée au Labo ;
+- catégorie Pokémon Pokopia avec 50 questions vérifiées et filtre de spoilers ;
 - récapitulatif de configuration avant lancement et statistiques détaillées au podium ;
 - rotation des questions entre les parties et cache local des images déjà consultées ;
 - difficulté Découverte, Confirmé, Expert ou Tous niveaux ;
