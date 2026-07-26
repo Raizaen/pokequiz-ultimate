@@ -459,6 +459,7 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
               <div className="wide">
                 <PokemonStatPicker
                   statLabel={form.statLabel}
+                  orderDirection={form.orderDirection}
                   value={form.orderEntries}
                   onChange={(orderEntries) => setForm({ ...form, orderEntries })}
                 />

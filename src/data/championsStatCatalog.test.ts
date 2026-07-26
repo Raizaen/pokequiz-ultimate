@@ -20,5 +20,7 @@ describe('Pokémon Champions stat catalog', () => {
       && championStatLabels.every((label) => Number.isFinite(pokemon.stats[label])),
     )).toBe(true)
     expect(new Set(championsStatCatalog.map(({ name }) => name)).size).toBe(championsStatCatalog.length)
+    expect(new Set(championsStatCatalog.map(({ generation }) => generation))).toEqual(new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+    expect(new Set(championsStatCatalog.map(({ kind }) => kind))).toEqual(new Set(['standard', 'regional', 'mega', 'other-form']))
   })
 })

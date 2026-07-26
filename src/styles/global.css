@@ -301,13 +301,22 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .pokemon-stat-picker header > div { display: grid; }
 .pokemon-stat-picker header small { color: #8889a3; }
 .pokemon-stat-picker header input { width: 100%; border: 1px solid #ffffff12; border-radius: 10px; background: #242541; color: #fff; padding: 10px; }
-.pokemon-stat-picker > div { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; max-height: 360px; margin-top: 13px; overflow: auto; }
+.pokemon-stat-filters { display: flex; gap: 9px; margin-top: 12px; }
+.pokemon-stat-filters select { min-width: 180px; border: 1px solid #ffffff12; border-radius: 10px; background: #242541; color: #fff; padding: 9px 11px; }
+.pokemon-stat-results { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; max-height: 360px; margin-top: 13px; overflow: auto; }
 .pokemon-stat-picker button { position: relative; display: grid; place-items: center; min-height: 145px; padding: 9px; border: 1px solid #ffffff0d; border-radius: 11px; background: #242541; color: #fff; }
 .pokemon-stat-picker button.selected { border-color: #f2c94c; background: #f2c94c13; box-shadow: inset 0 0 0 1px #f2c94c; }
 .pokemon-stat-picker button:disabled:not(.selected) { opacity: .38; cursor: not-allowed; filter: grayscale(.75); }
 .pokemon-stat-picker img { width: 82px; height: 82px; object-fit: contain; }
 .pokemon-stat-picker button small { color: #aaaabe; }
 .pokemon-stat-picker button i { position: absolute; top: 7px; right: 7px; display: grid; width: 22px; height: 22px; place-items: center; border-radius: 50%; background: #f2c94c; color: #17182b; font-size: 11px; font-style: normal; font-weight: 900; }
+.pokemon-stat-selection { margin-top: 14px; padding: 12px; border: 1px solid #f2c94c33; border-radius: 12px; background: #f2c94c08; }
+.pokemon-stat-selection > small { color: #f2c94c; font-weight: 800; }
+.pokemon-stat-selection > div { display: grid; grid-template-columns: repeat(5, minmax(90px, 1fr)); gap: 8px; margin-top: 9px; }
+.pokemon-stat-selection button { min-height: 126px; }
+.pokemon-stat-selection button span { position: absolute; top: 6px; left: 7px; color: #f2c94c; font-weight: 900; }
+.pokemon-stat-selection button b { color: #f2c94c; }
+.pokemon-stat-selection > p { margin: 10px 0 0; color: #ff7c70; font-size: 12px; font-weight: 700; }
 .quality-dashboard > header { text-align: center; }
 .quality-dashboard h2 { margin: 0; font-size: clamp(30px, 5vw, 46px); }
 .quality-dashboard header p { margin: 5px 0 24px; color: #9192aa; }
@@ -364,4 +373,7 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
   .revision-list article { align-items: stretch; flex-direction: column; }
   .quality-kpis { grid-template-columns: repeat(2, 1fr); }
   .pokemon-stat-picker > header { grid-template-columns: 1fr; }
+  .pokemon-stat-filters { display: grid; }
+  .pokemon-stat-filters select { width: 100%; }
+  .pokemon-stat-selection > div { grid-template-columns: repeat(2, minmax(90px, 1fr)); }
 }

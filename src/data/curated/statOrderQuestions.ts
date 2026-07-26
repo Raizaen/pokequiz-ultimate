@@ -9,6 +9,8 @@ export interface ChampionPokemon {
   nationalId: number
   name: string
   image: string
+  generation: number
+  kind: 'standard' | 'regional' | 'mega' | 'other-form'
   stats: Record<StatKey, number>
 }
 

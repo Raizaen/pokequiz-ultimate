@@ -35,6 +35,40 @@ const formTranslations = new Map([
   ['Hero Form', 'Forme Héroïque'],
 ])
 
+const unavailableShowdownSprites = new Set([
+  'raichumegax',
+  'raichumegay',
+  'staraptormega',
+  'meowsticmega',
+  'scolipedemega',
+  'scraftymega',
+  'eelektrossmega',
+  'pyroarmega',
+  'malamarmega',
+  'barbaraclemega',
+  'dragalgemega',
+  'falinksmega',
+])
+
+const imageOverrides = new Map([
+  ['taurospaldeacombat', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10250.png'],
+  ['taurospaldeablaze', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10251.png'],
+  ['taurospaldeaaqua', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10252.png'],
+  ['vivillon', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/666.png'],
+])
+
+const generationFromNationalId = (id) => {
+  if (id <= 151) return 1
+  if (id <= 251) return 2
+  if (id <= 386) return 3
+  if (id <= 493) return 4
+  if (id <= 649) return 5
+  if (id <= 721) return 6
+  if (id <= 809) return 7
+  if (id <= 905) return 8
+  return 9
+}
+
 function parseParameters(line) {
   const body = line.slice('{{gdex/Champs|'.length, -2)
   const parts = body.split('|')
@@ -131,6 +165,12 @@ const roster = relevantLines.flatMap((line) => {
   const baseFrenchName = frenchNames.get(nationalId) ?? englishName
   const rawForm = named.form
   const isMega = rawForm?.startsWith('Mega ')
+  const isRegional = /Alolan|Galarian|Hisuian|Paldean/.test(rawForm ?? '')
+  const spriteSuffix = suffix.replace(/^-/, '').toLowerCase().replaceAll(' ', '-')
+  const spriteSlug = `${toId(englishName)}${suffix
+    ? `-${spriteSuffix.replace(/^mega-([xy])$/, 'mega$1')}`
+    : ''}`
+  const fallbackImage = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${nationalId}.png`
   const formName = isMega
     ? rawForm.replace(/^Mega \S+/, '').trim()
     : formTranslations.get(rawForm)
@@ -142,7 +182,12 @@ const roster = relevantLines.flatMap((line) => {
     key: showdownKey,
     nationalId,
     name,
-    image: `https://play.pokemonshowdown.com/sprites/gen5/${showdownKey}.png`,
+    image: imageOverrides.get(showdownKey)
+      ?? (unavailableShowdownSprites.has(showdownKey)
+        ? fallbackImage
+        : `https://play.pokemonshowdown.com/sprites/gen5/${spriteSlug}.png`),
+    generation: generationFromNationalId(nationalId),
+    kind: isMega ? 'mega' : isRegional ? 'regional' : rawForm ? 'other-form' : 'standard',
     stats: data.stats,
     sourceForm: rawForm ?? null,
   }]
