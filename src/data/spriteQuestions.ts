@@ -2,10 +2,17 @@ import type { Question } from '../domain/quiz'
 import spriteCatalog from './generated/spriteCatalog.json'
 
 function choicesFor(index: number): string[] {
-  const offsets = [0, 47, 131, 229]
-  return offsets
-    .map((offset) => spriteCatalog[(index + offset) % spriteCatalog.length].name)
-    .sort((left, right) => left.localeCompare(right, 'fr'))
+  const choices = [spriteCatalog[index].name]
+  const step = 97
+  let cursor = (index + step) % spriteCatalog.length
+
+  while (choices.length < 4) {
+    const candidate = spriteCatalog[cursor].name
+    if (!choices.includes(candidate)) choices.push(candidate)
+    cursor = (cursor + step) % spriteCatalog.length
+  }
+
+  return choices.sort((left, right) => left.localeCompare(right, 'fr'))
 }
 
 export const spriteQuestions: Question[] = spriteCatalog.map((entry, index) => ({

@@ -2,9 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { spriteQuestions } from './spriteQuestions'
 
 describe('sprite question pack', () => {
-  it('contient 350 questions uniques et complètes', () => {
-    expect(spriteQuestions).toHaveLength(350)
-    expect(new Set(spriteQuestions.map(({ id }) => id)).size).toBe(350)
+  it('contient tous les Pokémon nationaux et leurs formes disponibles', () => {
+    expect(spriteQuestions.length).toBeGreaterThanOrEqual(1025)
+    expect(new Set(spriteQuestions.map(({ id }) => id)).size).toBe(spriteQuestions.length)
     expect(spriteQuestions.every(({ category, choices, media }) =>
       category === 'Sprites' && choices?.length === 4 && media?.kind === 'image',
     )).toBe(true)
@@ -16,7 +16,12 @@ describe('sprite question pack', () => {
     )).toBe(true)
   })
 
-  it('contient au moins 100 formes spéciales', () => {
-    expect(spriteQuestions.filter(({ id }) => Number(id.replace('sprites-', '')) > 1025)).toHaveLength(100)
+  it('contient les 1025 espèces nationales et de nombreuses formes spéciales', () => {
+    expect(spriteQuestions.filter(({ id }) => Number(id.replace('sprites-', '')) <= 1025)).toHaveLength(1025)
+    expect(spriteQuestions.filter(({ id }) => Number(id.replace('sprites-', '')) > 1025).length).toBeGreaterThanOrEqual(100)
+  })
+
+  it('propose quatre choix distincts pour chaque sprite', () => {
+    expect(spriteQuestions.every(({ choices }) => new Set(choices).size === 4)).toBe(true)
   })
 })

@@ -152,18 +152,14 @@ const moveFacts = await mapLimit(moveIds, 12, moveFact)
 const itemIds = Array.from({ length: 50 }, (_, index) => index + 1)
 const itemFacts = await mapLimit(itemIds, 12, itemFact)
 
-const pokemonList = await fetchJson(`${API}/pokemon?limit=2000`)
-const baseIds = Array.from({ length: 250 }, (_, index) => Math.round(1 + index * (1024 / 249)))
-const baseResources = baseIds.map((id) => ({ url: `${API}/pokemon/${id}` }))
-const specialPattern = /mega|gmax|alola|galar|hisui|paldea|primal|origin|therian|sky|black|white|crowned|dusk|midnight|school|zen/
-const formResources = pokemonList.results
-  .filter(({ name, url }) => idFromUrl(url) > 1025 && specialPattern.test(name))
-  .slice(0, 180)
-const formEntries = (await mapLimit(formResources, 12, spriteEntry)).filter(Boolean).slice(0, 100)
-const baseEntries = (await mapLimit(baseResources, 12, spriteEntry)).filter(Boolean)
-const spriteCatalog = [...baseEntries, ...formEntries].slice(0, 350)
+const pokemonList = await fetchJson(`${API}/pokemon?limit=100000`)
+const spriteCatalog = (await mapLimit(pokemonList.results, 16, spriteEntry))
+  .filter(Boolean)
+  .sort((left, right) => left.id - right.id)
 
-if (spriteCatalog.length < 350) throw new Error(`Only ${spriteCatalog.length} sprites generated`)
+if (spriteCatalog.length < 1025) {
+  throw new Error(`Only ${spriteCatalog.length} sprites generated`)
+}
 
 await Promise.all([
   writeFile(new URL('pokemonFacts.json', OUTPUT), `${JSON.stringify(pokemonFacts, null, 2)}\n`),
