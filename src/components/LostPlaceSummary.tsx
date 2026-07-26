@@ -72,7 +72,7 @@ export function LostPlaceSummary({ game }: Props) {
             <article key={region}>
               <h3>Carte de {region}</h3>
               <div className="summary-map-frame">
-                <svg viewBox="0 0 100 100" style={{ aspectRatio: asset.aspectRatio }} aria-label={`Récapitulatif des réponses sur la carte de ${region}`}>
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ aspectRatio: asset.aspectRatio }} aria-label={`Récapitulatif des réponses sur la carte de ${region}`}>
                   <image href={asset.src} x="0" y="0" width="100" height="100" preserveAspectRatio="none" />
                   {targets.map((question) => question.mapTarget && (
                     <g key={question.id} className="summary-target">

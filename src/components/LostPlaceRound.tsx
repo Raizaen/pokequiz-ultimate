@@ -123,6 +123,7 @@ export function LostPlaceRound({ players, answers, question, revealed, onAnswer 
           className="region-map"
           style={{ aspectRatio: mapAsset.aspectRatio }}
           viewBox={`${view.x} ${view.y} ${view.width} ${view.height}`}
+          preserveAspectRatio="none"
           onClick={placeMarker}
           onPointerDown={startDrag}
           onPointerMove={moveDrag}
