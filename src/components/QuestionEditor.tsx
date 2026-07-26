@@ -2,8 +2,10 @@ import { useEffect, useMemo, useState, type FormEvent } from 'react'
 import type { User } from '@supabase/supabase-js'
 import { categories } from '../domain/gameConfig'
 import type { Question, QuestionType } from '../domain/quiz'
+import { questions as bundledQuestions } from '../data/questions'
 import {
   deleteAdminQuestion,
+  importQuestions,
   loadAdminQuestions,
   saveAdminQuestion,
   type PublicationStatus,
@@ -17,7 +19,7 @@ interface Props {
 
 interface FormState {
   id: string
-  type: Extract<QuestionType, 'multiple-choice' | 'multiple-select' | 'open'>
+  type: QuestionType
   category: string
   difficulty: Question['difficulty']
   prompt: string
@@ -27,6 +29,17 @@ interface FormState {
   points: number
   durationSeconds: number
   status: PublicationStatus
+  mediaSrc: string
+  shinySrc: string
+  mediaAlt: string
+  spriteVariant: NonNullable<Question['media']>['spriteVariant']
+  mapRegion: string
+  mapX: number
+  mapY: number
+  statLabel: string
+  orderDirection: NonNullable<Question['orderDirection']>
+  orderEntries: string
+  base?: Question
 }
 
 const emptyForm = (): FormState => ({
@@ -41,6 +54,16 @@ const emptyForm = (): FormState => ({
   points: 10,
   durationSeconds: 20,
   status: 'draft',
+  mediaSrc: '',
+  shinySrc: '',
+  mediaAlt: '',
+  spriteVariant: 'normal',
+  mapRegion: 'Paldea',
+  mapX: 50,
+  mapY: 50,
+  statLabel: 'Vitesse',
+  orderDirection: 'ascending',
+  orderEntries: '',
 })
 
 const splitLines = (value: string) => value.split('\n').map((item) => item.trim()).filter(Boolean)
@@ -60,25 +83,54 @@ function toForm(row: StoredQuestion): FormState {
     points: row.payload.points,
     durationSeconds: row.payload.durationSeconds,
     status: row.publicationStatus,
+    mediaSrc: row.payload.media?.src ?? '',
+    shinySrc: row.payload.media?.shinySrc ?? '',
+    mediaAlt: row.payload.media?.alt ?? '',
+    spriteVariant: row.payload.media?.spriteVariant ?? 'normal',
+    mapRegion: row.payload.mapRegion ?? 'Paldea',
+    mapX: row.payload.mapTarget?.x ?? 50,
+    mapY: row.payload.mapTarget?.y ?? 50,
+    statLabel: row.payload.statLabel ?? 'Vitesse',
+    orderDirection: row.payload.orderDirection ?? 'ascending',
+    orderEntries: row.payload.orderEntries?.map((entry) => `${entry.name} | ${entry.value} | ${entry.image}`).join('\n') ?? '',
+    base: row.payload,
   }
 }
 
 function buildQuestion(form: FormState): Question {
   const choices = splitLines(form.choices)
   const answers = splitLines(form.answers)
+  const orderEntries = splitLines(form.orderEntries).map((line, index) => {
+    const [name = '', rawValue = '', image = ''] = line.split('|').map((item) => item.trim())
+    return { id: index + 1, name, value: Number(rawValue), image }
+  }).filter((entry) => entry.name && Number.isFinite(entry.value) && entry.image)
   return {
+    ...form.base,
     id: form.id,
     type: form.type,
     category: form.category,
     difficulty: form.difficulty,
     prompt: form.prompt.trim(),
-    choices: form.type === 'open' ? undefined : choices,
+    choices: form.type === 'multiple-choice' || form.type === 'multiple-select' ? choices : undefined,
     acceptedAnswers: answers,
     correctChoices: form.type === 'multiple-select' ? answers : undefined,
     explanation: form.explanation.trim(),
     points: form.points,
     durationSeconds: form.durationSeconds,
-    validation: {
+    media: form.mediaSrc ? {
+      kind: 'image',
+      src: form.mediaSrc.trim(),
+      shinySrc: form.shinySrc.trim() || undefined,
+      alt: form.mediaAlt.trim() || 'Illustration de la question',
+      pixelated: form.category === 'Sprites',
+      spriteVariant: form.spriteVariant,
+    } : undefined,
+    mapTarget: form.type === 'map-location' ? { x: form.mapX, y: form.mapY } : undefined,
+    mapRegion: form.type === 'map-location' ? form.mapRegion : undefined,
+    orderEntries: form.type === 'stat-order' ? orderEntries : undefined,
+    orderDirection: form.type === 'stat-order' ? form.orderDirection : undefined,
+    statLabel: form.type === 'stat-order' ? form.statLabel.trim() : undefined,
+    validation: form.base?.validation ?? {
       status: 'draft',
       sources: [],
     },
@@ -92,6 +144,7 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
   const [status, setStatus] = useState<PublicationStatus | 'all'>('all')
   const [message, setMessage] = useState('')
   const [busy, setBusy] = useState(false)
+  const [migrationProgress, setMigrationProgress] = useState<number | null>(null)
 
   const refresh = async () => {
     try {
@@ -110,6 +163,7 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
     return (status === 'all' || row.publicationStatus === status)
       && text.includes(query.toLocaleLowerCase('fr'))
   }), [query, rows, status])
+  const visibleRows = filtered.slice(0, 100)
 
   const submit = async (event: FormEvent) => {
     event.preventDefault()
@@ -120,12 +174,17 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
       setMessage('La question, la réponse et l’explication sont obligatoires.')
       return
     }
-    if (question.type !== 'open' && (question.choices?.length ?? 0) < 2) {
+    const isChoiceQuestion = question.type === 'multiple-choice' || question.type === 'multiple-select'
+    if (isChoiceQuestion && (question.choices?.length ?? 0) < 2) {
       setMessage('Un QCM doit contenir au moins deux propositions.')
       return
     }
-    if (question.type !== 'open' && answers.some((answer) => !question.choices?.includes(answer))) {
+    if (isChoiceQuestion && answers.some((answer) => !question.choices?.includes(answer))) {
       setMessage('Chaque bonne réponse doit être présente exactement dans les propositions.')
+      return
+    }
+    if (question.type === 'stat-order' && question.orderEntries?.length !== 5) {
+      setMessage('Stats en ordre nécessite exactement cinq Pokémon valides.')
       return
     }
 
@@ -155,6 +214,26 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
     }
   }
 
+  const migrateBundledBank = async () => {
+    if (!window.confirm(`Importer ou actualiser ${bundledQuestions.length} questions dans la banque partagée ?`)) return
+    setBusy(true)
+    setMigrationProgress(0)
+    setMessage('Import en cours… garde cette page ouverte.')
+    try {
+      await importQuestions(bundledQuestions, user, (completed, total) => {
+        setMigrationProgress(Math.round((completed / total) * 100))
+      })
+      await refresh()
+      onQuestionsChanged()
+      setMessage(`${bundledQuestions.length} questions ont été synchronisées avec Supabase.`)
+    } catch {
+      setMessage('L’import a été interrompu. Tu peux le relancer sans créer de doublons.')
+    } finally {
+      setBusy(false)
+      setMigrationProgress(null)
+    }
+  }
+
   if (form) {
     const preview = buildQuestion(form)
     return (
@@ -169,10 +248,20 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
               <option value="multiple-choice">QCM — une réponse</option>
               <option value="multiple-select">QCM — plusieurs réponses</option>
               <option value="open">Question ouverte</option>
+              <option value="stat-order">Stats en ordre</option>
+              <option value="map-location">Lieu Perdu</option>
             </select>
           </label>
           <label>Catégorie
-            <select value={form.category} onChange={(event) => setForm({ ...form, category: event.target.value })}>
+            <select value={form.category} onChange={(event) => {
+              const category = event.target.value
+              const type = category === 'Stats en Ordre'
+                ? 'stat-order'
+                : category === 'Lieu Perdu'
+                  ? 'map-location'
+                  : form.type
+              setForm({ ...form, category, type })
+            }}>
               {categories.map((category) => <option key={category.id}>{category.id}</option>)}
             </select>
           </label>
@@ -191,7 +280,7 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
           <label className="wide">Question
             <textarea value={form.prompt} onChange={(event) => setForm({ ...form, prompt: event.target.value })} rows={3} />
           </label>
-          {form.type !== 'open' && (
+          {(form.type === 'multiple-choice' || form.type === 'multiple-select') && (
             <label className="wide">Propositions — une par ligne
               <textarea value={form.choices} onChange={(event) => setForm({ ...form, choices: event.target.value })} rows={5} />
             </label>
@@ -199,6 +288,69 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
           <label className="wide">{form.type === 'multiple-select' ? 'Bonnes réponses — une par ligne' : 'Réponses acceptées — une par ligne'}
             <textarea value={form.answers} onChange={(event) => setForm({ ...form, answers: event.target.value })} rows={3} />
           </label>
+          {(form.category === 'Sprites' || form.type === 'map-location') && (
+            <>
+              <label className="wide">Adresse de l’image ou du sprite
+                <input value={form.mediaSrc} onChange={(event) => setForm({ ...form, mediaSrc: event.target.value })} placeholder="https://… ou /assets/…" />
+              </label>
+              <label className="wide">Description accessible de l’image
+                <input value={form.mediaAlt} onChange={(event) => setForm({ ...form, mediaAlt: event.target.value })} />
+              </label>
+            </>
+          )}
+          {form.category === 'Sprites' && (
+            <>
+              <label>Variante visuelle
+                <select value={form.spriteVariant} onChange={(event) => setForm({ ...form, spriteVariant: event.target.value as FormState['spriteVariant'] })}>
+                  <option value="normal">Normal</option>
+                  <option value="silhouette">Silhouette</option>
+                  <option value="progressive">Révélation progressive</option>
+                  <option value="shiny">Chromatique</option>
+                  <option value="zoom">Fragment</option>
+                  <option value="flipped">Retourné</option>
+                </select>
+              </label>
+              <label>Sprite chromatique facultatif
+                <input value={form.shinySrc} onChange={(event) => setForm({ ...form, shinySrc: event.target.value })} placeholder="https://…" />
+              </label>
+            </>
+          )}
+          {form.type === 'map-location' && (
+            <>
+              <label>Région
+                <select value={form.mapRegion} onChange={(event) => setForm({ ...form, mapRegion: event.target.value })}>
+                  <option>Paldea</option>
+                  <option>Sinnoh</option>
+                </select>
+              </label>
+              <label>Position horizontale X (%)
+                <input type="number" min="0" max="100" step=".1" value={form.mapX} onChange={(event) => setForm({ ...form, mapX: Number(event.target.value) })} />
+              </label>
+              <label>Position verticale Y (%)
+                <input type="number" min="0" max="100" step=".1" value={form.mapY} onChange={(event) => setForm({ ...form, mapY: Number(event.target.value) })} />
+              </label>
+              <div className="map-coordinate-preview">
+                <span style={{ left: `${form.mapX}%`, top: `${form.mapY}%` }} />
+                <small>Aperçu de la position</small>
+              </div>
+            </>
+          )}
+          {form.type === 'stat-order' && (
+            <>
+              <label>Statistique
+                <input value={form.statLabel} onChange={(event) => setForm({ ...form, statLabel: event.target.value })} />
+              </label>
+              <label>Ordre
+                <select value={form.orderDirection} onChange={(event) => setForm({ ...form, orderDirection: event.target.value as FormState['orderDirection'] })}>
+                  <option value="ascending">Croissant</option>
+                  <option value="descending">Décroissant</option>
+                </select>
+              </label>
+              <label className="wide">Cinq Pokémon — Nom | Valeur | URL de l’image
+                <textarea value={form.orderEntries} onChange={(event) => setForm({ ...form, orderEntries: event.target.value })} rows={7} placeholder={'Pikachu | 90 | https://…\nRaichu | 110 | https://…'} />
+              </label>
+            </>
+          )}
           <label className="wide">Explication
             <textarea value={form.explanation} onChange={(event) => setForm({ ...form, explanation: event.target.value })} rows={4} />
           </label>
@@ -212,7 +364,9 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
             <small>Aperçu</small>
             <span>{preview.category} · {'★'.repeat(preview.difficulty)}</span>
             <strong>{preview.prompt || 'Ta question apparaîtra ici'}</strong>
+            {preview.media?.src && <img src={preview.media.src} alt={preview.media.alt} />}
             {preview.choices?.length ? <div>{preview.choices.map((choice) => <i key={choice}>{choice}</i>)}</div> : null}
+            {preview.orderEntries?.length ? <div>{preview.orderEntries.map((entry) => <i key={`${entry.name}-${entry.value}`}>{entry.name} · {entry.value}</i>)}</div> : null}
           </div>
           <button className="primary wide" disabled={busy}>{busy ? 'Enregistrement…' : 'Enregistrer la question'}</button>
         </form>
@@ -224,8 +378,11 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
   return (
     <section className="question-bank">
       <header>
-        <div><span className="eyebrow">BANQUE PARTAGÉE</span><h2>Questions personnalisées</h2><p>{rows.length} question{rows.length > 1 ? 's' : ''} dans Supabase</p></div>
-        <button className="primary" onClick={() => { setMessage(''); setForm(emptyForm()) }}>+ Nouvelle question</button>
+        <div><span className="eyebrow">BANQUE PARTAGÉE</span><h2>Banque de questions</h2><p>{rows.length} question{rows.length > 1 ? 's' : ''} dans Supabase</p></div>
+        <div className="bank-header-actions">
+          <button disabled={busy} onClick={() => void migrateBundledBank()}>Synchroniser la banque actuelle</button>
+          <button className="primary" onClick={() => { setMessage(''); setForm(emptyForm()) }}>+ Nouvelle question</button>
+        </div>
       </header>
       <div className="question-bank-tools">
         <input type="search" placeholder="Rechercher une question…" value={query} onChange={(event) => setQuery(event.target.value)} />
@@ -237,9 +394,11 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
         </select>
       </div>
       {message && <p className="admin-message">{message}</p>}
+      {migrationProgress !== null && <div className="migration-progress"><i style={{ width: `${migrationProgress}%` }} /><span>{migrationProgress}%</span></div>}
       <div className="question-bank-list">
         {filtered.length === 0 && <p>Aucune question ne correspond à cette sélection.</p>}
-        {filtered.map((row) => (
+        {filtered.length > visibleRows.length && <p className="bank-result-limit">Les 100 premiers résultats sont affichés. Utilise la recherche pour affiner la liste.</p>}
+        {visibleRows.map((row) => (
           <article key={row.id}>
             <div>
               <span className={`publication-status ${row.publicationStatus}`}>{row.publicationStatus === 'draft' ? 'Brouillon' : row.publicationStatus === 'published' ? 'Publiée' : 'Archivée'}</span>

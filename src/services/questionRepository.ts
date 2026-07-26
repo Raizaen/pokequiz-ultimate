@@ -29,24 +29,38 @@ function mapRow(row: QuestionRow): StoredQuestion {
 
 export async function loadPublishedQuestions(): Promise<Question[]> {
   if (!supabase) return []
-  const { data, error } = await supabase
-    .from('questions')
-    .select('id,payload,publication_status,updated_at')
-    .eq('publication_status', 'published')
-
-  if (error) throw error
-  return (data as QuestionRow[]).map((row) => row.payload)
+  const rows: QuestionRow[] = []
+  const pageSize = 1000
+  for (let from = 0; ; from += pageSize) {
+    const { data, error } = await supabase
+      .from('questions')
+      .select('id,payload,publication_status,updated_at')
+      .eq('publication_status', 'published')
+      .range(from, from + pageSize - 1)
+    if (error) throw error
+    const page = data as QuestionRow[]
+    rows.push(...page)
+    if (page.length < pageSize) break
+  }
+  return rows.map((row) => row.payload)
 }
 
 export async function loadAdminQuestions(): Promise<StoredQuestion[]> {
   if (!supabase) return []
-  const { data, error } = await supabase
-    .from('questions')
-    .select('id,payload,publication_status,updated_at')
-    .order('updated_at', { ascending: false })
-
-  if (error) throw error
-  return (data as QuestionRow[]).map(mapRow)
+  const rows: QuestionRow[] = []
+  const pageSize = 1000
+  for (let from = 0; ; from += pageSize) {
+    const { data, error } = await supabase
+      .from('questions')
+      .select('id,payload,publication_status,updated_at')
+      .order('updated_at', { ascending: false })
+      .range(from, from + pageSize - 1)
+    if (error) throw error
+    const page = data as QuestionRow[]
+    rows.push(...page)
+    if (page.length < pageSize) break
+  }
+  return rows.map(mapRow)
 }
 
 export async function saveAdminQuestion(
@@ -71,4 +85,28 @@ export async function deleteAdminQuestion(id: string): Promise<void> {
   if (!supabase) throw new Error('Supabase n’est pas configuré.')
   const { error } = await supabase.from('questions').delete().eq('id', id)
   if (error) throw error
+}
+
+export async function importQuestions(
+  questions: Question[],
+  user: User,
+  onProgress?: (completed: number, total: number) => void,
+): Promise<void> {
+  if (!supabase) throw new Error('Supabase n’est pas configuré.')
+  const batchSize = 100
+  const now = new Date().toISOString()
+
+  for (let index = 0; index < questions.length; index += batchSize) {
+    const batch = questions.slice(index, index + batchSize).map((question) => ({
+      id: question.id,
+      payload: question,
+      publication_status: 'published' as const,
+      updated_at: now,
+      updated_by: user.id,
+      created_by: user.id,
+    }))
+    const { error } = await supabase.from('questions').upsert(batch, { onConflict: 'id' })
+    if (error) throw error
+    onProgress?.(Math.min(index + batchSize, questions.length), questions.length)
+  }
 }

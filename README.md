@@ -41,6 +41,8 @@ Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 jou
 - espace d’administration protégé par Supabase Auth et règles d’accès en base ;
 - éditeur administrateur avec recherche, aperçu, brouillons, publication et archivage ;
 - ajout automatique des questions personnalisées publiées à la banque jouable ;
+- synchronisation relançable de la banque historique vers Supabase, sans doublons ;
+- édition spécialisée des Sprites, Stats en ordre et questions cartographiques Lieu Perdu ;
 
 La mise en place du compte administrateur est décrite dans
 [`docs/ADMINISTRATION.md`](docs/ADMINISTRATION.md).
