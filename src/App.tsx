@@ -4,6 +4,7 @@ import { PlayerPanel } from './components/PlayerPanel'
 import { LostPlaceRound } from './components/LostPlaceRound'
 import { LostPlaceSummary } from './components/LostPlaceSummary'
 import { GameStats } from './components/GameStats'
+import { SpriteImage } from './components/SpriteImage'
 import { questions } from './data/questions'
 import {
   categories,
@@ -443,7 +444,7 @@ export function App() {
             key={question.id}
             className={`question-media ${question.media.pixelated ? 'pixelated' : ''} sprite-${question.media.spriteVariant ?? 'normal'} reveal-stage-${revealStage} ${game.revealed ? 'revealed' : ''} ${question.type === 'map-location' ? 'location-clue' : ''}`}
           >
-            <img src={question.media.src} alt={question.media.alt} />
+            <SpriteImage media={question.media} revealed={game.revealed} />
           </div>
         )}
         <p>{question.media?.spriteVariant === 'progressive' ? `${currentPoints} points disponibles` : `${question.points} points`}</p>
