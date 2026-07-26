@@ -2,6 +2,8 @@
 
 Application web de quiz Pokémon conçue pour des parties privées de 1 à 8 joueurs. La V3 Alpha inaugure un nouveau socle React + TypeScript, indépendant de l’ancienne V2.5 conservée dans le dépôt comme archive historique.
 
+**Jouer en ligne : https://pokequiz-ultimate.vercel.app**
+
 ## Fonctionnalités de l’Alpha
 
 - menu principal et reprise d’une partie sauvegardée ;
