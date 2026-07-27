@@ -72,6 +72,11 @@ export interface QuestionResult {
 }
 
 export interface GameState {
+  sessionId?: string
+  startedAt?: string
+  finishedAt?: string
+  config?: import('./gameConfig').GameConfig
+  imageFailures?: string[]
   players: Player[]
   questions: Question[]
   questionIndex: number

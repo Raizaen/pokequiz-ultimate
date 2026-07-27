@@ -8,6 +8,7 @@ import { championStatLabels } from '../data/championsStatCatalog'
 import { MapTargetPicker } from './MapTargetPicker'
 import { PokemonStatPicker } from './PokemonStatPicker'
 import { QualityDashboard } from './QualityDashboard'
+import { GameAnalyticsDashboard } from './GameAnalyticsDashboard'
 import {
   importQuestions,
   loadAdminQuestions,
@@ -164,7 +165,7 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
   const [category, setCategory] = useState('all')
   const [editorialStatus, setEditorialStatus] = useState<EditorialStatus | 'all'>('all')
   const [qualityFilter, setQualityFilter] = useState<'unsourced' | 'duplicates' | null>(null)
-  const [view, setView] = useState<'dashboard' | 'bank'>('dashboard')
+  const [view, setView] = useState<'dashboard' | 'analytics' | 'bank'>('dashboard')
   const [message, setMessage] = useState('')
   const [busy, setBusy] = useState(false)
   const [migrationProgress, setMigrationProgress] = useState<number | null>(null)
@@ -501,6 +502,7 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
       <section className="question-bank">
         <div className="admin-view-tabs">
           <button className="selected">Tableau de bord</button>
+          <button onClick={() => setView('analytics')}>Parties & statistiques</button>
           <button onClick={() => openBank()}>Banque de questions</button>
         </div>
         {message && <p className="admin-message">{message}</p>}
@@ -509,10 +511,24 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
     )
   }
 
+  if (view === 'analytics') {
+    return (
+      <section className="question-bank">
+        <div className="admin-view-tabs">
+          <button onClick={() => setView('dashboard')}>Tableau de bord</button>
+          <button className="selected">Parties & statistiques</button>
+          <button onClick={() => openBank()}>Banque de questions</button>
+        </div>
+        <GameAnalyticsDashboard />
+      </section>
+    )
+  }
+
   return (
     <section className="question-bank">
       <div className="admin-view-tabs">
         <button onClick={() => setView('dashboard')}>Tableau de bord</button>
+        <button onClick={() => setView('analytics')}>Parties & statistiques</button>
         <button className="selected">Banque de questions</button>
       </div>
       <header>

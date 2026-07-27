@@ -48,6 +48,14 @@ const progressiveSprite: Question = {
 }
 
 describe('quiz engine', () => {
+  it('prépare un identifiant et un horodatage pour le journal de partie', () => {
+    const config = { mode: 'category', category: 'Test', difficulty: 'all' } as const
+    const game = createGame([player], [qcm], 20, config)
+    expect(game.sessionId).toMatch(/^[0-9a-f-]{36}$/)
+    expect(game.startedAt).toBeTruthy()
+    expect(game.config).toEqual(config)
+  })
+
   it('verrouille un QCM après un seul essai', () => {
     const game = submitAnswer(createGame([player], [qcm]), player.id, 'Évoli')
     expect(game.answers[player.id]).toMatchObject({ attempts: 1, isCorrect: false, locked: true })

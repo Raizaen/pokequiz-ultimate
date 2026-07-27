@@ -1,4 +1,5 @@
 import type { AnswersByPlayer, AnswerValue, GameState, Player, Question } from '../domain/quiz'
+import type { GameConfig } from '../domain/gameConfig'
 import { isAnswerCorrect, maxAttemptsFor, pointsForAnswer } from './answerValidation'
 
 const emptyAnswers = (): AnswersByPlayer => ({})
@@ -29,6 +30,7 @@ export function createGame(
   players: Player[],
   questions: Question[],
   timerSeconds?: number | null,
+  config?: GameConfig,
 ): GameState {
   if (players.length < 1 || players.length > 8) {
     throw new Error('Une partie doit contenir entre 1 et 8 joueurs.')
@@ -36,6 +38,10 @@ export function createGame(
   if (questions.length === 0) throw new Error('Une partie doit contenir au moins une question.')
 
   return {
+    sessionId: crypto.randomUUID(),
+    startedAt: new Date().toISOString(),
+    config,
+    imageFailures: [],
     players,
     questions,
     questionIndex: 0,
@@ -113,7 +119,9 @@ export function nextQuestion(state: GameState): GameState {
     ? history
     : [...history, { questionId, answers: state.answers }]
 
-  if (nextIndex >= state.questions.length) return { ...state, history: archivedHistory, finished: true }
+  if (nextIndex >= state.questions.length) {
+    return { ...state, history: archivedHistory, finished: true, finishedAt: new Date().toISOString() }
+  }
   return {
     ...state,
     history: archivedHistory,

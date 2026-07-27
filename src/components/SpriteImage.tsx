@@ -6,9 +6,10 @@ import { imageFallbacks } from '../utils/imageSources'
 interface Props {
   media: NonNullable<Question['media']>
   revealed: boolean
+  onSourceError?: (source: string) => void
 }
 
-export function SpriteImage({ media, revealed }: Props) {
+export function SpriteImage({ media, revealed, onSourceError }: Props) {
   const [layout, setLayout] = useState<FragmentLayout | null>(null)
   const [sourceIndex, setSourceIndex] = useState(0)
   const sources = useMemo(() => imageFallbacks(media.src), [media.src])
@@ -65,6 +66,7 @@ export function SpriteImage({ media, revealed }: Props) {
       crossOrigin="anonymous"
       onLoad={analyse}
       onError={() => {
+        onSourceError?.(source)
         setLayout(null)
         setSourceIndex((current) => current + 1)
       }}

@@ -27,6 +27,15 @@ on conflict (user_id) do nothing;
 La clé secrète/service role et le mot de passe de la base ne doivent jamais être
 placés dans le navigateur, le dépôt Git ou les variables commençant par `VITE_`.
 
+## Journal des parties
+
+Exécuter `supabase/migrations/003_game_analytics.sql` dans le SQL Editor.
+
+Cette migration autorise les joueurs anonymes à enregistrer uniquement une partie
+terminée. La lecture des résultats, des noms de joueurs et des statistiques reste
+réservée aux membres de `admin_users`. Le quiz continue de fonctionner normalement
+si Supabase est indisponible.
+
 ## Workflow éditorial et historique
 
 Après la migration initiale, exécuter

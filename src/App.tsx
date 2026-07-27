@@ -39,6 +39,7 @@ import {
 import { loadPublishedQuestions } from './services/questionRepository'
 import type { Question } from './domain/quiz'
 import { mergeQuestionBanks } from './engine/questionIdentity'
+import { recordCompletedGame } from './services/gameAnalytics'
 
 type Screen = 'menu' | 'setup' | 'game' | 'admin'
 const avatars = ['⚡', '🔥', '💧', '🌿', '🌙', '⭐', '🐉', '🌀']
@@ -112,6 +113,11 @@ export function App() {
   }, [game])
 
   useEffect(() => {
+    if (!game?.finished || !game.sessionId) return
+    void recordCompletedGame(game)
+  }, [game, gameFinished])
+
+  useEffect(() => {
     void loadPublishedQuestions()
       .then(setRemoteQuestions)
       .catch(() => setRemoteQuestions([]))
@@ -155,7 +161,7 @@ export function App() {
       : []
     const selection = [...freshSelection, ...fallback]
     rememberQuestions(selection.map(({ id }) => id))
-    setGame(createGame(players, selection, config.timerSeconds))
+    setGame(createGame(players, selection, config.timerSeconds, config))
     setScreen('game')
   }
 
@@ -465,7 +471,17 @@ export function App() {
             key={question.id}
             className={`question-media ${question.media.pixelated ? 'pixelated' : ''} sprite-${question.media.spriteVariant ?? 'normal'} reveal-stage-${revealStage} ${game.revealed ? 'revealed' : ''} ${question.type === 'map-location' ? 'location-clue' : ''}`}
           >
-            <SpriteImage media={question.media} revealed={game.revealed} />
+            <SpriteImage
+              media={question.media}
+              revealed={game.revealed}
+              onSourceError={(source) => setGame((current) => {
+                if (!current) return current
+                const failure = `${question.id}|${source}`
+                return current.imageFailures?.includes(failure)
+                  ? current
+                  : { ...current, imageFailures: [...(current.imageFailures ?? []), failure] }
+              })}
+            />
           </div>
         )}
         <p>{question.media?.spriteVariant === 'progressive' ? `${currentPoints} points disponibles` : `${question.points} points`}</p>
