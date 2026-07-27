@@ -1,5 +1,6 @@
 import type { Question } from '../../domain/quiz'
 import championsStatRoster from '../generated/championsStatRoster.json'
+import { localizePokemonFormName } from '../../utils/pokemonNameLocalization'
 
 type StatKey = 'hp' | 'attack' | 'defense' | 'specialAttack' | 'specialDefense' | 'speed'
 
@@ -14,7 +15,10 @@ export interface ChampionPokemon {
   stats: Record<StatKey, number>
 }
 
-export const championPokemon = championsStatRoster as ChampionPokemon[]
+export const championPokemon = championsStatRoster.map((pokemon) => ({
+  ...pokemon,
+  name: localizePokemonFormName(pokemon.name),
+})) as ChampionPokemon[]
 
 const stats: Array<{ key: StatKey; label: string; slug: string }> = [
   { key: 'hp', label: 'PV', slug: 'pv' },

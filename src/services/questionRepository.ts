@@ -1,6 +1,7 @@
 import type { User } from '@supabase/supabase-js'
 import type { Question } from '../domain/quiz'
 import { supabase } from '../lib/supabase'
+import { localizePokemonNamesInQuestion } from '../utils/pokemonNameLocalization'
 
 export type PublicationStatus = 'draft' | 'published' | 'archived'
 export type EditorialStatus = 'review' | 'validated' | 'contested'
@@ -34,7 +35,7 @@ export interface QuestionRevision {
 function mapRow(row: QuestionRow): StoredQuestion {
   return {
     id: row.id,
-    payload: row.payload,
+    payload: localizePokemonNamesInQuestion(row.payload),
     publicationStatus: row.publication_status,
     validationStatus: row.validation_status,
     updatedAt: row.updated_at,
@@ -56,7 +57,7 @@ export async function loadPublishedQuestions(): Promise<Question[]> {
     rows.push(...page)
     if (page.length < pageSize) break
   }
-  return rows.map((row) => row.payload)
+  return rows.map((row) => localizePokemonNamesInQuestion(row.payload))
 }
 
 export async function loadAdminQuestions(): Promise<StoredQuestion[]> {

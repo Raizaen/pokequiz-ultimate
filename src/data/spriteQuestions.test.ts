@@ -38,4 +38,10 @@ describe('sprite question pack', () => {
     expect(spriteQuestions.filter(({ media }) => Boolean(media?.shinySrc)).length)
       .toBeGreaterThanOrEqual(1200)
   })
+
+  it('ne laisse plus les libellés techniques anglais des formes', () => {
+    const names = spriteQuestions.map(({ acceptedAnswers }) => acceptedAnswers[0]).join('\n')
+    expect(names).not.toMatch(/\((?:Mow|Heat|Wash|Frost|Fan|Male|Female|Average|Disguised|Busted|Amped|Low Key|Full Belly|Hangry|Single Strike|Rapid Strike|Zero|Curly|Droopy|Stretchy|Roaming|Bloodmoon|Eternal|Sunny|Rainy|Snowy|Plant|Sandy|Trash|Aria|Pirouette)\)/)
+    expect(names).not.toMatch(/(?:Family Of|Power Construct|Battle Bond|Own Tempo|Aqua Breed|Blaze Breed|Combat Breed|Totem|Eternamax)/)
+  })
 })
