@@ -36,6 +36,9 @@ terminée. La lecture des résultats, des noms de joueurs et des statistiques re
 réservée aux membres de `admin_users`. Le quiz continue de fonctionner normalement
 si Supabase est indisponible.
 
+Pour pouvoir exclure un test du journal puis le restaurer, exécuter ensuite
+`supabase/migrations/004_game_session_exclusions.sql`.
+
 ## Workflow éditorial et historique
 
 Après la migration initiale, exécuter

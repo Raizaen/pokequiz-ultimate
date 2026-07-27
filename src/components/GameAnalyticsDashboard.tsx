@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { loadGameSessions, type StoredGameSession } from '../services/gameAnalytics'
+import { loadGameSessions, setGameSessionExcluded, type StoredGameSession } from '../services/gameAnalytics'
 
 const percentage = (value: number, total: number) => total ? Math.round(value / total * 100) : 0
 const duration = (seconds: number) => `${Math.floor(seconds / 60)} min ${seconds % 60}s`
@@ -8,6 +8,8 @@ export function GameAnalyticsDashboard() {
   const [sessions, setSessions] = useState<StoredGameSession[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
+  const [message, setMessage] = useState('')
+  const [busySession, setBusySession] = useState<string | null>(null)
 
   const refresh = async () => {
     setLoading(true)
@@ -26,12 +28,13 @@ export function GameAnalyticsDashboard() {
   }, [])
 
   const metrics = useMemo(() => {
+    const includedSessions = sessions.filter((session) => !session.excludedAt)
     const categories = new Map<string, { answers: number; correct: number; points: number }>()
     const questions = new Map<string, { category: string; answers: number; correct: number }>()
     let answers = 0
     let correct = 0
 
-    sessions.forEach((session) => session.questionResults.forEach((result) => {
+    includedSessions.forEach((session) => session.questionResults.forEach((result) => {
       const category = categories.get(result.category) ?? { answers: 0, correct: 0, points: 0 }
       const question = questions.get(result.questionId) ?? { category: result.category, answers: 0, correct: 0 }
       result.answers.forEach((answer) => {
@@ -56,9 +59,10 @@ export function GameAnalyticsDashboard() {
     return {
       answers,
       correct,
-      players: sessions.reduce((total, session) => total + session.playerCount, 0),
-      questions: sessions.reduce((total, session) => total + session.questionCount, 0),
-      failures: sessions.reduce((total, session) => total + session.imageFailures.length, 0),
+      sessions: includedSessions.length,
+      players: includedSessions.reduce((total, session) => total + session.playerCount, 0),
+      questions: includedSessions.reduce((total, session) => total + session.questionCount, 0),
+      failures: includedSessions.reduce((total, session) => total + session.imageFailures.length, 0),
       categories: [...categories.entries()]
         .map(([name, item]) => ({ name, ...item, accuracy: percentage(item.correct, item.answers) }))
         .sort((left, right) => right.answers - left.answers),
@@ -66,6 +70,26 @@ export function GameAnalyticsDashboard() {
       hardest: [...rankedQuestions].sort((left, right) => left.accuracy - right.accuracy).slice(0, 5),
     }
   }, [sessions])
+  const includedSessions = sessions.filter((session) => !session.excludedAt)
+  const excludedSessions = sessions.filter((session) => Boolean(session.excludedAt))
+
+  const toggleExcluded = async (session: StoredGameSession, excluded: boolean) => {
+    if (excluded && !window.confirm('Exclure cette partie de toutes les statistiques ? Tu pourras la restaurer ensuite.')) return
+    setBusySession(session.sessionId)
+    setMessage('')
+    try {
+      await setGameSessionExcluded(session.sessionId, excluded)
+      setSessions((current) => current.map((item) =>
+        item.sessionId === session.sessionId
+          ? { ...item, excludedAt: excluded ? new Date().toISOString() : null }
+          : item))
+      setMessage(excluded ? 'Partie exclue des statistiques.' : 'Partie restaurée dans les statistiques.')
+    } catch {
+      setMessage('Impossible de modifier cette partie. Vérifie que la migration 004 a bien été exécutée.')
+    } finally {
+      setBusySession(null)
+    }
+  }
 
   if (loading) return <p className="analytics-state">Chargement des parties…</p>
   if (error) {
@@ -85,14 +109,15 @@ export function GameAnalyticsDashboard() {
         <button onClick={() => void refresh()}>Actualiser</button>
       </header>
       <div className="analytics-kpis">
-        <article><strong>{sessions.length}</strong><span>Parties</span></article>
+        <article><strong>{metrics.sessions}</strong><span>Parties comptabilisées</span></article>
         <article><strong>{metrics.players}</strong><span>Participations</span></article>
         <article><strong>{metrics.questions}</strong><span>Questions jouées</span></article>
         <article><strong>{percentage(metrics.correct, metrics.answers)}%</strong><span>Bonnes réponses</span></article>
         <article className={metrics.failures ? 'alert' : 'good'}><strong>{metrics.failures}</strong><span>Erreurs d’image</span></article>
       </div>
 
-      {sessions.length === 0 ? (
+      {message && <p className="analytics-message">{message}</p>}
+      {includedSessions.length === 0 ? (
         <p className="analytics-empty">Les prochaines parties terminées apparaîtront automatiquement ici.</p>
       ) : (
         <>
@@ -119,7 +144,7 @@ export function GameAnalyticsDashboard() {
 
           <section className="recent-games">
             <h3>Parties récentes</h3>
-            {sessions.slice(0, 20).map((session) => (
+            {includedSessions.slice(0, 20).map((session) => (
               <article key={session.sessionId}>
                 <div>
                   <strong>{session.players.filter((player) => player.rank === 1).map((player) => player.name).join(' & ')}</strong>
@@ -129,10 +154,31 @@ export function GameAnalyticsDashboard() {
                 <span>{session.playerCount} joueur{session.playerCount > 1 ? 's' : ''}</span>
                 <span>{session.questionCount} questions</span>
                 <span>{duration(session.durationSeconds)}</span>
+                <button
+                  className="exclude-game"
+                  disabled={busySession === session.sessionId}
+                  onClick={() => void toggleExcluded(session, true)}
+                  title="Ne plus compter cette partie"
+                >
+                  {busySession === session.sessionId ? '…' : 'Exclure'}
+                </button>
               </article>
             ))}
           </section>
         </>
+      )}
+      {excludedSessions.length > 0 && (
+        <details className="excluded-games">
+          <summary>Parties exclues ({excludedSessions.length})</summary>
+          {excludedSessions.map((session) => (
+            <article key={session.sessionId}>
+              <span>{new Date(session.finishedAt).toLocaleString('fr-FR')} · {session.category ?? 'Questions en vrac'} · {session.questionCount} questions</span>
+              <button disabled={busySession === session.sessionId} onClick={() => void toggleExcluded(session, false)}>
+                {busySession === session.sessionId ? '…' : 'Restaurer'}
+              </button>
+            </article>
+          ))}
+        </details>
       )}
     </section>
   )

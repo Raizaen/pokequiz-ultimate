@@ -346,9 +346,18 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .analytics-grid code { max-width: 65%; overflow: hidden; color: #ddd; text-overflow: ellipsis; white-space: nowrap; }
 .analytics-grid section:nth-child(2) p span { color: #f2c94c; font-size: 11px; }
 .recent-games { margin-top: 16px; }
-.recent-games article { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); align-items: center; gap: 10px; padding: 11px 4px; border-top: 1px solid #ffffff0b; }
+.recent-games article { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr) auto; align-items: center; gap: 10px; padding: 11px 4px; border-top: 1px solid #ffffff0b; }
 .recent-games article > div { display: grid; }
 .recent-games article small, .recent-games article > span { color: #9293aa; font-size: 11px; }
+.exclude-game { padding: 7px 10px; border: 1px solid #ff6d6870; border-radius: 9px; background: #ff6d6814; color: #ff9692; font: inherit; font-size: 11px; font-weight: 900; cursor: pointer; }
+.exclude-game:hover:not(:disabled) { border-color: #ff6d68; background: #ff6d6828; }
+.exclude-game:disabled { cursor: wait; opacity: .55; }
+.analytics-message { margin: 16px 0 0; padding: 11px 14px; border: 1px solid #62d68b55; border-radius: 12px; background: #62d68b14; color: #7be5a1; }
+.excluded-games { margin-top: 14px; padding: 14px 18px; border: 1px solid #ffffff0d; border-radius: 16px; background: #191a30; }
+.excluded-games summary { color: #9293aa; font-weight: 900; cursor: pointer; }
+.excluded-games article { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 10px 4px; border-top: 1px solid #ffffff0b; }
+.excluded-games button { padding: 7px 10px; border: 1px solid #62d68b70; border-radius: 9px; background: #62d68b14; color: #7be5a1; font: inherit; font-size: 11px; font-weight: 900; cursor: pointer; }
+.excluded-games button:disabled { cursor: wait; opacity: .55; }
 .analytics-empty, .analytics-state { display: grid; place-items: center; gap: 8px; min-height: 220px; color: #9293aa; text-align: center; }
 .analytics-state strong { color: #fff; font-size: 18px; }
 .quality-kpis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 9px; }
@@ -410,4 +419,6 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
   .analytics-kpis { grid-template-columns: repeat(2, 1fr); }
   .analytics-grid { grid-template-columns: 1fr; }
   .recent-games article { grid-template-columns: 1fr 1fr; }
+  .excluded-games article { grid-template-columns: 1fr; }
+  .exclude-game, .excluded-games button { width: 100%; }
 }

@@ -27,6 +27,7 @@ export interface StoredGameSession {
     }>
   }>
   imageFailures: string[]
+  excludedAt: string | null
 }
 
 const reportedKey = 'pokequiz-ultimate:reported-sessions:v1'
@@ -119,5 +120,15 @@ export async function loadGameSessions(limit = 200): Promise<StoredGameSession[]
     players: row.players,
     questionResults: row.question_results,
     imageFailures: row.image_failures,
+    excludedAt: row.excluded_at ?? null,
   }))
+}
+
+export async function setGameSessionExcluded(sessionId: string, excluded: boolean): Promise<void> {
+  if (!supabase) throw new Error('Supabase n’est pas configuré.')
+  const { error } = await supabase.rpc('set_game_session_excluded', {
+    target_session_id: sessionId,
+    should_exclude: excluded,
+  })
+  if (error) throw error
 }
