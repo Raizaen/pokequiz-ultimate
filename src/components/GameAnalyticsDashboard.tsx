@@ -172,7 +172,15 @@ export function GameAnalyticsDashboard() {
           <summary>Parties exclues ({excludedSessions.length})</summary>
           {excludedSessions.map((session) => (
             <article key={session.sessionId}>
-              <span>{new Date(session.finishedAt).toLocaleString('fr-FR')} · {session.category ?? 'Questions en vrac'} · {session.questionCount} questions</span>
+              <span>
+                <strong>{session.players.map((player) => player.name).join(' · ')}</strong>
+                {' — '}
+                {new Date(session.finishedAt).toLocaleString('fr-FR')}
+                {' · '}
+                {session.category ?? 'Questions en vrac'}
+                {' · '}
+                {session.questionCount} questions
+              </span>
               <button disabled={busySession === session.sessionId} onClick={() => void toggleExcluded(session, false)}>
                 {busySession === session.sessionId ? '…' : 'Restaurer'}
               </button>
