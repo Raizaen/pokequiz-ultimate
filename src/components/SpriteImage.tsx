@@ -1,6 +1,7 @@
-import { useState, type CSSProperties, type SyntheticEvent } from 'react'
+import { useEffect, useMemo, useState, type CSSProperties, type SyntheticEvent } from 'react'
 import type { Question } from '../domain/quiz'
 import { findOpaqueBounds, fragmentLayout, type FragmentLayout } from '../engine/spriteFragment'
+import { imageFallbacks } from '../utils/imageSources'
 
 interface Props {
   media: NonNullable<Question['media']>
@@ -9,7 +10,15 @@ interface Props {
 
 export function SpriteImage({ media, revealed }: Props) {
   const [layout, setLayout] = useState<FragmentLayout | null>(null)
+  const [sourceIndex, setSourceIndex] = useState(0)
+  const sources = useMemo(() => imageFallbacks(media.src), [media.src])
+  const source = sources[sourceIndex]
   const isFragment = media.spriteVariant === 'zoom' && !revealed
+
+  useEffect(() => {
+    setSourceIndex(0)
+    setLayout(null)
+  }, [media.src])
 
   const analyse = (event: SyntheticEvent<HTMLImageElement>) => {
     if (media.spriteVariant !== 'zoom') return
@@ -40,12 +49,25 @@ export function SpriteImage({ media, revealed }: Props) {
     }
     : undefined
 
+  if (!source) {
+    return (
+      <div className="sprite-load-error" role="status">
+        <strong>Image momentanément indisponible</strong>
+        <small>Révèle la réponse ou passe à la question suivante.</small>
+      </div>
+    )
+  }
+
   return (
     <img
-      src={media.src}
+      src={source}
       alt={media.alt}
       crossOrigin="anonymous"
       onLoad={analyse}
+      onError={() => {
+        setLayout(null)
+        setSourceIndex((current) => current + 1)
+      }}
       style={fragmentStyle}
     />
   )

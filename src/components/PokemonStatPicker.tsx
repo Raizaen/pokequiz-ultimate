@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import type { SyntheticEvent } from 'react'
 import { championsStatCatalog, type ChampionsPokemonStat } from '../data/championsStatCatalog'
+import { preferImageCdn } from '../utils/imageSources'
 
 interface Props {
   statLabel: string
@@ -60,7 +61,7 @@ export function PokemonStatPicker({ statLabel, orderDirection, value, onChange }
 
   const handleImageError = (event: SyntheticEvent<HTMLImageElement>, pokemon: ChampionsPokemonStat) => {
     event.currentTarget.onerror = null
-    event.currentTarget.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.nationalId}.png`
+    event.currentTarget.src = preferImageCdn(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.nationalId}.png`)
   }
 
   return (

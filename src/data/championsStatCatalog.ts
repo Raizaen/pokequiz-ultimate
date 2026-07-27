@@ -1,4 +1,5 @@
 import { championPokemon } from './curated/statOrderQuestions'
+import { preferImageCdn } from '../utils/imageSources'
 
 export interface ChampionsPokemonStat {
   id: number
@@ -23,7 +24,7 @@ export const championsStatCatalog: ChampionsPokemonStat[] = championPokemon.map(
   id: pokemon.id,
   nationalId: pokemon.nationalId,
   name: pokemon.name,
-  image: pokemon.image,
+  image: preferImageCdn(pokemon.image),
   generation: pokemon.generation,
   kind: pokemon.kind,
   stats: {

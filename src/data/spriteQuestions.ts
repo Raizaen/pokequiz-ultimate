@@ -1,4 +1,5 @@
 import type { Question } from '../domain/quiz'
+import { preferImageCdn } from '../utils/imageSources'
 import spriteCatalog from './generated/spriteCatalog.json'
 
 function choicesFor(index: number): string[] {
@@ -29,8 +30,8 @@ export const spriteQuestions: Question[] = spriteCatalog.map((entry, index) => (
   durationSeconds: 20,
   media: {
     kind: 'image',
-    src: entry.sprite,
-    shinySrc: entry.shinySprite ?? undefined,
+    src: preferImageCdn(entry.sprite),
+    shinySrc: entry.shinySprite ? preferImageCdn(entry.shinySprite) : undefined,
     alt: 'Sprite mystère à identifier',
     pixelated: true,
     spriteVariant: 'normal',

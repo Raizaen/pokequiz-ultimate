@@ -1,4 +1,6 @@
-const CACHE = 'pokequiz-images-v1'
+const CACHE = 'pokequiz-images-v2'
+
+self.addEventListener('install', () => self.skipWaiting())
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
@@ -9,7 +11,8 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url)
-  if (event.request.method !== 'GET' || !url.hostname.includes('raw.githubusercontent.com')) return
+  const cacheableImageHost = url.hostname === 'raw.githubusercontent.com' || url.hostname === 'cdn.jsdelivr.net'
+  if (event.request.method !== 'GET' || !cacheableImageHost) return
   event.respondWith(
     caches.open(CACHE).then(async (cache) => {
       const cached = await cache.match(event.request)

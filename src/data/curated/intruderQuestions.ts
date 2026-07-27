@@ -1,8 +1,9 @@
 import type { Question } from '../../domain/quiz'
+import { preferImageCdn } from '../../utils/imageSources'
 import pokemonFacts from '../generated/pokemonFacts.json'
 
 const artwork = (id: number) =>
-  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
+  preferImageCdn(`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`)
 
 const grouped = pokemonFacts.reduce<Record<string, typeof pokemonFacts>>((result, pokemon) => {
   ;(result[pokemon.primaryType] ??= []).push(pokemon)
