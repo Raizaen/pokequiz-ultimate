@@ -1,12 +1,10 @@
-import { useEffect, useMemo, useState } from 'react'
+import { lazy, Suspense, useEffect, useMemo, useState, type FormEvent } from 'react'
 import { Logo } from './components/Logo'
 import { PlayerPanel } from './components/PlayerPanel'
 import { LostPlaceRound } from './components/LostPlaceRound'
 import { LostPlaceSummary } from './components/LostPlaceSummary'
 import { GameStats } from './components/GameStats'
 import { SpriteImage } from './components/SpriteImage'
-import { AdminPanel } from './components/AdminPanel'
-import { questions as bundledQuestions } from './data/questions'
 import {
   categories,
   difficultyPresets,
@@ -40,6 +38,9 @@ import { loadPublishedQuestions } from './services/questionRepository'
 import type { Question } from './domain/quiz'
 import { mergeQuestionBanks } from './engine/questionIdentity'
 import { recordCompletedGame } from './services/gameAnalytics'
+import { reportQuestion, type ReportReason } from './services/questionReports'
+
+const AdminPanel = lazy(() => import('./components/AdminPanel').then((module) => ({ default: module.AdminPanel })))
 
 type Screen = 'menu' | 'setup' | 'game' | 'admin'
 const avatars = ['⚡', '🔥', '💧', '🌿', '🌙', '⭐', '🐉', '🌀']
@@ -83,11 +84,18 @@ export function App() {
     timerSeconds: 20,
   })
   const [questionCount, setQuestionCount] = useState(10)
+  const [bundledQuestions, setBundledQuestions] = useState<Question[]>([])
+  const [questionBankLoading, setQuestionBankLoading] = useState(true)
   const [remoteQuestions, setRemoteQuestions] = useState<Question[]>([])
   const [remoteRefreshKey, setRemoteRefreshKey] = useState(0)
+  const [reporting, setReporting] = useState(false)
+  const [reportReason, setReportReason] = useState<ReportReason>('incorrect')
+  const [reportDetails, setReportDetails] = useState('')
+  const [reportStatus, setReportStatus] = useState('')
+  const [reportBusy, setReportBusy] = useState(false)
   const questionBank = useMemo(
     () => mergeQuestionBanks(remoteQuestions, bundledQuestions),
-    [remoteQuestions],
+    [bundledQuestions, remoteQuestions],
   )
   const savedGame = loadGame()
   const gameQuestions = game?.questions
@@ -116,6 +124,12 @@ export function App() {
     if (!game?.finished || !game.sessionId) return
     void recordCompletedGame(game)
   }, [game, gameFinished])
+
+  useEffect(() => {
+    void import('./data/questions')
+      .then(({ questions }) => setBundledQuestions(questions))
+      .finally(() => setQuestionBankLoading(false))
+  }, [])
 
   useEffect(() => {
     void loadPublishedQuestions()
@@ -194,7 +208,11 @@ export function App() {
   }
 
   if (screen === 'admin') {
-    return <AdminPanel onBack={() => setScreen('menu')} onQuestionsChanged={() => setRemoteRefreshKey((value) => value + 1)} />
+    return (
+      <Suspense fallback={<main className="app-shell"><p className="analytics-state">Chargement de l’administration…</p></main>}>
+        <AdminPanel onBack={() => setScreen('menu')} onQuestionsChanged={() => setRemoteRefreshKey((value) => value + 1)} />
+      </Suspense>
+    )
   }
 
   if (screen === 'menu') {
@@ -425,8 +443,8 @@ export function App() {
           <div className="setup-actions">
             <button disabled={players.length >= 8} onClick={() => setPlayers([...players, newPlayer(players.length)])}>+ Ajouter un joueur</button>
             <div className="launch-area">
-              <small>{eligibleQuestions.length === 0 ? 'Aucune question pour cette combinaison' : `${effectiveQuestionCount} question${effectiveQuestionCount > 1 ? 's' : ''} dans cette partie`}</small>
-              <button className="primary" disabled={players.some((player) => !player.name.trim()) || eligibleQuestions.length === 0} onClick={startGame}>Lancer la partie <span>→</span></button>
+              <small>{questionBankLoading ? 'Chargement de la banque…' : eligibleQuestions.length === 0 ? 'Aucune question pour cette combinaison' : `${effectiveQuestionCount} question${effectiveQuestionCount > 1 ? 's' : ''} dans cette partie`}</small>
+              <button className="primary" disabled={questionBankLoading || players.some((player) => !player.name.trim()) || eligibleQuestions.length === 0} onClick={startGame}>Lancer la partie <span>→</span></button>
             </div>
           </div>
         </section>
@@ -453,6 +471,32 @@ export function App() {
   }
 
   const question = game.questions[game.questionIndex]
+  const submitReport = async (event: FormEvent) => {
+    event.preventDefault()
+    setReportBusy(true)
+    setReportStatus('')
+    try {
+      await reportQuestion({
+        sessionId: game.sessionId,
+        questionId: question.id,
+        questionPrompt: question.prompt,
+        category: question.category,
+        reason: reportReason,
+        details: reportDetails,
+        reporterNames: game.players.map((player) => player.name).join(', '),
+      })
+      setReportStatus('Merci, le signalement a été transmis à l’administrateur.')
+      setReportDetails('')
+      window.setTimeout(() => {
+        setReporting(false)
+        setReportStatus('')
+      }, 1400)
+    } catch {
+      setReportStatus('Le signalement n’a pas pu être envoyé. Réessaie un peu plus tard.')
+    } finally {
+      setReportBusy(false)
+    }
+  }
   const revealStage = progressiveRevealStage(question, game.questionElapsedSeconds, game.timerSeconds)
   const currentPoints = availablePoints(question, game.questionElapsedSeconds, game.timerSeconds)
   return (
@@ -509,6 +553,33 @@ export function App() {
         </section>
       ) : (
         <button className="reveal-button" onClick={() => setGame(revealAnswer(game))}>Révéler la réponse</button>
+      )}
+      <button className="report-question-button" onClick={() => { setReporting(true); setReportStatus('') }}>
+        ⚑ Signaler cette question
+      </button>
+      {reporting && (
+        <div className="report-overlay" role="dialog" aria-modal="true" aria-label="Signaler cette question">
+          <form className="report-panel" onSubmit={submitReport}>
+            <header><div><span className="eyebrow">RETOUR JOUEUR</span><h2>Quel est le problème ?</h2></div><button type="button" onClick={() => setReporting(false)}>Fermer</button></header>
+            <p>{question.prompt}</p>
+            <label>
+              Type de problème
+              <select value={reportReason} onChange={(event) => setReportReason(event.target.value as ReportReason)}>
+                <option value="incorrect">Réponse incorrecte</option>
+                <option value="ambiguous">Question ambiguë</option>
+                <option value="media">Image ou média défectueux</option>
+                <option value="translation">Nom ou traduction incorrecte</option>
+                <option value="other">Autre problème</option>
+              </select>
+            </label>
+            <label>
+              Précisions facultatives
+              <textarea maxLength={2000} value={reportDetails} onChange={(event) => setReportDetails(event.target.value)} placeholder="Explique ce qui semble incorrect…" />
+            </label>
+            {reportStatus && <p className="report-status">{reportStatus}</p>}
+            <button className="primary" disabled={reportBusy}>{reportBusy ? 'Envoi…' : 'Envoyer le signalement'}</button>
+          </form>
+        </div>
       )}
     </main>
   )

@@ -346,18 +346,54 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .analytics-grid code { max-width: 65%; overflow: hidden; color: #ddd; text-overflow: ellipsis; white-space: nowrap; }
 .analytics-grid section:nth-child(2) p span { color: #f2c94c; font-size: 11px; }
 .recent-games { margin-top: 16px; }
-.recent-games article { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr) auto; align-items: center; gap: 10px; padding: 11px 4px; border-top: 1px solid #ffffff0b; }
+.recent-games article { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr) auto auto; align-items: center; gap: 10px; padding: 11px 4px; border-top: 1px solid #ffffff0b; }
 .recent-games article > div { display: grid; }
 .recent-games article small, .recent-games article > span { color: #9293aa; font-size: 11px; }
 .exclude-game { padding: 7px 10px; border: 1px solid #ff6d6870; border-radius: 9px; background: #ff6d6814; color: #ff9692; font: inherit; font-size: 11px; font-weight: 900; cursor: pointer; }
 .exclude-game:hover:not(:disabled) { border-color: #ff6d68; background: #ff6d6828; }
 .exclude-game:disabled { cursor: wait; opacity: .55; }
+.game-details-button { padding: 7px 10px; border: 1px solid #ffffff20; border-radius: 9px; background: #30314f; color: #fff; font: inherit; font-size: 11px; font-weight: 900; cursor: pointer; }
 .analytics-message { margin: 16px 0 0; padding: 11px 14px; border: 1px solid #62d68b55; border-radius: 12px; background: #62d68b14; color: #7be5a1; }
 .excluded-games { margin-top: 14px; padding: 14px 18px; border: 1px solid #ffffff0d; border-radius: 16px; background: #191a30; }
 .excluded-games summary { color: #9293aa; font-weight: 900; cursor: pointer; }
 .excluded-games article { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 10px 4px; border-top: 1px solid #ffffff0b; }
 .excluded-games button { padding: 7px 10px; border: 1px solid #62d68b70; border-radius: 9px; background: #62d68b14; color: #7be5a1; font: inherit; font-size: 11px; font-weight: 900; cursor: pointer; }
 .excluded-games button:disabled { cursor: wait; opacity: .55; }
+.question-watchlist { margin-top: 16px; padding: 18px; border: 1px solid #ffffff0d; border-radius: 16px; background: #191a30; }
+.question-watchlist > header { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.question-watchlist h3 { margin: 0; }
+.question-watchlist header div { display: grid; }
+.question-watchlist small { color: #9293aa; }
+.question-watchlist > article { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 12px 4px; border-top: 1px solid #ffffff0b; }
+.question-watchlist article > div { display: grid; gap: 3px; }
+.question-watchlist article div > span { width: max-content; padding: 3px 7px; border-radius: 99px; background: #ff6d681c; color: #ff9692; font-size: 10px; font-weight: 900; }
+.question-watchlist article p { margin: 4px 0 0; color: #c6c6d2; font-size: 12px; }
+.question-watchlist article button { flex: 0 0 auto; padding: 8px 11px; border-radius: 9px; background: #30314f; color: #fff; font-weight: 900; }
+.report-actions { display: flex; gap: 7px; }
+.game-session-detail { width: min(1000px, 100%); }
+.session-ranking { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 9px; margin: 20px 0; }
+.session-ranking article { display: grid; grid-template-columns: auto 1fr auto; gap: 9px; align-items: center; padding: 12px; border-radius: 11px; background: #242541; }
+.session-ranking article > span, .session-ranking b { color: #f2c94c; }
+.session-question-list { display: grid; gap: 8px; }
+.session-question-list > details { padding: 11px 13px; border: 1px solid #ffffff0d; border-radius: 12px; background: #202139; }
+.session-question-list > details.needs-attention { border-color: #ff6d6855; }
+.session-question-list summary { display: grid; grid-template-columns: 28px 1fr auto; gap: 9px; align-items: center; cursor: pointer; }
+.session-question-list summary > span { display: grid; width: 24px; height: 24px; place-items: center; border-radius: 50%; background: #30314f; color: #f2c94c; font-size: 11px; font-weight: 900; }
+.session-question-list summary small { color: #9293aa; }
+.session-question-list details > p { margin: 12px 0 5px; }
+.session-question-list details article { display: grid; grid-template-columns: minmax(120px, 1fr) 55px 70px 45px 55px; gap: 8px; align-items: center; padding: 8px 0; border-top: 1px solid #ffffff0b; font-size: 12px; }
+.answer-correct { color: #62d68b; font-weight: 900; }
+.answer-wrong { color: #ff7d7d; font-weight: 900; }
+.report-question-button { display: block; margin: 12px auto 0; padding: 8px 11px; border: 1px solid #ffffff18; border-radius: 9px; background: transparent; color: #9293aa; font-size: 11px; font-weight: 800; }
+.report-overlay { position: fixed; z-index: 30; inset: 0; display: grid; place-items: center; padding: 20px; background: #090a18e8; backdrop-filter: blur(8px); }
+.report-panel { display: grid; gap: 14px; width: min(560px, 100%); padding: 26px; border: 1px solid #ffffff18; border-radius: 22px; background: #191a31; box-shadow: 0 30px 90px #0008; }
+.report-panel > header { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; }
+.report-panel h2 { margin: 2px 0 0; }
+.report-panel header button { padding: 8px 10px; border-radius: 8px; background: #30314f; color: #fff; }
+.report-panel label { display: grid; gap: 6px; color: #b9bac9; font-size: 12px; font-weight: 900; }
+.report-panel select, .report-panel textarea { width: 100%; border: 1px solid #ffffff16; border-radius: 10px; background: #242541; color: #fff; padding: 11px; font: inherit; }
+.report-panel textarea { min-height: 110px; resize: vertical; }
+.report-status { margin: 0; color: #62d68b; }
 .analytics-empty, .analytics-state { display: grid; place-items: center; gap: 8px; min-height: 220px; color: #9293aa; text-align: center; }
 .analytics-state strong { color: #fff; font-size: 18px; }
 .quality-kpis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 9px; }
@@ -421,4 +457,9 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
   .recent-games article { grid-template-columns: 1fr 1fr; }
   .excluded-games article { grid-template-columns: 1fr; }
   .exclude-game, .excluded-games button { width: 100%; }
+  .game-details-button { width: 100%; }
+  .question-watchlist > article { align-items: stretch; flex-direction: column; }
+  .session-question-list summary { grid-template-columns: 28px 1fr; }
+  .session-question-list summary small { grid-column: 2; }
+  .session-question-list details article { grid-template-columns: 1fr 1fr; }
 }

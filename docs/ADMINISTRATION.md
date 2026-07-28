@@ -39,6 +39,10 @@ si Supabase est indisponible.
 Pour pouvoir exclure un test du journal puis le restaurer, exécuter ensuite
 `supabase/migrations/004_game_session_exclusions.sql`.
 
+Pour activer les signalements envoyés pendant une partie et leur traitement depuis
+le journal administrateur, exécuter enfin
+`supabase/migrations/005_question_reports.sql`.
+
 ## Workflow éditorial et historique
 
 Après la migration initiale, exécuter

@@ -16,6 +16,8 @@ export interface StoredGameSession {
   players: Array<{ name: string; avatar: string; score: number; rank: number }>
   questionResults: Array<{
     questionId: string
+    prompt?: string
+    acceptedAnswer?: string
     category: string
     difficulty: number
     answers: Array<{
@@ -72,6 +74,8 @@ export function serializeCompletedGame(game: GameState) {
       const question = questions.get(result.questionId)
       return {
         questionId: result.questionId,
+        prompt: question?.prompt,
+        acceptedAnswer: question?.acceptedAnswers[0],
         category: question?.category ?? 'Inconnue',
         difficulty: question?.difficulty ?? 1,
         answers: Object.entries(result.answers).map(([playerId, answer]) => ({

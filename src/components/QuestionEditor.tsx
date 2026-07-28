@@ -198,7 +198,7 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
   }, [rows])
 
   const filtered = useMemo(() => rows.filter((row) => {
-    const text = `${row.payload.prompt} ${row.payload.category}`.toLocaleLowerCase('fr')
+    const text = `${row.id} ${row.payload.prompt} ${row.payload.category}`.toLocaleLowerCase('fr')
     return (status === 'all' || row.publicationStatus === status)
       && (category === 'all' || row.payload.category === category)
       && (editorialStatus === 'all' || row.validationStatus === editorialStatus)
@@ -519,7 +519,7 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
           <button className="selected">Parties & statistiques</button>
           <button onClick={() => openBank()}>Banque de questions</button>
         </div>
-        <GameAnalyticsDashboard />
+        <GameAnalyticsDashboard onOpenQuestion={(questionId) => openBank({ query: questionId })} />
       </section>
     )
   }
