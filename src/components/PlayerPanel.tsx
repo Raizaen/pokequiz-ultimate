@@ -15,11 +15,18 @@ export function PlayerPanel({ player, question, answer, disabled, onAnswer }: Pr
   const [selectedChoices, setSelectedChoices] = useState<string[]>([])
   const locked = disabled || answer?.locked
   const isWrong = Boolean(answer && answer.attempts > 0 && answer.locked && !answer.isCorrect)
-  const attemptsLeft = question.type === 'open' ? 3 - (answer?.attempts ?? 0) : (answer ? 0 : 1)
+  const attemptsLeft = question.type === 'open' || question.type === 'open-multiple' ? 3 - (answer?.attempts ?? 0) : (answer ? 0 : 1)
 
   const submit = () => {
     if (!draft.trim() || locked) return
     onAnswer(draft)
+    setDraft('')
+  }
+
+  const addOpenChoice = () => {
+    const value = draft.trim()
+    if (!value || locked || selectedChoices.some((choice) => choice.toLocaleLowerCase('fr') === value.toLocaleLowerCase('fr'))) return
+    setSelectedChoices([...selectedChoices, value])
     setDraft('')
   }
 
@@ -67,6 +74,36 @@ export function PlayerPanel({ player, question, answer, disabled, onAnswer }: Pr
             Valider {selectedChoices.length} réponse{selectedChoices.length > 1 ? 's' : ''}
           </button>
         </>
+      ) : question.type === 'open-multiple' ? (
+        <div className="open-multiple-answer">
+          <div className="multi-select-hint">Saisis toutes les évolutions, dans n’importe quel ordre</div>
+          <div className="open-answer">
+            <input
+              value={draft}
+              onChange={(event) => setDraft(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') {
+                  event.preventDefault()
+                  addOpenChoice()
+                }
+              }}
+              placeholder="Nom d’un Pokémon…"
+              disabled={locked}
+              aria-label={`Évolution proposée par ${player.name}`}
+            />
+            <button onClick={addOpenChoice} disabled={locked || !draft.trim()}>Ajouter</button>
+          </div>
+          <div className="open-answer-chips">
+            {selectedChoices.map((choice) => (
+              <button key={choice} disabled={locked} onClick={() => setSelectedChoices(selectedChoices.filter((value) => value !== choice))}>
+                {choice} <span>×</span>
+              </button>
+            ))}
+          </div>
+          <button className="validate-selection" disabled={locked || selectedChoices.length === 0} onClick={() => onAnswer(selectedChoices)}>
+            Valider la liste ({selectedChoices.length})
+          </button>
+        </div>
       ) : (
         <div className="open-answer">
           <input

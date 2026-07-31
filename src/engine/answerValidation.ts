@@ -52,7 +52,7 @@ export function isAnswerCorrect(question: Question, answer: AnswerValue): boolea
     return submitted.length === expected.length
       && submitted.every((value, index) => value === expected[index])
   }
-  if (question.type === 'multiple-select') {
+  if (question.type === 'multiple-select' || question.type === 'open-multiple') {
     if (!Array.isArray(answer) || !question.correctChoices) return false
     const submitted = [...new Set(answer.map(normalizeAnswer))].sort()
     const expected = [...new Set(question.correctChoices.map(normalizeAnswer))].sort()
@@ -64,7 +64,7 @@ export function isAnswerCorrect(question: Question, answer: AnswerValue): boolea
 }
 
 export function maxAttemptsFor(question: Question): number {
-  return question.type === 'open' ? 3 : 1
+  return question.type === 'open' || question.type === 'open-multiple' ? 3 : 1
 }
 
 export function pointsForAnswer(question: Question, answer: AnswerValue): number {

@@ -394,6 +394,10 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .report-panel select, .report-panel textarea { width: 100%; border: 1px solid #ffffff16; border-radius: 10px; background: #242541; color: #fff; padding: 11px; font: inherit; }
 .report-panel textarea { min-height: 110px; resize: vertical; }
 .report-status { margin: 0; color: #62d68b; }
+.open-multiple-answer { display: grid; gap: 10px; }
+.open-answer-chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.open-answer-chips button { padding: 7px 10px; border: 1px solid #f2c94c55; border-radius: 99px; background: #f2c94c12; color: #fff; font-size: 12px; }
+.open-answer-chips button span { margin-left: 4px; color: #ff8b87; font-weight: 900; }
 .analytics-empty, .analytics-state { display: grid; place-items: center; gap: 8px; min-height: 220px; color: #9293aa; text-align: center; }
 .analytics-state strong { color: #fff; font-size: 18px; }
 .quality-kpis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 9px; }

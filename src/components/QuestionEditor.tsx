@@ -84,7 +84,7 @@ const splitLines = (value: string) => value.split('\n').map((item) => item.trim(
 function toForm(row: StoredQuestion): FormState {
   return {
     id: row.id,
-    type: row.payload.type === 'open' || row.payload.type === 'multiple-select'
+    type: row.payload.type === 'open' || row.payload.type === 'open-multiple' || row.payload.type === 'multiple-select'
       ? row.payload.type
       : 'multiple-choice',
     category: row.payload.category,
@@ -131,8 +131,8 @@ function buildQuestion(form: FormState): Question {
     difficulty: form.difficulty,
     prompt: form.prompt.trim(),
     choices: form.type === 'multiple-choice' || form.type === 'multiple-select' ? choices : undefined,
-    acceptedAnswers: answers,
-    correctChoices: form.type === 'multiple-select' ? answers : undefined,
+    acceptedAnswers: form.type === 'open-multiple' ? [answers.join(' · ')] : answers,
+    correctChoices: form.type === 'multiple-select' || form.type === 'open-multiple' ? answers : undefined,
     explanation: form.explanation.trim(),
     points: form.points,
     durationSeconds: form.durationSeconds,
@@ -233,6 +233,10 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
     }
     if (isChoiceQuestion && answers.some((answer) => !question.choices?.includes(answer))) {
       setMessage('Chaque bonne réponse doit être présente exactement dans les propositions.')
+      return
+    }
+    if (question.type === 'open-multiple' && (question.correctChoices?.length ?? 0) < 2) {
+      setMessage('Une question ouverte multiple doit contenir au moins deux bonnes réponses.')
       return
     }
     if (question.type === 'stat-order' && question.orderEntries?.length !== 5) {
@@ -346,6 +350,7 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
               <option value="multiple-choice">QCM — une réponse</option>
               <option value="multiple-select">QCM — plusieurs réponses</option>
               <option value="open">Question ouverte</option>
+              <option value="open-multiple">Question ouverte — plusieurs noms</option>
               <option value="stat-order">Stats en ordre</option>
               <option value="map-location">Lieu Perdu</option>
             </select>
@@ -390,7 +395,7 @@ export function QuestionEditor({ user, onQuestionsChanged }: Props) {
               <textarea value={form.choices} onChange={(event) => setForm({ ...form, choices: event.target.value })} rows={5} />
             </label>
           )}
-          <label className="wide">{form.type === 'multiple-select' ? 'Bonnes réponses — une par ligne' : 'Réponses acceptées — une par ligne'}
+          <label className="wide">{form.type === 'multiple-select' || form.type === 'open-multiple' ? 'Bonnes réponses — une par ligne' : 'Réponses acceptées — une par ligne'}
             <textarea value={form.answers} onChange={(event) => setForm({ ...form, answers: event.target.value })} rows={3} />
           </label>
           {(form.category === 'Sprites' || form.type === 'map-location') && (

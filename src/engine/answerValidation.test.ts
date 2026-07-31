@@ -38,6 +38,19 @@ describe('answer validation', () => {
     expect(maxAttemptsFor(multipleQuestion)).toBe(1)
   })
 
+  it('valide une réponse ouverte multiple indépendamment de l’ordre et des accents', () => {
+    const evolutionQuestion: Question = {
+      ...openQuestion,
+      type: 'open-multiple',
+      acceptedAnswers: ['Aquali · Voltali · Pyroli'],
+      correctChoices: ['Aquali', 'Voltali', 'Pyroli'],
+    }
+
+    expect(isAnswerCorrect(evolutionQuestion, ['pyroli', 'AQUAli', 'Voltali'])).toBe(true)
+    expect(isAnswerCorrect(evolutionQuestion, ['Aquali', 'Voltali'])).toBe(false)
+    expect(maxAttemptsFor(evolutionQuestion)).toBe(3)
+  })
+
   it('calibre précisément le score des réponses cartographiques', () => {
     expect([0, 2.5, 5, 8, 12, 18, 19].map(mapPointsForDistance))
       .toEqual([25, 25, 20, 15, 10, 5, 0])
