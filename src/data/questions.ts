@@ -18,6 +18,7 @@ import { intruderQuestions } from './curated/intruderQuestions'
 import { pokopiaQuestions } from './curated/pokopiaQuestions'
 import { evolutionNameQuestions } from './curated/evolutionNameQuestions'
 import { deduplicateQuestions } from '../engine/questionIdentity'
+import { withContextualPokemonMedia } from '../utils/questionPokemonMedia'
 
 const textQuestions: Question[] = [
   {
@@ -97,3 +98,4 @@ const textQuestions: Question[] = [
 ]
 
 export const questions: Question[] = deduplicateQuestions([...curatedLaboQuestions, ...evolutionNameQuestions, ...intruderQuestions, ...pokopiaQuestions, ...curatedMoveQuestions, ...curatedStrategyQuestions, ...statOrderQuestions, ...paldeaLostPlaceQuestions, ...sinnohLostPlaceQuestions, ...curatedItemQuestions, ...curatedPokedexQuestions, ...curatedGameQuestions, ...curatedLoreQuestions, ...curatedAnimeQuestions, ...spinOffQuestions, ...textQuestions, ...generatedQuestions, ...animeQuestions, ...spriteQuestions])
+  .map(withContextualPokemonMedia)

@@ -283,7 +283,8 @@ export function App() {
                         pokopiaSpoilers: category.id === 'Pokopia' ? config.pokopiaSpoilers ?? 'safe' : config.pokopiaSpoilers,
                       })}
                     >
-                      <i>{category.icon}</i><strong>{category.label}</strong><small>{unavailable ? 'Bientôt disponible' : `${count} question${count > 1 ? 's' : ''}`}</small>
+                      <span className="category-visual"><img src={category.image} alt="" loading="lazy" /></span>
+                      <strong>{category.label}</strong><small>{unavailable ? 'Bientôt disponible' : `${count} question${count > 1 ? 's' : ''}`}</small>
                     </button>
                   )
                 })}

@@ -57,7 +57,8 @@ export async function loadPublishedQuestions(): Promise<Question[]> {
     rows.push(...page)
     if (page.length < pageSize) break
   }
-  return rows.map((row) => localizePokemonNamesInQuestion(row.payload))
+  const { withContextualPokemonMedia } = await import('../utils/questionPokemonMedia')
+  return rows.map((row) => withContextualPokemonMedia(localizePokemonNamesInQuestion(row.payload)))
 }
 
 export async function loadAdminQuestions(): Promise<StoredQuestion[]> {
