@@ -50,11 +50,11 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .mode-grid strong { font-size: 16px; }
 .mode-grid small, .category-grid small, .region-grid small, .generation-grid small, .sprite-variant-grid small, .difficulty-grid small, .timer-grid small { color: #8889a3; }
 .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 9px; }
-.category-grid button { min-height: 165px; overflow: hidden; text-align: center; place-items: center; align-content: end; isolation: isolate; }
+.category-grid button { min-height: 176px; overflow: hidden; text-align: center; place-items: center; align-content: end; isolation: isolate; }
 .category-grid button:disabled { opacity: .36; }
 .category-visual { position: absolute; z-index: -1; inset: 0; display: grid; place-items: start center; background: radial-gradient(circle at 50% 30%, #383b68 0, #252641 54%, #1c1d35 100%); }
 .category-visual::after { position: absolute; inset: 0; content: ''; background: linear-gradient(transparent 54%, #191a31eb 82%); }
-.category-logo { width: min(100%, 190px); height: 120px; margin-top: 2px; overflow: visible; filter: drop-shadow(0 9px 10px #050612aa); transition: transform .2s ease, filter .2s ease; }
+.category-logo { width: min(116%, 220px); height: 136px; margin-top: 0; overflow: visible; filter: drop-shadow(0 10px 12px #050612b8); transition: transform .2s ease, filter .2s ease; }
 .category-logo-flare { opacity: .13; transform: scale(.9); transform-origin: center; }
 .category-logo-motif { opacity: .2; transform: translate(61px, 15px) scale(.62); transform-origin: center; }
 .category-logo-copy { transform: rotate(-2deg); transform-origin: center; }
