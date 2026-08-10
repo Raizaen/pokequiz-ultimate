@@ -52,11 +52,18 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 9px; }
 .category-grid button { min-height: 165px; overflow: hidden; text-align: center; place-items: center; align-content: end; isolation: isolate; }
 .category-grid button:disabled { opacity: .36; }
-.category-visual { position: absolute; z-index: -1; inset: 0; display: grid; place-items: center; background: radial-gradient(circle at 50% 35%, #4a4c7b 0, #262743 60%, #1d1e35 100%); }
-.category-visual::after { position: absolute; inset: 0; content: ''; background: linear-gradient(transparent 25%, #18192fe8 82%); }
-.category-visual img { width: 104px; height: 104px; margin-top: -20px; object-fit: contain; filter: drop-shadow(0 9px 12px #0008); transition: transform .2s ease; }
-.category-grid button:hover:not(:disabled) .category-visual img { transform: translateY(-4px) scale(1.07); }
-.category-grid button strong, .category-grid button small { z-index: 1; }
+.category-visual { position: absolute; z-index: -1; inset: 0; display: grid; place-items: start center; background: radial-gradient(circle at 50% 30%, #383b68 0, #252641 54%, #1c1d35 100%); }
+.category-visual::after { position: absolute; inset: 0; content: ''; background: linear-gradient(transparent 54%, #191a31eb 82%); }
+.category-logo { width: min(100%, 190px); height: 120px; margin-top: 2px; overflow: visible; filter: drop-shadow(0 9px 10px #050612aa); transition: transform .2s ease, filter .2s ease; }
+.category-logo-flare { opacity: .13; transform: scale(.9); transform-origin: center; }
+.category-logo-motif { opacity: .2; transform: translate(61px, 15px) scale(.62); transform-origin: center; }
+.category-logo-copy { transform: rotate(-2deg); transform-origin: center; }
+.category-logo-top, .category-logo-bottom { font-family: Nunito, system-ui, sans-serif; font-weight: 1000; text-anchor: middle; letter-spacing: 2px; paint-order: stroke; stroke: #17182c; stroke-width: 6px; stroke-linejoin: round; fill: #fff; }
+.category-logo-top { font-size: 13px; }
+.category-logo-bottom { font-size: 11px; }
+.category-logo-main { font-family: Nunito, system-ui, sans-serif; font-size: 25px; font-weight: 1000; text-anchor: middle; letter-spacing: -.8px; paint-order: stroke fill; stroke-width: 9px; stroke-linejoin: round; fill: #fff; }
+.category-grid button:hover:not(:disabled) .category-logo { transform: translateY(-4px) scale(1.06) rotate(1deg); filter: drop-shadow(0 12px 13px #050612dd) saturate(1.12); }
+.category-grid button small { z-index: 1; font-weight: 800; }
 .region-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .region-grid button { min-height: 100px; text-align: center; place-items: center; align-content: center; }
 .region-grid i { font-size: 26px; font-style: normal; }

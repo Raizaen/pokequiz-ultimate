@@ -5,6 +5,7 @@ import { LostPlaceRound } from './components/LostPlaceRound'
 import { LostPlaceSummary } from './components/LostPlaceSummary'
 import { GameStats } from './components/GameStats'
 import { SpriteImage } from './components/SpriteImage'
+import { CategoryLogo } from './components/CategoryLogo'
 import {
   categories,
   difficultyPresets,
@@ -272,6 +273,7 @@ export function App() {
                   return (
                     <button
                       key={category.id}
+                      aria-label={`${category.label} — ${unavailable ? 'Bientôt disponible' : `${count} question${count > 1 ? 's' : ''}`}`}
                       className={config.category === category.id ? 'selected' : ''}
                       disabled={unavailable}
                       onClick={() => setConfig({
@@ -283,8 +285,8 @@ export function App() {
                         pokopiaSpoilers: category.id === 'Pokopia' ? config.pokopiaSpoilers ?? 'safe' : config.pokopiaSpoilers,
                       })}
                     >
-                      <span className="category-visual"><img src={category.image} alt="" loading="lazy" /></span>
-                      <strong>{category.label}</strong><small>{unavailable ? 'Bientôt disponible' : `${count} question${count > 1 ? 's' : ''}`}</small>
+                      <span className="category-visual"><CategoryLogo category={category.id} /></span>
+                      <small>{unavailable ? 'Bientôt disponible' : `${count} question${count > 1 ? 's' : ''}`}</small>
                     </button>
                   )
                 })}
