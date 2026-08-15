@@ -16,8 +16,12 @@ function initialRocks(questionId: string): number[] {
   let seed = hash(questionId)
   return Array.from({ length: columns * rows }, () => {
     seed = (seed * 1664525 + 1013904223) >>> 0
-    return 2 + (seed % 2)
+    return 2 + ((seed >>> 16) % 2)
   })
+}
+
+function tileVariant(questionId: string, index: number): number {
+  return (hash(`${questionId}-${index}`) >>> 16) % 2
 }
 
 interface Props {
@@ -94,11 +98,11 @@ export function MiningRound({ question, revealed, availablePoints, onClearedTile
             <button
               type="button"
               key={index}
-              className={`mining-rock depth-${depth}`}
+              className={`mining-rock depth-${depth} variant-${tileVariant(question.id, index)}`}
               aria-label={depth === 0 ? 'Zone dégagée' : `Frapper la roche, couche ${depth}`}
               disabled={revealed || collapsed || depth === 0}
               onClick={() => dig(index)}
-            ><span /></button>
+            />
           ))}
         </div>
       </div>

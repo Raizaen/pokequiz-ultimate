@@ -138,14 +138,12 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .mining-sprite { position: absolute; inset: 8%; display: grid; place-items: center; }
 .mining-sprite img { width: 82%; height: 82%; object-fit: contain; image-rendering: pixelated; filter: drop-shadow(0 8px 13px #0008); }
 .mining-grid { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(6, 1fr); }
-.mining-rock { position: relative; min-width: 0; padding: 0; overflow: hidden; border: 1px solid #645c52; background: #a8916f; transition: opacity .18s ease, transform .1s ease, filter .18s ease; }
-.mining-rock::before, .mining-rock::after, .mining-rock span::before { position: absolute; content: ''; border-radius: 45% 55% 53% 47%; background: #756b61; box-shadow: inset 2px 2px #b9a98c, 1px 2px 3px #332d2a88; }
-.mining-rock::before { width: 38%; height: 32%; left: 9%; top: 15%; transform: rotate(17deg); }
-.mining-rock::after { width: 31%; height: 27%; right: 7%; bottom: 12%; transform: rotate(-23deg); }
-.mining-rock span::before { width: 20%; height: 18%; right: 17%; top: 18%; background: #d2b65b; }
-.mining-rock.depth-2 { filter: brightness(1.08); background: #b9a77e; }
-.mining-rock.depth-1 { filter: brightness(1.18) saturate(.75); background: #c2b391; }
-.mining-rock.depth-1::before { transform: rotate(17deg) scale(.75); }
+.mining-rock { position: relative; min-width: 0; padding: 0; overflow: hidden; border: 0; background-position: center; background-repeat: no-repeat; background-size: 100% 100%; image-rendering: pixelated; transition: opacity .18s ease, transform .1s ease, filter .18s ease; }
+.mining-rock.depth-3.variant-0 { background-image: url('/assets/mining/wall-depth-5.png'); }
+.mining-rock.depth-3.variant-1 { background-image: url('/assets/mining/wall-depth-4.png'); }
+.mining-rock.depth-2.variant-0 { background-image: url('/assets/mining/wall-depth-3.png'); }
+.mining-rock.depth-2.variant-1 { background-image: url('/assets/mining/wall-depth-2.png'); }
+.mining-rock.depth-1 { background-image: url('/assets/mining/wall-depth-1.png'); }
 .mining-rock.depth-0 { pointer-events: none; opacity: 0; transform: scale(.82); }
 .mining-rock:hover:not(:disabled) { z-index: 1; filter: brightness(1.28); box-shadow: inset 0 0 0 3px #f1c45b; }
 .mining-wall.revealed .mining-rock { opacity: 0; transform: scale(.75); pointer-events: none; }
