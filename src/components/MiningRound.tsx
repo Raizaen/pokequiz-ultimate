@@ -63,10 +63,6 @@ export function MiningRound({ question, revealed, availablePoints, onClearedTile
           <strong>Choisis ton outil puis frappe la paroi</strong>
           <small>Pioche : précise · Marteau : large mais destructeur</small>
         </div>
-        <div className="mining-tools" role="group" aria-label="Outil de fouille">
-          <button className={tool === 'pickaxe' ? 'selected' : ''} disabled={revealed || collapsed} onClick={() => setTool('pickaxe')}><img src="/assets/mining/pickaxe.png" alt="" /><span>Pioche</span></button>
-          <button className={tool === 'hammer' ? 'selected' : ''} disabled={revealed || collapsed} onClick={() => setTool('hammer')}><img src="/assets/mining/hammer.png" alt="" /><span>Marteau</span></button>
-        </div>
       </header>
 
       <div className="mining-status">
@@ -78,42 +74,57 @@ export function MiningRound({ question, revealed, availablePoints, onClearedTile
         </div>
       </div>
 
-      <div className={`mining-wall ${collapsed ? 'collapsed' : ''} ${revealed ? 'revealed' : ''}`}>
-        <div className="mining-sprite">
-          {question.media && <SpriteImage media={question.media} revealed={revealed} />}
-        </div>
-        <div className="mining-grid">
-          {rocks.map((depth, index) => (
-            <button
-              type="button"
-              key={index}
-              className={`mining-rock depth-${depth} variant-${tileVariant(question.id, index)} ${impact?.affected.includes(index) ? 'hit' : ''} ${impact?.index === index ? 'direct-hit' : ''}`}
-              aria-label={depth === 0 ? 'Zone dégagée' : `Frapper la roche, couche ${depth}`}
-              disabled={revealed || collapsed || depth === 0}
-              onClick={() => dig(index)}
-            />
-          ))}
-        </div>
-        {impact && !revealed && (
-          <div
-            key={impact.id}
-            className={`mining-impact ${impact.tool}`}
-            style={{
-              '--impact-x': `${(((impact.index % columns) + .5) / columns) * 100}%`,
-              '--impact-y': `${((Math.floor(impact.index / columns) + .5) / rows) * 100}%`,
-            } as CSSProperties}
-          >
-            <img src={`/assets/mining/${impact.tool}.png`} alt="" />
-            {Array.from({ length: impact.tool === 'hammer' ? 9 : 6 }, (_, particle) => <i key={particle} style={{ '--particle': particle } as CSSProperties} />)}
+      <div className="mining-playfield">
+        <div className={`mining-wall ${collapsed ? 'collapsed' : ''} ${revealed ? 'revealed' : ''}`}>
+          <div className="mining-sprite">
+            {question.media && <SpriteImage media={question.media} revealed={revealed} />}
           </div>
-        )}
-        {collapsed && !revealed && (
-          <div className="mining-collapse-overlay" role="status">
-            <div>{Array.from({ length: 12 }, (_, debris) => <i key={debris} style={{ '--debris': debris } as CSSProperties} />)}</div>
-            <strong>PAROI EFFONDRÉE</strong>
-            <span>Tu peux encore proposer ta réponse.</span>
+          <div className="mining-grid">
+            {rocks.map((depth, index) => (
+              <button
+                type="button"
+                key={index}
+                className={`mining-rock depth-${depth} variant-${tileVariant(question.id, index)} ${impact?.affected.includes(index) ? 'hit' : ''} ${impact?.index === index ? 'direct-hit' : ''}`}
+                aria-label={depth === 0 ? 'Zone dégagée' : `Frapper la roche, couche ${depth}`}
+                disabled={revealed || collapsed || depth === 0}
+                onClick={() => dig(index)}
+              />
+            ))}
           </div>
-        )}
+          {impact && !revealed && (
+            <div
+              key={impact.id}
+              className={`mining-impact ${impact.tool}`}
+              style={{
+                '--impact-x': `${(((impact.index % columns) + .5) / columns) * 100}%`,
+                '--impact-y': `${((Math.floor(impact.index / columns) + .5) / rows) * 100}%`,
+              } as CSSProperties}
+            >
+              <img src={`/assets/mining/${impact.tool}.png`} alt="" />
+              {Array.from({ length: impact.tool === 'hammer' ? 9 : 6 }, (_, particle) => <i key={particle} style={{ '--particle': particle } as CSSProperties} />)}
+            </div>
+          )}
+          {collapsed && !revealed && (
+            <div className="mining-collapse-overlay" role="status">
+              <div>{Array.from({ length: 12 }, (_, debris) => <i key={debris} style={{ '--debris': debris } as CSSProperties} />)}</div>
+              <strong>PAROI EFFONDRÉE</strong>
+              <span>Tu peux encore proposer ta réponse.</span>
+            </div>
+          )}
+        </div>
+
+        <div className="mining-tool-rail" role="group" aria-label="Outil de fouille">
+          <div className="mining-tool-rail-crack" aria-hidden="true" />
+          <button className={`hammer ${tool === 'hammer' ? 'selected' : ''}`} aria-pressed={tool === 'hammer'} disabled={revealed || collapsed} onClick={() => setTool('hammer')}>
+            <img src="/assets/mining/hammer.png" alt="" />
+            <span>Marteau</span>
+          </button>
+          <span className="mining-tool-divider" aria-hidden="true" />
+          <button className={`pickaxe ${tool === 'pickaxe' ? 'selected' : ''}`} aria-pressed={tool === 'pickaxe'} disabled={revealed || collapsed} onClick={() => setTool('pickaxe')}>
+            <img src="/assets/mining/pickaxe.png" alt="" />
+            <span>Pioche</span>
+          </button>
+        </div>
       </div>
       <p className="mining-help">Clique directement sur une case de roche. Tu peux changer d’outil entre chaque coup.</p>
     </section>
