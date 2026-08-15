@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import type { AnswerValue, Player, PlayerAnswer, Question } from '../domain/quiz'
 import { StatOrderPanel } from './StatOrderPanel'
+import { PokemonAnswerField } from './PokemonAnswerField'
+import { questionExpectsPokemonName } from '../utils/pokemonAnswerSuggestions'
 
 interface Props {
   player: Player
@@ -77,22 +79,16 @@ export function PlayerPanel({ player, question, answer, disabled, onAnswer }: Pr
       ) : question.type === 'open-multiple' ? (
         <div className="open-multiple-answer">
           <div className="multi-select-hint">Saisis toutes les évolutions, dans n’importe quel ordre</div>
-          <div className="open-answer">
-            <input
-              value={draft}
-              onChange={(event) => setDraft(event.target.value)}
-              onKeyDown={(event) => {
-                if (event.key === 'Enter') {
-                  event.preventDefault()
-                  addOpenChoice()
-                }
-              }}
-              placeholder="Nom d’un Pokémon…"
-              disabled={locked}
-              aria-label={`Évolution proposée par ${player.name}`}
-            />
-            <button onClick={addOpenChoice} disabled={locked || !draft.trim()}>Ajouter</button>
-          </div>
+          <PokemonAnswerField
+            value={draft}
+            onChange={setDraft}
+            onConfirm={addOpenChoice}
+            confirmLabel="Ajouter"
+            placeholder="Nom d’un Pokémon…"
+            disabled={Boolean(locked)}
+            ariaLabel={`Évolution proposée par ${player.name}`}
+            suggestionsEnabled={questionExpectsPokemonName(question)}
+          />
           <div className="open-answer-chips">
             {selectedChoices.map((choice) => (
               <button key={choice} disabled={locked} onClick={() => setSelectedChoices(selectedChoices.filter((value) => value !== choice))}>
@@ -105,17 +101,16 @@ export function PlayerPanel({ player, question, answer, disabled, onAnswer }: Pr
           </button>
         </div>
       ) : (
-        <div className="open-answer">
-          <input
-            value={draft}
-            onChange={(event) => setDraft(event.target.value)}
-            onKeyDown={(event) => event.key === 'Enter' && submit()}
-            placeholder="Ta réponse…"
-            disabled={locked}
-            aria-label={`Réponse de ${player.name}`}
-          />
-          <button onClick={submit} disabled={locked || !draft.trim()}>Valider</button>
-        </div>
+        <PokemonAnswerField
+          value={draft}
+          onChange={setDraft}
+          onConfirm={submit}
+          confirmLabel="Valider"
+          placeholder="Ta réponse…"
+          disabled={Boolean(locked)}
+          ariaLabel={`Réponse de ${player.name}`}
+          suggestionsEnabled={questionExpectsPokemonName(question)}
+        />
       )}
 
       <p className="attempts">

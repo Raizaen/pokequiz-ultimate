@@ -38,6 +38,17 @@ describe('answer validation', () => {
     expect(maxAttemptsFor(multipleQuestion)).toBe(1)
   })
 
+  it('accepte une forme Pokémon avec ou sans parenthèses, mais pas le nom de base seul', () => {
+    const formQuestion: Question = {
+      ...openQuestion,
+      acceptedAnswers: ['Miaouss (Gigamax)'],
+    }
+
+    expect(isAnswerCorrect(formQuestion, 'Miaouss (Gigamax)')).toBe(true)
+    expect(isAnswerCorrect(formQuestion, 'Miaouss Gigamax')).toBe(true)
+    expect(isAnswerCorrect(formQuestion, 'Miaouss')).toBe(false)
+  })
+
   it('valide une réponse ouverte multiple indépendamment de l’ordre et des accents', () => {
     const evolutionQuestion: Question = {
       ...openQuestion,
