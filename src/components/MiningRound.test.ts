@@ -25,4 +25,14 @@ describe('outils de Fouille dans les Mines', () => {
 
     expect(result.affected.sort((left, right) => left - right)).toEqual([0, 1, 8, 9])
   })
+
+  it('cumule plusieurs frappes successives sans perdre les dégâts précédents', () => {
+    const firstHit = applyMiningHit(fullWall(), 19, 'hammer')
+    const secondHit = applyMiningHit(firstHit.rocks, 20, 'hammer')
+
+    expect(secondHit.rocks[19]).toBe(0)
+    expect(secondHit.rocks[20]).toBe(0)
+    expect(secondHit.rocks[11]).toBe(1)
+    expect(secondHit.rocks[21]).toBe(2)
+  })
 })

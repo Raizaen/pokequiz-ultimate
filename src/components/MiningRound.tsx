@@ -1,4 +1,4 @@
-import { useMemo, useState, type CSSProperties } from 'react'
+import { useMemo, useRef, useState, type CSSProperties } from 'react'
 import type { Question } from '../domain/quiz'
 import { applyMiningHit, type MiningTool } from '../engine/miningMechanics'
 import { SpriteImage } from './SpriteImage'
@@ -33,18 +33,24 @@ interface Props {
 export function MiningRound({ question, revealed, availablePoints, onClearedTilesChange }: Props) {
   const startingRocks = useMemo(() => initialRocks(question.id), [question.id])
   const [rocks, setRocks] = useState(startingRocks)
+  const rocksRef = useRef(startingRocks)
   const [tool, setTool] = useState<MiningTool>('pickaxe')
   const [damage, setDamage] = useState(0)
+  const damageRef = useRef(0)
   const [impact, setImpact] = useState<{ id: number; index: number; tool: MiningTool; affected: number[] } | null>(null)
   const collapsed = damage >= maximumDamage
   const visibleTiles = rocks.filter((depth) => depth === 0).length
   const uncoveredPercent = Math.round((visibleTiles / rocks.length) * 100)
 
   const dig = (index: number) => {
-    if (revealed || collapsed || rocks[index] === 0) return
-    const hit = applyMiningHit(rocks, index, tool)
-    setDamage((current) => Math.min(maximumDamage, current + (tool === 'pickaxe' ? 1 : 3)))
+    const currentRocks = rocksRef.current
+    if (revealed || damageRef.current >= maximumDamage || currentRocks[index] === 0) return
+    const hit = applyMiningHit(currentRocks, index, tool)
+    const nextDamage = Math.min(maximumDamage, damageRef.current + (tool === 'pickaxe' ? 1 : 3))
+    rocksRef.current = hit.rocks
+    damageRef.current = nextDamage
     setRocks(hit.rocks)
+    setDamage(nextDamage)
     setImpact({ id: Date.now(), index, tool, affected: hit.affected })
     onClearedTilesChange(hit.rocks.filter((depth) => depth === 0).length)
   }
