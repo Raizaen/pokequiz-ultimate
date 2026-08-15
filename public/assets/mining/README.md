@@ -1,6 +1,6 @@
 # Tuiles de la paroi souterraine
 
-Les fichiers `wall-depth-1.png` à `wall-depth-5.png` sont des découpes pixel-perfect de la feuille **Underground Digging** de *Pokémon Diamond / Pearl*.
+Les fichiers `wall-depth-1.png` à `wall-depth-5.png`, `pickaxe.png` et `hammer.png` sont des découpes pixel-perfect de la feuille **Underground Digging** de *Pokémon Diamond / Pearl*.
 
 - Source de la feuille : https://www.spriters-resource.com/ds_dsi/pokemondiamondpearl/asset/37301/
 - Extraction originale publiée par : `redblueyellow`

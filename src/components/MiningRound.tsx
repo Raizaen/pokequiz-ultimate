@@ -1,8 +1,7 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, type CSSProperties } from 'react'
 import type { Question } from '../domain/quiz'
+import { applyMiningHit, type MiningTool } from '../engine/miningMechanics'
 import { SpriteImage } from './SpriteImage'
-
-type Tool = 'pickaxe' | 'hammer'
 
 const columns = 8
 const rows = 6
@@ -34,36 +33,20 @@ interface Props {
 export function MiningRound({ question, revealed, availablePoints, onClearedTilesChange }: Props) {
   const startingRocks = useMemo(() => initialRocks(question.id), [question.id])
   const [rocks, setRocks] = useState(startingRocks)
-  const [tool, setTool] = useState<Tool>('pickaxe')
+  const [tool, setTool] = useState<MiningTool>('pickaxe')
   const [damage, setDamage] = useState(0)
+  const [impact, setImpact] = useState<{ id: number; index: number; tool: MiningTool; affected: number[] } | null>(null)
   const collapsed = damage >= maximumDamage
   const visibleTiles = rocks.filter((depth) => depth === 0).length
   const uncoveredPercent = Math.round((visibleTiles / rocks.length) * 100)
 
   const dig = (index: number) => {
     if (revealed || collapsed || rocks[index] === 0) return
-    const x = index % columns
-    const y = Math.floor(index / columns)
-    const next = [...rocks]
-
-    if (tool === 'pickaxe') {
-      next[index] = Math.max(0, next[index] - 2)
-      setDamage((current) => Math.min(maximumDamage, current + 1))
-    } else {
-      for (let offsetY = -1; offsetY <= 1; offsetY += 1) {
-        for (let offsetX = -1; offsetX <= 1; offsetX += 1) {
-          const targetX = x + offsetX
-          const targetY = y + offsetY
-          if (targetX < 0 || targetX >= columns || targetY < 0 || targetY >= rows) continue
-          const target = targetY * columns + targetX
-          next[target] = Math.max(0, next[target] - 1)
-        }
-      }
-      setDamage((current) => Math.min(maximumDamage, current + 3))
-    }
-
-    setRocks(next)
-    onClearedTilesChange(next.filter((depth) => depth === 0).length)
+    const hit = applyMiningHit(rocks, index, tool)
+    setDamage((current) => Math.min(maximumDamage, current + (tool === 'pickaxe' ? 1 : 3)))
+    setRocks(hit.rocks)
+    setImpact({ id: Date.now(), index, tool, affected: hit.affected })
+    onClearedTilesChange(hit.rocks.filter((depth) => depth === 0).length)
   }
 
   return (
@@ -75,8 +58,8 @@ export function MiningRound({ question, revealed, availablePoints, onClearedTile
           <small>Pioche : précise · Marteau : large mais destructeur</small>
         </div>
         <div className="mining-tools" role="group" aria-label="Outil de fouille">
-          <button className={tool === 'pickaxe' ? 'selected' : ''} disabled={revealed || collapsed} onClick={() => setTool('pickaxe')}><i>⛏️</i><span>Pioche</span></button>
-          <button className={tool === 'hammer' ? 'selected' : ''} disabled={revealed || collapsed} onClick={() => setTool('hammer')}><i>🔨</i><span>Marteau</span></button>
+          <button className={tool === 'pickaxe' ? 'selected' : ''} disabled={revealed || collapsed} onClick={() => setTool('pickaxe')}><img src="/assets/mining/pickaxe.png" alt="" /><span>Pioche</span></button>
+          <button className={tool === 'hammer' ? 'selected' : ''} disabled={revealed || collapsed} onClick={() => setTool('hammer')}><img src="/assets/mining/hammer.png" alt="" /><span>Marteau</span></button>
         </div>
       </header>
 
@@ -93,18 +76,38 @@ export function MiningRound({ question, revealed, availablePoints, onClearedTile
         <div className="mining-sprite">
           {question.media && <SpriteImage media={question.media} revealed={revealed} />}
         </div>
-        <div className="mining-grid">
+        <div className="mining-grid" key={impact?.id ?? 0}>
           {rocks.map((depth, index) => (
             <button
               type="button"
               key={index}
-              className={`mining-rock depth-${depth} variant-${tileVariant(question.id, index)}`}
+              className={`mining-rock depth-${depth} variant-${tileVariant(question.id, index)} ${impact?.affected.includes(index) ? 'hit' : ''} ${impact?.index === index ? 'direct-hit' : ''}`}
               aria-label={depth === 0 ? 'Zone dégagée' : `Frapper la roche, couche ${depth}`}
               disabled={revealed || collapsed || depth === 0}
               onClick={() => dig(index)}
             />
           ))}
         </div>
+        {impact && !revealed && (
+          <div
+            key={impact.id}
+            className={`mining-impact ${impact.tool}`}
+            style={{
+              '--impact-x': `${(((impact.index % columns) + .5) / columns) * 100}%`,
+              '--impact-y': `${((Math.floor(impact.index / columns) + .5) / rows) * 100}%`,
+            } as CSSProperties}
+          >
+            <img src={`/assets/mining/${impact.tool}.png`} alt="" />
+            {Array.from({ length: impact.tool === 'hammer' ? 9 : 6 }, (_, particle) => <i key={particle} style={{ '--particle': particle } as CSSProperties} />)}
+          </div>
+        )}
+        {collapsed && !revealed && (
+          <div className="mining-collapse-overlay" role="status">
+            <div>{Array.from({ length: 12 }, (_, debris) => <i key={debris} style={{ '--debris': debris } as CSSProperties} />)}</div>
+            <strong>PAROI EFFONDRÉE</strong>
+            <span>Tu peux encore proposer ta réponse.</span>
+          </div>
+        )}
       </div>
       <p className="mining-help">Clique directement sur une case de roche. Tu peux changer d’outil entre chaque coup.</p>
     </section>
