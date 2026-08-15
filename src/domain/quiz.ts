@@ -1,4 +1,4 @@
-export type QuestionType = 'multiple-choice' | 'multiple-select' | 'open' | 'open-multiple' | 'stat-order' | 'map-location'
+export type QuestionType = 'multiple-choice' | 'multiple-select' | 'open' | 'open-multiple' | 'stat-order' | 'map-location' | 'mining'
 export interface MapAnswer { x: number; y: number }
 export type AnswerValue = string | string[] | MapAnswer
 

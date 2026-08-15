@@ -15,7 +15,7 @@ export function PlayerPanel({ player, question, answer, disabled, onAnswer }: Pr
   const [selectedChoices, setSelectedChoices] = useState<string[]>([])
   const locked = disabled || answer?.locked
   const isWrong = Boolean(answer && answer.attempts > 0 && answer.locked && !answer.isCorrect)
-  const attemptsLeft = question.type === 'open' || question.type === 'open-multiple' ? 3 - (answer?.attempts ?? 0) : (answer ? 0 : 1)
+  const attemptsLeft = question.type === 'open' || question.type === 'open-multiple' || question.type === 'mining' ? 3 - (answer?.attempts ?? 0) : (answer ? 0 : 1)
 
   const submit = () => {
     if (!draft.trim() || locked) return

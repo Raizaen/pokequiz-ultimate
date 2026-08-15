@@ -30,6 +30,7 @@ export interface CategoryDefinition {
 export const categories: CategoryDefinition[] = [
   { id: 'Labo', label: 'Labo', description: 'Types, évolutions et familles' },
   { id: 'Sprites', label: 'Sprites', description: 'Reconnaissance visuelle', requiresMedia: true },
+  { id: 'Fouille dans les Mines', label: 'Fouille dans les Mines', description: 'Excavation de sprites enfouis', requiresMedia: true },
   { id: 'Cris', label: 'Cris', description: 'Reconnaissance sonore', requiresMedia: true },
   { id: 'Musique', label: 'Musique', description: 'Thèmes des jeux', requiresMedia: true },
   { id: 'Pokédex', label: 'Pokédex', description: 'Espèces et caractéristiques' },

@@ -64,7 +64,7 @@ export function isAnswerCorrect(question: Question, answer: AnswerValue): boolea
 }
 
 export function maxAttemptsFor(question: Question): number {
-  return question.type === 'open' || question.type === 'open-multiple' ? 3 : 1
+  return question.type === 'open' || question.type === 'open-multiple' || question.type === 'mining' ? 3 : 1
 }
 
 export function pointsForAnswer(question: Question, answer: AnswerValue): number {

@@ -116,6 +116,40 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
 .sprite-load-error { display: grid; gap: 6px; padding: 18px; color: #ffb2aa; text-align: center; }
 .sprite-load-error strong { font-size: 13px; }
 .sprite-load-error small { color: #9c9db2; font-size: 11px; }
+.mining-round { width: min(820px, 100%); margin: 22px auto 8px; padding: 18px; border: 1px solid #ffffff17; border-radius: 24px; background: linear-gradient(160deg, #252238, #151526); box-shadow: 0 25px 65px #0006; }
+.mining-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 13px; }
+.mining-toolbar > div:first-child { display: grid; gap: 2px; }
+.mining-toolbar .eyebrow { margin: 0; color: #e5aa55; }
+.mining-toolbar small, .mining-status small, .mining-help { color: #9893a3; }
+.mining-tools { display: flex; gap: 7px; }
+.mining-tools button { min-width: 92px; padding: 9px 12px; display: grid; place-items: center; gap: 2px; border: 1px solid #ffffff16; border-radius: 12px; background: #303047; color: #fff; font-weight: 900; }
+.mining-tools button.selected { border-color: #f1c45b; background: #f1c45b1b; box-shadow: inset 0 0 0 1px #f1c45b; }
+.mining-tools i { font-size: 23px; font-style: normal; }
+.mining-tools span { font-size: 11px; }
+.mining-status { display: grid; gap: 5px; margin-bottom: 12px; }
+.mining-status > div:first-child { display: flex; justify-content: space-between; gap: 12px; color: #d9d5dd; font-size: 12px; font-weight: 900; }
+.mining-status b { color: #f1c45b; }
+.mining-stability { height: 8px; overflow: hidden; border-radius: 99px; background: #0f1020; }
+.mining-stability i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #ef5d57, #f0c459, #62d68b); transition: width .25s ease; }
+.mining-status small { text-align: right; font-size: 10px; font-weight: 800; }
+.mining-wall { position: relative; width: min(600px, 100%); aspect-ratio: 4 / 3; margin: auto; overflow: hidden; border: 8px solid #62584e; border-radius: 16px; background: radial-gradient(circle at 50% 50%, #342f3b, #151521 70%); box-shadow: inset 0 0 45px #0009, 0 12px 30px #0005; }
+.mining-sprite { position: absolute; inset: 8%; display: grid; place-items: center; }
+.mining-sprite img { width: 82%; height: 82%; object-fit: contain; image-rendering: pixelated; filter: drop-shadow(0 8px 13px #0008); }
+.mining-grid { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(6, 1fr); }
+.mining-rock { position: relative; min-width: 0; padding: 0; overflow: hidden; border: 1px solid #645c52; background: #a8916f; transition: opacity .18s ease, transform .1s ease, filter .18s ease; }
+.mining-rock::before, .mining-rock::after, .mining-rock span::before { position: absolute; content: ''; border-radius: 45% 55% 53% 47%; background: #756b61; box-shadow: inset 2px 2px #b9a98c, 1px 2px 3px #332d2a88; }
+.mining-rock::before { width: 38%; height: 32%; left: 9%; top: 15%; transform: rotate(17deg); }
+.mining-rock::after { width: 31%; height: 27%; right: 7%; bottom: 12%; transform: rotate(-23deg); }
+.mining-rock span::before { width: 20%; height: 18%; right: 17%; top: 18%; background: #d2b65b; }
+.mining-rock.depth-2 { filter: brightness(1.08); background: #b9a77e; }
+.mining-rock.depth-1 { filter: brightness(1.18) saturate(.75); background: #c2b391; }
+.mining-rock.depth-1::before { transform: rotate(17deg) scale(.75); }
+.mining-rock.depth-0 { pointer-events: none; opacity: 0; transform: scale(.82); }
+.mining-rock:hover:not(:disabled) { z-index: 1; filter: brightness(1.28); box-shadow: inset 0 0 0 3px #f1c45b; }
+.mining-wall.revealed .mining-rock { opacity: 0; transform: scale(.75); pointer-events: none; }
+.mining-wall.collapsed:not(.revealed) { animation: mining-collapse .28s ease both; }
+.mining-help { margin: 10px 0 0; font-size: 11px; text-align: center; }
+@keyframes mining-collapse { 40% { transform: translateX(-5px); } 70% { transform: translateX(4px); } }
 .lost-place-round { width: min(1100px, 100%); margin: 30px auto; padding: 18px; border-radius: 22px; background: #17182dcc; border: 1px solid #ffffff14; box-shadow: 0 24px 60px #0005; }
 .lost-place-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 14px; }
 .lost-place-toolbar > div:first-child { display: grid; gap: 2px; }
@@ -453,6 +487,8 @@ nav { display: flex; justify-content: space-between; align-items: center; gap: 2
   .mode-grid, .difficulty-grid, .region-grid, .generation-grid, .sprite-variant-grid, .timer-grid { grid-template-columns: 1fr 1fr; }
   .launch-area { width: 100%; justify-content: space-between; }
   .lost-place-toolbar, .active-map-player { align-items: stretch; flex-direction: column; }
+  .mining-toolbar { align-items: stretch; flex-direction: column; }
+  .mining-tools button { flex: 1; }
   .map-controls { justify-content: flex-start; }
   .lost-place-summary { padding: 16px; }
   .question-bank > header, .question-editor > header { align-items: stretch; flex-direction: column; }

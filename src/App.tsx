@@ -6,6 +6,7 @@ import { LostPlaceSummary } from './components/LostPlaceSummary'
 import { GameStats } from './components/GameStats'
 import { SpriteImage } from './components/SpriteImage'
 import { CategoryLogo } from './components/CategoryLogo'
+import { MiningRound } from './components/MiningRound'
 import {
   categories,
   difficultyPresets,
@@ -513,7 +514,7 @@ export function App() {
           <span className="difficulty">{'★'.repeat(question.difficulty)}{'☆'.repeat(5 - question.difficulty)}</span>
         </div>
         <h1>{question.prompt}</h1>
-        {question.media?.kind === 'image' && (
+        {question.media?.kind === 'image' && question.type !== 'mining' && (
           <div
             key={question.id}
             className={`question-media ${question.media.pixelated ? 'pixelated' : ''} sprite-${question.media.spriteVariant ?? 'normal'} reveal-stage-${revealStage} ${game.revealed ? 'revealed' : ''} ${question.type === 'map-location' ? 'location-clue' : ''}`}
@@ -533,6 +534,7 @@ export function App() {
         )}
         <p>{question.media?.spriteVariant === 'progressive' ? `${currentPoints} points disponibles` : `${question.points} points`}</p>
       </section>
+      {question.type === 'mining' && <MiningRound key={question.id} question={question} revealed={game.revealed} />}
       {question.type === 'map-location' ? (
         <LostPlaceRound
           key={question.id}
