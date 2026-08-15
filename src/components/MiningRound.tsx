@@ -82,7 +82,7 @@ export function MiningRound({ question, revealed, availablePoints, onClearedTile
         <div className="mining-sprite">
           {question.media && <SpriteImage media={question.media} revealed={revealed} />}
         </div>
-        <div className="mining-grid" key={impact?.id ?? 0}>
+        <div className="mining-grid">
           {rocks.map((depth, index) => (
             <button
               type="button"
