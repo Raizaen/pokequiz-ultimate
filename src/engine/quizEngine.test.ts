@@ -5,6 +5,7 @@ import {
   createGame,
   nextQuestion,
   progressiveRevealStage,
+  miningPointsForClearedTiles,
   revealAnswer,
   submitAnswer,
   tick,
@@ -125,6 +126,24 @@ describe('quiz engine', () => {
 
     expect(game.answers[player.id].pointsAwarded).toBe(15)
     expect(game.players[0].score).toBe(15)
+  })
+
+  it('réduit les points de la Mine après la première case entièrement retirée', () => {
+    const miningQuestion: Question = { ...open, id: 'mine', type: 'mining', points: 15 }
+
+    expect(miningPointsForClearedTiles(miningQuestion, 0)).toBe(15)
+    expect(miningPointsForClearedTiles(miningQuestion, 1)).toBe(15)
+    expect(miningPointsForClearedTiles(miningQuestion, 2)).toBe(14)
+    expect(miningPointsForClearedTiles(miningQuestion, 8)).toBe(8)
+    expect(miningPointsForClearedTiles(miningQuestion, 48)).toBe(1)
+  })
+
+  it('fige le score de la Mine au palier disponible lors de la bonne réponse', () => {
+    const miningQuestion: Question = { ...open, id: 'mine-score', type: 'mining', points: 15 }
+    const game = submitAnswer(createGame([player], [miningQuestion]), player.id, miningQuestion.acceptedAnswers[0], 11)
+
+    expect(game.answers[player.id].pointsAwarded).toBe(11)
+    expect(game.players[0].score).toBe(11)
   })
 
   it('fait progresser la révélation même sans timer', () => {

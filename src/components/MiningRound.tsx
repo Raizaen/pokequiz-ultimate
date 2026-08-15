@@ -23,9 +23,11 @@ function initialRocks(questionId: string): number[] {
 interface Props {
   question: Question
   revealed: boolean
+  availablePoints: number
+  onClearedTilesChange: (clearedTiles: number) => void
 }
 
-export function MiningRound({ question, revealed }: Props) {
+export function MiningRound({ question, revealed, availablePoints, onClearedTilesChange }: Props) {
   const startingRocks = useMemo(() => initialRocks(question.id), [question.id])
   const [rocks, setRocks] = useState(startingRocks)
   const [tool, setTool] = useState<Tool>('pickaxe')
@@ -57,6 +59,7 @@ export function MiningRound({ question, revealed }: Props) {
     }
 
     setRocks(next)
+    onClearedTilesChange(next.filter((depth) => depth === 0).length)
   }
 
   return (
@@ -76,7 +79,10 @@ export function MiningRound({ question, revealed }: Props) {
       <div className="mining-status">
         <div><span>Stabilité du mur</span><b>{maximumDamage - damage} / {maximumDamage}</b></div>
         <div className="mining-stability"><i style={{ width: `${((maximumDamage - damage) / maximumDamage) * 100}%` }} /></div>
-        <small>{revealed ? 'Sprite entièrement révélé' : collapsed ? 'Le mur s’est effondré : la fouille est terminée !' : `${uncoveredPercent}% de la paroi dégagée`}</small>
+        <div className="mining-progress-detail">
+          <small>{revealed ? 'Sprite entièrement révélé' : collapsed ? 'Le mur s’est effondré : la fouille est terminée !' : `${uncoveredPercent}% de la paroi dégagée`}</small>
+          <strong>{availablePoints} point{availablePoints > 1 ? 's' : ''} disponible{availablePoints > 1 ? 's' : ''}</strong>
+        </div>
       </div>
 
       <div className={`mining-wall ${collapsed ? 'collapsed' : ''} ${revealed ? 'revealed' : ''}`}>

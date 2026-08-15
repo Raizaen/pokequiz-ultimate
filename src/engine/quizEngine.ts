@@ -26,6 +26,11 @@ export function availablePoints(
     : question.points
 }
 
+export function miningPointsForClearedTiles(question: Question, clearedTiles: number): number {
+  if (question.type !== 'mining') return question.points
+  return Math.max(1, question.points - Math.max(0, Math.floor(clearedTiles) - 1))
+}
+
 export function createGame(
   players: Player[],
   questions: Question[],
@@ -55,7 +60,7 @@ export function createGame(
   }
 }
 
-export function submitAnswer(state: GameState, playerId: string, value: AnswerValue): GameState {
+export function submitAnswer(state: GameState, playerId: string, value: AnswerValue, pointsOverride?: number): GameState {
   if (state.finished || state.revealed || state.remainingSeconds === 0) return state
   const question = state.questions[state.questionIndex]
   const previous = state.answers[playerId]
@@ -64,9 +69,11 @@ export function submitAnswer(state: GameState, playerId: string, value: AnswerVa
   const attempts = (previous?.attempts ?? 0) + 1
   const isCorrect = isAnswerCorrect(question, value)
   const rawPoints = pointsForAnswer(question, value)
-  const pointsAwarded = isCorrect && question.media?.spriteVariant === 'progressive'
-    ? availablePoints(question, state.questionElapsedSeconds, state.timerSeconds)
-    : rawPoints
+  const pointsAwarded = isCorrect && question.type === 'mining' && pointsOverride !== undefined
+    ? Math.max(0, Math.min(question.points, Math.floor(pointsOverride)))
+    : isCorrect && question.media?.spriteVariant === 'progressive'
+      ? availablePoints(question, state.questionElapsedSeconds, state.timerSeconds)
+      : rawPoints
   const locked = isCorrect || attempts >= maxAttemptsFor(question)
   const previouslyAwarded = previous?.pointsAwarded ?? 0
 

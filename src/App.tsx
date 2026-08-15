@@ -21,6 +21,7 @@ import type { GameState, Player } from './domain/quiz'
 import {
   availablePoints,
   createGame,
+  miningPointsForClearedTiles,
   nextQuestion,
   progressiveRevealStage,
   revealAnswer,
@@ -95,6 +96,7 @@ export function App() {
   const [reportDetails, setReportDetails] = useState('')
   const [reportStatus, setReportStatus] = useState('')
   const [reportBusy, setReportBusy] = useState(false)
+  const [miningPointsAvailable, setMiningPointsAvailable] = useState(15)
   const questionBank = useMemo(
     () => mergeQuestionBanks(remoteQuestions, bundledQuestions),
     [bundledQuestions, remoteQuestions],
@@ -103,6 +105,7 @@ export function App() {
   const gameQuestions = game?.questions
   const gameQuestionIndex = game?.questionIndex
   const gameFinished = game?.finished
+  const currentQuestion = game && !game.finished ? game.questions[game.questionIndex] : undefined
   const eligibleQuestions = questionsForConfig(questionBank, config)
   const hasRegionSelection = config.mode === 'category' && config.category === 'Lieu Perdu'
   const hasSpriteGenerationSelection = config.mode === 'category' && config.category === 'Sprites'
@@ -121,6 +124,10 @@ export function App() {
   useEffect(() => {
     if (game) saveGame(game)
   }, [game])
+
+  useEffect(() => {
+    if (currentQuestion?.type === 'mining') setMiningPointsAvailable(currentQuestion.points)
+  }, [currentQuestion?.id, currentQuestion?.points, currentQuestion?.type])
 
   useEffect(() => {
     if (!game?.finished || !game.sessionId) return
@@ -532,9 +539,17 @@ export function App() {
             />
           </div>
         )}
-        <p>{question.media?.spriteVariant === 'progressive' ? `${currentPoints} points disponibles` : `${question.points} points`}</p>
+        <p>{question.type === 'mining' ? `${miningPointsAvailable} points disponibles` : question.media?.spriteVariant === 'progressive' ? `${currentPoints} points disponibles` : `${question.points} points`}</p>
       </section>
-      {question.type === 'mining' && <MiningRound key={question.id} question={question} revealed={game.revealed} />}
+      {question.type === 'mining' && (
+        <MiningRound
+          key={question.id}
+          question={question}
+          revealed={game.revealed}
+          availablePoints={miningPointsAvailable}
+          onClearedTilesChange={(clearedTiles) => setMiningPointsAvailable(miningPointsForClearedTiles(question, clearedTiles))}
+        />
+      )}
       {question.type === 'map-location' ? (
         <LostPlaceRound
           key={question.id}
@@ -547,7 +562,7 @@ export function App() {
       ) : (
         <section className="player-grid">
           {game.players.map((player) => (
-            <PlayerPanel key={`${question.id}-${player.id}`} player={player} question={question} answer={game.answers[player.id]} disabled={game.revealed} onAnswer={(value) => setGame(submitAnswer(game, player.id, value))} />
+            <PlayerPanel key={`${question.id}-${player.id}`} player={player} question={question} answer={game.answers[player.id]} disabled={game.revealed} onAnswer={(value) => setGame(submitAnswer(game, player.id, value, question.type === 'mining' ? miningPointsAvailable : undefined))} />
           ))}
         </section>
       )}
