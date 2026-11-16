@@ -51,6 +51,7 @@ export function PaletteSpriteCanvas({ question, color, label }: Props) {
   const [loadFailed, setLoadFailed] = useState(false)
   const [imageVersion, setImageVersion] = useState(0)
   const source = question.media?.src
+  const canvasSource = source ? `${source}${source.includes('?') ? '&' : '?'}palette-canvas=v1` : undefined
   const target = question.paletteTarget
 
   useEffect(() => {
@@ -58,7 +59,7 @@ export function PaletteSpriteCanvas({ question, color, label }: Props) {
     sourceRef.current = null
     paletteAnchorRef.current = null
     setLoadFailed(false)
-    if (!source || !target) return
+    if (!canvasSource || !target) return
     const image = new Image()
     image.crossOrigin = 'anonymous'
     image.onload = () => {
@@ -101,14 +102,14 @@ export function PaletteSpriteCanvas({ question, color, label }: Props) {
     image.onerror = () => {
       if (!cancelled) setLoadFailed(true)
     }
-    image.src = source
+    image.src = canvasSource
 
     return () => {
       cancelled = true
       image.onload = null
       image.onerror = null
     }
-  }, [source, target])
+  }, [canvasSource, target])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -142,7 +143,7 @@ export function PaletteSpriteCanvas({ question, color, label }: Props) {
   return (
     <div className="palette-sprite-frame">
       <canvas ref={canvasRef} role="img" aria-label={label} />
-      {loadFailed && source && <img src={source} alt={label} />}
+      {loadFailed && source && <img src={source} alt={label} crossOrigin="anonymous" />}
     </div>
   )
 }

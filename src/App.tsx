@@ -165,6 +165,7 @@ export function App() {
         ]
         sources.forEach((src) => {
           const image = new Image()
+          image.crossOrigin = 'anonymous'
           image.src = src
         })
       })
