@@ -47,6 +47,7 @@ function hslToRgb(hue: number, saturation: number, lightness: number): [number, 
 export function PaletteSpriteCanvas({ question, color, label }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const sourceRef = useRef<ImageData | null>(null)
+  const paletteAnchorRef = useRef<[number, number, number] | null>(null)
   const [loadFailed, setLoadFailed] = useState(false)
   const [imageVersion, setImageVersion] = useState(0)
   const source = question.media?.src
@@ -54,6 +55,7 @@ export function PaletteSpriteCanvas({ question, color, label }: Props) {
 
   useEffect(() => {
     sourceRef.current = null
+    paletteAnchorRef.current = null
     setLoadFailed(false)
     if (!source || !target) return
     const image = new Image()
@@ -70,6 +72,22 @@ export function PaletteSpriteCanvas({ question, color, label }: Props) {
       context.drawImage(image, 0, 0)
       try {
         sourceRef.current = context.getImageData(0, 0, canvas.width, canvas.height)
+        let closestColor: [number, number, number] | null = null
+        let closestDistance = Number.POSITIVE_INFINITY
+        const sourcePixels = sourceRef.current.data
+        for (let index = 0; index < sourcePixels.length; index += 4) {
+          if (sourcePixels[index + 3] < 128) continue
+          const candidate = rgbToHsl(sourcePixels[index], sourcePixels[index + 1], sourcePixels[index + 2])
+          if (candidate[1] < 12) continue
+          const distance = (hueDistance(candidate[0], target.hue) / 180) ** 2 * .62
+            + ((candidate[1] - target.saturation) / 100) ** 2 * .16
+            + ((candidate[2] - target.lightness) / 100) ** 2 * .22
+          if (distance < closestDistance) {
+            closestDistance = distance
+            closestColor = candidate
+          }
+        }
+        paletteAnchorRef.current = closestColor ?? [target.hue, target.saturation, target.lightness]
         setLoadFailed(false)
         setImageVersion((version) => version + 1)
       } catch {
@@ -83,20 +101,21 @@ export function PaletteSpriteCanvas({ question, color, label }: Props) {
   useEffect(() => {
     const canvas = canvasRef.current
     const sourceImage = sourceRef.current
-    if (!canvas || !sourceImage || !target) return
+    const paletteAnchor = paletteAnchorRef.current
+    if (!canvas || !sourceImage || !paletteAnchor || !target) return
     const pixels = new Uint8ClampedArray(sourceImage.data)
     const hueTolerance = target.hueTolerance ?? 24
     const lightnessTolerance = target.lightnessTolerance ?? 24
     const saturationRatio = color.saturation / Math.max(1, target.saturation)
     const lightnessOffset = color.lightness - target.lightness
+    const hueShift = ((color.hue - target.hue + 540) % 360) - 180
 
     for (let index = 0; index < pixels.length; index += 4) {
       if (pixels[index + 3] === 0) continue
       const [hue, saturation, lightness] = rgbToHsl(pixels[index], pixels[index + 1], pixels[index + 2])
-      if (saturation < 14 || hueDistance(hue, target.hue) > hueTolerance || Math.abs(lightness - target.lightness) > lightnessTolerance) continue
-      const relativeHue = ((hue - target.hue + 540) % 360) - 180
+      if (saturation < 14 || hueDistance(hue, paletteAnchor[0]) > hueTolerance || Math.abs(lightness - paletteAnchor[2]) > lightnessTolerance) continue
       const [red, green, blue] = hslToRgb(
-        color.hue + relativeHue * .18,
+        hue + hueShift,
         saturation * saturationRatio,
         lightness + lightnessOffset,
       )
