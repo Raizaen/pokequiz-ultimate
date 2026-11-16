@@ -1,5 +1,5 @@
 import type { GameState, MapAnswer, Player, Question } from '../domain/quiz'
-import { mapAnswerDistance } from './answerValidation'
+import { isMapAnswer, mapAnswerDistance } from './answerValidation'
 
 export interface LostPlaceAttempt {
   question: Question
@@ -30,8 +30,7 @@ export function buildLostPlaceStats(game: GameState): LostPlacePlayerStats[] {
       const distance = mapAnswerDistance(question, answer.value)
       if (
         distance === null
-        || typeof answer.value === 'string'
-        || Array.isArray(answer.value)
+        || !isMapAnswer(answer.value)
       ) return []
 
       return [{

@@ -1,6 +1,7 @@
-export type QuestionType = 'multiple-choice' | 'multiple-select' | 'open' | 'open-multiple' | 'stat-order' | 'map-location' | 'mining'
+export type QuestionType = 'multiple-choice' | 'multiple-select' | 'open' | 'open-multiple' | 'stat-order' | 'map-location' | 'mining' | 'palette-match'
 export interface MapAnswer { x: number; y: number }
-export type AnswerValue = string | string[] | MapAnswer
+export interface ColorAnswer { hue: number; saturation: number; lightness: number }
+export type AnswerValue = string | string[] | MapAnswer | ColorAnswer
 
 export interface Question {
   id: string
@@ -22,6 +23,11 @@ export interface Question {
   statLabel?: string
   mapTarget?: MapAnswer
   mapRegion?: string
+  paletteTarget?: ColorAnswer & {
+    pokemonName: string
+    hueTolerance?: number
+    lightnessTolerance?: number
+  }
   template?: string
   tags?: string[]
   generationScope?: number[] | 'all'

@@ -1,10 +1,44 @@
-import type { AnswerValue, Question } from '../domain/quiz'
+import type { AnswerValue, ColorAnswer, MapAnswer, Question } from '../domain/quiz'
+
+export function isMapAnswer(answer: AnswerValue): answer is MapAnswer {
+  return !Array.isArray(answer)
+    && typeof answer !== 'string'
+    && 'x' in answer
+    && 'y' in answer
+    && Number.isFinite(answer.x)
+    && Number.isFinite(answer.y)
+}
+
+export function isColorAnswer(answer: AnswerValue): answer is ColorAnswer {
+  return !Array.isArray(answer)
+    && typeof answer !== 'string'
+    && 'hue' in answer
+    && 'saturation' in answer
+    && 'lightness' in answer
+    && [answer.hue, answer.saturation, answer.lightness].every(Number.isFinite)
+}
+
+export function paletteDistance(question: Question, answer: AnswerValue): number | null {
+  if (question.type !== 'palette-match' || !question.paletteTarget || !isColorAnswer(answer)) return null
+  const hueDifference = Math.min(
+    Math.abs(answer.hue - question.paletteTarget.hue),
+    360 - Math.abs(answer.hue - question.paletteTarget.hue),
+  ) / 180
+  const saturationDifference = Math.abs(answer.saturation - question.paletteTarget.saturation) / 100
+  const lightnessDifference = Math.abs(answer.lightness - question.paletteTarget.lightness) / 100
+  return Math.sqrt((hueDifference ** 2) * .6 + (saturationDifference ** 2) * .2 + (lightnessDifference ** 2) * .2)
+}
+
+export function palettePoints(question: Question, answer: AnswerValue): number {
+  const distance = paletteDistance(question, answer)
+  if (distance === null) return 0
+  return Math.max(0, Math.round(question.points * (1 - Math.min(1, distance * 1.35))))
+}
 
 export function mapAnswerDistance(question: Question, answer: AnswerValue): number | null {
   if (
     question.type !== 'map-location'
-    || Array.isArray(answer)
-    || typeof answer === 'string'
+    || !isMapAnswer(answer)
     || !question.mapTarget
   ) return null
 
@@ -38,6 +72,7 @@ export function normalizeAnswer(value: string): string {
 }
 
 export function isAnswerCorrect(question: Question, answer: AnswerValue): boolean {
+  if (question.type === 'palette-match') return isColorAnswer(answer)
   if (question.type === 'map-location') {
     const distance = mapAnswerDistance(question, answer)
     return distance !== null && distance <= 5
@@ -68,6 +103,7 @@ export function maxAttemptsFor(question: Question): number {
 }
 
 export function pointsForAnswer(question: Question, answer: AnswerValue): number {
+  if (question.type === 'palette-match') return palettePoints(question, answer)
   if (question.type === 'map-location') {
     const distance = mapAnswerDistance(question, answer)
     return distance === null ? 0 : mapPointsForDistance(distance)

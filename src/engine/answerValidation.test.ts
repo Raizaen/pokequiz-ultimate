@@ -6,6 +6,7 @@ import {
   mapPointsForDistance,
   maxAttemptsFor,
   normalizeAnswer,
+  palettePoints,
 } from './answerValidation'
 
 const openQuestion: Question = {
@@ -67,5 +68,19 @@ describe('answer validation', () => {
       .toEqual([25, 25, 20, 15, 10, 5, 0])
     expect(mapAccuracyLabel(2)).toBe('Dans le mille !')
     expect(mapAccuracyLabel(20)).toBe('Trop éloigné')
+  })
+
+  it('attribue un score progressif à une couleur proposée', () => {
+    const paletteQuestion: Question = {
+      ...openQuestion,
+      type: 'palette-match',
+      points: 20,
+      paletteTarget: { pokemonName: 'Pikachu', hue: 50, saturation: 85, lightness: 58 },
+    }
+
+    expect(palettePoints(paletteQuestion, { hue: 50, saturation: 85, lightness: 58 })).toBe(20)
+    expect(palettePoints(paletteQuestion, { hue: 65, saturation: 75, lightness: 62 })).toBeGreaterThan(14)
+    expect(palettePoints(paletteQuestion, { hue: 230, saturation: 20, lightness: 20 })).toBe(0)
+    expect(isAnswerCorrect(paletteQuestion, { hue: 65, saturation: 75, lightness: 62 })).toBe(true)
   })
 })

@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from 'react'
 import type { AnswersByPlayer, MapAnswer, Player, Question } from '../domain/quiz'
 import { mapAssetFor } from '../data/mapAssets'
-import { mapAccuracyLabel } from '../engine/answerValidation'
+import { isMapAnswer, mapAccuracyLabel } from '../engine/answerValidation'
 import { MapPin } from './MapPin'
 
 interface Props {
@@ -42,7 +42,7 @@ export function LostPlaceRound({ players, answers, question, revealed, onAnswer 
 
   const revealedMarkers = useMemo(() => players.flatMap((player) => {
     const value = answers[player.id]?.value
-    return !revealed || !value || typeof value === 'string' || Array.isArray(value)
+    return !revealed || !value || !isMapAnswer(value)
       ? []
       : [{
           player,

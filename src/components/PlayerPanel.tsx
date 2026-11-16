@@ -3,6 +3,7 @@ import type { AnswerValue, Player, PlayerAnswer, Question } from '../domain/quiz
 import { StatOrderPanel } from './StatOrderPanel'
 import { PokemonAnswerField } from './PokemonAnswerField'
 import { questionExpectsPokemonName } from '../utils/pokemonAnswerSuggestions'
+import { PalettePlayerPanel } from './PalettePlayerPanel'
 
 interface Props {
   player: Player
@@ -30,6 +31,10 @@ export function PlayerPanel({ player, question, answer, disabled, onAnswer }: Pr
     if (!value || locked || selectedChoices.some((choice) => choice.toLocaleLowerCase('fr') === value.toLocaleLowerCase('fr'))) return
     setSelectedChoices([...selectedChoices, value])
     setDraft('')
+  }
+
+  if (question.type === 'palette-match') {
+    return <PalettePlayerPanel player={player} question={question} answer={answer} revealed={disabled} onAnswer={onAnswer} />
   }
 
   return (

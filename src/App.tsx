@@ -521,7 +521,7 @@ export function App() {
           <span className="difficulty">{'★'.repeat(question.difficulty)}{'☆'.repeat(5 - question.difficulty)}</span>
         </div>
         <h1>{question.prompt}</h1>
-        {question.media?.kind === 'image' && question.type !== 'mining' && (
+        {question.media?.kind === 'image' && question.type !== 'mining' && question.type !== 'palette-match' && (
           <div
             key={question.id}
             className={`question-media ${question.media.pixelated ? 'pixelated' : ''} sprite-${question.media.spriteVariant ?? 'normal'} reveal-stage-${revealStage} ${game.revealed ? 'revealed' : ''} ${question.type === 'map-location' ? 'location-clue' : ''}`}
