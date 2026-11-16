@@ -54,6 +54,7 @@ export function PaletteSpriteCanvas({ question, color, label }: Props) {
   const target = question.paletteTarget
 
   useEffect(() => {
+    let cancelled = false
     sourceRef.current = null
     paletteAnchorRef.current = null
     setLoadFailed(false)
@@ -61,6 +62,7 @@ export function PaletteSpriteCanvas({ question, color, label }: Props) {
     const image = new Image()
     image.crossOrigin = 'anonymous'
     image.onload = () => {
+      if (cancelled) return
       const canvas = canvasRef.current
       if (!canvas) return
       canvas.width = image.naturalWidth
@@ -88,14 +90,24 @@ export function PaletteSpriteCanvas({ question, color, label }: Props) {
           }
         }
         paletteAnchorRef.current = closestColor ?? [target.hue, target.saturation, target.lightness]
+        if (cancelled) return
         setLoadFailed(false)
         setImageVersion((version) => version + 1)
       } catch {
+        if (cancelled) return
         setLoadFailed(true)
       }
     }
-    image.onerror = () => setLoadFailed(true)
+    image.onerror = () => {
+      if (!cancelled) setLoadFailed(true)
+    }
     image.src = source
+
+    return () => {
+      cancelled = true
+      image.onload = null
+      image.onerror = null
+    }
   }, [source, target])
 
   useEffect(() => {
